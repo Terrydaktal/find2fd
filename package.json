@@ -1,0 +1,28 @@
+{
+  "name": "find2fd",
+  "version": "0.1.0",
+  "description": "Run qualified GNU find file searches through fd while preserving GNU behavior and native fallback.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": { "name": "Terrydaktal", "email": "9lewis9@gmail.com" },
+  "repository": { "type": "git", "url": "git+https://github.com/Terrydaktal/find2fd.git" },
+  "homepage": "https://github.com/Terrydaktal/find2fd#readme",
+  "bugs": { "url": "https://github.com/Terrydaktal/find2fd/issues" },
+  "engines": { "node": ">=24" },
+  "main": "./src/find-wrapper.mjs",
+  "exports": { ".": "./src/find-wrapper.mjs" },
+  "bin": {
+    "find2fd": "bin/find2fd",
+    "find2fd-shell-prefix": "bin/find2fd-shell-prefix.mjs"
+  },
+  "files": ["src/", "bin/", "pi/", "docs/", "tests/", "tools/", "README.md", "LICENSE", "NOTICE"],
+  "scripts": {
+    "test": "node tools/verify.mjs",
+    "test:core": "node tools/verify.mjs --core",
+    "test:deep": "node tools/verify.mjs --deep"
+  },
+  "keywords": ["find", "fd", "compatibility", "bash", "pi-package"],
+  "peerDependencies": { "@earendil-works/pi-coding-agent": ">=0.84.2" },
+  "peerDependenciesMeta": { "@earendil-works/pi-coding-agent": { "optional": true } },
+  "pi": { "extensions": ["./pi/find2fd.ts"] }
+}

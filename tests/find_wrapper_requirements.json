@@ -1,0 +1,100 @@
+{
+  "scope": "Standalone GNU find compatibility adapter and optional private Pi Bash integration",
+  "runner": "tools/verify.mjs",
+  "requirements": [
+    {
+      "id": "FIND-QUALIFICATION",
+      "owner": "find2fd",
+      "contract": "A narrow directory-root, safe-name/type conjunction listing subset may use fd; every other GNU invocation retains its original argv.",
+      "tests": [
+        "tests/test_find_options.mjs",
+        "tests/test_find_cli.mjs"
+      ]
+    },
+    {
+      "id": "FIND-EXPRESSIONS",
+      "owner": "find2fd",
+      "contract": "GNU precedence, short circuiting, negation, comma, default printing and action truth values remain native unchanged.",
+      "tests": [
+        "tests/test_find_fallback.mjs"
+      ]
+    },
+    {
+      "id": "FIND-TRAVERSAL",
+      "owner": "find2fd",
+      "contract": "Exact starting-point spelling, root inclusion, hidden/ignored entries, traversal order and repeated/overlapping root multiplicity match GNU.",
+      "tests": [
+        "tests/test_find_cli.mjs"
+      ]
+    },
+    {
+      "id": "FIND-FILENAME-BYTES",
+      "owner": "find2fd",
+      "contract": "Newlines, Unicode and invalid UTF-8 names/argv preserve exact raw output and native argv bytes.",
+      "tests": [
+        "tests/test_find_cli.mjs",
+        "tests/test_package_entry.mjs"
+      ]
+    },
+    {
+      "id": "FIND-FAILURES",
+      "owner": "find2fd",
+      "contract": "Filesystem failures, malformed fd protocol, missing engines and overflow fall back before output while retaining original GNU partial output/diagnostics/status.",
+      "tests": [
+        "tests/test_find_cli.mjs",
+        "tests/test_find_runtime.mjs"
+      ]
+    },
+    {
+      "id": "FIND-ACTIONS",
+      "owner": "find2fd",
+      "contract": "Exec/output/deletion actions execute exactly once under GNU, and stdin-root lists are not consumed by fd preflight.",
+      "tests": [
+        "tests/test_find_fallback.mjs"
+      ]
+    },
+    {
+      "id": "FIND-SCOPE",
+      "owner": "find2fd",
+      "contract": "The private non-exported Bash function preserves native bypasses, children and outside shells; optional Pi native bash adaptation is gated dynamically by exact provider.",
+      "tests": [
+        "tests/test_find_scope.mjs",
+        "tests/test_package_entry.mjs"
+      ]
+    },
+    {
+      "id": "FIND-PACKAGING",
+      "owner": "find2fd",
+      "contract": "An actual npm tarball extracts and installs offline; its public entry and helper retain byte/status/scope behavior.",
+      "tests": [
+        "tests/test_package_artifact.mjs",
+        "tests/test_package_entry.mjs"
+      ]
+    },
+    {
+      "id": "FIND-SEEDED-CLI",
+      "owner": "find2fd",
+      "contract": "A finite seeded campaign compares actual CLI bytes/status with GNU and records distinct fd/native routes and actual fd executions separately.",
+      "tests": [
+        "tests/test_find_campaign.mjs"
+      ]
+    },
+    {
+      "id": "FIND-MUTATION",
+      "owner": "find2fd",
+      "contract": "Test-only root-output/order/fallback mutations are rejected by semantic GNU oracles; syntax and infrastructure failures receive no mutation credit.",
+      "tests": [
+        "tests/test_find_runtime.mjs"
+      ]
+    },
+    {
+      "id": "FIND-LIFECYCLE",
+      "owner": "find2fd",
+      "contract": "Cancellation and deadlines terminate owned descendants; inherited raw or removed working directories retain GNU behavior.",
+      "tests": [
+        "tests/test_find_runtime.mjs",
+        "tests/test_package_entry.mjs"
+      ]
+    }
+  ]
+}

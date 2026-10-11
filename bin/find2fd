@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Preserve arbitrary argv bytes before Node can decode them.
+if ! (
+	LC_ALL=C
+	_find2fd_nonascii=$'[^\001-\177]'
+	for _find2fd_arg; do
+		if [[ $_find2fd_arg =~ $_find2fd_nonascii ]]; then exit 1; fi
+	done
+); then
+	exec find "$@"
+fi
+
+_find2fd_script=$(readlink -f -- "${BASH_SOURCE[0]}") || exit 1
+exec node "${_find2fd_script%/*}/find2fd.mjs" "$@"

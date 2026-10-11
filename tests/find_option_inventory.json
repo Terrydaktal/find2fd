@@ -1,0 +1,881 @@
+{
+  "schemaVersion": 1,
+  "scope": "GNU-help spelling inventory; classification is conservative and contextual, never a universal fd-equivalence claim.",
+  "options": [
+    {
+      "spelling": "-P",
+      "argv": [
+        "-P",
+        "tree"
+      ],
+      "classification": "qualified",
+      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+    },
+    {
+      "spelling": "-name",
+      "argv": [
+        "tree",
+        "-name",
+        "foo*"
+      ],
+      "classification": "qualified",
+      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+    },
+    {
+      "spelling": "-type",
+      "argv": [
+        "tree",
+        "-type",
+        "f"
+      ],
+      "classification": "qualified",
+      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+    },
+    {
+      "spelling": "-mindepth",
+      "argv": [
+        "tree",
+        "-mindepth",
+        "1"
+      ],
+      "classification": "qualified",
+      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+    },
+    {
+      "spelling": "-maxdepth",
+      "argv": [
+        "tree",
+        "-maxdepth",
+        "1"
+      ],
+      "classification": "qualified",
+      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+    },
+    {
+      "spelling": "-a",
+      "argv": [
+        "tree",
+        "-type",
+        "f",
+        "-a",
+        "-name",
+        "*.txt"
+      ],
+      "classification": "qualified",
+      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+    },
+    {
+      "spelling": "-and",
+      "argv": [
+        "tree",
+        "-type",
+        "f",
+        "-and",
+        "-name",
+        "*.txt"
+      ],
+      "classification": "qualified",
+      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+    },
+    {
+      "spelling": "-print",
+      "argv": [
+        "tree",
+        "-print"
+      ],
+      "classification": "qualified",
+      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+    },
+    {
+      "spelling": "-print0",
+      "argv": [
+        "tree",
+        "-print0"
+      ],
+      "classification": "qualified",
+      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+    },
+    {
+      "spelling": "-daystart",
+      "argv": [
+        "tree",
+        "-daystart"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-follow",
+      "argv": [
+        "tree",
+        "-follow"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-nowarn",
+      "argv": [
+        "tree",
+        "-nowarn"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-warn",
+      "argv": [
+        "tree",
+        "-warn"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-depth",
+      "argv": [
+        "tree",
+        "-depth"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-mount",
+      "argv": [
+        "tree",
+        "-mount"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-noleaf",
+      "argv": [
+        "tree",
+        "-noleaf"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-xdev",
+      "argv": [
+        "tree",
+        "-xdev"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-ignore_readdir_race",
+      "argv": [
+        "tree",
+        "-ignore_readdir_race"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-noignore_readdir_race",
+      "argv": [
+        "tree",
+        "-noignore_readdir_race"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-empty",
+      "argv": [
+        "tree",
+        "-empty"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-false",
+      "argv": [
+        "tree",
+        "-false"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-nouser",
+      "argv": [
+        "tree",
+        "-nouser"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-nogroup",
+      "argv": [
+        "tree",
+        "-nogroup"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-readable",
+      "argv": [
+        "tree",
+        "-readable"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-writable",
+      "argv": [
+        "tree",
+        "-writable"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-executable",
+      "argv": [
+        "tree",
+        "-executable"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-true",
+      "argv": [
+        "tree",
+        "-true"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-ls",
+      "argv": [
+        "tree",
+        "-ls"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-prune",
+      "argv": [
+        "tree",
+        "-prune"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-quit",
+      "argv": [
+        "tree",
+        "-quit"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-delete",
+      "argv": [
+        "tree",
+        "-delete"
+      ],
+      "classification": "native",
+      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+    },
+    {
+      "spelling": "-amin",
+      "argv": [
+        "tree",
+        "-amin",
+        "1"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-anewer",
+      "argv": [
+        "tree",
+        "-anewer",
+        "tree/foo.txt"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-atime",
+      "argv": [
+        "tree",
+        "-atime",
+        "1"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-cmin",
+      "argv": [
+        "tree",
+        "-cmin",
+        "1"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-cnewer",
+      "argv": [
+        "tree",
+        "-cnewer",
+        "tree/foo.txt"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-context",
+      "argv": [
+        "tree",
+        "-context",
+        "*"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-ctime",
+      "argv": [
+        "tree",
+        "-ctime",
+        "1"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-fstype",
+      "argv": [
+        "tree",
+        "-fstype",
+        "ext4"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-gid",
+      "argv": [
+        "tree",
+        "-gid",
+        "0"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-group",
+      "argv": [
+        "tree",
+        "-group",
+        "root"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-ilname",
+      "argv": [
+        "tree",
+        "-ilname",
+        "*"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-iname",
+      "argv": [
+        "tree",
+        "-iname",
+        "*.TXT"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-inum",
+      "argv": [
+        "tree",
+        "-inum",
+        "0"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-iwholename",
+      "argv": [
+        "tree",
+        "-iwholename",
+        "*"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-iregex",
+      "argv": [
+        "tree",
+        "-iregex",
+        ".*"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-links",
+      "argv": [
+        "tree",
+        "-links",
+        "1"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-lname",
+      "argv": [
+        "tree",
+        "-lname",
+        "*"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-mmin",
+      "argv": [
+        "tree",
+        "-mmin",
+        "1"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-mtime",
+      "argv": [
+        "tree",
+        "-mtime",
+        "1"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-newer",
+      "argv": [
+        "tree",
+        "-newer",
+        "tree/foo.txt"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-newerXY",
+      "argv": [
+        "tree",
+        "-newermt",
+        "2026-01-01"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-path",
+      "argv": [
+        "tree",
+        "-path",
+        "tree/*"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-perm",
+      "argv": [
+        "tree",
+        "-perm",
+        "u=r"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-regex",
+      "argv": [
+        "tree",
+        "-regex",
+        ".*"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-size",
+      "argv": [
+        "tree",
+        "-size",
+        "1c"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-uid",
+      "argv": [
+        "tree",
+        "-uid",
+        "0"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-used",
+      "argv": [
+        "tree",
+        "-used",
+        "1"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-user",
+      "argv": [
+        "tree",
+        "-user",
+        "root"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-wholename",
+      "argv": [
+        "tree",
+        "-wholename",
+        "tree/*"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-xtype",
+      "argv": [
+        "tree",
+        "-xtype",
+        "l"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-regextype",
+      "argv": [
+        "tree",
+        "-regextype",
+        "posix-extended"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-printf",
+      "argv": [
+        "tree",
+        "-printf",
+        "%p\\n"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-fprintf",
+      "argv": [
+        "tree",
+        "-fprintf",
+        "result.paths",
+        "%p\\n"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-fprint",
+      "argv": [
+        "tree",
+        "-fprint",
+        "result.paths"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-fprint0",
+      "argv": [
+        "tree",
+        "-fprint0",
+        "result.paths"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-fls",
+      "argv": [
+        "tree",
+        "-fls",
+        "result.paths"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-files0-from",
+      "argv": [
+        "-files0-from",
+        "roots.list"
+      ],
+      "classification": "native",
+      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+    },
+    {
+      "spelling": "-exec",
+      "argv": [
+        "tree",
+        "-exec",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "classification": "native",
+      "contract": "Actions execute exactly once under original GNU short-circuit, cwd and batching semantics; interactive actions are tested with owned input only."
+    },
+    {
+      "spelling": "-execdir",
+      "argv": [
+        "tree",
+        "-execdir",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "classification": "native",
+      "contract": "Actions execute exactly once under original GNU short-circuit, cwd and batching semantics; interactive actions are tested with owned input only."
+    },
+    {
+      "spelling": "-ok",
+      "argv": [
+        "tree",
+        "-ok",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "classification": "native",
+      "contract": "Actions execute exactly once under original GNU short-circuit, cwd and batching semantics; interactive actions are tested with owned input only."
+    },
+    {
+      "spelling": "-okdir",
+      "argv": [
+        "tree",
+        "-okdir",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "classification": "native",
+      "contract": "Actions execute exactly once under original GNU short-circuit, cwd and batching semantics; interactive actions are tested with owned input only."
+    },
+    {
+      "spelling": "-H",
+      "argv": [
+        "-H",
+        "tree"
+      ],
+      "classification": "native",
+      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+    },
+    {
+      "spelling": "-L",
+      "argv": [
+        "-L",
+        "tree"
+      ],
+      "classification": "native",
+      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+    },
+    {
+      "spelling": "-Olevel",
+      "argv": [
+        "-O2",
+        "tree"
+      ],
+      "classification": "native",
+      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+    },
+    {
+      "spelling": "-D",
+      "argv": [
+        "-D",
+        "tree",
+        "tree"
+      ],
+      "classification": "native",
+      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+    },
+    {
+      "spelling": "--help",
+      "argv": [
+        "--help"
+      ],
+      "classification": "native",
+      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+    },
+    {
+      "spelling": "--version",
+      "argv": [
+        "--version"
+      ],
+      "classification": "native",
+      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+    },
+    {
+      "spelling": "-not",
+      "argv": [
+        "tree",
+        "-not",
+        "-type",
+        "d"
+      ],
+      "classification": "native",
+      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+    },
+    {
+      "spelling": "-o",
+      "argv": [
+        "tree",
+        "-type",
+        "f",
+        "-o",
+        "-type",
+        "d"
+      ],
+      "classification": "native",
+      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+    },
+    {
+      "spelling": "-or",
+      "argv": [
+        "tree",
+        "-type",
+        "f",
+        "-or",
+        "-type",
+        "d"
+      ],
+      "classification": "native",
+      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+    }
+  ],
+  "operators": [
+    {
+      "spelling": "(",
+      "classification": "native",
+      "argv": [
+        "tree",
+        "("
+      ],
+      "contract": "Unsupported expression operators retain their exact original argv and GNU diagnostics; precedence is never translated."
+    },
+    {
+      "spelling": ")",
+      "classification": "native",
+      "argv": [
+        "tree",
+        ")"
+      ],
+      "contract": "Unsupported expression operators retain their exact original argv and GNU diagnostics; precedence is never translated."
+    },
+    {
+      "spelling": "!",
+      "classification": "native",
+      "argv": [
+        "tree",
+        "!"
+      ],
+      "contract": "Unsupported expression operators retain their exact original argv and GNU diagnostics; precedence is never translated."
+    },
+    {
+      "spelling": ",",
+      "classification": "native",
+      "argv": [
+        "tree",
+        ","
+      ],
+      "contract": "Unsupported expression operators retain their exact original argv and GNU diagnostics; precedence is never translated."
+    }
+  ],
+  "boundaries": {
+    "name": [
+      "literal",
+      "*",
+      "prefix*",
+      "*.suffix"
+    ],
+    "nativeName": [
+      "",
+      "?",
+      "[]",
+      "{}",
+      "\\",
+      "/",
+      "non-ASCII"
+    ],
+    "depth": [
+      "0",
+      "1",
+      "2",
+      "999",
+      "-1",
+      "bad",
+      "missing"
+    ],
+    "type": [
+      "f",
+      "d",
+      "l",
+      "p",
+      "s",
+      "b",
+      "c",
+      "D",
+      "x",
+      "f,d"
+    ]
+  }
+}

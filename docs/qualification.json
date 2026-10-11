@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "package": "find2fd@0.1.0",
+  "qualifiedArchive": {
+    "filename": "find2fd-0.1.0.tgz",
+    "sha256": "2de2d3c39f58a100b3ba44600e56e340b8c2811b02718da997f6940ac8b2644c",
+    "integrity": "sha512-m5mn3kj3JRHQv0qItbipznoFTE9TmOHx+x9YMH087iq0tQ9/olfOf3W5+TvnPPvSAFOV8LDL1lPRM+cMXuVLow==",
+    "fileCount": 27,
+    "verification": "actual npm pack tarball, extracted tools/verify.mjs"
+  },
+  "sourceHashes": {
+    "bin/find2fd": "78a54f34d443c420c86217527d75e41694c35eaf5c93d954627ed3d0addda619",
+    "bin/find2fd-shell-prefix.mjs": "42610de727a3f49a5f2bf10c87b821d0a101dfa12d64f889ff9a565d0e74f58c",
+    "bin/find2fd.mjs": "5295f12e0816ccc493fdb1d2f56c7f42515dcd2cddbbb9091315060f64dd98a9",
+    "package.json": "6bf9f2598f9a09272e210b4a0b8f4c97b8ab2dc9b3ff6dd0a279b036ba440bd6",
+    "pi/find2fd.ts": "b56e79273a1e0ad7d38419ca25c4a38fc79b269a76daf798726ff850f8bb21a1",
+    "src/find-options.mjs": "817f141168d298cb8913164067a4bdac8cdaf0f8a8d778d9a45d9e87cb457426",
+    "src/find-order.mjs": "78d295706acde4378b79ea440ae4b037390310e8ac01fdc91a77c71d5bfd3c88",
+    "src/find-runtime.mjs": "8d2c75322946c74944c197e3349ff63d48afd6cee108bf6a6eff28888a1e775f",
+    "src/find-wrapper.mjs": "a5e704d69d7ce97981893a1cdb92166abeb27f3b69b82bf98d54930408711efc",
+    "tests/find_option_inventory.json": "7ab1cfac59f4d4ed13e290609fcac051c0ffe25b172477b7a07b11e6dcdf9545",
+    "tests/find_wrapper_requirements.json": "4d0ff05113760aebe67b27d22e86469d58e37e2c61a2671fe51a048bbb9c4413",
+    "tests/helpers.mjs": "c54d1d39e3863de49f52109c21a6d01d71214a29ea2818836598889c947a9830",
+    "tests/test_find_campaign.mjs": "33ce467da3fed98e1d3db2a45ab01db634396c82eeb3efa141271f5db2f2043d",
+    "tests/test_find_cli.mjs": "b7bd0d4a39fc9aec7b5db111525f800b3af7f015bf28d4110e0da11e79ab376d",
+    "tests/test_find_fallback.mjs": "bab22a16461807eebb27d1bd0542718f921aaf0ce241b39e45586a780641dc84",
+    "tests/test_find_options.mjs": "b078ad8ceca34b8bcfb3fba969ffe5ea90304d7971056ceee8d433098ee0e1f8",
+    "tests/test_find_runtime.mjs": "1a3a71317a6b29786d13c686e2aa6a7c7104182775d271d335254cbcb516ad11",
+    "tests/test_find_scope.mjs": "498bef110253180a173a46dd1456fda446192a409f961cd7373a1ce98c011def",
+    "tests/test_package_artifact.mjs": "b0bf4d032a37c6f636ae16d946787b2bc8946232cdc41ee973e2a7c6d3b5572a",
+    "tests/test_package_entry.mjs": "ccfafcc8bf080732788b0b1192dd340896bbd7d9e0c57390cc0f3a66badd8fa1",
+    "tools/verify-artifact.mjs": "c0a22c9d1537be12ab9499bfc0161668c130ebf8b522bf67a188a60388690942",
+    "tools/verify.mjs": "0e60aa486ee0a7c4b56152b79f987773148672f56f770e94788358cbcb13e347"
+  },
+  "environments": [
+    {
+      "environment": "Linux, Node 26",
+      "startedAt": "2026-10-11T19:05:17.237Z",
+      "finishedAt": "2026-10-11T19:06:08.637Z",
+      "passed": true,
+      "tier": "deep",
+      "nodeTests": 55,
+      "versions": {
+        "node": "v26.4.0",
+        "GNU": "find (GNU findutils) 4.11.0-modified",
+        "fd": "fd 9.0.0",
+        "python": "Python 3.14.6",
+        "bash": "GNU bash, version 5.3.15(1)-release (x86_64-pc-linux-gnu)",
+        "readlink": "readlink (GNU coreutils) 9.11",
+        "npm": "12.0.2",
+        "tar": "tar (GNU tar) 1.35"
+      },
+      "PiSDKVersion": "0.84.2",
+      "stages": [
+        {
+          "name": "core",
+          "counts": {
+            "tests": 48,
+            "suites": 0,
+            "pass": 48,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "durationMs": 25629,
+          "passed": true
+        },
+        {
+          "name": "campaigns",
+          "counts": {
+            "tests": 1,
+            "suites": 0,
+            "pass": 1,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "durationMs": 24979,
+          "passed": true
+        },
+        {
+          "name": "installed Pi native Bash scope",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "durationMs": 740,
+          "passed": true
+        }
+      ],
+      "seededCLI": {
+        "campaign": "seeded-cli",
+        "seed": "0x8f2da643",
+        "deep": true,
+        "fixtureSourceSHA256": "c54d1d39e3863de49f52109c21a6d01d71214a29ea2818836598889c947a9830",
+        "actualGNUComparisons": 3072,
+        "distinctArgvCases": 3072,
+        "fdQualifiedPlans": 2140,
+        "nativePlans": 932,
+        "actualFdInvocations": 3364,
+        "actualNativeInvocations": 932,
+        "qualifiedRuntimeFallbacks": 0,
+        "mismatches": 0,
+        "concurrency": 8
+      },
+      "PiSDK": {
+        "campaign": "pi-sdk-scope",
+        "actualFdInvocations": 7,
+        "networkRequests": 0,
+        "inferenceRequests": 0,
+        "extension": "pi/find2fd.ts",
+        "nativeToolName": "bash"
+      },
+      "sourceChanged": false
+    },
+    {
+      "environment": "Linux, Node 24",
+      "startedAt": "2026-10-11T19:06:10.019Z",
+      "finishedAt": "2026-10-11T19:07:15.414Z",
+      "passed": true,
+      "tier": "deep",
+      "nodeTests": 55,
+      "versions": {
+        "node": "v24.21.0",
+        "GNU": "find (GNU findutils) 4.10.0",
+        "fd": "fdfind 10.2.0",
+        "python": "Python 3.13.5",
+        "bash": "GNU bash, version 5.2.37(1)-release (x86_64-pc-linux-gnu)",
+        "readlink": "readlink (GNU coreutils) 9.7",
+        "npm": "11.19.0",
+        "tar": "tar (GNU tar) 1.35"
+      },
+      "PiSDKVersion": "0.84.2",
+      "stages": [
+        {
+          "name": "core",
+          "counts": {
+            "tests": 48,
+            "suites": 0,
+            "pass": 48,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "durationMs": 31535,
+          "passed": true
+        },
+        {
+          "name": "campaigns",
+          "counts": {
+            "tests": 1,
+            "suites": 0,
+            "pass": 1,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "durationMs": 32442,
+          "passed": true
+        },
+        {
+          "name": "installed Pi native Bash scope",
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "durationMs": 1313,
+          "passed": true
+        }
+      ],
+      "seededCLI": {
+        "campaign": "seeded-cli",
+        "seed": "0x8f2da643",
+        "deep": true,
+        "fixtureSourceSHA256": "c54d1d39e3863de49f52109c21a6d01d71214a29ea2818836598889c947a9830",
+        "actualGNUComparisons": 3072,
+        "distinctArgvCases": 3072,
+        "fdQualifiedPlans": 2140,
+        "nativePlans": 932,
+        "actualFdInvocations": 3364,
+        "actualNativeInvocations": 932,
+        "qualifiedRuntimeFallbacks": 0,
+        "mismatches": 0,
+        "concurrency": 8
+      },
+      "PiSDK": {
+        "campaign": "pi-sdk-scope",
+        "actualFdInvocations": 7,
+        "networkRequests": 0,
+        "inferenceRequests": 0,
+        "extension": "pi/find2fd.ts",
+        "nativeToolName": "bash"
+      },
+      "sourceChanged": false
+    }
+  ],
+  "semanticMutations": {
+    "rootOrderArgvRejected": 3,
+    "helperCleanupRejected": 1,
+    "cleanNegativeControls": 4
+  },
+  "packedEntryChecks": {
+    "extractedEntryNodeTests": 5,
+    "offlineInstalledEntryNodeTests": 5,
+    "includedInTopLevelNodeTests": false
+  },
+  "scopeNotes": [
+    "The same 3,072 distinct argument cases were replayed in both environments; they are not 6,144 distinct cases.",
+    "fd plans and actual fd invocations are counted separately; multiple or repeated starting paths invoke fd more than once.",
+    "Qualification compares stdout bytes, stderr bytes and exit status with GNU find on owned synthetic fixtures.",
+    "Final reporting documentation is added after the qualified archive; implementation and test hashes identify the tested code.",
+    "These finite checks do not prove universal equivalence, arbitrary concurrent filesystem mutation, or a speed advantage."
+  ]
+}
