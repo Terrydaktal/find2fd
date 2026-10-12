@@ -1,22 +1,34 @@
 {
-  "scope": "Standalone GNU find compatibility adapter and optional private Pi Bash integration",
+  "scope": "Measured automatic GNU/fd routing and explicitly experimental finite broader fd semantics, independently compared against GNU.",
   "runner": "tools/verify.mjs",
   "requirements": [
     {
+      "id": "FIND-DEFAULT-GNU-POLICY",
+      "contract": "Public/private calls automatically use the measured sparse large-layered name/type fd family. Small/dense/shallow/rich/action/unsupported classes use original GNU before Node. Explicit off/0 or set nonexact experimental flag uses GNU. Pi allowed-provider model Bash calls get the same private policy; user commands, native bypasses and child scripts remain GNU. Routing predicts measured class speed, not every future call.",
+      "tests": [
+        "tests/test_find_default_policy.mjs",
+        "tests/test_find_scope.mjs",
+        "tests/test_find_automatic_routing.mjs"
+      ]
+    },
+    {
       "id": "FIND-QUALIFICATION",
       "owner": "find2fd",
-      "contract": "A narrow directory-root, safe-name/type conjunction listing subset may use fd; every other GNU invocation retains its original argv.",
+      "contract": "Under exact FIND2FD_EXPERIMENTAL_FD=1: fd supplies actual candidates for supported pure and GNU metadata/format expressions. Physical preorder controls evaluate each node under GNU before immediate fd descent. Unsupported actions/diagnostics and buffered compatibility/resource failures retain original GNU before publication; incremental listing faults continue locally without replay.",
       "tests": [
         "tests/test_find_options.mjs",
-        "tests/test_find_cli.mjs"
+        "tests/test_find_cli.mjs",
+        "tests/test_find_expressions.mjs",
+        "tests/test_find_incremental.mjs"
       ]
     },
     {
       "id": "FIND-EXPRESSIONS",
       "owner": "find2fd",
-      "contract": "GNU precedence, short circuiting, negation, comma, default printing and action truth values remain native unchanged.",
+      "contract": "Under exact FIND2FD_EXPERIMENTAL_FD=1: GNU precedence, short circuiting, negation, comma, implicit printing and repeated/mixed print actions remain exact through fd; unsupported actions retain native GNU execution.",
       "tests": [
-        "tests/test_find_fallback.mjs"
+        "tests/test_find_fallback.mjs",
+        "tests/test_find_expressions.mjs"
       ]
     },
     {
@@ -39,18 +51,20 @@
     {
       "id": "FIND-FAILURES",
       "owner": "find2fd",
-      "contract": "Filesystem failures, malformed fd protocol, missing engines and overflow fall back before output while retaining original GNU partial output/diagnostics/status.",
+      "contract": "Buffered traversal failures retain original GNU before output. Once the incremental evaluator starts, fd failures use local depth-one GNU discovery and never replay original argv or prior output; diagnostics/status remain GNU-owned.",
       "tests": [
         "tests/test_find_cli.mjs",
-        "tests/test_find_runtime.mjs"
+        "tests/test_find_runtime.mjs",
+        "tests/test_find_incremental_runtime.mjs"
       ]
     },
     {
       "id": "FIND-ACTIONS",
       "owner": "find2fd",
-      "contract": "Exec/output/deletion actions execute exactly once under GNU, and stdin-root lists are not consumed by fd preflight.",
+      "contract": "Exec, file-output and deletion actions execute exactly once under original GNU, and stdin-root lists are not consumed by fd preflight. Arbitrary root actions creating/deleting/modifying later entries retain native behavior without fd credit.",
       "tests": [
-        "tests/test_find_fallback.mjs"
+        "tests/test_find_fallback.mjs",
+        "tests/test_find_incremental.mjs"
       ]
     },
     {
@@ -82,9 +96,10 @@
     {
       "id": "FIND-MUTATION",
       "owner": "find2fd",
-      "contract": "Test-only root-output/order/fallback mutations are rejected by semantic GNU oracles; syntax and infrastructure failures receive no mutation credit.",
+      "contract": "Test-only root-output/order/fallback and ignored-prune mutations are rejected by semantic GNU output and directory-access-time oracles; syntax and infrastructure failures receive no mutation credit.",
       "tests": [
-        "tests/test_find_runtime.mjs"
+        "tests/test_find_runtime.mjs",
+        "tests/test_find_incremental_runtime.mjs"
       ]
     },
     {
@@ -93,8 +108,103 @@
       "contract": "Cancellation and deadlines terminate owned descendants; inherited raw or removed working directories retain GNU behavior.",
       "tests": [
         "tests/test_find_runtime.mjs",
-        "tests/test_package_entry.mjs"
+        "tests/test_package_entry.mjs",
+        "tests/test_find_incremental_runtime.mjs"
       ]
+    },
+    {
+      "id": "FIND-EXPRESSION-BOUNDARIES",
+      "owner": "find2fd",
+      "contract": "The pure byte evaluator is gated by syntax and locale; arbitrary GNU globs, regex dialects and metadata use fd traversal plus GNU candidate evaluation. Directory access-time effects, split diagnostic duplication and bounded expression/capture limits remain explicit native boundaries.",
+      "tests": [
+        "tests/test_find_expressions.mjs",
+        "tests/test_find_options.mjs"
+      ]
+    },
+    {
+      "id": "FIND-GENERATED-EXPRESSION",
+      "owner": "find2fd",
+      "contract": "Finite seeded complete expression comparisons against actual GNU verify nested operators, print side effects and candidate pushdown using observed fd/native executions; unsupported syntax/actions preserve native execution.",
+      "tests": [
+        "tests/test_find_expression_campaign.mjs"
+      ]
+    },
+    {
+      "id": "FIND-GNU-METADATA-BROKER",
+      "contract": "Under exact FIND2FD_EXPERIMENTAL_FD=1: Independent complete GNU CLI comparisons require real fd traversal; all GNU evaluator calls use depth zero on ordered candidates, and compile-only validations, candidate evaluations and original recursive fallback are recorded separately. Numeric size rounding, permissions, owners, inode/links, emptiness, times/references, regex/globs and symlink predicates retain GNU semantics.",
+      "tests": [
+        "tests/test_find_metadata.mjs",
+        "tests/find_metadata_helpers.mjs"
+      ]
+    },
+    {
+      "id": "FIND-GNU-FORMAT-CONTEXT",
+      "contract": "GNU printf and ls preserve exact bytes, widths, precision, escapes and Boolean repeated effects, including original root label, relative path and depth across overlapping/repeated/aliased roots and invalid UTF-8 descendant names.",
+      "tests": [
+        "tests/test_find_metadata_formats.mjs"
+      ]
+    },
+    {
+      "id": "FIND-GNU-METADATA-TRAVERSAL",
+      "contract": "Actual fd execution preserves depth order and H/L root/descendant dereference policy. An owned cross-filesystem symlink regression preserves both GNU expression-dependent results through observed native fallback, which receives no completed acceleration credit.",
+      "tests": [
+        "tests/test_find_metadata_traversal.mjs"
+      ]
+    },
+    {
+      "id": "FIND-ACCESS-TIME-OBSERVATION",
+      "contract": "Buffered traversal routes directory/symlink access-time observations to original GNU before fd can change them; regular-file-only output proofs permit acceleration. Incremental physical preorder evaluates the current node before opening its directory and prune/quit leave its access time unchanged.",
+      "tests": [
+        "tests/test_find_metadata.mjs",
+        "tests/test_find_metadata_formats.mjs",
+        "tests/test_find_incremental.mjs"
+      ]
+    },
+    {
+      "id": "FIND-LEADING-FLAGS",
+      "owner": "GNU root and global option parsing",
+      "contract": "Leading --, numeric optimization spellings including zero padding, and noignore_readdir_race use actual fd with exact independent GNU outputs. Invalid optimization, late flags, delimiter misuse and action mixtures retain exact original GNU diagnostics before fd.",
+      "tests": [
+        "tests/test_find_leading_flags.mjs"
+      ]
+    },
+    {
+      "id": "FIND-CALLER-DESCRIPTORS",
+      "owner": "Bash and child descriptor inheritance",
+      "contract": "Public/private calls preserve auxiliary FD3/FD63/FD4097 for exec and samefile references plus process substitution, reserving an unused evaluator input descriptor. Closed caller descriptors remain errors instead of exposing Node internals. Closed standard0/1/2 retain GNU output/status/errors. Direct runFind supports explicit callerDescriptors for low FD3.",
+      "tests": [
+        "tests/test_find_descriptors.mjs"
+      ]
+    },
+    {
+      "id": "FIND-INCREMENTAL-CONTROLS",
+      "contract": "Under exact FIND2FD_EXPERIMENTAL_FD=1: Finite-depth physical preorder GNU prune/quit preserve Boolean truth, short circuiting, comma, implicit printing, raw filename bytes, original roots/order and no-descent access times. GNU owns public streams via a private FIFO and control PTY; immediate fd listings occur only after current-node evaluation. Unsafe action/traversal mixtures remain native with no fd credit. Unbounded controls and unsafe root/depth pathname budgets use original GNU before helper startup; a controlled beyond-PATH_MAX tree confirms native full output without false fd credit.",
+      "tests": [
+        "tests/test_find_incremental.mjs",
+        "tests/find_incremental_helpers.mjs"
+      ]
+    },
+    {
+      "id": "FIND-INCREMENTAL-FAULTS-AND-FLOW",
+      "contract": "Malformed/error fd listings continue through local GNU depth-one discovery without replay; paused sinks retain exact complete bytes, handled signals exit within a bounded deadline and remove owned FIFO/PTY state. Failed engine peers receive zero real-fd credit.",
+      "tests": [
+        "tests/test_find_incremental_runtime.mjs"
+      ]
+    },
+    {
+      "id": "FIND-AUTOMATIC-PERFORMANCE-ROUTING",
+      "owner": "find2fd",
+      "contract": "Audit all inventory spellings and structural families; measured sparse large trees execute actual fd with full byte order/status/diagnostic equality. Dispatch, density sampling and ordering cost belongs in end-to-end randomized paired speed captures. Slower/incompatible classes route GNU without Node; no universal-speed assertion.",
+      "tests": [
+        "tests/test_find_automatic_routing.mjs",
+        "tests/test_find_default_policy.mjs",
+        "tests/test_package_entry.mjs"
+      ],
+      "evidence": [
+        "docs/automatic-routing-audit.json",
+        "docs/automatic-routing-performance.json"
+      ],
+      "benchmark": "tools/benchmark-routing.py"
     }
   ]
 }

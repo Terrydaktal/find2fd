@@ -1,0 +1,741 @@
+{
+  "schema_version": 1,
+  "project": "find2fd",
+  "scope": "Implementation inventory for the current source. Passing qualification results are recorded separately.",
+  "interface_and_execution": {
+    "interface": "Unsupported GNU syntax is passed to the original GNU invocation; accepting that interface does not mean fd executes every feature.",
+    "execution": "fd_listing, fd_gnu_evaluation and fd_incremental_control count as fd contribution only when an actual directory query supplies used descendant records. Root-only prune/quit, scan-free roots, original GNU actions and discarded queries receive no fd credit.",
+    "all_features_accelerated": false
+  },
+  "acceleration_definition": {
+    "required": [
+      "At least one successful fd directory query contributes candidate records to the result",
+      "GNU does not recursively rewalk the original invocation"
+    ],
+    "excluded": [
+      "A plan whose backend field is fd without an actual directory query",
+      "An incidental fd invocation whose records are discarded before whole-call GNU fallback",
+      "A file-only starting-point invocation with no directory traversal",
+      "GNU informational or validation-only invocations with no input search",
+      "Root-only output supplied by starting-path metadata when fd returns no contributing descendant records"
+    ],
+    "performance": "fd supplies traversal; this does not guarantee a speedup for every expression or filesystem."
+  },
+  "routes": {
+    "fd_listing": "fd supplies candidates; the bounded byte-safe expression evaluator restores GNU order and print effects.",
+    "fd_gnu_evaluation": "fd supplies candidates; GNU evaluates ordered paths nonrecursively using -files0-from on a reserved private descriptor and -maxdepth 0.",
+    "native": "GNU receives the original argv and inherited input/output. This route is compatible fallback, not fd acceleration.",
+    "fd_incremental_control": "GNU evaluates each physical preorder entry through a persistent FIFO/PTY broker before fd enumerates its immediate children. Reached prune prevents that directory query; quit prevents later queries. Original expression truth, default print and output remain GNU-owned. Local GNU depth-one discovery can continue after fd failure without replaying prior expression output. Qualification requires a leading finite -maxdepth and a worst-case path-byte bound below Linux PATH_MAX; unbounded controls retain original GNU before output."
+  },
+  "features": [
+    {
+      "spellings": [
+        "-P"
+      ],
+      "route": "fd_listing_or_fd_gnu_evaluation",
+      "conditions": [
+        "Physical traversal is the default",
+        "Shared boundaries apply"
+      ]
+    },
+    {
+      "spellings": [
+        "-H",
+        "-L"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "-H follows original roots and evaluates descendants physically",
+        "-L follows directory symlinks during fd traversal"
+      ],
+      "boundaries": [
+        "h_reference",
+        "split_warnings",
+        "logical_xdev"
+      ]
+    },
+    {
+      "spellings": [
+        "-O0",
+        "-O1",
+        "-O2",
+        "-O3",
+        "-Odecimal"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "Leading optimization setting is passed to GNU evaluation",
+        "Other decimal spellings, including leading zeroes and GNU-accepted levels beyond three, qualify only when GNU validation accepts them."
+      ]
+    },
+    {
+      "spellings": [
+        "-a",
+        "-and",
+        "implicit AND",
+        "-o",
+        "-or",
+        "!",
+        "-not",
+        "(",
+        ")",
+        ","
+      ],
+      "route": "fd_listing_or_fd_gnu_evaluation",
+      "conditions": [
+        "GNU precedence and short circuiting are preserved",
+        "Output actions remain in their original expression positions"
+      ],
+      "boundaries": [
+        "expression_limits"
+      ]
+    },
+    {
+      "spellings": [
+        "-true",
+        "-false"
+      ],
+      "route": "fd_listing_or_fd_gnu_evaluation"
+    },
+    {
+      "spellings": [
+        "-name",
+        "-iname",
+        "-path",
+        "-ipath",
+        "-wholename",
+        "-iwholename"
+      ],
+      "route": "fd_listing_or_fd_gnu_evaluation",
+      "conditions": [
+        "Common ASCII literal/star matching uses the byte evaluator",
+        "Other GNU glob syntax and locale-sensitive matching use the GNU evaluator"
+      ],
+      "boundaries": [
+        "trailing_slash_path",
+        "argument_limits"
+      ]
+    },
+    {
+      "spellings": [
+        "-regex",
+        "-iregex",
+        "-regextype"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "GNU validates and evaluates its own regex dialects in the original expression order"
+      ],
+      "boundaries": [
+        "argument_limits"
+      ]
+    },
+    {
+      "spellings": [
+        "-type"
+      ],
+      "route": "fd_listing_or_fd_gnu_evaluation",
+      "conditions": [
+        "Single supported byte-evaluator types use the fast listing route",
+        "GNU owns other accepted type syntax, including lists"
+      ]
+    },
+    {
+      "spellings": [
+        "-xtype",
+        "-lname",
+        "-ilname",
+        "-samefile",
+        "-inum",
+        "-links"
+      ],
+      "route": "fd_gnu_evaluation",
+      "boundaries": [
+        "h_reference",
+        "argument_limits"
+      ]
+    },
+    {
+      "spellings": [
+        "-size",
+        "-perm",
+        "-uid",
+        "-gid",
+        "-user",
+        "-group",
+        "-nouser",
+        "-nogroup",
+        "-fstype",
+        "-context",
+        "-empty",
+        "-readable",
+        "-writable",
+        "-executable"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "GNU owns rounding, permissions, ACLs, NSS, metadata and validation"
+      ],
+      "boundaries": [
+        "split_warnings",
+        "argument_limits"
+      ]
+    },
+    {
+      "spellings": [
+        "-mtime",
+        "-mmin",
+        "-ctime",
+        "-cmin",
+        "-newer",
+        "-cnewer",
+        "-newerXY"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "GNU owns reference parsing, units and timestamp comparisons"
+      ],
+      "boundaries": [
+        "atime_output",
+        "atime_reference",
+        "h_reference",
+        "argument_limits",
+        "clock_state"
+      ]
+    },
+    {
+      "spellings": [
+        "-atime",
+        "-amin",
+        "-anewer",
+        "-used"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "Expression output conditions must prove regular-file-only output"
+      ],
+      "boundaries": [
+        "atime_output",
+        "atime_reference",
+        "h_reference",
+        "clock_state"
+      ]
+    },
+    {
+      "spellings": [
+        "-daystart",
+        "-follow",
+        "-warn",
+        "-nowarn"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "Original positional order is retained",
+        "-follow changes fd traversal while initial reference-file dereference policy is retained"
+      ],
+      "boundaries": [
+        "atime_output",
+        "atime_reference",
+        "split_warnings",
+        "h_reference"
+      ]
+    },
+    {
+      "spellings": [
+        "-mindepth",
+        "-maxdepth"
+      ],
+      "route": "fd_listing_or_fd_gnu_evaluation",
+      "conditions": [
+        "Leading traversal globals only",
+        "Last repeated leading setting wins"
+      ],
+      "boundaries": [
+        "depth_limits",
+        "late_globals"
+      ]
+    },
+    {
+      "spellings": [
+        "-depth"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "Leading traversal global; ordered candidates are postorder"
+      ],
+      "boundaries": [
+        "late_globals"
+      ]
+    },
+    {
+      "spellings": [
+        "-xdev",
+        "-mount"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "Leading traversal global maps to fd --one-file-system"
+      ],
+      "boundaries": [
+        "late_globals",
+        "logical_xdev"
+      ]
+    },
+    {
+      "spellings": [
+        "-noleaf"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "Leading option is safe because the adapter does not use link-count leaf optimization"
+      ],
+      "boundaries": [
+        "late_globals"
+      ]
+    },
+    {
+      "spellings": [
+        "-print",
+        "-print0",
+        "implicit -print"
+      ],
+      "route": "fd_listing_or_fd_gnu_evaluation",
+      "conditions": [
+        "Repeated and mixed actions preserve original short circuiting",
+        "GNU evaluation retains GNU terminal quoting"
+      ],
+      "boundaries": [
+        "listing_tty",
+        "output_limits"
+      ]
+    },
+    {
+      "spellings": [
+        "-printf"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "GNU owns recognized noncontextual format directives, widths, precision, escapes and diagnostics",
+        "%H, %P and %d are rewritten from original root/relative/depth records using octal byte escapes",
+        "Contiguous equal rewritten formats share an evaluator; %P can require an evaluator per path"
+      ],
+      "boundaries": [
+        "context_tty",
+        "split_warnings",
+        "atime_output",
+        "evaluation_limits"
+      ]
+    },
+    {
+      "spellings": [
+        "-ls"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "GNU owns listing fields, locale and quoting"
+      ],
+      "boundaries": [
+        "split_warnings"
+      ]
+    },
+    {
+      "spellings": [
+        "-files0-from"
+      ],
+      "route": "native",
+      "reason": "Caller-provided root streams are not implemented by the accelerated parser."
+    },
+    {
+      "spellings": [
+        "-noignore_readdir_race"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "Leading traversal option retains GNU's default race diagnostic mode."
+      ],
+      "boundaries": [
+        "late_globals"
+      ]
+    },
+    {
+      "spellings": [
+        "-ignore_readdir_race"
+      ],
+      "route": "native",
+      "reason": "GNU owns race diagnostic and missing-entry behavior."
+    },
+    {
+      "spellings": [
+        "-prune",
+        "-quit"
+      ],
+      "route": "conditional_fd_incremental_control",
+      "reason": "Pure physical preorder predicates/output with a leading finite -maxdepth and proved path-byte budget can use incremental fd listing after each GNU decision. Unbounded controls, depth, following, cross-filesystem, contextual formats and user actions remain native. A root prune/quit needs no fd traversal."
+    },
+    {
+      "spellings": [
+        "-delete"
+      ],
+      "route": "native",
+      "reason": "GNU owns mutation, postorder and errors; preenumeration would change filesystem effects."
+    },
+    {
+      "spellings": [
+        "-exec",
+        "-execdir",
+        "-ok",
+        "-okdir"
+      ],
+      "route": "native",
+      "reason": "GNU owns side effects, cwd, batching, interaction and exact-once execution."
+    },
+    {
+      "spellings": [
+        "-fprint",
+        "-fprint0",
+        "-fprintf",
+        "-fls"
+      ],
+      "route": "native",
+      "reason": "GNU owns parse-time output-file opening, truncation and action ordering."
+    },
+    {
+      "spellings": [
+        "-D"
+      ],
+      "route": "native",
+      "reason": "GNU preserves debug output and evaluates any original expression; debug invocations may still perform a search."
+    },
+    {
+      "spellings": [
+        "-help",
+        "--help",
+        "-version",
+        "--version"
+      ],
+      "route": "native",
+      "reason": "GNU informational output without an input search; no fd acceleration credit."
+    },
+    {
+      "spellings": [
+        "-d"
+      ],
+      "route": "native",
+      "reason": "GNU owns this documented synonym for -depth and its installed-version diagnostics; the accelerated parser does not accept this alias."
+    },
+    {
+      "spellings": [
+        "--"
+      ],
+      "route": "fd_gnu_evaluation",
+      "conditions": [
+        "Leading GNU option delimiter is consumed after any leading dereference/optimization settings."
+      ]
+    },
+    {
+      "spellings": [
+        "unknown options",
+        "invalid expressions",
+        "invalid metadata operands"
+      ],
+      "route": "native",
+      "reason": "Original GNU invocation owns its diagnostics and status."
+    }
+  ],
+  "printf_directives": {
+    "gnu_owned": [
+      "%",
+      "a",
+      "A",
+      "b",
+      "B",
+      "c",
+      "C",
+      "D",
+      "f",
+      "F",
+      "g",
+      "G",
+      "h",
+      "i",
+      "k",
+      "l",
+      "m",
+      "M",
+      "n",
+      "p",
+      "s",
+      "S",
+      "t",
+      "T",
+      "u",
+      "U",
+      "y",
+      "Y",
+      "Z"
+    ],
+    "contextual_rewrite": [
+      "d",
+      "H",
+      "P"
+    ],
+    "rule": "GNU's installed version validates each format. Unsupported directives retain GNU diagnostics; split requests with parse warnings use native GNU.",
+    "access_time": "a and A require regular-file-only output conditions.",
+    "tty": "Contextual d/H/P formats use native GNU when stdout is a terminal."
+  },
+  "boundaries": [
+    {
+      "id": "platform",
+      "native_when": "Outside Linux, unavailable cwd, or failed current-directory /proc qualification.",
+      "requirements": "Supported operation requires usable GNU find, fd or fdfind, and Linux /proc; GNU evaluator dependency validation fails before fd enumeration."
+    },
+    {
+      "id": "argv_bytes",
+      "native_when": "Public Bash/private function detect invalid UTF-8 argv bytes; raw argv is forwarded before Node decoding. Valid Unicode is eligible."
+    },
+    {
+      "id": "cwd_bytes",
+      "native_when": "Current directory contains invalid UTF-8 bytes or its pathname has been removed."
+    },
+    {
+      "id": "roots",
+      "native_when": "Unnormalized starting paths, failed root lookup, or more than 256 roots.",
+      "note": "File/symlink roots may be evaluated without a directory query and do not count as traversal acceleration."
+    },
+    {
+      "id": "trailing_slash_path",
+      "native_when": "A path/ipath/wholename/iwholename pattern ends in slash, because GNU warnings depend on original roots."
+    },
+    {
+      "id": "h_reference",
+      "native_when": "-H uses a symbolic-link reference operand requiring different original-root and descendant reference policy."
+    },
+    {
+      "id": "split_warnings",
+      "native_when": "A contextual printf or -H split would repeat GNU parse warnings."
+    },
+    {
+      "id": "atime_output",
+      "native_when": "Access-time predicates (-amin/-atime/-anewer/-used or -neweraX) or printf a/A can produce output for directories or symlinks.",
+      "note": "fd and ordering reads may update access times. The output-condition summary must prove only regular files can produce output. The incremental physical control route evaluates entries before their own descent and keeps references in one GNU parse; buffered routes retain the stated access-time guard."
+    },
+    {
+      "id": "atime_reference",
+      "native_when": "An access-time reference operand (-newerXa) names a directory or symbolic link.",
+      "note": " The incremental physical control route evaluates entries before their own descent and keeps references in one GNU parse; buffered routes retain the stated access-time guard."
+    },
+    {
+      "id": "clock_state",
+      "native_when": "Explicit access-time guards apply.",
+      "note": "A buffered traversal evaluates relative clock predicates later than native traversal. Concurrent filesystem mutation and exact boundary-crossing clock equivalence are not guaranteed."
+    },
+    {
+      "id": "late_globals",
+      "native_when": "Traversal globals occur after expression primaries."
+    },
+    {
+      "id": "depth_limits",
+      "native_when": "Depth is not decimal digits, exceeds 1000000, or its lexical length exceeds 10."
+    },
+    {
+      "id": "expression_limits",
+      "native_when": "Expression exceeds 256 nodes or nesting/unary depth exceeds 64."
+    },
+    {
+      "id": "argument_limits",
+      "native_when": "A GNU predicate/format argument exceeds 8192 bytes."
+    },
+    {
+      "id": "dependency_or_protocol",
+      "native_when": "fd/fdfind is unavailable, emits stderr, exits unsuccessfully, times out, exceeds capture bounds, or returns malformed/escaped/duplicate candidate records.",
+      "note": "fdfind is tried only when fd is absent. Incremental control preparation also requires util-linux script, mkfifo and a safe private scratch directory outside all traversed roots. Preparation failure runs original GNU before output; failure during a directory query uses only local GNU depth-one discovery without replaying earlier expressions."
+    },
+    {
+      "id": "order_limits",
+      "native_when": "A needed ordering parent has more than 10000 entries, ordering requires more than 10000 parent directories or 200000 total entries, or entries change during ordering."
+    },
+    {
+      "id": "closed_standard_descriptors",
+      "native_when": "A public Bash or private shell-function entry point detects closed caller stdin, stdout or stderr before Node startup.",
+      "note": "Node can reopen missing standard descriptors to /dev/null. Direct GNU dispatch preserves original closed-descriptor diagnostics and status."
+    },
+    {
+      "id": "candidate_limits",
+      "native_when": "fd candidates exceed 100000 or captured bytes exceed 33554432."
+    },
+    {
+      "id": "output_limits",
+      "native_when": "The in-process listing result exceeds 100000 output records or 33554432 output bytes.",
+      "note": "GNU evaluator stdout is inherited; arbitrary GNU formatting output is not buffered under this listing-output limit."
+    },
+    {
+      "id": "evaluation_limits",
+      "native_when": "A GNU input list, contextual rewrite, or grouped evaluator arguments exceed bounded limits before output.",
+      "limits": {
+        "input_bytes": 33554432,
+        "records": 100256,
+        "grouped_arguments_and_input_bytes": 33554432,
+        "width_or_precision": 33554432
+      }
+    },
+    {
+      "id": "listing_tty",
+      "native_when": "The in-process listing route uses -print with terminal stdout."
+    },
+    {
+      "id": "context_tty",
+      "native_when": "Contextual printf is used with terminal stdout."
+    },
+    {
+      "id": "logical_xdev",
+      "native_when": "Logical dereferencing and a detected cross-filesystem directory require GNU boundary evaluation."
+    },
+    {
+      "id": "incremental_path_budget",
+      "native_when": "Incremental controls lack a leading finite -maxdepth, or worst-case displayed/absolute paths can reach Linux PATH_MAX.",
+      "note": "Native GNU FTS can traverse beyond PATH_MAX using directory anchors. A files0 maxdepth-zero broker cannot represent those paths independently. This boundary is decided before broker output; a reproduced >4096-byte descendant tree is retained as an independent regression."
+    }
+  ],
+  "timeouts": {
+    "fd_query_ms": 10000,
+    "gnu_validation_ms": 2000,
+    "owned_child_cleanup_grace_ms": 250,
+    "incremental_control_start_ms": 2000
+  },
+  "nonprewalkable_counterexamples": [
+    {
+      "feature": "-prune",
+      "argv": [
+        "tree",
+        "-path",
+        "tree/skip",
+        "-prune",
+        "-o",
+        "-print"
+      ],
+      "native_behavior": "The skip directory is never descended into.",
+      "prewalk_problem": "A buffered fd walk has already visited the excluded tree. Even discarded candidates can change directory access times or trigger inaccessible-tree errors. Calling that discarded traversal acceleration would misstate execution.",
+      "current_resolution": "Eligible pure physical preorder controls with a finite-depth/path-byte proof use the incremental GNU decision/fd child-listing route. Unbounded or unsupported controls retain original GNU; buffered prewalking remains unsuitable."
+    },
+    {
+      "feature": "-quit",
+      "argv": [
+        "tree",
+        "-print",
+        "-quit"
+      ],
+      "native_behavior": "GNU prints the starting root and stops before reading later descendants.",
+      "prewalk_problem": "Enumerating the entire tree before evaluation performs reads that the original command never performs.",
+      "current_resolution": "Eligible pure physical preorder controls with a finite-depth/path-byte proof use the incremental GNU decision/fd child-listing route. Unbounded or unsupported controls retain original GNU; buffered prewalking remains unsuitable."
+    },
+    {
+      "feature": "-exec creates entries",
+      "argv": [
+        "tree",
+        "-maxdepth",
+        "1",
+        "-type",
+        "d",
+        "-exec",
+        "sh",
+        "-c",
+        "touch \"$1/new\"",
+        "_",
+        "{}",
+        ";",
+        "-o",
+        "-print"
+      ],
+      "native_behavior": "A new file created while evaluating the root is included when GNU subsequently enumerates that directory.",
+      "prewalk_problem": "A previously buffered candidate list omits the new file.",
+      "evidence": "An owned synthetic GNU probe printed both the initial keep file and newly created new file with status zero."
+    },
+    {
+      "feature": "-exec deletes entries",
+      "argv": [
+        "tree",
+        "-maxdepth",
+        "1",
+        "-type",
+        "d",
+        "-exec",
+        "sh",
+        "-c",
+        "rm -f \"$1/victim\"",
+        "_",
+        "{}",
+        ";",
+        "-o",
+        "-print"
+      ],
+      "native_behavior": "A victim removed while evaluating the root is absent from the later directory enumeration.",
+      "prewalk_problem": "A previously buffered candidate list still contains the removed path and can produce wrong output or errors.",
+      "evidence": "An owned synthetic GNU probe printed only the untouched keep file with status zero and no stderr."
+    }
+  ],
+  "cancellation": "SIGINT/SIGTERM/SIGHUP stop owned fd process groups and native evaluator descendants; cleanup is scoped and does not claim containment of arbitrary escaped daemons.",
+  "known_compatibility_gaps": [
+    {
+      "id": "caller_auxiliary_descriptors",
+      "status": "fixed for public Bash and private shell-function entry points; direct Node API requires explicit low-descriptor context",
+      "reproduction": "The original low-fd3 native -exec regression is covered by the new caller descriptor snapshot and inheritance helper.",
+      "impact": "Public Bash and private shell-function entry points snapshot descriptors before Node startup changes close-on-exec flags. Direct Node API callers must supply callerDescriptors for low descriptors when no launch snapshot is available. High non-CLOEXEC caller descriptors are discovered without an arbitrary descriptor-number cap."
+    }
+  ],
+  "qualification_sources": [
+    "tests/test_find_expressions.mjs",
+    "tests/test_find_expression_campaign.mjs",
+    "tests/test_find_metadata.mjs",
+    "tests/test_find_metadata_formats.mjs",
+    "tests/test_find_runtime.mjs",
+    "tests/test_find_descriptors.mjs",
+    "tests/test_find_leading_flags.mjs",
+    "tests/find_option_inventory.json",
+    "tests/find_incremental_helpers.mjs",
+    "tests/test_find_incremental.mjs",
+    "tests/test_find_incremental_runtime.mjs"
+  ],
+  "implementation_sources": [
+    "src/find-options.mjs",
+    "src/find-evaluate.mjs",
+    "src/find-descriptors.mjs",
+    "src/find-runtime.mjs",
+    "src/find-order.mjs",
+    "src/find-wrapper.mjs",
+    "bin/find2fd",
+    "src/find-incremental.mjs"
+  ],
+  "documented_option_inventory": {
+    "path": "tests/find_option_inventory.json",
+    "option_spellings": 87,
+    "operator_spellings": 4,
+    "unique_spellings": 91,
+    "qualified_option_representatives": 67,
+    "native_option_representatives": 20,
+    "count_meaning": "Finite representative spellings and routes, not exhaustive values or proof that every qualified representative completes with contributing fd traversal."
+  },
+  "incremental_path_qualification": {
+    "max_path_bytes": 4095,
+    "max_component_bytes": 255,
+    "max_mount_info_bytes": 1048576,
+    "filesystems": [
+      "ext2",
+      "ext3",
+      "ext4",
+      "btrfs",
+      "xfs",
+      "tmpfs",
+      "ramfs",
+      "f2fs"
+    ],
+    "proof": "Leading finite maxdepth times256 plus displayed, absolute and canonical root bytes must fit4095 bytes. statfs and bounded mountinfo reject unknown root or nested filesystem types before output.",
+    "limitations": "The mount/filesystem checks are not a filesystem snapshot; arbitrary concurrent mount changes are not universally proved. CIFS/FUSE/overlay are not qualified by this route."
+  },
+  "routing_policy": {
+    "default": "Direct original GNU before Node/preflight; normal Pi Bash remains unchanged.",
+    "experimental_opt_in": "FIND2FD_EXPERIMENTAL_FD=1 (exact value)",
+    "universally_faster_classes": [],
+    "reason": "Current semantically qualified fd routes do not establish a universal wall-time win; no automatic fd forcing.",
+    "verification": "Explicitly enable experimental semantic routes and independently require native default CLI/API/private/Pi behavior."
+  }
+}

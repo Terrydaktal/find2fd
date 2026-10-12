@@ -19,7 +19,7 @@ SYNOPSIS
 DESCRIPTION
   Create a real npm pack tarball, extract it into an owned temporary directory,
   and execute the packaged tools/verify.mjs with the requested tier. The default
-  includes one bounded campaign. No network request or preinstalled package
+  includes two bounded campaigns. No network request or preinstalled package
   dependency is required; the artifact test performs its own offline local install.
 
 OPTIONS

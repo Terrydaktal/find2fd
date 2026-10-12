@@ -1,0 +1,671 @@
+{
+  "schemaVersion": 1,
+  "package": "find2fd",
+  "scope": "Expanded bounded pure-expression fd acceleration; synthetic public CLI/GNU differential qualification, no private transcripts or model requests.",
+  "qualifiedArchive": {
+    "filename": "find2fd-0.1.0.tgz",
+    "sha256": "c524b7f4babc5c7ac552e30a45c9815d866c09c7804b57c9a778ca1763df1371",
+    "integrity": "sha512-z3nLkv/wEnBmXF8z+dQf0oDAFUxL1cvnMbvz1skpD4g8Kw2mceC4HifBgR2k/JmyCq85SMCqcuexlbRH8CkHhA==",
+    "fileCount": 30,
+    "verification": "actual npm pack tarball, extracted tools/verify.mjs"
+  },
+  "sourceHashes": {
+    "bin/find2fd": "78a54f34d443c420c86217527d75e41694c35eaf5c93d954627ed3d0addda619",
+    "bin/find2fd-shell-prefix.mjs": "42610de727a3f49a5f2bf10c87b821d0a101dfa12d64f889ff9a565d0e74f58c",
+    "bin/find2fd.mjs": "5295f12e0816ccc493fdb1d2f56c7f42515dcd2cddbbb9091315060f64dd98a9",
+    "package.json": "6bf9f2598f9a09272e210b4a0b8f4c97b8ab2dc9b3ff6dd0a279b036ba440bd6",
+    "pi/find2fd.ts": "b56e79273a1e0ad7d38419ca25c4a38fc79b269a76daf798726ff850f8bb21a1",
+    "src/find-options.mjs": "578f1cb0092af38d3eef80509a990dc52cc78f95b0402d323bcdf51cc59c8e54",
+    "src/find-order.mjs": "4604bd86d2f40b4c7d21136b7800b87c72805033310e3233000f7c36941e7f8f",
+    "src/find-runtime.mjs": "59659003fbe89ee10a4d9c9b219385e3b24d4e0d5baf37462dfe54463a4f19b8",
+    "src/find-wrapper.mjs": "a5e704d69d7ce97981893a1cdb92166abeb27f3b69b82bf98d54930408711efc",
+    "tests/find_option_inventory.json": "72889ec7ff8f6f9e70549eea462477b06022e96b101d0f58297c6b6a595a14ba",
+    "tests/find_wrapper_requirements.json": "6cd741366be2ad3297610efe2f20fcf67d88bb5a19c35e55fb12e35a8efa8dc3",
+    "tests/helpers.mjs": "c54d1d39e3863de49f52109c21a6d01d71214a29ea2818836598889c947a9830",
+    "tests/test_find_campaign.mjs": "5c3c1f6591f172fc9ede6bf5762339e729d8fd909a13b13d7a877ef935e4c640",
+    "tests/test_find_cli.mjs": "b7bd0d4a39fc9aec7b5db111525f800b3af7f015bf28d4110e0da11e79ab376d",
+    "tests/test_find_expression_campaign.mjs": "49b7093a6b0152c3998473f8907d46b29033362fd551bdfffc67abf03c7b9d19",
+    "tests/test_find_expressions.mjs": "a851d33e0e470fa9209fda4843abfa3dba766faf06129d970fb434f53e050068",
+    "tests/test_find_fallback.mjs": "74492310c4acfd2d5c8ff79ef6c587d4aadc57c98826dac002ffd4998c1af56e",
+    "tests/test_find_options.mjs": "d1faa557fb919f0abca912653a6d60e103515bf8ef1ce7663d088a17cf7fc480",
+    "tests/test_find_runtime.mjs": "cf90d67da4edc4510016c6a2b438791d893ab605b7e90b3740bd3e565c547ecb",
+    "tests/test_find_scope.mjs": "498bef110253180a173a46dd1456fda446192a409f961cd7373a1ce98c011def",
+    "tests/test_package_artifact.mjs": "c43e78690ebabb2933248bd1cb615454e411cdeb6da235f7dc6f156ba52eaf44",
+    "tests/test_package_entry.mjs": "2152f9b4fad426c23343fda9121fd7a071c2e788781f32caee81bc1030c9590c",
+    "tools/verify-artifact.mjs": "1aad695310ccaa53ba080b705561f2e924276eb737db72819dd1612691d248ea",
+    "tools/verify.mjs": "e63fe3e7817955b9981941c3cc2b654683893aba8c3c8d6f25931b2d4e803714"
+  },
+  "environments": [
+    {
+      "environment": "Linux desktop",
+      "startedAt": "2026-10-11T19:55:19.825Z",
+      "finishedAt": "2026-10-11T19:56:58.620Z",
+      "passed": true,
+      "nodeTests": 64,
+      "sourceChanged": false,
+      "versions": {
+        "node": "v26.4.0",
+        "GNU": "find (GNU findutils) 4.11.0-modified",
+        "fd": "fd 9.0.0",
+        "python": "Python 3.14.6",
+        "bash": "GNU bash, version 5.3.15(1)-release (x86_64-pc-linux-gnu)",
+        "readlink": "readlink (GNU coreutils) 9.11",
+        "npm": "12.0.2",
+        "tar": "tar (GNU tar) 1.35"
+      },
+      "piSdk": "0.84.2",
+      "stages": [
+        {
+          "name": "core",
+          "status": 0,
+          "durationMs": 40038,
+          "timedOut": false,
+          "interrupted": false,
+          "logTruncated": false,
+          "counts": {
+            "tests": 56,
+            "suites": 0,
+            "pass": 56,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "passed": true
+        },
+        {
+          "name": "campaigns",
+          "status": 0,
+          "durationMs": 57677,
+          "timedOut": false,
+          "interrupted": false,
+          "logTruncated": false,
+          "counts": {
+            "tests": 2,
+            "suites": 0,
+            "pass": 2,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "passed": true
+        },
+        {
+          "name": "installed Pi native Bash scope",
+          "status": 0,
+          "durationMs": 1007,
+          "timedOut": false,
+          "interrupted": false,
+          "logTruncated": false,
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "passed": true
+        }
+      ],
+      "campaignDiagnostics": [
+        {
+          "campaign": "qualified-cli",
+          "actualGNUComparisons": 25,
+          "actualFdInvocations": 28
+        },
+        {
+          "campaign": "filename-bytes",
+          "actualGNUComparisons": 8
+        },
+        {
+          "campaign": "expanded-expressions",
+          "actualGNUComparisons": 45,
+          "actualFdInvocations": 48,
+          "actualNativeInvocations": 0,
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "candidate-raw-byte-regression",
+          "actualGNUComparisons": 7,
+          "actualFdInvocations": 7,
+          "actualNativeInvocations": 0
+        },
+        {
+          "campaign": "expanded-C-matching",
+          "actualGNUComparisons": 16,
+          "actualFdInvocations": 16,
+          "actualNativeInvocations": 0,
+          "locale": "C/POSIX including LC_ALL/LC_CTYPE/LANG precedence"
+        },
+        {
+          "campaign": "expression-native-boundaries",
+          "actualGNUComparisons": 15,
+          "actualFdInvocations": 0,
+          "actualNativeInvocations": 15
+        },
+        {
+          "campaign": "expression-errors",
+          "actualGNUComparisons": 17,
+          "actualNativeInvocations": 17,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "trailing-slash-path-diagnostics",
+          "actualGNUComparisons": 22,
+          "actualNativeInvocations": 22,
+          "actualFdInvocations": 0,
+          "warningCases": 12,
+          "matchingRootCasesWithoutWarnings": 10
+        },
+        {
+          "campaign": "expression-fallback",
+          "actualGNUComparisons": 20,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "action-fallback",
+          "actualGNUComparisons": 6,
+          "ownedSideEffectComparisons": 6,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "qualification",
+          "fdPlans": 27,
+          "nativePlans": 30
+        },
+        {
+          "campaign": "option-inventory",
+          "GNUHelpOptionSpellings": 81,
+          "classifiedOptionsAndOperators": 86
+        },
+        {
+          "campaign": "mutations",
+          "rejectedSemanticMutants": 4,
+          "cleanNegativeControls": 4
+        },
+        {
+          "campaign": "cleanup-mutation",
+          "rejectedSemanticMutants": 1,
+          "cleanNegativeControls": 1,
+          "defect": "cancelled escalation timer leaks ignored-stdio helper"
+        },
+        {
+          "campaign": "packed-artifact",
+          "tarballSHA256": "c524b7f4babc5c7ac552e30a45c9815d866c09c7804b57c9a778ca1763df1371",
+          "npmIntegrity": "sha512-z3nLkv/wEnBmXF8z+dQf0oDAFUxL1cvnMbvz1skpD4g8Kw2mceC4HifBgR2k/JmyCq85SMCqcuexlbRH8CkHhA==",
+          "extractedFilesVerified": 27,
+          "extractedEntryNodeTests": 5,
+          "installedEntryNodeTests": 5,
+          "extractedEvidence": [
+            {
+              "campaign": "package-entry",
+              "actualGNUComparisons": 33,
+              "executable": "find2fd",
+              "actualFdInvocations": 25
+            },
+            {
+              "campaign": "package-prefix",
+              "actualFdInvocations": 3,
+              "nativeScopeComparisons": 1
+            },
+            {
+              "campaign": "package-argv-bytes",
+              "actualGNUComparisons": 4,
+              "argvSource": "Python byte argv to real executable"
+            },
+            {
+              "campaign": "package-cwd-bytes",
+              "actualGNUComparisons": 3,
+              "cwdSource": "Python byte cwd to real executable and private prefix"
+            }
+          ],
+          "installedEvidence": [
+            {
+              "campaign": "package-entry",
+              "actualGNUComparisons": 33,
+              "executable": "find2fd",
+              "actualFdInvocations": 25
+            },
+            {
+              "campaign": "package-prefix",
+              "actualFdInvocations": 3,
+              "nativeScopeComparisons": 1
+            },
+            {
+              "campaign": "package-argv-bytes",
+              "actualGNUComparisons": 4,
+              "argvSource": "Python byte argv to real executable"
+            },
+            {
+              "campaign": "package-cwd-bytes",
+              "actualGNUComparisons": 3,
+              "cwdSource": "Python byte cwd to real executable and private prefix"
+            }
+          ]
+        },
+        {
+          "campaign": "package-entry",
+          "actualGNUComparisons": 33,
+          "executable": "find2fd",
+          "actualFdInvocations": 25
+        },
+        {
+          "campaign": "package-prefix",
+          "actualFdInvocations": 3,
+          "nativeScopeComparisons": 1
+        },
+        {
+          "campaign": "package-argv-bytes",
+          "actualGNUComparisons": 4,
+          "argvSource": "Python byte argv to real executable"
+        },
+        {
+          "campaign": "package-cwd-bytes",
+          "actualGNUComparisons": 3,
+          "cwdSource": "Python byte cwd to real executable and private prefix"
+        },
+        {
+          "campaign": "seeded-cli",
+          "seed": "0x8f2da643",
+          "deep": true,
+          "fixtureSourceSHA256": "c54d1d39e3863de49f52109c21a6d01d71214a29ea2818836598889c947a9830",
+          "actualGNUComparisons": 3072,
+          "distinctArgvCases": 3072,
+          "fdQualifiedPlans": 2294,
+          "nativePlans": 778,
+          "actualFdInvocations": 3607,
+          "actualNativeInvocations": 778,
+          "qualifiedRuntimeFallbacks": 0,
+          "mismatches": 0,
+          "concurrency": 8
+        },
+        {
+          "campaign": "generated-expression-cli",
+          "seed": "0x6a29fd37",
+          "deep": true,
+          "concurrency": 8,
+          "fixtureSourceSHA256": "c54d1d39e3863de49f52109c21a6d01d71214a29ea2818836598889c947a9830",
+          "campaignSourceSHA256": "49b7093a6b0152c3998473f8907d46b29033362fd551bdfffc67abf03c7b9d19",
+          "actualGNUComparisons": 1536,
+          "distinctLocaleArgvCases": 1536,
+          "distinctArgvCases": 960,
+          "casesPerLocale": {
+            "C": 960,
+            "C.UTF-8": 576
+          },
+          "pairedComparisons": 1152,
+          "COnlyByteMatchingComparisons": 384,
+          "rawFilenameBytes": true,
+          "publicCLI": true,
+          "actualFdInvocations": 2152,
+          "expectedFdInvocations": 2152,
+          "actualNativeInvocations": 0,
+          "qualifiedRuntimeFallbacks": 0,
+          "globPushdownInvocations": 240,
+          "typePushdownInvocations": 299,
+          "nonemptyGNUResults": 1157,
+          "expressionSpellings": [
+            "!",
+            "(",
+            ")",
+            ",",
+            "-a",
+            "-and",
+            "-false",
+            "-hyphen*",
+            "-iname",
+            "-ipath",
+            "-iwholename",
+            "-maxdepth",
+            "-mindepth",
+            "-name",
+            "-not",
+            "-o",
+            "-or",
+            "-path",
+            "-print",
+            "-print0",
+            "-true",
+            "-type",
+            "-wholename"
+          ],
+          "mismatches": 0
+        },
+        {
+          "campaign": "pi-sdk-scope",
+          "actualFdInvocations": 7,
+          "networkRequests": 0,
+          "inferenceRequests": 0,
+          "extension": "pi/find2fd.ts",
+          "nativeToolName": "bash"
+        }
+      ]
+    },
+    {
+      "environment": "Linux Pi-opsec VM",
+      "startedAt": "2026-10-11T20:01:56.889Z",
+      "finishedAt": "2026-10-11T20:03:33.637Z",
+      "passed": true,
+      "nodeTests": 64,
+      "sourceChanged": false,
+      "versions": {
+        "node": "v24.21.0",
+        "GNU": "find (GNU findutils) 4.10.0",
+        "fd": "fdfind 10.2.0",
+        "python": "Python 3.13.5",
+        "bash": "GNU bash, version 5.2.37(1)-release (x86_64-pc-linux-gnu)",
+        "readlink": "readlink (GNU coreutils) 9.7",
+        "npm": "11.19.0",
+        "tar": "tar (GNU tar) 1.35"
+      },
+      "piSdk": "0.84.2",
+      "stages": [
+        {
+          "name": "core",
+          "status": 0,
+          "durationMs": 41907,
+          "timedOut": false,
+          "interrupted": false,
+          "logTruncated": false,
+          "counts": {
+            "tests": 56,
+            "suites": 0,
+            "pass": 56,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "passed": true
+        },
+        {
+          "name": "campaigns",
+          "status": 0,
+          "durationMs": 53367,
+          "timedOut": false,
+          "interrupted": false,
+          "logTruncated": false,
+          "counts": {
+            "tests": 2,
+            "suites": 0,
+            "pass": 2,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "passed": true
+        },
+        {
+          "name": "installed Pi native Bash scope",
+          "status": 0,
+          "durationMs": 1371,
+          "timedOut": false,
+          "interrupted": false,
+          "logTruncated": false,
+          "counts": {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "passed": true
+        }
+      ],
+      "campaignDiagnostics": [
+        {
+          "campaign": "qualified-cli",
+          "actualGNUComparisons": 25,
+          "actualFdInvocations": 28
+        },
+        {
+          "campaign": "filename-bytes",
+          "actualGNUComparisons": 8
+        },
+        {
+          "campaign": "expanded-expressions",
+          "actualGNUComparisons": 45,
+          "actualFdInvocations": 48,
+          "actualNativeInvocations": 0,
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "candidate-raw-byte-regression",
+          "actualGNUComparisons": 7,
+          "actualFdInvocations": 7,
+          "actualNativeInvocations": 0
+        },
+        {
+          "campaign": "expanded-C-matching",
+          "actualGNUComparisons": 16,
+          "actualFdInvocations": 16,
+          "actualNativeInvocations": 0,
+          "locale": "C/POSIX including LC_ALL/LC_CTYPE/LANG precedence"
+        },
+        {
+          "campaign": "expression-native-boundaries",
+          "actualGNUComparisons": 15,
+          "actualFdInvocations": 0,
+          "actualNativeInvocations": 15
+        },
+        {
+          "campaign": "expression-errors",
+          "actualGNUComparisons": 17,
+          "actualNativeInvocations": 17,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "trailing-slash-path-diagnostics",
+          "actualGNUComparisons": 22,
+          "actualNativeInvocations": 22,
+          "actualFdInvocations": 0,
+          "warningCases": 12,
+          "matchingRootCasesWithoutWarnings": 10
+        },
+        {
+          "campaign": "expression-fallback",
+          "actualGNUComparisons": 20,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "action-fallback",
+          "actualGNUComparisons": 6,
+          "ownedSideEffectComparisons": 6,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "qualification",
+          "fdPlans": 27,
+          "nativePlans": 30
+        },
+        {
+          "campaign": "option-inventory",
+          "GNUHelpOptionSpellings": 80,
+          "classifiedOptionsAndOperators": 86
+        },
+        {
+          "campaign": "mutations",
+          "rejectedSemanticMutants": 4,
+          "cleanNegativeControls": 4
+        },
+        {
+          "campaign": "cleanup-mutation",
+          "rejectedSemanticMutants": 1,
+          "cleanNegativeControls": 1,
+          "defect": "cancelled escalation timer leaks ignored-stdio helper"
+        },
+        {
+          "campaign": "packed-artifact",
+          "tarballSHA256": "a546fdcdd2ef119a948ec04c6e156735ff483ce70641765dd77315691aa17aec",
+          "npmIntegrity": "sha512-UbFR2/29nCv+HJb+iyCV/VlL4p77GrtdbA6XS5btGO3/wXVLhnFpKM8XI3y564dGa0rk3/THwUpb9Z9bmxz5hA==",
+          "extractedFilesVerified": 27,
+          "extractedEntryNodeTests": 5,
+          "installedEntryNodeTests": 5,
+          "extractedEvidence": [
+            {
+              "campaign": "package-entry",
+              "actualGNUComparisons": 33,
+              "executable": "find2fd",
+              "actualFdInvocations": 25
+            },
+            {
+              "campaign": "package-prefix",
+              "actualFdInvocations": 3,
+              "nativeScopeComparisons": 1
+            },
+            {
+              "campaign": "package-argv-bytes",
+              "actualGNUComparisons": 4,
+              "argvSource": "Python byte argv to real executable"
+            },
+            {
+              "campaign": "package-cwd-bytes",
+              "actualGNUComparisons": 3,
+              "cwdSource": "Python byte cwd to real executable and private prefix"
+            }
+          ],
+          "installedEvidence": [
+            {
+              "campaign": "package-entry",
+              "actualGNUComparisons": 33,
+              "executable": "find2fd",
+              "actualFdInvocations": 25
+            },
+            {
+              "campaign": "package-prefix",
+              "actualFdInvocations": 3,
+              "nativeScopeComparisons": 1
+            },
+            {
+              "campaign": "package-argv-bytes",
+              "actualGNUComparisons": 4,
+              "argvSource": "Python byte argv to real executable"
+            },
+            {
+              "campaign": "package-cwd-bytes",
+              "actualGNUComparisons": 3,
+              "cwdSource": "Python byte cwd to real executable and private prefix"
+            }
+          ]
+        },
+        {
+          "campaign": "package-entry",
+          "actualGNUComparisons": 33,
+          "executable": "find2fd",
+          "actualFdInvocations": 25
+        },
+        {
+          "campaign": "package-prefix",
+          "actualFdInvocations": 3,
+          "nativeScopeComparisons": 1
+        },
+        {
+          "campaign": "package-argv-bytes",
+          "actualGNUComparisons": 4,
+          "argvSource": "Python byte argv to real executable"
+        },
+        {
+          "campaign": "package-cwd-bytes",
+          "actualGNUComparisons": 3,
+          "cwdSource": "Python byte cwd to real executable and private prefix"
+        },
+        {
+          "campaign": "seeded-cli",
+          "seed": "0x8f2da643",
+          "deep": true,
+          "fixtureSourceSHA256": "c54d1d39e3863de49f52109c21a6d01d71214a29ea2818836598889c947a9830",
+          "actualGNUComparisons": 3072,
+          "distinctArgvCases": 3072,
+          "fdQualifiedPlans": 2294,
+          "nativePlans": 778,
+          "actualFdInvocations": 3607,
+          "actualNativeInvocations": 778,
+          "qualifiedRuntimeFallbacks": 0,
+          "mismatches": 0,
+          "concurrency": 8
+        },
+        {
+          "campaign": "generated-expression-cli",
+          "seed": "0x6a29fd37",
+          "deep": true,
+          "concurrency": 8,
+          "fixtureSourceSHA256": "c54d1d39e3863de49f52109c21a6d01d71214a29ea2818836598889c947a9830",
+          "campaignSourceSHA256": "49b7093a6b0152c3998473f8907d46b29033362fd551bdfffc67abf03c7b9d19",
+          "actualGNUComparisons": 1536,
+          "distinctLocaleArgvCases": 1536,
+          "distinctArgvCases": 960,
+          "casesPerLocale": {
+            "C": 960,
+            "C.UTF-8": 576
+          },
+          "pairedComparisons": 1152,
+          "COnlyByteMatchingComparisons": 384,
+          "rawFilenameBytes": true,
+          "publicCLI": true,
+          "actualFdInvocations": 2152,
+          "expectedFdInvocations": 2152,
+          "actualNativeInvocations": 0,
+          "qualifiedRuntimeFallbacks": 0,
+          "globPushdownInvocations": 240,
+          "typePushdownInvocations": 299,
+          "nonemptyGNUResults": 1157,
+          "expressionSpellings": [
+            "!",
+            "(",
+            ")",
+            ",",
+            "-a",
+            "-and",
+            "-false",
+            "-hyphen*",
+            "-iname",
+            "-ipath",
+            "-iwholename",
+            "-maxdepth",
+            "-mindepth",
+            "-name",
+            "-not",
+            "-o",
+            "-or",
+            "-path",
+            "-print",
+            "-print0",
+            "-true",
+            "-type",
+            "-wholename"
+          ],
+          "mismatches": 0
+        },
+        {
+          "campaign": "pi-sdk-scope",
+          "actualFdInvocations": 7,
+          "networkRequests": 0,
+          "inferenceRequests": 0,
+          "extension": "pi/find2fd.ts",
+          "nativeToolName": "bash"
+        }
+      ]
+    }
+  ],
+  "countNotes": [
+    "64 Node tests per environment: 56 core, 2 campaign and 6 SDK checks. Nested extracted/offline package child checks are separate.",
+    "Seeded CLI campaign: 3,072 distinct argv cases, 2,294 fd-qualified and 778 native plans; 3,607 actual fd searches and 778 native invocations, zero unexpected qualified runtime fallbacks and zero mismatches.",
+    "Generated pure-expression campaign: 1,536 distinct locale/argv cases, 960 distinct argv; 2,152 actual fd searches, no native invocations and zero mismatches.",
+    "Expression locale coverage: 1,152 paired C/C.UTF-8 comparisons and 384 C-only byte/question/insensitive comparisons.",
+    "A command can contain multiple roots, so engine searches exceed command counts. Both environments replay the same bounded corpora; replay counts do not create new unique-case coverage.",
+    "Campaign counts are separate corpus counts; cross-campaign cases are not claimed globally unique. Native cases demonstrate GNU compatibility, not acceleration.",
+    "Documentation added after these captures changes the npm archive identity; implementation and selected test hashes remain exactly those recorded here."
+  ],
+  "limits": [
+    "GNU metadata, traversal-control, command/filesystem actions, unqualified locale/pattern semantics and diagnostics retain native execution.",
+    "Expressions, candidates, ordering and rendered output are bounded as documented in compatibility.md.",
+    "Stable synthetic-tree evidence does not prove all filesystems or concurrent mutation schedules.",
+    "Actual fd execution is established; universal speedup or complete GNU acceleration is not claimed."
+  ]
+}

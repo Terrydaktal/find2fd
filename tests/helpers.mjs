@@ -10,7 +10,9 @@ export const ROOT = fileURLToPath(new URL('../', import.meta.url));
 export const INTERNAL = join(ROOT, 'bin/find2fd.mjs');
 export const PUBLIC = join(ROOT, 'bin/find2fd');
 export const quote = (value) => `'${value.replaceAll("'", "'\\''")}'`;
-export const ENV = { ...process.env, LC_ALL: 'C', LANG: 'C', TERM: 'xterm', NO_COLOR: '1' };
+// Semantic engine campaigns opt in explicitly. Separate default-policy tests
+// delete or replace this flag and require original GNU with no fd/helper work.
+export const ENV = { ...process.env, FIND2FD_EXPERIMENTAL_FD: '1', LC_ALL: 'C', LANG: 'C', TERM: 'xterm', NO_COLOR: '1' };
 delete ENV.POSIXLY_CORRECT;
 export function run(program, argv, cwd, { input, env = ENV, timeout = 10000 } = {}) {
   const result = spawnSync(program, argv, { cwd, env, input, timeout, maxBuffer: 4 * 1024 * 1024, argv0: program === '/usr/bin/find' ? 'find' : undefined });
@@ -54,7 +56,7 @@ export function fixture(t, { rawNames = false, cycle = false } = {}) {
   const executable = engine();
   const recorder = `#!${process.execPath}\nconst fs=require('node:fs');const {spawnSync}=require('node:child_process');const argv=process.argv.slice(2);fs.appendFileSync(process.env.FIND2FD_TRACE,JSON.stringify(argv)+'\\n');const result=spawnSync(${JSON.stringify(executable)},argv,{stdio:'inherit'});process.exitCode=result.status??1;\n`;
   for (const name of ['fd', 'fdfind']) writeFileSync(join(bin, name), recorder, { mode: 0o700 });
-  const nativeRecorder = `#!${process.execPath}\nconst fs=require('node:fs');const {spawnSync}=require('node:child_process');const argv=process.argv.slice(2);fs.appendFileSync(process.env.FIND2FD_NATIVE_TRACE,JSON.stringify(argv)+'\\n');const result=spawnSync('/usr/bin/find',argv,{stdio:'inherit',argv0:'find'});process.exitCode=result.status??1;\n`;
+  const nativeRecorder = `#!/usr/bin/env bash\n${quote(process.execPath)} -e 'const fs=require("node:fs");fs.appendFileSync(process.env.FIND2FD_NATIVE_TRACE,JSON.stringify(process.argv.slice(1))+"\\n");' -- "$@"\nexec -a find /usr/bin/find "$@"\n`;
   writeFileSync(join(bin, 'find'), nativeRecorder, { mode: 0o700 });
   const env = { ...ENV, PATH: `${bin}:${process.env.PATH ?? ''}`, FIND2FD_TRACE: trace, FIND2FD_NATIVE_TRACE: nativeTrace };
   const calls = () => existsSync(trace) ? readFileSync(trace, 'utf8').trim().split('\n').filter(Boolean).map((line) => JSON.parse(line)) : [];

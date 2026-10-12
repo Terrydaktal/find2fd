@@ -9,3 +9,6 @@ node_modules/
 *.tgz
 *.tsbuildinfo
 .DS_Store
+/rust/target/
+__pycache__/
+*.pyc

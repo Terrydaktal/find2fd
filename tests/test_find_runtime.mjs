@@ -95,7 +95,8 @@ test('test-only mutations prove root/order/fallback assertions detect semantic f
   const mutants = [
     ['root omission', "const write=process.stdout.write.bind(process.stdout);let first=true;process.stdout.write=(value,...rest)=>{if(first){first=false;const bytes=Buffer.from(value);const cut=bytes.indexOf(0);if(cut>=0)return write(bytes.subarray(cut+1),...rest);}return write(value,...rest);};\n", ['tree', '-print0']],
     ['order reversal', "const write=process.stdout.write.bind(process.stdout);process.stdout.write=(value,...rest)=>{const bytes=Buffer.from(value);if(bytes.includes(0)){const records=bytes.toString().split('\\0');records.pop();return write(records.reverse().join('\\0')+'\\0',...rest);}return write(value,...rest);};\n", ['tree', '-print0']],
-    ['fallback argv corruption', "const pattern=process.argv.indexOf('-name');process.argv[pattern+1]='*';\n", ['tree', '-name', 'foo.txt', '-o', '-print0']],
+    ['fallback argv corruption', "const pattern=process.argv.indexOf('-name');process.argv[pattern+1]='*';\n", ['tree', '-name', 'foo.txt', '-printf', '%p\\0']],
+    ['operator precedence', "process.argv.splice(3,0,'(');process.argv.splice(process.argv.indexOf('-a'),0,')');\n", ['tree', '-name', 'foo.txt', '-o', '-name', 'a-dir', '-a', '-type', 'd']],
   ];
   for (const [name, injection, argv] of mutants) {
     writeFileSync(entry, original); const expected = run('/usr/bin/find', argv, current.cwd); exact(run(process.execPath, [entry, ...argv], current.cwd), expected, `negative control ${name}`);

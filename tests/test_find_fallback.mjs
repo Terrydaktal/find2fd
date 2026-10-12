@@ -5,18 +5,11 @@ import test from 'node:test';
 import { compare, exact, fixture, INTERNAL, run } from './helpers.mjs';
 
 const expressions = [
-  ['-maxdepth', '1', '-type', 'f', '-name', 'foo.txt', '-o', '-name', 'Foo.txt', '-print0'],
-  ['-maxdepth', '1', '(', '-name', 'foo.txt', '-o', '-name', 'Foo.txt', ')', '-print0'],
-  ['-maxdepth', '1', '!', '-name', 'foo.txt', '-a', '-type', 'f', '-print0'],
-  ['-maxdepth', '1', '-not', '-type', 'd', '-and', '-print0'],
-  ['-maxdepth', '0', '-printf', 'A:%p\\0', ',', '-printf', 'B:%p\\0'],
-  ['-prune'], ['-quit'], ['-depth', '-type', 'd', '-print0'],
+  ['-prune'], ['-quit'],
   ['-path', 'tree/z-dir', '-prune', '-o', '-name', 'target.txt', '-print0'],
-  ['-iname', 'FOO.TXT', '-print0'], ['-path', 'tree/*/target.txt', '-print0'], ['-regex', '.*target.*', '-print0'],
-  ['-name', '?oo.txt'], ['-name', '[fF]oo.txt'], ['-name', 'literal\\*.txt'], ['-name', 'literal[[]1].txt'],
-  ['-true'], ['-false'], ['-empty'], ['-readable'], ['-writable'], ['-executable'], ['-size', '+0c'], ['-perm', 'u=r'], ['-uid', String(process.getuid())], ['-gid', String(process.getgid())], ['-links', '+0'], ['-lname', '*'], ['-xtype', 'l'], ['-print', '-print0'], ['-printf', '%y %p %P %f %d\n'],
+  ['-path', 'tree/'], ['-name', '*', '-maxdepth', '1'], ['-unknown'],
 ];
-test('complex expressions preserve GNU precedence, implied printing, short circuiting and formatting without fd', (t) => {
+test('unbounded traversal controls and diagnostic-sensitive expressions retain original GNU execution without fd', (t) => {
   const current = fixture(t);
   for (const expression of expressions) {
     const before = current.calls().length;

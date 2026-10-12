@@ -1,0 +1,15 @@
+node_modules/
+artifacts/
+captures/
+cache/
+caches/
+.cache/
+.npm/
+.git/
+rust/target/
+*.log
+*.tgz
+*.tsbuildinfo
+.DS_Store
+__pycache__/
+*.pyc

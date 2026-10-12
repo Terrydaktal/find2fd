@@ -10,9 +10,9 @@ import { fileURLToPath } from "node:url";
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
 const MAX_LOG = 4 * 1024 * 1024;
 const MAX_STAGE_TIME = 10 * 60 * 1000;
-const CORE = ["test_find_options.mjs", "test_find_cli.mjs", "test_find_fallback.mjs", "test_find_runtime.mjs", "test_find_scope.mjs", "test_package_entry.mjs", "test_package_artifact.mjs"];
-const CAMPAIGNS = ["test_find_campaign.mjs"];
-const IMPLEMENTATION = ["options", "order", "runtime", "wrapper"].map((file) => `src/find-${file}.mjs`).concat(["package.json", "bin/find2fd", "bin/find2fd.mjs", "bin/find2fd-shell-prefix.mjs", "pi/find2fd.ts"]);
+const CORE = ["test_find_automatic_routing.mjs", "test_find_default_policy.mjs", "test_find_options.mjs", "test_find_cli.mjs", "test_find_expressions.mjs", "test_find_leading_flags.mjs", "test_find_metadata.mjs", "test_find_metadata_formats.mjs", "test_find_metadata_traversal.mjs", "test_find_incremental.mjs", "test_find_incremental_runtime.mjs", "test_find_descriptors.mjs", "test_find_fallback.mjs", "test_find_runtime.mjs", "test_find_scope.mjs", "test_package_entry.mjs", "test_package_artifact.mjs"];
+const CAMPAIGNS = ["test_find_campaign.mjs", "test_find_expression_campaign.mjs"];
+const IMPLEMENTATION = ["options", "order", "evaluate", "incremental", "descriptors", "runtime", "wrapper"].map((file) => `src/find-${file}.mjs`).concat(["src/find-auto.sh", "package.json", "bin/find2fd", "bin/find2fd.mjs", "bin/find2fd-shell-prefix.mjs", "pi/find2fd.ts"]);
 const HELP = `NAME
   verify.mjs — verify the standalone GNU-compatible find adapter
 
@@ -22,17 +22,20 @@ SYNOPSIS
 
 DESCRIPTION
   Run independent GNU comparisons and regression checks on synthetic fixtures.
-  The default tier includes one bounded generated campaign. --core omits it;
-  --deep selects its larger bounded campaign. Counts come from actual results.
+  The default tier includes two bounded generated campaigns. --core omits them;
+  --deep selects their larger bounded campaigns. Counts come from actual results.
 
 OPTIONS
   --core         Run focused CPU regressions, launcher and actual packed artifact checks.
-  --deep         Run core checks and the larger generated campaign.
+  --deep         Run core checks and the larger generated campaigns.
   --sdk          Also require and verify the installed Pi native Bash integration.
   --output FILE  Save bounded logs, diagnostics, versions and source hashes as JSON.
   --help, -h     Print this text without running checks.
 
 OPERATION
+  Automatic sparse-tree tests require real fd and exact GNU output. Broader
+  semantic tests explicitly enable FIND2FD_EXPERIMENTAL_FD=1; small/native tests
+  require GNU without Node/fd work. Speed capture includes actual entry overhead.
   Run test files sequentially with a ten-minute deadline per stage. Selected
   skips, empty runs, changed sources, truncated logs and failures return nonzero.
   The verifier stops after the first failed stage and retains its evidence.
@@ -51,7 +54,7 @@ FILES
 
 PATHS
   Repository and test paths are resolved relative to this script, not your cwd.
-  GNU find is /usr/bin/find; fd or fdfind, Bash, GNU readlink, Python 3, npm and tar
+  GNU find is /usr/bin/find; fd or fdfind, util-linux script, Bash, GNU readlink, Python 3, npm and tar
   must be installed. Tests use no GPU or model server.
   FIND2FD_TEST_PI_ROOT selects an installed node_modules/@earendil-works directory
   for --sdk only; QWEN_TEST_PI_ROOT is accepted for compatibility. No SDK location
@@ -176,17 +179,18 @@ let configuration;
 try { configuration = options(process.argv.slice(2)); }
 catch (error) { process.stderr.write(`${error.message}\n`); process.exit(2); }
 if (configuration.help) { process.stdout.write(HELP); process.exit(0); }
-const report = { schemaVersion: 1, startedAt: new Date().toISOString(), tier: configuration.deep ? "deep" : configuration.core ? "core" : "default", sdkRequested: configuration.sdk, stages: [], passed: false };
+const report = { schemaVersion: 1, startedAt: new Date().toISOString(), tier: configuration.deep ? "deep" : configuration.core ? "core" : "default", sdkRequested: configuration.sdk,
+  executionPolicy: { defaultBackend: "compiled Rust release, GNU when unbuilt or unsupported", experimentalFlag: "FIND2FD_EXPERIMENTAL_FD=1", semanticTestsOptInExplicitly: true, defaultPolicyTest: "tests/test_find_default_policy.mjs", speedClaim: "none" }, stages: [], passed: false };
 try {
   const selected = [...CORE, ...(!configuration.core ? CAMPAIGNS : [])];
-  report.versions = { node: process.version, GNU: version("/usr/bin/find", ["--version"]), fd: fdVersion(), python: version("python3", ["--version"]), bash: version("/usr/bin/bash", ["--version"]), readlink: version("readlink", ["--version"]), npm: version("npm", ["--version"]), tar: version("tar", ["--version"]) };
+  report.versions = { node: process.version, GNU: version("/usr/bin/find", ["--version"]), fd: fdVersion(), script: version("script", ["--version"]), python: version("python3", ["--version"]), bash: version("/usr/bin/bash", ["--version"]), readlink: version("readlink", ["--version"]), npm: version("npm", ["--version"]), tar: version("tar", ["--version"]) };
   if (!report.versions.GNU.includes("GNU findutils")) throw new Error("This verification suite requires GNU find as its independent oracle.");
   report.sourceHashes = sourceHashes([...IMPLEMENTATION, "tools/verify.mjs", "tools/verify-artifact.mjs", "tests/find_wrapper_requirements.json",
-    "tests/find_option_inventory.json", "tests/helpers.mjs", ...selected.map((file) => `tests/${file}`)]);
+    "tests/find_option_inventory.json", "tests/helpers.mjs", "tests/find_metadata_helpers.mjs", "tests/find_incremental_helpers.mjs", ...selected.map((file) => `tests/${file}`)]);
   process.stdout.write(`Node ${report.versions.node}; ${report.versions.GNU.split("\n")[0]}; ${report.versions.fd.split("\n")[0]}\n`);
   process.stdout.write(`Source identity: ${createHash("sha256").update(JSON.stringify(report.sourceHashes)).digest("hex")}\n`);
   const sdkEnvironment = configuration.sdk ? requiredSdkEnvironment() : {};
-  const environment = { FIND2FD_DEEP: configuration.deep ? "1" : "0", FIND2FD_TEST_PI_SDK: "0", ...sdkEnvironment };
+  const environment = { FIND2FD_EXPERIMENTAL_FD: "1", FIND2FD_DEEP: configuration.deep ? "1" : "0", FIND2FD_TEST_PI_SDK: "0", ...sdkEnvironment };
   report.stages.push(await stage("core", CORE, [], environment));
   if (report.stages.every((run) => run.passed) && !configuration.core) report.stages.push(await stage("campaigns", CAMPAIGNS, [], environment));
   if (report.stages.every((run) => run.passed) && configuration.sdk) {

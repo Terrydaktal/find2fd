@@ -1,0 +1,1573 @@
+{
+  "schemaVersion": 1,
+  "scope": "Audit of all87 inventoried GNU option/operator spellings plus structural interaction families. Automatic performance routing is a measured bounded subset; original GNU covers all other invocations. Finite evidence does not prove every input or hardware has the same speed ordering.",
+  "performance_capture": "automatic-routing-performance.json",
+  "source_inventory": "../tests/find_option_inventory.json",
+  "entry_points": [
+    "bin/find2fd",
+    "bin/find2fd.mjs",
+    "withFindWrapper private Bash function",
+    "Pi allowed-provider model shell calls"
+  ],
+  "automatic_family": {
+    "roots": "one existing normalized physical ASCII directory",
+    "syntax": "optional-P; leading mindepth/maxdepth; one-name; optional-type f/d/l; simple AND; implicit-print or final-print/print0",
+    "shape": "root directory link count34..514; at most8 child-directory link counts project at least24000 second-level directories; sampled child links no larger10000",
+    "density": "up to8 read-only depth2 GNU samples, at most32768 marker bytes each; each sample at least128 entries and match fraction <=1/128; projected total matches <=32",
+    "side_effects": "no user actions are sampled or replayed; internal observation outputs and errors never enter user output",
+    "cost": "policy startup, metadata and sample work included in shipping-entry benchmark",
+    "limitations": "Link counts and prefix samples are predictors, not a complete recursive size/selectivity census; irregular, changing or differently cached filesystems may change the speed ordering. Existing engine validates ordering/bytes/errors/resource bounds before output."
+  },
+  "option_rows": [
+    {
+      "spelling": "-P",
+      "automatic_route": "conditional_fd",
+      "reason": "Physical single-root traversal is eligible only inside the measured large layered sparse name family.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "-P",
+        "tree"
+      ],
+      "benchmark_case_ids": [
+        "large-sparse-exact",
+        "large-sparse-glob",
+        "large-sparse-type",
+        "large-absent",
+        "small-sparse",
+        "wide-flat",
+        "deep-chain",
+        "medium-sparse",
+        "large-dense-exact",
+        "large-broad-name",
+        "large-shallow"
+      ]
+    },
+    {
+      "spelling": "-name",
+      "automatic_route": "conditional_fd",
+      "reason": "Only nonempty bounded ASCII literal/star-only basename patterns; actual sample density and topology decide between GNU and fd.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-name",
+        "foo*"
+      ],
+      "benchmark_case_ids": [
+        "large-sparse-exact",
+        "large-sparse-glob",
+        "large-sparse-type",
+        "large-absent",
+        "small-sparse",
+        "wide-flat",
+        "deep-chain",
+        "medium-sparse",
+        "large-dense-exact",
+        "large-broad-name",
+        "large-shallow"
+      ]
+    },
+    {
+      "spelling": "-type",
+      "automatic_route": "conditional_fd",
+      "reason": "Optional f/d/l alongside one name predicate; unfiltered types and other types use GNU.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-type",
+        "f"
+      ],
+      "benchmark_case_ids": [
+        "large-sparse-exact",
+        "large-sparse-glob",
+        "large-sparse-type",
+        "large-absent",
+        "small-sparse",
+        "wide-flat",
+        "deep-chain",
+        "medium-sparse",
+        "large-dense-exact",
+        "large-broad-name",
+        "large-shallow"
+      ]
+    },
+    {
+      "spelling": "-mindepth",
+      "automatic_route": "conditional_fd",
+      "reason": "Leading numeric minimum depth 0..3; higher, misplaced and malformed values use GNU.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-mindepth",
+        "1"
+      ],
+      "benchmark_case_ids": [
+        "large-sparse-exact",
+        "large-sparse-glob",
+        "large-sparse-type",
+        "large-absent",
+        "small-sparse",
+        "wide-flat",
+        "deep-chain",
+        "medium-sparse",
+        "large-dense-exact",
+        "large-broad-name",
+        "large-shallow"
+      ]
+    },
+    {
+      "spelling": "-maxdepth",
+      "automatic_route": "conditional_fd",
+      "reason": "Leading numeric maximum at least3; shallow traversal uses GNU, invalid values retain GNU diagnostics.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-maxdepth",
+        "1"
+      ],
+      "benchmark_case_ids": [
+        "large-sparse-exact",
+        "large-sparse-glob",
+        "large-sparse-type",
+        "large-absent",
+        "small-sparse",
+        "wide-flat",
+        "deep-chain",
+        "medium-sparse",
+        "large-dense-exact",
+        "large-broad-name",
+        "large-shallow"
+      ]
+    },
+    {
+      "spelling": "-a",
+      "automatic_route": "conditional_fd",
+      "reason": "Simple AND joining name/type predicates; other expression shapes retain GNU.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-type",
+        "f",
+        "-a",
+        "-name",
+        "*.txt"
+      ],
+      "benchmark_case_ids": [
+        "large-sparse-exact",
+        "large-sparse-glob",
+        "large-sparse-type",
+        "large-absent",
+        "small-sparse",
+        "wide-flat",
+        "deep-chain",
+        "medium-sparse",
+        "large-dense-exact",
+        "large-broad-name",
+        "large-shallow"
+      ]
+    },
+    {
+      "spelling": "-and",
+      "automatic_route": "conditional_fd",
+      "reason": "Simple AND joining name/type predicates; other expression shapes retain GNU.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-type",
+        "f",
+        "-and",
+        "-name",
+        "*.txt"
+      ],
+      "benchmark_case_ids": [
+        "large-sparse-exact",
+        "large-sparse-glob",
+        "large-sparse-type",
+        "large-absent",
+        "small-sparse",
+        "wide-flat",
+        "deep-chain",
+        "medium-sparse",
+        "large-dense-exact",
+        "large-broad-name",
+        "large-shallow"
+      ]
+    },
+    {
+      "spelling": "-print",
+      "automatic_route": "conditional_fd",
+      "reason": "Final single action, or implicit action, only for redirected/piped output; terminal quoting stays GNU.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-print"
+      ],
+      "benchmark_case_ids": [
+        "large-sparse-exact",
+        "large-sparse-glob",
+        "large-sparse-type",
+        "large-absent",
+        "small-sparse",
+        "wide-flat",
+        "deep-chain",
+        "medium-sparse",
+        "large-dense-exact",
+        "large-broad-name",
+        "large-shallow"
+      ]
+    },
+    {
+      "spelling": "-print0",
+      "automatic_route": "conditional_fd",
+      "reason": "Final single NUL action preserves full GNU ordering, byte paths and root inclusion.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-print0"
+      ],
+      "benchmark_case_ids": [
+        "large-sparse-exact",
+        "large-sparse-glob",
+        "large-sparse-type",
+        "large-absent",
+        "small-sparse",
+        "wide-flat",
+        "deep-chain",
+        "medium-sparse",
+        "large-dense-exact",
+        "large-broad-name",
+        "large-shallow"
+      ]
+    },
+    {
+      "spelling": "-daystart",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-daystart"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-follow",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-follow"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-nowarn",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-nowarn"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-warn",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-warn"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-d",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "tree",
+        "-d",
+        "-print0"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-depth",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-depth"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-mount",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-mount"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-noleaf",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-noleaf"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-xdev",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-xdev"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-ignore_readdir_race",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "tree",
+        "-ignore_readdir_race"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-noignore_readdir_race",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-noignore_readdir_race"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-empty",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-empty"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-false",
+      "automatic_route": "gnu",
+      "reason": "Boolean combinations, repeated output and alternate roots may require broad ordered candidates; measured broader semantic path loses and the simple automatic grammar rejects the complete invocation before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-false"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-name"
+      ]
+    },
+    {
+      "spelling": "-nouser",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-nouser"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-nogroup",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-nogroup"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-readable",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-readable"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-writable",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-writable"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-executable",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-executable"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-true",
+      "automatic_route": "gnu",
+      "reason": "Boolean combinations, repeated output and alternate roots may require broad ordered candidates; measured broader semantic path loses and the simple automatic grammar rejects the complete invocation before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-true"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-name"
+      ]
+    },
+    {
+      "spelling": "-ls",
+      "automatic_route": "gnu",
+      "reason": "GNU-specific output formats require the broker and full ordered candidates; measured experimental cost loses. Original GNU is automatic default.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-ls"
+      ],
+      "benchmark_case_ids": [
+        "large-format"
+      ]
+    },
+    {
+      "spelling": "-prune",
+      "automatic_route": "gnu",
+      "reason": "Incremental fd starts a helper per descent and a GNU evaluator; measured overhead loses. Original GNU handles early termination/pruning by default; experimental semantic path remains available.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-maxdepth",
+        "8",
+        "-prune"
+      ],
+      "benchmark_case_ids": [
+        "small-prune"
+      ]
+    },
+    {
+      "spelling": "-quit",
+      "automatic_route": "gnu",
+      "reason": "Incremental fd starts a helper per descent and a GNU evaluator; measured overhead loses. Original GNU handles early termination/pruning by default; experimental semantic path remains available.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-maxdepth",
+        "8",
+        "-quit"
+      ],
+      "benchmark_case_ids": [
+        "small-prune"
+      ]
+    },
+    {
+      "spelling": "-delete",
+      "automatic_route": "gnu",
+      "reason": "Side effects and command/file-output actions run original GNU exactly once. Buffering fd discovery would change action/traversal boundaries; no translated performance candidate is qualified.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "tree",
+        "-delete"
+      ],
+      "benchmark_case_ids": [
+        "small-exec"
+      ]
+    },
+    {
+      "spelling": "-amin",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-type",
+        "f",
+        "-amin",
+        "1"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-anewer",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-type",
+        "f",
+        "-anewer",
+        "tree/foo.txt"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-atime",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-type",
+        "f",
+        "-atime",
+        "1"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-cmin",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-cmin",
+        "1"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-cnewer",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-cnewer",
+        "tree/foo.txt"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-context",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "tree",
+        "-context",
+        "*"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-ctime",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-ctime",
+        "1"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-fstype",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-fstype",
+        "ext4"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-gid",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-gid",
+        "0"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-group",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-group",
+        "root"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-ilname",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-ilname",
+        "*"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-iname",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-iname",
+        "*.TXT"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-inum",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-inum",
+        "0"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-iwholename",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-iwholename",
+        "*"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-iregex",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-iregex",
+        ".*"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-links",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-links",
+        "1"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-lname",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-lname",
+        "*"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-mmin",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-mmin",
+        "1"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-mtime",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-mtime",
+        "1"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-newer",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-newer",
+        "tree/foo.txt"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-newerXY",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-newermt",
+        "2026-01-01"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-path",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-path",
+        "tree/*"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-perm",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-perm",
+        "u=r"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-regex",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-regex",
+        ".*"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-size",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-size",
+        "1c"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-uid",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-uid",
+        "0"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-used",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-type",
+        "f",
+        "-used",
+        "1"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-user",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-user",
+        "root"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-wholename",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-wholename",
+        "tree/*"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-xtype",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-xtype",
+        "l"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-regextype",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-regextype",
+        "posix-extended"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-printf",
+      "automatic_route": "gnu",
+      "reason": "GNU-specific output formats require the broker and full ordered candidates; measured experimental cost loses. Original GNU is automatic default.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-printf",
+        "%p\\n"
+      ],
+      "benchmark_case_ids": [
+        "large-format"
+      ]
+    },
+    {
+      "spelling": "-fprintf",
+      "automatic_route": "gnu",
+      "reason": "Side effects and command/file-output actions run original GNU exactly once. Buffering fd discovery would change action/traversal boundaries; no translated performance candidate is qualified.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "tree",
+        "-fprintf",
+        "result.paths",
+        "%p\\n"
+      ],
+      "benchmark_case_ids": [
+        "small-exec"
+      ]
+    },
+    {
+      "spelling": "-fprint",
+      "automatic_route": "gnu",
+      "reason": "Side effects and command/file-output actions run original GNU exactly once. Buffering fd discovery would change action/traversal boundaries; no translated performance candidate is qualified.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "tree",
+        "-fprint",
+        "result.paths"
+      ],
+      "benchmark_case_ids": [
+        "small-exec"
+      ]
+    },
+    {
+      "spelling": "-fprint0",
+      "automatic_route": "gnu",
+      "reason": "Side effects and command/file-output actions run original GNU exactly once. Buffering fd discovery would change action/traversal boundaries; no translated performance candidate is qualified.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "tree",
+        "-fprint0",
+        "result.paths"
+      ],
+      "benchmark_case_ids": [
+        "small-exec"
+      ]
+    },
+    {
+      "spelling": "-fls",
+      "automatic_route": "gnu",
+      "reason": "Side effects and command/file-output actions run original GNU exactly once. Buffering fd discovery would change action/traversal boundaries; no translated performance candidate is qualified.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "tree",
+        "-fls",
+        "result.paths"
+      ],
+      "benchmark_case_ids": [
+        "small-exec"
+      ]
+    },
+    {
+      "spelling": "-files0-from",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "-files0-from",
+        "roots.list"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-exec",
+      "automatic_route": "gnu",
+      "reason": "Side effects and command/file-output actions run original GNU exactly once. Buffering fd discovery would change action/traversal boundaries; no translated performance candidate is qualified.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "tree",
+        "-exec",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "benchmark_case_ids": [
+        "small-exec"
+      ]
+    },
+    {
+      "spelling": "-execdir",
+      "automatic_route": "gnu",
+      "reason": "Side effects and command/file-output actions run original GNU exactly once. Buffering fd discovery would change action/traversal boundaries; no translated performance candidate is qualified.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "tree",
+        "-execdir",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "benchmark_case_ids": [
+        "small-exec"
+      ]
+    },
+    {
+      "spelling": "-ok",
+      "automatic_route": "gnu",
+      "reason": "Side effects and command/file-output actions run original GNU exactly once. Buffering fd discovery would change action/traversal boundaries; no translated performance candidate is qualified.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "tree",
+        "-ok",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "benchmark_case_ids": [
+        "small-exec"
+      ]
+    },
+    {
+      "spelling": "-okdir",
+      "automatic_route": "gnu",
+      "reason": "Side effects and command/file-output actions run original GNU exactly once. Buffering fd discovery would change action/traversal boundaries; no translated performance candidate is qualified.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "tree",
+        "-okdir",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "benchmark_case_ids": [
+        "small-exec"
+      ]
+    },
+    {
+      "spelling": "-H",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "-H",
+        "tree"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-L",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "-L",
+        "tree"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-Olevel",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "-O2",
+        "tree"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-D",
+      "automatic_route": "gnu",
+      "reason": "Traversal/reference/debug semantics and GNU observations stay native automatically. Extended qualified experiments preserve specific cases, but no automatic performance profile covers them.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "-D",
+        "tree",
+        "tree"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-type"
+      ]
+    },
+    {
+      "spelling": "-help",
+      "automatic_route": "gnu",
+      "reason": "Informational command executes GNU directly, with no traversal, Node or fd.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "-help"
+      ],
+      "benchmark_case_ids": [
+        "missing-root"
+      ]
+    },
+    {
+      "spelling": "--help",
+      "automatic_route": "gnu",
+      "reason": "Informational command executes GNU directly, with no traversal, Node or fd.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "--help"
+      ],
+      "benchmark_case_ids": [
+        "missing-root"
+      ]
+    },
+    {
+      "spelling": "-version",
+      "automatic_route": "gnu",
+      "reason": "Informational command executes GNU directly, with no traversal, Node or fd.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "-version"
+      ],
+      "benchmark_case_ids": [
+        "missing-root"
+      ]
+    },
+    {
+      "spelling": "--version",
+      "automatic_route": "gnu",
+      "reason": "Informational command executes GNU directly, with no traversal, Node or fd.",
+      "experimental_compatibility": "native",
+      "representative_argv": [
+        "--version"
+      ],
+      "benchmark_case_ids": [
+        "missing-root"
+      ]
+    },
+    {
+      "spelling": "-not",
+      "automatic_route": "gnu",
+      "reason": "Boolean combinations, repeated output and alternate roots may require broad ordered candidates; measured broader semantic path loses and the simple automatic grammar rejects the complete invocation before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-not",
+        "-type",
+        "d"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-name"
+      ]
+    },
+    {
+      "spelling": "-o",
+      "automatic_route": "gnu",
+      "reason": "Boolean combinations, repeated output and alternate roots may require broad ordered candidates; measured broader semantic path loses and the simple automatic grammar rejects the complete invocation before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-type",
+        "f",
+        "-o",
+        "-type",
+        "d"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-name"
+      ]
+    },
+    {
+      "spelling": "-or",
+      "automatic_route": "gnu",
+      "reason": "Boolean combinations, repeated output and alternate roots may require broad ordered candidates; measured broader semantic path loses and the simple automatic grammar rejects the complete invocation before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-type",
+        "f",
+        "-or",
+        "-type",
+        "d"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-name"
+      ]
+    },
+    {
+      "spelling": "-ipath",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-ipath",
+        "TREE/*"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "-samefile",
+      "automatic_route": "gnu",
+      "reason": "Rich matching/metadata/locale/format or reference semantics require GNU broker or are incompatible with buffered sampling. Measured broader candidate/broker class loses; automatic routing sends original argv to GNU before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "tree",
+        "-samefile",
+        "tree/foo.txt"
+      ],
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "spelling": "--",
+      "automatic_route": "gnu",
+      "reason": "Boolean combinations, repeated output and alternate roots may require broad ordered candidates; measured broader semantic path loses and the simple automatic grammar rejects the complete invocation before Node.",
+      "experimental_compatibility": "qualified",
+      "representative_argv": [
+        "--",
+        "tree",
+        "-size",
+        "+0c"
+      ],
+      "benchmark_case_ids": [
+        "large-boolean",
+        "large-broad-name"
+      ]
+    }
+  ],
+  "interaction_rows": [
+    {
+      "family": "small/medium/flat/deep trees",
+      "route": "gnu",
+      "reason": "fd startup and ordering cost exceeds traversal; topology gate before Node",
+      "benchmark_case_ids": [
+        "small-sparse",
+        "wide-flat",
+        "deep-chain",
+        "medium-sparse"
+      ]
+    },
+    {
+      "family": "large layered sparse exact/glob/type names including absent matches",
+      "route": "fd conditional",
+      "reason": "parallel candidate discovery amortizes Node and sparse GNU-order reconstruction",
+      "benchmark_case_ids": [
+        "large-sparse-exact",
+        "large-sparse-glob",
+        "large-sparse-type",
+        "large-absent"
+      ]
+    },
+    {
+      "family": "dense matches/repeated names/broad globs",
+      "route": "gnu",
+      "reason": "candidate capture/order reconstruction measured slower; bounded density and candidate-count estimate rejects",
+      "benchmark_case_ids": [
+        "large-dense-exact",
+        "large-broad-name"
+      ]
+    },
+    {
+      "family": "broad type/unfiltered output",
+      "route": "gnu",
+      "reason": "original GNU single walk beats fd plus second ordering walk",
+      "benchmark_case_ids": [
+        "large-broad-type"
+      ]
+    },
+    {
+      "family": "shallow depth/file-only roots/multiple roots",
+      "route": "gnu",
+      "reason": "little traversal to amortize startup and complex root-order batching",
+      "benchmark_case_ids": [
+        "large-shallow",
+        "small-sparse"
+      ]
+    },
+    {
+      "family": "metadata/formats/locale-sensitive patterns/Boolean alternatives",
+      "route": "gnu",
+      "reason": "broader metadata broker and broad ordering path measured slower",
+      "benchmark_case_ids": [
+        "large-metadata",
+        "large-format",
+        "large-boolean"
+      ]
+    },
+    {
+      "family": "prune/quit/mutations/exec/output-files",
+      "route": "gnu",
+      "reason": "early side effects must stay GNU; incremental helper path measured slower",
+      "benchmark_case_ids": [
+        "small-prune",
+        "small-exec"
+      ]
+    },
+    {
+      "family": "invalid arguments/missing paths/terminal quoting/raw argv/closed descriptors",
+      "route": "gnu",
+      "reason": "preserve GNU diagnostics, original bytes, descriptor state and quoting before Node",
+      "benchmark_case_ids": [
+        "missing-root"
+      ]
+    },
+    {
+      "family": "fd absent/failing/malformed records/order or memory bound",
+      "route": "gnu before publication",
+      "reason": "existing buffered compatibility runtime preserves complete native fallback and never partly performs a user action",
+      "tests": [
+        "tests/test_find_fallback.mjs",
+        "tests/test_find_runtime.mjs",
+        "tests/test_find_descriptors.mjs"
+      ]
+    },
+    {
+      "family": "explicit native control/provider and shell scope",
+      "route": "gnu",
+      "reason": "FIND2FD_ACCELERATION=off/0; set nonexact experimental values; user shell/native command/absolute path/child scripts and disallowed providers remain native",
+      "tests": [
+        "tests/test_find_default_policy.mjs",
+        "tests/test_find_scope.mjs"
+      ]
+    },
+    {
+      "family": "explicit broader experiment",
+      "route": "semantic fd or GNU",
+      "reason": "EXPERIMENTAL_FD=1 retains broader qualified engine for finite semantic coverage; no automatic speed promise",
+      "tests": [
+        "tests/test_find_options.mjs",
+        "tests/test_find_campaign.mjs",
+        "tests/test_find_expression_campaign.mjs"
+      ]
+    },
+    {
+      "family": "unrecognized options/unknown values/unsupported combinations",
+      "route": "gnu",
+      "reason": "complete unchanged native argv; no guidance/refusal/approximation"
+    }
+  ],
+  "additional_operators": [
+    {
+      "spelling": "!",
+      "automatic_route": "gnu",
+      "reason": "Structural Boolean expression requires broader ordered evaluation, outside sparse simple AND family."
+    },
+    {
+      "spelling": "(",
+      "automatic_route": "gnu",
+      "reason": "Structural Boolean expression requires broader ordered evaluation, outside sparse simple AND family."
+    },
+    {
+      "spelling": ")",
+      "automatic_route": "gnu",
+      "reason": "Structural Boolean expression requires broader ordered evaluation, outside sparse simple AND family."
+    },
+    {
+      "spelling": ",",
+      "automatic_route": "gnu",
+      "reason": "Structural Boolean expression requires broader ordered evaluation, outside sparse simple AND family."
+    }
+  ],
+  "validation_tests": [
+    "tests/test_find_automatic_routing.mjs",
+    "tests/test_find_default_policy.mjs",
+    "tests/test_find_options.mjs",
+    "tests/test_find_scope.mjs",
+    "tests/test_package_entry.mjs",
+    "tests/test_package_artifact.mjs"
+  ]
+}

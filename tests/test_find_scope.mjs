@@ -24,7 +24,7 @@ function fixture(t) {
   writeFileSync(join(cwd, "tree/foo.txt"), "synthetic\n");
   writeFileSync(join(cwd, "child.sh"), "#!/usr/bin/env bash\ntype -t find\nfind tree -name foo.txt\n", { mode: 0o700 });
   writeFileSync(join(bin, "fd"), `#!/usr/bin/env bash\nprintf 'fd\n' >> "$FIND_SCOPE_TRACE"\nexec ${quote(realFd)} "$@"\n`, { mode: 0o700 });
-  const env = { ...process.env, PATH: `${bin}:${process.env.PATH ?? ""}`, FIND_SCOPE_TRACE: trace, LC_ALL: "C" };
+  const env = { ...process.env, FIND2FD_EXPERIMENTAL_FD: "1", PATH: `${bin}:${process.env.PATH ?? ""}`, FIND_SCOPE_TRACE: trace, LC_ALL: "C" };
   t.after(() => rmSync(cwd, { recursive: true, force: true }));
   return { cwd, env, bin, trace, calls: () => existsSync(trace) ? readFileSync(trace, "utf8").split("\n").filter(Boolean).length : 0 };
 }
@@ -89,6 +89,9 @@ if (process.env.FIND2FD_TEST_PI_SDK === "1") {
     mkdirSync(agentDir);
     const previous = process.env.PI_CODING_AGENT_DIR;
     const previousProviders = process.env.FIND2FD_PI_PROVIDERS;
+    const previousExperiment = process.env.FIND2FD_EXPERIMENTAL_FD;
+    process.env.FIND2FD_EXPERIMENTAL_FD = "1";
+    t.after(() => { if (previousExperiment === undefined) delete process.env.FIND2FD_EXPERIMENTAL_FD; else process.env.FIND2FD_EXPERIMENTAL_FD = previousExperiment; });
     process.env.PI_CODING_AGENT_DIR = agentDir;
     t.after(() => { if (previous === undefined) delete process.env.PI_CODING_AGENT_DIR; else process.env.PI_CODING_AGENT_DIR = previous; });
     delete process.env.FIND2FD_PI_PROVIDERS;
@@ -125,7 +128,18 @@ if (process.env.FIND2FD_TEST_PI_SDK === "1") {
       validateToolArguments(tool, { name: tool.name, arguments: params });
       return textOf(await tool.execute("synthetic-find-scope", params, new AbortController().signal));
     };
-    await t.test("Qwen bare shell find reaches fd without rewriting the model command", async () => {
+    await t.test("Qwen gets automatic private routing by default and explicit nonexperiment flags stay native", async () => {
+      const count = current.calls();
+      try {
+        for (const flag of [undefined, "", "0", "true", "01", "1 "]) {
+          if (flag === undefined) delete process.env.FIND2FD_EXPERIMENTAL_FD;
+          else process.env.FIND2FD_EXPERIMENTAL_FD = flag;
+          assert.equal(await invoke("type -t find; find tree -name foo.txt"), `${flag === undefined ? "function" : "file"}\ntree/foo.txt\n`);
+          assert.equal(current.calls(), count, "small/native-policy Pi calls must not invoke fd");
+        }
+      } finally { process.env.FIND2FD_EXPERIMENTAL_FD = "1"; }
+    });
+    await t.test("explicitly experimental Qwen bare shell find reaches fd without rewriting the model command", async () => {
       const count = current.calls();
       assert.equal(await invoke("type -t find; find tree -name foo.txt"), "function\ntree/foo.txt\n");
       assert.equal(current.calls(), count + 1);

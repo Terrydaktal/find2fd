@@ -1,5 +1,5 @@
-import { opendirSync } from "node:fs";
-import { nameMatches, typeMatches } from "./find-options.mjs";
+import { opendirSync, statSync } from "node:fs";
+import { typeMatches } from "./find-options.mjs";
 
 export const MAX_CANDIDATES = 100000;
 export const MAX_ORDER_PARENTS = 10000;
@@ -60,7 +60,10 @@ export function orderCandidates(root, candidates, options, budget = { entries: 0
       const parentEnd = relative.lastIndexOf(47);
       const parent = parentEnd < 0 ? Buffer.alloc(0) : relative.subarray(0, parentEnd);
       const name = relative.subarray(parentEnd + 1);
-      if (!listings.get(key(parent))?.get(key(name))?.entry.isDirectory()) throw new Error("fd ancestor changed or is not a directory");
+      const entry = listings.get(key(parent))?.get(key(name))?.entry;
+      const path = Buffer.concat([Buffer.from(root === "/" ? "/" : `${root}/`), relative]);
+      if (!entry || !(entry.isDirectory() || (options.dereference === "L" && entry.isSymbolicLink() && statSync(path).isDirectory())))
+        throw new Error("fd ancestor changed or is not a directory");
     }
     const path = relative.length ? Buffer.concat([Buffer.from(root === "/" ? "/" : `${root}/`), relative]) : Buffer.from(root);
     const directory = opendirSync(path, { encoding: "buffer" });
@@ -84,17 +87,23 @@ export function orderCandidates(root, candidates, options, budget = { entries: 0
       ranks.push(leaf.rank);
       parent = parent.length ? Buffer.concat([parent, Buffer.from("/"), part]) : part;
     }
-    if (leaf.entry.isDirectory() !== candidate.directory || !typeMatches(leaf.entry, options.type))
+    let entry = leaf.entry;
+    if (options.dereference === "L" && entry.isSymbolicLink()) {
+      try { entry = statSync(Buffer.concat([Buffer.from(root === "/" ? "/" : `${root}/`), candidate.relative])); }
+      catch (error) { if (!["ENOENT", "ENOTDIR"].includes(error.code)) throw error; }
+    }
+    if (entry.isDirectory() !== candidate.directory ||
+        (options.candidateFilter.types && !options.candidateFilter.types.some((type) => typeMatches(entry, type))))
       throw new Error("fd type changed or invalid response");
     candidate.ranks = ranks;
+    candidate.entry = entry;
   }
   return candidates.filter((candidate) => candidate.parts.length >= options.minDepth &&
-    (options.maxDepth === null || candidate.parts.length <= options.maxDepth) &&
-    options.names.every((pattern) => nameMatches(candidate.parts.at(-1), pattern))).sort((left, right) => {
+    (options.maxDepth === null || candidate.parts.length <= options.maxDepth)).sort((left, right) => {
       for (let index = 0; index < Math.min(left.ranks.length, right.ranks.length); index++) {
         if (left.ranks[index] !== right.ranks[index]) return left.ranks[index] - right.ranks[index];
       }
-      return left.ranks.length - right.ranks.length;
+      return options.depth ? right.ranks.length - left.ranks.length : left.ranks.length - right.ranks.length;
     });
 }
 

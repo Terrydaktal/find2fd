@@ -1,0 +1,952 @@
+{
+  "schemaVersion": 1,
+  "capture_date": "2026-10-12",
+  "platform": "Linux-7.1.6-1-cachyos-x86_64-with-glibc2.44",
+  "logical_cpus": 32,
+  "versions": {
+    "gnu_find": "find (GNU findutils) 4.11.0-modified",
+    "fd": "fd 9.0.0",
+    "node": "v26.4.0"
+  },
+  "clock": "perf_counter_ns: monotonic wall-clock",
+  "scope": "Actual shipping Bash CLI, including shell/Node startup, policy metadata and bounded density sampling, ordering and output. Owned warm-cache synthetic fixtures. No universal speed claim.",
+  "runs_per_engine_case": 7,
+  "warmup_runs_per_engine_case": 1,
+  "timing_order_seed": 120026,
+  "timing_order": "randomized within each paired repetition",
+  "shared_measurement_lock": "/tmp/coherence-search-wrapper-benchmark.lock",
+  "source_sha256": {
+    "src/find-auto.sh": "dc5a817baa0e70f173ba4cc01984a09ce3f735b964b03bd082c99b330d798ba1",
+    "src/find-descriptors.mjs": "98abb8a06198882ead1bde0417e6bf500866e68015d53fc7f7ad8e19e32b89d2",
+    "src/find-evaluate.mjs": "f651088cdd502aaf7b2849573784fef99eb87e5ffd78d779d12626b5cf1761cb",
+    "src/find-incremental.mjs": "b856907e8211fa0e997bf6ec892bc98dc2ed61ba9139712a2a11cfdf0e927aa8",
+    "src/find-options.mjs": "ce0541da53edc7384769aac3d7efa5bbcd44440d3bc624a71c20f920d3313806",
+    "src/find-order.mjs": "82a06b06a6dc43f0311acf188eea1e0799639ab90dba7b71c3b8bb4381268ef6",
+    "src/find-runtime.mjs": "2363f275c4dee36dd19fbc1faa1ca5fc09f106b37d24d4453e76d8c3ebd38739",
+    "src/find-wrapper.mjs": "10c406e0242ae5304a5e7d12347e80b43e1648f30b9d4a4b6e6a06be12c5465b",
+    "bin/find2fd": "6f9b323e2cf12cc938831185a76141670da13bf9ad3722fbbb7659d09e52e16c",
+    "bin/find2fd.mjs": "5295f12e0816ccc493fdb1d2f56c7f42515dcd2cddbbb9091315060f64dd98a9",
+    "bin/find2fd-shell-prefix.mjs": "42610de727a3f49a5f2bf10c87b821d0a101dfa12d64f889ff9a565d0e74f58c",
+    "pi/find2fd.ts": "039fcbe4f42a0ef1252304026903db5555b22a53a017fa46853ef3d805b13114",
+    "tools/benchmark-routing.py": "c67eb88fe0aaf55e0c57841f1029300d3c8253acd1f9b606d267ff9d5fc758b6"
+  },
+  "cases": [
+    {
+      "id": "small-sparse",
+      "argv": [
+        "small",
+        "-name",
+        "rare-result.dat",
+        "-print0"
+      ],
+      "policy": "small trees: GNU",
+      "median_ms": {
+        "gnu": 1.446195,
+        "automatic": 4.119401,
+        "experimental_fd": 36.596735
+      },
+      "samples_ms": {
+        "gnu": [
+          1.621226,
+          1.411359,
+          1.484377,
+          1.446195,
+          1.383958,
+          1.642246,
+          0.410837
+        ],
+        "automatic": [
+          3.724975,
+          3.464492,
+          4.119401,
+          4.553092,
+          4.204863,
+          4.348935,
+          4.043377
+        ],
+        "experimental_fd": [
+          35.240019,
+          32.022554,
+          32.547767,
+          37.174186,
+          38.938964,
+          36.596735,
+          41.309367
+        ]
+      },
+      "gnu_output_sha256": "130c3dd96c16b16ffaa380f7a240bebced6300e85f7032a968854a948aee53e8",
+      "gnu_stdout_bytes": 22,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.351069245261629
+    },
+    {
+      "id": "wide-flat",
+      "argv": [
+        "flat",
+        "-name",
+        "rare-result.dat",
+        "-print0"
+      ],
+      "policy": "flat file-heavy trees: GNU",
+      "median_ms": {
+        "gnu": 3.446458,
+        "automatic": 5.95872,
+        "experimental_fd": 47.375399
+      },
+      "samples_ms": {
+        "gnu": [
+          3.444825,
+          3.472267,
+          3.67501,
+          3.446458,
+          3.330639,
+          3.636818,
+          3.275595
+        ],
+        "automatic": [
+          5.95872,
+          5.47212,
+          6.047648,
+          6.427466,
+          5.405944,
+          5.804688,
+          5.973337
+        ],
+        "experimental_fd": [
+          48.335977,
+          49.058112,
+          46.48778,
+          47.844597,
+          47.375399,
+          45.886364,
+          45.566919
+        ]
+      },
+      "gnu_output_sha256": "5a423ff0721484764e0021c1b28faab2beae73003f0ee59a9abf8ce45d444bb4",
+      "gnu_stdout_bytes": 21,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.578388982868804
+    },
+    {
+      "id": "deep-chain",
+      "argv": [
+        "deep",
+        "-name",
+        "rare-result.dat",
+        "-print0"
+      ],
+      "policy": "deep chains: GNU",
+      "median_ms": {
+        "gnu": 2.032053,
+        "automatic": 4.889899,
+        "experimental_fd": 41.942244
+      },
+      "samples_ms": {
+        "gnu": [
+          2.199139,
+          2.032053,
+          2.011214,
+          2.260906,
+          1.046108,
+          2.24703,
+          1.155926
+        ],
+        "automatic": [
+          4.92282,
+          4.05548,
+          5.06548,
+          4.942929,
+          3.475072,
+          4.889899,
+          4.6162
+        ],
+        "experimental_fd": [
+          41.25285,
+          41.942244,
+          43.627461,
+          40.606007,
+          39.353578,
+          43.755013,
+          43.553191
+        ]
+      },
+      "gnu_output_sha256": "b02cc6bf7f1ea92ac83c67200b32ad8a9ba551c595966aa496d6c7b629b026fa",
+      "gnu_stdout_bytes": 381,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.41556134390505817
+    },
+    {
+      "id": "medium-sparse",
+      "argv": [
+        "medium",
+        "-name",
+        "rare-result.dat",
+        "-print0"
+      ],
+      "policy": "below measured topology threshold: GNU",
+      "median_ms": {
+        "gnu": 19.992221,
+        "automatic": 23.789332,
+        "experimental_fd": 42.413555
+      },
+      "samples_ms": {
+        "gnu": [
+          18.703323,
+          21.467371,
+          20.929173,
+          19.992221,
+          21.892805,
+          19.29377,
+          18.377286
+        ],
+        "automatic": [
+          23.384967,
+          23.789332,
+          25.135658,
+          23.169049,
+          24.44361,
+          26.268922,
+          22.695403
+        ],
+        "experimental_fd": [
+          42.074995,
+          41.73375,
+          42.413555,
+          44.779731,
+          43.908924,
+          46.525603,
+          42.191425
+        ]
+      },
+      "gnu_output_sha256": "7295c4b4fa273b5ec75f1a8481521d28c3cb42746323093e498ce094aa632a2e",
+      "gnu_stdout_bytes": 176,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.840385976369576
+    },
+    {
+      "id": "large-sparse-exact",
+      "argv": [
+        "large",
+        "-name",
+        "rare-result.dat",
+        "-print0"
+      ],
+      "policy": "large layered sparse names: fd",
+      "median_ms": {
+        "gnu": 112.758807,
+        "automatic": 84.379835,
+        "experimental_fd": 62.119285
+      },
+      "samples_ms": {
+        "gnu": [
+          114.508437,
+          114.186888,
+          110.448708,
+          111.127722,
+          112.758807,
+          118.46555,
+          107.750174
+        ],
+        "automatic": [
+          84.839604,
+          84.090227,
+          84.379835,
+          86.873151,
+          84.55701,
+          78.321326,
+          79.932855
+        ],
+        "experimental_fd": [
+          60.772327,
+          63.351525,
+          65.668287,
+          61.778811,
+          63.586069,
+          61.304985,
+          62.119285
+        ]
+      },
+      "gnu_output_sha256": "7f77e7d75be4af880e330b4078e22d8ddb5745c1f737b256bba9bf2c2398455a",
+      "gnu_stdout_bytes": 215,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 1.336324099235321
+    },
+    {
+      "id": "large-sparse-glob",
+      "argv": [
+        "large",
+        "-name",
+        "rare*.dat",
+        "-print0"
+      ],
+      "policy": "large layered sparse star globs: fd",
+      "median_ms": {
+        "gnu": 116.060882,
+        "automatic": 86.523689,
+        "experimental_fd": 66.25191
+      },
+      "samples_ms": {
+        "gnu": [
+          124.010738,
+          110.829519,
+          119.651563,
+          116.060882,
+          115.157655,
+          116.297811,
+          109.176051
+        ],
+        "automatic": [
+          88.642847,
+          82.914313,
+          86.408231,
+          85.116078,
+          86.523689,
+          92.126175,
+          88.724842
+        ],
+        "experimental_fd": [
+          65.701529,
+          64.892559,
+          67.630848,
+          67.008861,
+          68.42457,
+          66.073724,
+          66.25191
+        ]
+      },
+      "gnu_output_sha256": "7f77e7d75be4af880e330b4078e22d8ddb5745c1f737b256bba9bf2c2398455a",
+      "gnu_stdout_bytes": 215,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 1.34137694938088
+    },
+    {
+      "id": "large-sparse-type",
+      "argv": [
+        "large",
+        "-type",
+        "f",
+        "-name",
+        "rare-result.dat",
+        "-print0"
+      ],
+      "policy": "large layered sparse name/type: fd",
+      "median_ms": {
+        "gnu": 115.348545,
+        "automatic": 86.763363,
+        "experimental_fd": 63.842032
+      },
+      "samples_ms": {
+        "gnu": [
+          107.829324,
+          113.620076,
+          115.348545,
+          111.739198,
+          118.374268,
+          119.892479,
+          124.694851
+        ],
+        "automatic": [
+          85.284676,
+          86.763363,
+          82.150559,
+          85.245171,
+          87.837836,
+          86.917184,
+          91.45681
+        ],
+        "experimental_fd": [
+          63.842032,
+          60.196989,
+          62.049011,
+          59.900808,
+          64.798902,
+          71.114306,
+          71.775646
+        ]
+      },
+      "gnu_output_sha256": "7f77e7d75be4af880e330b4078e22d8ddb5745c1f737b256bba9bf2c2398455a",
+      "gnu_stdout_bytes": 215,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 1.3294614340847992
+    },
+    {
+      "id": "large-absent",
+      "argv": [
+        "large",
+        "-name",
+        "no-such-owned-name",
+        "-print0"
+      ],
+      "policy": "large layered absent names: fd",
+      "median_ms": {
+        "gnu": 120.283539,
+        "automatic": 83.810228,
+        "experimental_fd": 65.689847
+      },
+      "samples_ms": {
+        "gnu": [
+          126.62922,
+          122.765913,
+          127.468557,
+          119.829079,
+          114.212316,
+          117.533127,
+          120.283539
+        ],
+        "automatic": [
+          89.316862,
+          81.250997,
+          89.862795,
+          83.810228,
+          86.009176,
+          78.744197,
+          75.527252
+        ],
+        "experimental_fd": [
+          65.689847,
+          64.032112,
+          66.311623,
+          68.907303,
+          60.476197,
+          68.374113,
+          59.784869
+        ]
+      },
+      "gnu_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gnu_stdout_bytes": 0,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 1.4351892587620692
+    },
+    {
+      "id": "large-dense-exact",
+      "argv": [
+        "large",
+        "-name",
+        "common-0.txt",
+        "-print0"
+      ],
+      "policy": "density sample rejects repeated names: GNU",
+      "median_ms": {
+        "gnu": 120.79233,
+        "automatic": 129.424576,
+        "experimental_fd": 272.767166
+      },
+      "samples_ms": {
+        "gnu": [
+          121.708663,
+          122.431801,
+          115.072503,
+          119.716747,
+          120.79233,
+          118.252327,
+          127.551064
+        ],
+        "automatic": [
+          130.301445,
+          124.744886,
+          130.532572,
+          116.112089,
+          122.697554,
+          131.333326,
+          129.424576
+        ],
+        "experimental_fd": [
+          271.329557,
+          272.767166,
+          288.952758,
+          263.985127,
+          277.868274,
+          276.236638,
+          263.515118
+        ]
+      },
+      "gnu_output_sha256": "b7926d0314570aa9f03a24d4f97a1f7d509e388dbfcd190ca7a0ae00df70e65b",
+      "gnu_stdout_bytes": 1200000,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.9333028836810715
+    },
+    {
+      "id": "large-broad-name",
+      "argv": [
+        "large",
+        "-name",
+        "*.txt",
+        "-print0"
+      ],
+      "policy": "density sample rejects broad matches: GNU",
+      "median_ms": {
+        "gnu": 123.801382,
+        "automatic": 125.004006,
+        "experimental_fd": 361.029113
+      },
+      "samples_ms": {
+        "gnu": [
+          125.303523,
+          123.801382,
+          125.41822,
+          121.779528,
+          125.906493,
+          117.351874,
+          107.78999
+        ],
+        "automatic": [
+          127.373357,
+          124.930688,
+          125.736852,
+          125.004006,
+          153.782984,
+          113.225089,
+          110.472713
+        ],
+        "experimental_fd": [
+          348.705155,
+          361.029113,
+          373.467598,
+          352.516974,
+          422.393129,
+          404.995465,
+          317.930872
+        ]
+      },
+      "gnu_output_sha256": "6cfd8742d4d0a879c56d74d78c8ecceb33b1a911f15ca6480d325c4e618a8d40",
+      "gnu_stdout_bytes": 4800000,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.9903793163236705
+    },
+    {
+      "id": "large-broad-type",
+      "argv": [
+        "large",
+        "-type",
+        "f",
+        "-print0"
+      ],
+      "policy": "unfiltered broad type output: GNU",
+      "median_ms": {
+        "gnu": 101.15942,
+        "automatic": 103.553819,
+        "experimental_fd": 324.400128
+      },
+      "samples_ms": {
+        "gnu": [
+          101.15942,
+          100.205295,
+          98.847888,
+          104.048323,
+          98.593507,
+          102.144232,
+          102.491028
+        ],
+        "automatic": [
+          102.059652,
+          103.553819,
+          109.946859,
+          104.240247,
+          100.915569,
+          102.28596,
+          104.129436
+        ],
+        "experimental_fd": [
+          319.560334,
+          330.232849,
+          305.1552,
+          331.366022,
+          324.400128,
+          323.379948,
+          333.102366
+        ]
+      },
+      "gnu_output_sha256": "ae46affaa5fe836c078c14655ab51ccc09802933fc54120cfa569e6330e5d81e",
+      "gnu_stdout_bytes": 4800215,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.9768777335001039
+    },
+    {
+      "id": "large-shallow",
+      "argv": [
+        "large",
+        "-maxdepth",
+        "1",
+        "-name",
+        "rare-result.dat",
+        "-print0"
+      ],
+      "policy": "shallow traversal: GNU",
+      "median_ms": {
+        "gnu": 1.60732,
+        "automatic": 3.290644,
+        "experimental_fd": 33.481984
+      },
+      "samples_ms": {
+        "gnu": [
+          1.472685,
+          1.80272,
+          1.767442,
+          1.60732,
+          1.452988,
+          1.701217,
+          1.465011
+        ],
+        "automatic": [
+          2.993792,
+          3.797092,
+          3.290644,
+          3.723593,
+          3.823822,
+          2.449723,
+          1.809923
+        ],
+        "experimental_fd": [
+          35.406323,
+          34.42152,
+          36.609378,
+          30.890673,
+          32.963122,
+          33.481984,
+          31.774064
+        ]
+      },
+      "gnu_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gnu_stdout_bytes": 0,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.4884515006788945
+    },
+    {
+      "id": "large-metadata",
+      "argv": [
+        "large",
+        "-type",
+        "f",
+        "-size",
+        "+0c",
+        "-print0"
+      ],
+      "policy": "metadata broker startup and broad discovery: GNU",
+      "median_ms": {
+        "gnu": 169.075968,
+        "automatic": 173.660259,
+        "experimental_fd": 394.539511
+      },
+      "samples_ms": {
+        "gnu": [
+          171.534337,
+          174.954887,
+          168.842627,
+          176.687052,
+          167.955169,
+          169.075968,
+          165.607779
+        ],
+        "automatic": [
+          171.475877,
+          183.990345,
+          173.660259,
+          173.201471,
+          171.998456,
+          177.926357,
+          177.603146
+        ],
+        "experimental_fd": [
+          384.829887,
+          396.450835,
+          392.072866,
+          395.802609,
+          388.334786,
+          394.539511,
+          396.075325
+        ]
+      },
+      "gnu_output_sha256": "ae46affaa5fe836c078c14655ab51ccc09802933fc54120cfa569e6330e5d81e",
+      "gnu_stdout_bytes": 4800215,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.9736019569105905
+    },
+    {
+      "id": "large-format",
+      "argv": [
+        "large",
+        "-name",
+        "rare-result.dat",
+        "-printf",
+        "%p\n"
+      ],
+      "policy": "GNU formats: GNU",
+      "median_ms": {
+        "gnu": 104.277578,
+        "automatic": 108.228209,
+        "experimental_fd": 319.797614
+      },
+      "samples_ms": {
+        "gnu": [
+          103.907547,
+          104.277578,
+          105.057593,
+          105.710106,
+          100.015806,
+          103.184941,
+          108.250912
+        ],
+        "automatic": [
+          111.780026,
+          113.266828,
+          108.228209,
+          108.235633,
+          105.474581,
+          107.614819,
+          108.047858
+        ],
+        "experimental_fd": [
+          334.661104,
+          317.042292,
+          313.538045,
+          319.797614,
+          316.773093,
+          332.026882,
+          326.867404
+        ]
+      },
+      "gnu_output_sha256": "99da4016d07f51a8a4277b04ed01241f95df09d8e51eeeeec8e68540e49b7761",
+      "gnu_stdout_bytes": 215,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.9634972154071219
+    },
+    {
+      "id": "large-boolean",
+      "argv": [
+        "large",
+        "-name",
+        "rare-result.dat",
+        "-o",
+        "-name",
+        "common-0.txt",
+        "-print0"
+      ],
+      "policy": "compound/repeated output ordering: GNU",
+      "median_ms": {
+        "gnu": 112.564991,
+        "automatic": 115.843822,
+        "experimental_fd": 251.525482
+      },
+      "samples_ms": {
+        "gnu": [
+          112.452057,
+          114.684339,
+          112.836133,
+          113.381194,
+          111.58109,
+          111.353339,
+          112.564991
+        ],
+        "automatic": [
+          114.986971,
+          113.423264,
+          115.843822,
+          113.380373,
+          116.278805,
+          118.007945,
+          116.793969
+        ],
+        "experimental_fd": [
+          249.814827,
+          254.619253,
+          250.159038,
+          251.525482,
+          251.622015,
+          258.122459,
+          249.085658
+        ]
+      },
+      "gnu_output_sha256": "b7926d0314570aa9f03a24d4f97a1f7d509e388dbfcd190ca7a0ae00df70e65b",
+      "gnu_stdout_bytes": 1200000,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.9716961082309594
+    },
+    {
+      "id": "small-prune",
+      "argv": [
+        "small",
+        "-maxdepth",
+        "3",
+        "-name",
+        "node_modules",
+        "-prune",
+        "-o",
+        "-print0"
+      ],
+      "policy": "incremental per-directory fd/helper overhead: GNU",
+      "median_ms": {
+        "gnu": 1.458609,
+        "automatic": 3.480593,
+        "experimental_fd": 298.871136
+      },
+      "samples_ms": {
+        "gnu": [
+          1.458609,
+          1.667514,
+          1.722548,
+          1.365262,
+          1.371834,
+          1.696849,
+          0.434532
+        ],
+        "automatic": [
+          4.122036,
+          3.480593,
+          3.403897,
+          3.538162,
+          3.440326,
+          3.090605,
+          3.618794
+        ],
+        "experimental_fd": [
+          303.943349,
+          296.478972,
+          298.871136,
+          297.992514,
+          301.377456,
+          299.308302,
+          296.766867
+        ]
+      },
+      "gnu_output_sha256": "141ce54c3d57ed5cba0e36699c686a42b57f26dc36612338f7076e87d1b36b2c",
+      "gnu_stdout_bytes": 2350,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.41906910690218596
+    },
+    {
+      "id": "small-exec",
+      "argv": [
+        "small",
+        "-name",
+        "rare-result.dat",
+        "-exec",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "policy": "command actions execute exactly once natively",
+      "median_ms": {
+        "gnu": 1.823448,
+        "automatic": 3.364202,
+        "experimental_fd": 26.316682
+      },
+      "samples_ms": {
+        "gnu": [
+          1.849748,
+          1.835922,
+          1.62874,
+          1.848607,
+          1.791097,
+          1.733579,
+          1.823448
+        ],
+        "automatic": [
+          3.364202,
+          3.53211,
+          3.207557,
+          3.265376,
+          3.592534,
+          3.129369,
+          3.548912
+        ],
+        "experimental_fd": [
+          25.793593,
+          26.502654,
+          25.94536,
+          27.669411,
+          24.380771,
+          26.316682,
+          26.862073
+        ]
+      },
+      "gnu_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gnu_stdout_bytes": 0,
+      "gnu_stderr_bytes": 0,
+      "gnu_status": 0,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.5420150157451901
+    },
+    {
+      "id": "missing-root",
+      "argv": [
+        "not-present",
+        "-name",
+        "rare-result.dat",
+        "-print0"
+      ],
+      "policy": "GNU diagnostics: GNU",
+      "median_ms": {
+        "gnu": 1.42235,
+        "automatic": 3.116664,
+        "experimental_fd": 27.849962
+      },
+      "samples_ms": {
+        "gnu": [
+          1.398606,
+          1.36414,
+          1.42235,
+          1.436737,
+          1.4593,
+          1.438922,
+          1.331809
+        ],
+        "automatic": [
+          2.988442,
+          3.259895,
+          2.746925,
+          3.640395,
+          2.97637,
+          3.116664,
+          3.332503
+        ],
+        "experimental_fd": [
+          27.836205,
+          30.249029,
+          29.276509,
+          27.152403,
+          28.07679,
+          27.810958,
+          27.849962
+        ]
+      },
+      "gnu_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gnu_stdout_bytes": 0,
+      "gnu_stderr_bytes": 47,
+      "gnu_status": 1,
+      "actual_gnu_differential_checks": 24,
+      "speedup_vs_gnu": 0.45636937443368936
+    }
+  ]
+}

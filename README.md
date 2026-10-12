@@ -1,19 +1,115 @@
 # find2fd
 
-**GNU find compatibility with a qualified fd execution path.**
+find2fd accepts GNU `find` commands and runs qualified searches in a native Rust engine. It uses fd-style parallel directory traversal while preserving GNU output order, path bytes, diagnostics, exit status and action boundaries. Unsupported expressions run original GNU find before any result is emitted.
 
-find2fd accepts GNU `find` arguments. It uses fd for eligible directory searches, restores GNU's traversal order, and preserves path bytes and output format. Expressions that need GNU-specific behavior run unchanged through GNU find, without a guidance message or a request to rewrite the command.
+The package provides a direct CLI, a private Bash function and an optional Pi extension. Once the release is built, the CLI and allowed-provider Pi model shell calls such as `qwen-r9700` use Rust by default, with no Node or fd process for ordinary searches. User `!` commands, ordinary interactive shells, explicit native bypasses and child scripts keep system GNU find. It needs no model or inference backend.
 
-The package provides a direct CLI, a private Bash function and an optional Pi extension. Its core works with any harness that runs shell commands; it needs no model or inference backend. The Pi extension defaults to the `qwen-r9700` provider.
+Set `FIND2FD_ACCELERATION=off` to force GNU. An installation without a compiled release also uses GNU. `FIND2FD_RUST_BINARY=/absolute/path/to/find2fd-rust` selects a separately built release. Setting `FIND2FD_EXPERIMENTAL_FD=1` explicitly selects the retained JS/fd compatibility experiment, including routes slower than GNU; other explicitly set values use GNU.
+
+## Native Rust engine
+
+The compiled `find2fd-rust` executable performs qualified GNU find
+searches inside one Rust process. It uses sequential or ordered parallel
+directory discovery, with no Bash, Node or fd startup in the native search
+path. Unsupported expressions execute GNU find with the original arguments.
+The CLI and private Pi Bash hook now select this release by default. The table
+below measures the native executable directly: Bash launcher/prefix setup is
+not included and has not been assigned these direct-executable timings.
+
+The independently rebuilt package passed **706 exact GNU comparisons**,
+including **579 native Rust suite searches**. Thirty-one rotated
+warm-cache trials per class measured the archived and optimized Rust releases
+on the same trees alongside direct GNU find and fd. All 18 earlier classes are
+included, plus case-insensitive, path, compound and repeated-output cases.
+
+| Workload | Direct GNU find ms | Direct fd ms | Previous Rust ms | Optimized Rust ms | Execution |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 128-file sparse name | 0.470 | 8.951 | 0.467 | 0.476 | Native Rust |
+| 8K-file flat sparse name | 2.216 | 9.379 | 2.415 | 1.783 | Native Rust |
+| 180-level chain sparse name | 0.880 | 8.954 | 1.203 | 0.799 | Native Rust |
+| 5K-directory layered sparse name | 16.353 | 10.400 | 6.278 | 3.222 | Native Rust |
+| 30K-directory sparse exact name | 103.707 | 21.439 | 31.461 | 14.081 | Native Rust |
+| 30K-directory sparse star glob | 103.584 | 21.666 | 31.394 | 14.194 | Native Rust |
+| 30K-directory sparse name/type | 102.603 | 20.932 | 31.555 | 13.990 | Native Rust |
+| 30K-directory absent name | 101.493 | 20.738 | 31.307 | 13.942 | Native Rust |
+| 30K-directory repeated filename | 104.813 | 21.680 | 32.022 | 14.842 | Native Rust |
+| 30K-directory broad name output | 109.008 | 23.201 | 34.675 | 17.108 | Native Rust |
+| 30K-directory all regular files | 101.405 | 23.475 | 34.804 | 17.161 | Native Rust |
+| 30K-directory depth-one sparse name | 0.543 | 9.155 | 1.026 | 0.495 | Native Rust |
+| Metadata size predicate | 165.461 | — | 166.065 | 164.668 | GNU fallback |
+| GNU printf format | 102.964 | — | 103.319 | 102.993 | GNU fallback |
+| Boolean with short-circuit output | 110.732 | — | 32.162 | 14.694 | Native Rust |
+| Case-insensitive sparse name | 102.394 | 21.098 | 31.653 | 14.068 | Native Rust |
+| Full-path sparse glob | 103.095 | 22.672 | 32.106 | 14.387 | Native Rust |
+| Compound name/type negation | 17.813 | 10.798 | 6.664 | 3.482 | Native Rust |
+| Repeated print actions | 14.953 | — | 6.170 | 3.181 | Native Rust |
+| Prune control | 0.359 | — | 0.564 | 0.574 | GNU fallback |
+| GNU exec action | 0.548 | — | 0.783 | 0.774 | GNU fallback |
+| Missing-root diagnostics | 0.266 | — | 0.466 | 0.462 | GNU fallback |
+
+Optimized Rust was faster than fd in **15/15 comparable classes** in this capture.
+Sixteen of 17 native-class medians improved over the archived Rust release;
+the 128-file case stayed approximately unchanged at 0.47 ms. Large-tree native
+searches fell from roughly 31–35 ms to 14–17 ms. GNU fallback rows do not receive
+native acceleration credit. These finite warm-cache results do not establish
+universal performance across filesystems, cold caches or expression classes.
+
+Rust preserves exact GNU ordering. Direct fd can return the same records in a
+different order. Measurements include process startup and complete output
+capture. The optimization removes redundant directory opens, duplicate filename
+allocations and per-file shared-counter traffic, specializes common globs, and
+avoids workers on depth-one searches. Anchored no-follow traversal, raw path
+bytes, conservative bounds and fallback before output remain checked.
+
+```bash
+cargo build --release --locked --manifest-path rust/Cargo.toml
+rust/target/release/find2fd-rust . -type f -name '*.ts' -print0
+node --test tests/test_rust_engine.mjs
+node tools/verify-rust-artifact.mjs --output artifacts/rust-package.json
+python3 tools/benchmark-rust-engine.py --output artifacts/rust-performance.json
+```
+
+See [the Rust engine](docs/rust-engine.md) for measured timings, independently
+rebuilt package verification, supported expressions and GNU fallback boundaries.
+This native executable needs Linux, Rust 1.90 or newer to build, and GNU find
+at runtime for compatibility fallback. An installed fd is needed for the
+comparative benchmark, rather than native execution.
+
+## Historical JS/fd routing
+
+This retained capture describes the former automatic JS/fd policy, before Rust became the default. It does not describe current CLI or Pi timings.
+
+Warm-cache seven-run medians on owned synthetic trees, with randomized engine order after one warmup. These are actual CLI completion times, including Bash/Node startup, policy sampling, ordering and output. The larger tree has 30,000 second-level directories and about 150,000 entries. Original GNU remains fastest for many classes; automatic routing includes a small dispatch cost and does not claim zero overhead.
+
+| Workload | GNU find ms | Automatic wrapper ms | Broader fd experiment ms | Automatic engine |
+| --- | ---: | ---: | ---: | --- |
+| 128-file sparse search | 1.45 | 4.12 | 36.60 | GNU |
+| 8K-file flat search | 3.45 | 5.96 | 47.38 | GNU |
+| 180-level chain | 2.03 | 4.89 | 41.94 | GNU |
+| 5K-directory layered sparse search | 19.99 | 23.79 | 42.41 | GNU |
+| 30K-directory layered sparse exact name | 112.76 | 84.38 | 62.12 | fd |
+| 30K-directory layered sparse star glob | 116.06 | 86.52 | 66.25 | fd |
+| 30K-directory layered absent name | 120.28 | 83.81 | 65.69 | fd |
+| 30K-directory repeated filename | 120.79 | 129.42 | 272.77 | GNU |
+| 30K-directory broad type output | 101.16 | 103.55 | 324.40 | GNU |
+| 30K-directory metadata | 169.08 | 173.66 | 394.54 | GNU |
+| 30K-directory GNU output format | 104.28 | 108.23 | 319.80 | GNU |
+| 128-file prune expression | 1.46 | 3.48 | 298.87 | GNU |
+
+The four admitted sparse large-tree cases saved **28–36 ms (25–30%)** versus direct GNU in this capture. Broad, metadata, format and control cases stay GNU because the full fd compatibility route was slower. The audit records all remaining option and interaction decisions. The retained capture from the earlier `tools/benchmark-routing.py` policy records complete numeric samples and GNU output/status checks. Its source hashes identify the historical implementation; current default routing no longer follows that policy.
+
+These local timings are a class qualification rather than an oracle for every call. The topology and bounded density sample can mispredict an irregular or changing tree; cache state, filesystem and CPU also affect performance. `FIND2FD_ACCELERATION=off` provides a direct GNU override.
 
 ## Requirements
 
-- Linux, **Node.js 24 or newer**, **GNU find**, **Bash** and **GNU coreutils `readlink`**.
-- **fd 9 or newer**, named `fd` or Debian's `fdfind`, for acceleration. Without a usable engine, commands use GNU find.
-- Python 3, GNU coreutils `mkfifo`, npm and tar for verification and package checks.
+- Public execution needs Linux, **GNU find**, **Bash** and GNU coreutils `readlink`. Build the native release with **Rust/Cargo 1.90 or newer**; without it the launcher uses GNU.
+- Experiments and JS helpers additionally need **Node.js 24 or newer** and **GNU coreutils `readlink`**.
+- **fd 9 or newer**, named `fd` or Debian's `fdfind`, plus GNU coreutils `stat` and `head`, for retained JS experiments and comparative benchmarks. Native Rust execution does not require fd.
+- util-linux `script` and GNU coreutils `mkfifo` for the incremental prune/quit route; failed preparation uses GNU unchanged.
+- Python 3, npm and tar for verification and package checks.
 - An installed Pi SDK only for the optional Pi extension or `--sdk` verification.
 
-GNU find remains a runtime dependency. The wrapper deliberately delegates expressions outside its qualified subset to the original implementation.
+GNU find remains a runtime dependency. In the explicit experiment, common listings use fd and the in-process evaluator; richer read-only expressions use fd discovery followed by nonrecursive GNU predicate evaluation. Eligible physical preorder prune/quit uses incremental fd listing after each GNU decision; user actions and unsupported control combinations retain native execution.
 
 ## Install
 
@@ -22,13 +118,17 @@ Install the checkout with a user prefix:
 ```bash
 git clone https://github.com/Terrydaktal/find2fd.git
 cd find2fd
+cargo build --release --locked --manifest-path rust/Cargo.toml
 npm install --global --prefix "$HOME/.local" .
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-Alternatively, create links to the checkout:
+The npm postinstall hook also builds the release when Cargo is available. Missing Cargo leaves a working GNU fallback; a Cargo compilation failure is reported as an installation error. To build it later, run `npm run build:rust` in the installed package. Published source packages exclude machine-specific build output.
+
+Alternatively, build the checkout and create links:
 
 ```bash
+cargo build --release --locked --manifest-path rust/Cargo.toml
 mkdir -p "$HOME/.local/bin"
 ln -s "$(pwd)/bin/find2fd" "$HOME/.local/bin/find2fd"
 ln -s "$(pwd)/bin/find2fd-shell-prefix.mjs" "$HOME/.local/bin/find2fd-shell-prefix"
@@ -38,51 +138,58 @@ Keep that checkout in place, or recreate the links after moving it. Do not repla
 
 ## Direct CLI
 
-These simple directory searches fit the fd candidate path:
+Ordinary calls use native Rust for qualified physical searches and GNU for unsupported cases. These commands preserve GNU semantics:
 
 ```bash
 find2fd -P . -type f -name '*.ts' | head -50
 find2fd src -mindepth 1 -maxdepth 3 -type f -name '*test*' -print0
 find2fd . -type d -name 'build' -print | cat
+find2fd src \( -name '*.ts' -o -name '*.js' \) -type f -print0
+LC_ALL=C find2fd src -iname '*.md' -print0
 ```
 
-Newline output on a terminal uses GNU find for its pathname quoting. Piped or redirected newline output, and `-print0`, can qualify for fd. Qualification also depends on the actual filesystem and resource limits; a very large result or ordering directory uses GNU find instead.
+Native Rust uses GNU for newline output on a terminal so GNU pathname quoting is preserved. Piped or redirected newline output, and `-print0`, can qualify for Rust. Preparation, path, locale, resource and descriptor checks can still require GNU.
 
-The full GNU interface remains available through transparent fallback:
+Metadata searches, pruning and command actions retain GNU execution:
 
 ```bash
 find2fd . -type f -mtime -1 -print
 find2fd . -type f -name '*.log' -exec wc -l '{}' +
-find2fd . -name node_modules -prune -o -name '*.ts' -print
+find2fd . -maxdepth 8 -name node_modules -prune -o -name '*.ts' -print
 ```
 
-`find2fd --help` and `find2fd --version` return GNU find's help and version. There are no additional wrapper flags mixed into the GNU expression. Exit status follows find: a successful search returns `0`, including a search with no matches; errors return a nonzero status.
+`find2fd --help` and `find2fd --version` return GNU find's help and version. Ordinary wrapper calls do not add flags to the GNU expression. The directly invoked Rust release also exposes `--find2fd-route-json` for bounded, read-only route diagnostics. Exit status follows find: a successful search returns `0`, including a search with no matches; errors return a nonzero status.
 
 ## What qualifies for fd
 
-The initial candidate subset is intentionally small:
+The explicitly enabled experiment has three fd routes. Common byte-safe listings run in-process. Richer read-only expressions use a GNU predicate broker. Pure physical prune/quit expressions evaluate each entry before fd lists its children:
 
-| Part | Qualified form |
+| Part | Supported fd route |
 | --- | --- |
-| Starting paths | Up to 256 existing directories, normalized ASCII paths and default physical traversal, `-P` |
-| Expressions | Implicit conjunctions; `-a`/`-and` between supported predicates or before the final print action |
-| Name matching | Nonempty ASCII literals and `*`; excludes `?`, brackets, braces, backslashes and `/` |
-| File types | `-type f`, `d`, `l`, `p`, `s`, `b` or `c`; repeated type tests must be identical |
-| Depth | `-mindepth` and `-maxdepth` before predicates, at most ten decimal digits and values up to 1,000,000; the last repeated value wins |
-| Output | Default print or one final `-print`, with nonterminal stdout; `-print0` also qualifies |
+| Starting paths | Existing normalized paths, including valid Unicode; files are evaluated without an unnecessary walk, and mixed file/directory roots retain their order |
+| Expressions | GNU AND, OR, NOT, parentheses, comma, default printing and explicit repeated output actions |
+| Matching | GNU name/path/link-target globs, regex dialects, case folding and locales through the predicate broker |
+| Metadata | Size, permissions, ownership, IDs, links, inode, filesystem, access checks, modification/change times and reference tests |
+| Traversal | Leading depth/minimum/maximum depth, physical traversal, `-L`, `-H`, `-follow`, `-xdev` and `-mount`, within the qualification boundaries |
+| Output | `-print`, `-print0`, `-ls`, GNU `-printf`, including original root, relative path and depth fields |
+| Descent controls | Pure physical preorder `-prune`/`-quit` with a leading finite `-maxdepth`, proved path-byte budget, Boolean expressions and noncontextual output; GNU decides before each immediate fd child listing |
 
-Other GNU expressions go to GNU find before fd is invoked. This includes metadata tests, Unicode or more elaborate glob syntax, logical alternatives, symbolic-link following, pruning, early termination, formatting and actions. Normalized paths permit `.`/`./`/`/`, a leading `./` and a trailing slash, but not internal `.`/`..` components or repeated separators. See [compatibility](docs/compatibility.md) for the exact boundary and ordering limits.
+The GNU broker receives fd-discovered descendants and separately included starting paths on a private descriptor and runs with `-maxdepth 0`; it does not walk the tree again. File-only starting paths need no fd query and receive no traversal acceleration credit. Caller descriptors remain available to GNU, including process substitutions and `-exec` output descriptors, and private input uses a free descriptor slot. Compile-only GNU checks and candidate evaluation are counted separately from an original-command fallback. Context-dependent `%P` formatting can require one GNU evaluation process per path and can be substantially slower than native find; fd routing is not a universal speed guarantee.
 
-## Opt in inside Bash
+`-exec`, `-execdir`, `-ok`, `-okdir`, `-delete`, output-file actions, unqualified pruning/termination combinations, `-files0-from` lists and `-ignore_readdir_race` retain GNU's complete execution. Leading `-noignore_readdir_race` can qualify through the broker; its late placement remains native. Buffered directory/symlink access-time tests also stay native because an earlier fd walk can change the value being tested. The incremental control route preserves the evaluate-before-descent boundary and parse-time references in one GNU process. Contextual formatting on a terminal, split-request warnings, logical cross-filesystem boundaries and other detected compatibility problems use native execution. [Compatibility](docs/compatibility.md) records the exact bounds. These native cases are compatible, but they are **not** counted as acceleration.
 
-Load the private function into one shell:
+Incremental pruning requires a leading finite `-maxdepth` and a conservative path-byte proof. Unbounded controls stay native because GNU can traverse beyond Linux `PATH_MAX` using directory anchors that the broker cannot preserve. Eligible pruning does not prewalk excluded trees. A root-only prune or quit needs no fd query. Once output starts, a failed fd directory query can continue through a local GNU depth-one listing without replaying earlier predicates or output. Starting fd per directory has a cost, so this is compatible engine contribution rather than a universal speed guarantee.
+
+## Use inside one Bash shell
+
+Load the private Rust-dispatching function into one shell:
 
 ```bash
 eval "$(find2fd-shell-prefix)"
 find -P . -type f -name '*.ts' | head -50
 ```
 
-`find2fd-shell-prefix` takes no arguments. It prints the function definition and pins its Node executable and wrapper path. The function is not exported to child shells. User scripts and subprocesses continue using the system executable.
+`find2fd-shell-prefix` takes no arguments. Its Node process prints the function definition once, pinning the package-relative Rust path and the Node path used only by the explicit experiment. Subsequent ordinary searches invoke Rust directly, without another Node process. The function is not exported to child shells. User scripts and subprocesses continue using the system executable.
 
 These calls explicitly bypass the function:
 
@@ -116,7 +223,7 @@ Or install its declared Pi package:
 pi install /path/to/find2fd
 ```
 
-The extension keeps Pi's native `bash` tool and adds the private function only to eligible model-issued commands. User `!` commands retain normal shell execution. The default provider is `qwen-r9700`; an exact comma-separated list replaces that default:
+The extension keeps Pi's native `bash` tool and adds the private Rust-dispatching find function to eligible model-issued commands by default. User `!` commands retain normal shell execution. The default provider is `qwen-r9700`; an exact comma-separated list replaces that default:
 
 ```bash
 export FIND2FD_PI_PROVIDERS='qwen-r9700,my-local-provider'
@@ -142,20 +249,27 @@ Attach it through one native Bash tool's `spawnHook`, keeping your harness's pro
 
 ## How execution works
 
-1. The public CLI or Bash function preserves original arguments. Non-ASCII argument bytes go directly to GNU find before Node can decode them.
-2. The parser selects a qualified expression or GNU fallback. The runtime checks starting paths and invokes fd with unrestricted traversal, explicit matching rules, no colors and NUL-separated output.
-3. fd candidates remain buffered. The wrapper evaluates starting directories itself, since fd omits them, and reads candidate parents and ancestors with `opendir` to recover GNU's sibling order.
-4. The wrapper emits the reordered paths with GNU root spelling and the requested newline or NUL separator. Problems detected before output cause the original command to run through GNU find instead.
+1. CLI, private Bash and allowed-provider Pi calls honor explicit GNU optouts. Closed standard descriptors delegate immediately so runtime initialization cannot change their meaning.
+2. Default calls invoke the package-relative `rust/target/release/find2fd-rust`, or `FIND2FD_RUST_BINARY` when explicitly provided. A missing build delegates directly to GNU. No Node helper, fd subprocess or topology sample runs on this default path.
+3. Rust parses the qualified expression and performs bounded physical traversal. Directory descriptors anchor no-follow descent; raw filenames and GNU sibling order are preserved. Starting paths are included, booleans short-circuit, and repeated print actions retain their exact placement.
+4. Native results remain buffered until preparation succeeds. Unsupported syntax, metadata/actions, locale cases or failed preparation execute `/usr/bin/find` with the original arguments before output. Output errors after emission never replay the search or actions.
 
-Each fd search has a **10-second timeout**. Captured candidate bytes and rendered output each have a **32 MiB** cap; separate limits cover 100,000 candidates, 10,000 ordering directories and 200,000 ordering entries across starting paths. Any ordering directory exceeding **10,000 entries** uses GNU find because GNU's FTS traversal can switch to inode ordering. See [the complete bounds](docs/compatibility.md#resource-bounds).
+See [Rust bounds and fallback boundaries](docs/rust-engine.md#fallback-boundaries) for supported expressions and conservative memory, traversal and output limits.
+
+The explicitly enabled JS experiment retains the older fd discovery, ordering and nonrecursive GNU predicate broker. Its resource limits are distinct from those of the default Rust engine:
+
+Each fd search has a **10-second timeout**, with a **32 MiB** candidate-capture cap across starting paths. Separate limits cover 100,000 candidates, 10,000 ordering directories and 200,000 ordering entries. Expressions are bounded to **256 nodes**, **64 nesting levels** and **8,192 bytes per predicate or format argument**. The in-process listing route also caps rendered output at **32 MiB** and **100,000 records**, including repeated print actions. The GNU broker bounds its input lists and contextual rewrites before output, then inherits stdout without those listing-output caps. Any ordering directory exceeding **10,000 entries** uses GNU find because GNU's FTS traversal can switch to inode ordering. See [the complete bounds](docs/compatibility.md#resource-bounds).
 
 Recovering order repeats directory enumeration for the candidate ancestors; broad searches can therefore re-enumerate most directories. It does not run a second GNU find traversal to build an ordering map, but it is additional work, and fd is not universally faster. Detected missing paths or type inconsistencies cause fallback; the wrapper does not provide an atomic filesystem snapshot or prove equivalence under arbitrary concurrent changes.
 
 ## Verification
 
+The compiled dispatch regression traces the actual public and private Bash exec chains. It verifies Rust execution without Node/fd, exact GNU fallback, optouts and missing builds, local scope, closed descriptors and relocated/symlinked installations. Run it with the operator suite through `npm run test:rust`; `node tools/verify-rust-artifact.mjs` rebuilds and tests the shipped source outside the checkout.
+
 Run focused checks, then the bounded or larger synthetic campaigns:
 
 ```bash
+npm run build:rust
 node tools/verify.mjs --core --output artifacts/core.json
 node tools/verify.mjs --output artifacts/default.json
 node tools/verify.mjs --deep --output artifacts/deep.json
@@ -176,27 +290,41 @@ FIND2FD_TEST_PI_ROOT=/path/to/node_modules/@earendil-works \
 
 Tests use disposable synthetic trees and compare output bytes, diagnostics and exit status with GNU find. The suite distinguishes actual CLI comparisons, routing decisions and verified fd invocations. See [verification](docs/verification.md) for coverage and evidence. No universal equivalence or speed claim follows from a finite test suite.
 
-The packed deep suite and Pi SDK checks passed in both a Node 26/fd 9 environment and a Node 24/fdfind 10 VM. Each run passed **55 Node tests** and replayed the same **3,072 distinct full CLI comparisons** with zero mismatches; these are 3,072 unique cases, not 6,144. See [the qualification record](docs/qualification.json) for the captured package, source hashes and exact engine versions.
+The historical automatic JS/fd product source passed **102 Node groups** through the extracted npm artifact: **93 core, 2 deep campaigns and 7 installed-Pi SDK groups**, with no failures, skips or source changes. The campaigns completed **3,072 seeded GNU comparisons** and **1,536 locale/expression comparisons**, with zero mismatches and zero runtime fallbacks in qualified cases. The automatic-routing regression adds 20 complete GNU comparisons with eight actual automatic fd calls; the speed capture adds 432 timing/warmup comparisons across 18 classes. [Historical automatic qualification](docs/automatic-qualification.json) records exact hashes and scope, including its tested archive identity. Documentation edits after that test do not redefine the archive's original bytes.
+
+The retained pre-automatic qualification tested experimental semantic routes and the previous native-default policy. The packed build passed **100 Node test groups** in each of the Node 26/fd 9 desktop and Node 24/fdfind 10 VM environments: **91 core, 2 campaign and 7 SDK groups**, including offline installation, with no failures or skips. Both replayed the **3,072-case seeded CLI** and **1,536-case expression** campaigns with zero mismatches. The expression campaign required 2,152 actual fd searches and zero native fallbacks. The seeded campaign separates 350 original-native cases, 16 incremental cases and 340 scan-free cases from 2,366 batched fd-search cases; those routes made 3,743 actual fd calls per environment. Metadata, formatting, raw-byte, traversal, descriptor, documented-alias and cancellation regressions add separately recorded checks. See [pre-automatic qualification](docs/broader-qualification.json) for the immutable archive, hashes and actual routing evidence, and [the coverage map](docs/coverage.json) for explicit native boundaries. Replaying a corpus on two environments does not double unique-case coverage.
+
+The [earlier expanded qualification](docs/expanded-qualification.json), which passed 64 Node tests per environment before the metadata/formatting broker and descriptor repair, and [original qualification](docs/qualification.json) remain historical evidence.
 
 ## Project structure
 
 ```text
 find2fd/
 ├── bin/
-│   ├── find2fd                   Public Bash CLI; preserves raw argument bytes
+│   ├── find2fd                   Public Bash CLI; Rust default, direct GNU fallback and explicit JS experiment
 │   ├── find2fd.mjs               Internal Node dispatcher; original GNU arguments
 │   └── find2fd-shell-prefix.mjs  Emits the private Bash function
 ├── src/
 │   ├── find-options.mjs         GNU expression parsing and qualification
 │   ├── find-order.mjs           Candidate records, ancestor ordering and path rendering
+│   ├── find-evaluate.mjs        Nonrecursive GNU predicates and contextual formatting
+│   ├── find-descriptors.mjs     Caller descriptor preservation and private input slots
+│   ├── find-incremental.mjs     GNU control decisions before immediate fd listing
 │   ├── find-runtime.mjs         fd execution, limits and transparent GNU fallback
 │   └── find-wrapper.mjs         planFind, runFind and withFindWrapper interfaces
 ├── pi/
 │   └── find2fd.ts               Optional provider-scoped native Pi bash integration
+├── rust/
+│   ├── Cargo.toml               Native Rust executable and locked dependencies
+│   ├── Cargo.lock               Reproducible dependency resolution
+│   └── src/main.rs              GNU-compatible parsing, matching and ordered traversal
 ├── tests/                       Synthetic GNU comparisons and focused regressions
 ├── tools/
 │   ├── verify.mjs               Tiered checks and structured JSON reports
-│   └── verify-artifact.mjs      Packs, extracts and verifies the npm artifact
+│   ├── verify-artifact.mjs      Packs, extracts and verifies the existing npm CLI
+│   ├── verify-rust-artifact.mjs Rebuilds and verifies the packaged Rust source
+│   ├── benchmark-processes.py  Bounded process timer with complete byte capture
+│   └── benchmark-rust-engine.py Compares Rust, direct GNU find and direct fd
 ├── docs/                        Compatibility and verification details
 ├── package.json                 CLI, runtime and optional Pi metadata
 ├── LICENSE                      Full Apache License 2.0

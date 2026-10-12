@@ -1,11 +1,17 @@
-import { spawn } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 import { isUtf8 } from "node:buffer";
-import { lstatSync, readFileSync, readlinkSync } from "node:fs";
-import { resolve } from "node:path";
-import { fdArguments, nameMatches, parseFindOptions, rootName } from "./find-options.mjs";
+import { closeSync, lstatSync, mkdtempSync, openSync, readFileSync, readlinkSync, realpathSync, rmdirSync, statSync, unlinkSync, writeSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import { evaluateFind, fdArguments, parseFindOptions, rootName } from "./find-options.mjs";
 import { decodeCandidates, displayPath, MAX_CANDIDATES, orderCandidates } from "./find-order.mjs";
+import { createEvaluationRequests, MAX_EVALUATION_RECORDS } from "./find-evaluate.mjs";
+import { inheritedStdio } from "./find-descriptors.mjs";
+import { incrementalPathReason, runIncremental } from "./find-incremental.mjs";
 
 export const MAX_CAPTURE_BYTES = 32 * 1024 * 1024;
+export const MAX_OUTPUT_RECORDS = MAX_CANDIDATES;
 export const FD_TIMEOUT_MS = 10000;
 const nativePlan = (argv, cwd, reason) => ({ backend: "find", args: argv, cwd, reason });
 
@@ -14,9 +20,20 @@ function currentDirectory() {
 }
 
 export function planFind(argv, configuration = {}) {
+  if (["off", "0"].includes(process.env.FIND2FD_ACCELERATION))
+    return nativePlan(argv, configuration.cwd ?? currentDirectory(), "explicit GNU routing");
+  if (process.env.FIND2FD_EXPERIMENTAL_FD !== "1") {
+    if (Object.hasOwn(process.env, "FIND2FD_EXPERIMENTAL_FD") || ["off", "0"].includes(process.env.FIND2FD_ACCELERATION))
+      return nativePlan(argv, configuration.cwd ?? currentDirectory(), "explicit GNU routing");
+    const policy = fileURLToPath(new URL("./find-auto.sh", import.meta.url));
+    const decision = spawnSync("/usr/bin/bash", ["--noprofile", "--norc", "-c", 'source "$1"; shift; _find2fd_auto_eligible "$@"', "find2fd-auto", policy, ...argv],
+      { cwd: configuration.cwd ?? currentDirectory(), stdio: "ignore", timeout: 10000 });
+    if (decision.error || decision.status !== 0)
+      return nativePlan(argv, configuration.cwd ?? currentDirectory(), "GNU wins small/dense/shallow or unqualified automatic class");
+  }
   const actualCwd = currentDirectory();
   const cwd = configuration.cwd ?? actualCwd;
-  const parsed = parseFindOptions(argv);
+  const parsed = parseFindOptions(argv, { cwd, callerDescriptors: configuration.callerDescriptors });
   if (!parsed.eligible) return nativePlan(argv, cwd, parsed.reason);
   if (process.platform !== "linux") return nativePlan(argv, cwd, "platform is outside the Linux qualification");
   if (cwd === undefined) return nativePlan(argv, cwd, "current directory path is unavailable");
@@ -27,17 +44,30 @@ export function planFind(argv, configuration = {}) {
     } catch { return nativePlan(argv, cwd, "cannot qualify current directory bytes"); }
   }
   const options = parsed.options;
-  if (options.action === "print" && process.stdout.isTTY) return nativePlan(argv, cwd, "GNU terminal pathname quoting");
+  if (options.contextualPrintf && process.stdout.isTTY)
+    return nativePlan(argv, cwd, "GNU terminal quoting of contextual printf fields");
+  if (!["gnu-evaluate", "gnu-incremental"].includes(options.mode) && options.action === "print" && process.stdout.isTTY)
+    return nativePlan(argv, cwd, "GNU terminal pathname quoting");
   if (options.roots.length > 256) return nativePlan(argv, cwd, "starting root count bound");
   const searches = [];
   try {
     for (const root of options.roots) {
-      const path = resolve(cwd, root);
-      if (!lstatSync(path).isDirectory()) return nativePlan(argv, cwd, "starting root is not a regular directory");
-      searches.push({ root, path, args: fdArguments(path, options) });
+      let path = resolve(cwd, root);
+      let entry = lstatSync(path);
+      if (["L", "H"].includes(options.dereference)) {
+        try { entry = statSync(path); }
+        catch (error) { if (!["ENOENT", "ENOTDIR"].includes(error.code)) throw error; }
+        if (entry.isDirectory()) path = realpathSync(path);
+      }
+      const directory = entry.isDirectory();
+      searches.push({ root, path, entry, directory, args: directory ? fdArguments(path, options) : [] });
     }
   } catch { return nativePlan(argv, cwd, "GNU starting path diagnostics"); }
-  return { backend: "fd", mode: "listing", args: searches[0].args, searches, options, cwd };
+  if (options.mode === "gnu-incremental") {
+    const reason = incrementalPathReason(options, searches, cwd);
+    if (reason) return nativePlan(argv, cwd, reason);
+  }
+  return { backend: "fd", mode: options.mode === "gnu-incremental" ? "incremental" : "listing", args: searches.find((search) => search.directory)?.args ?? [], searches, options, cwd };
 }
 
 const signalStatus = (signal) => ({ SIGINT: 130, SIGTERM: 143, SIGPIPE: 141, SIGHUP: 129 })[signal] ?? 1;
@@ -74,9 +104,35 @@ function signalSnapshot(records, signal) {
   }
 }
 
-function runNative(argv, cwd, state) {
+function runNative(argv, cwd, state, input, inputFd = 3) {
   return new Promise((done) => {
-    const child = spawn("find", argv, { cwd, stdio: "inherit" });
+    // Evaluation receives paths on a private descriptor. Original stdin and
+    // terminal streams remain inherited, including GNU's pathname quoting.
+    let descriptor, directory, filename, child;
+    try {
+      if (input !== undefined) {
+        // Node's "pipe" is a Unix socket and cannot be reopened through /proc.
+        // An unlinked private regular file provides a seekable fd without
+        // taking over the caller's stdin or exposing a persistent pathname.
+        directory = mkdtempSync(join(tmpdir(), "find2fd-input-"));
+        filename = join(directory, "paths");
+        descriptor = openSync(filename, "wx+", 0o600);
+        unlinkSync(filename); filename = undefined;
+        rmdirSync(directory); directory = undefined;
+        let offset = 0;
+        while (offset < input.length) offset += writeSync(descriptor, input, offset, input.length - offset, offset);
+      }
+      const stdio = inheritedStdio(undefined, state.callerDescriptors);
+      if (descriptor !== undefined) stdio[inputFd] = descriptor;
+      child = spawn("find", argv, { cwd, stdio });
+    } catch (error) {
+      process.stderr.write(`find: could not prepare evaluation input: ${error.code ?? "input failure"}\n`);
+      done(1); return;
+    } finally {
+      if (descriptor !== undefined) closeSync(descriptor);
+      if (filename) try { unlinkSync(filename); } catch { /* Owned partial input. */ }
+      if (directory) try { rmdirSync(directory); } catch { /* Owned directory. */ }
+    }
     let cleanup;
     state.stop = (signal) => {
       if (cleanup) return;
@@ -167,26 +223,39 @@ export async function runFind(argv, configuration = {}) {
   const cwd = configuration.cwd ?? currentDirectory();
   // An inherited OS cwd retains bytes that process.cwd() cannot represent.
   const nativeCwd = configuration.cwd === undefined ? undefined : cwd;
-  const state = { signal: null, stop: null };
+  const state = { signal: null, stop: null, callerDescriptors: configuration.callerDescriptors };
   const interrupted = (signal) => { state.signal = signal; state.stop?.(signal); };
   const onInt = () => interrupted("SIGINT"), onTerm = () => interrupted("SIGTERM"), onHup = () => interrupted("SIGHUP");
   process.on("SIGINT", onInt); process.on("SIGTERM", onTerm); process.on("SIGHUP", onHup);
   try {
-    const plan = planFind(argv, { cwd });
+    const plan = planFind(argv, { cwd, callerDescriptors: configuration.callerDescriptors });
     if (plan.backend === "find") return await runNative(argv, nativeCwd, state);
     const { options } = plan;
-    const records = [], terminator = Buffer.from(options.action === "print0" ? [0] : [10]);
+    if (options.mode === "gnu-incremental") {
+      const status = await runIncremental(plan, state, { captureFd, processIdentity, ownedDescendants, signalSnapshot, signalStatus });
+      return status === null ? await runNative(argv, nativeCwd, state) : status;
+    }
+    const records = [], terminators = { print: Buffer.from([10]), print0: Buffer.from([0]) };
+    const evaluationRecords = [];
+    let evaluationBytes = 0;
+    const appendEvaluation = (record) => {
+      evaluationBytes += record.path.length + 1;
+      if (evaluationRecords.length >= MAX_EVALUATION_RECORDS || evaluationBytes > MAX_CAPTURE_BYTES)
+        throw new Error("GNU evaluation input bound");
+      evaluationRecords.push(record);
+    };
     const budget = { entries: 0, parents: 0 };
-    let captured = 0, outputBytes = 0, totalCandidates = 0;
-    const append = (path) => {
+    let captured = 0, outputBytes = 0, totalCandidates = 0, outputRecords = 0;
+    const append = (path, action) => {
       outputBytes += path.length + 1;
+      if (++outputRecords > MAX_OUTPUT_RECORDS) throw new Error("formatted output record bound");
       if (outputBytes > MAX_CAPTURE_BYTES) throw new Error("formatted output byte bound");
-      records.push(path, terminator);
+      records.push(path, terminators[action]);
     };
     try {
       for (const search of plan.searches) {
-        let data = await captureFd(search.args, cwd, state, MAX_CAPTURE_BYTES - captured);
-        if (data === undefined && !state.signal)
+        let data = search.directory ? await captureFd(search.args, cwd, state, MAX_CAPTURE_BYTES - captured) : Buffer.alloc(0);
+        if (search.directory && data === undefined && !state.signal)
           data = await captureFd(search.args, cwd, state, MAX_CAPTURE_BYTES - captured, "fdfind");
         if (state.signal) return signalStatus(state.signal);
         if (data === null || data === undefined) throw new Error("fd dependency, error, timeout or response bound");
@@ -195,15 +264,45 @@ export async function runFind(argv, configuration = {}) {
         totalCandidates += candidates.length;
         if (totalCandidates > MAX_CANDIDATES) throw new Error("total candidate count bound");
         const ordered = orderCandidates(search.path, candidates, options, budget);
-        if (!options.minDepth && (!options.type || options.type === "d") &&
-            options.names.every((pattern) => nameMatches(rootName(search.root), pattern))) append(Buffer.from(search.root));
-        for (const candidate of ordered) append(displayPath(search.root, candidate.relative));
+        if (options.xdev && options.dereference === "L" && ordered.some((candidate) => candidate.entry.isDirectory() &&
+          statSync(Buffer.concat([Buffer.from(search.path === "/" ? "/" : `${search.path}/`), candidate.relative])).dev !== search.entry.dev))
+          throw new Error("GNU logical cross-filesystem boundary evaluation");
+        if (options.mode === "gnu-evaluate") {
+          const rootRecord = { path: Buffer.from(search.root), root: search.root, relative: Buffer.alloc(0), depth: 0 };
+          if (!options.minDepth && !options.depth) appendEvaluation(rootRecord);
+          for (const candidate of ordered)
+            appendEvaluation({ path: displayPath(search.root, candidate.relative), root: search.root, relative: candidate.relative, depth: candidate.parts.length });
+          if (!options.minDepth && options.depth) appendEvaluation(rootRecord);
+          continue;
+        }
+        const appendRoot = () => {
+          if (options.minDepth) return;
+          const path = Buffer.from(search.root);
+          for (const action of evaluateFind(options.expression, { name: rootName(search.root), path, entry: search.entry }).actions) append(path, action);
+        };
+        if (!options.depth) appendRoot();
+        for (const candidate of ordered) {
+          const path = displayPath(search.root, candidate.relative);
+          for (const action of evaluateFind(options.expression, { name: candidate.parts.at(-1), path, entry: candidate.entry }).actions) append(path, action);
+        }
+        if (options.depth) appendRoot();
       }
     } catch {
       if (state.signal) return signalStatus(state.signal);
       return await runNative(argv, nativeCwd, state);
     }
     if (state.signal) return signalStatus(state.signal);
+    if (options.mode === "gnu-evaluate") {
+      let requests;
+      try { requests = createEvaluationRequests(options, evaluationRecords); }
+      catch { return await runNative(argv, nativeCwd, state); }
+      for (const request of requests) {
+        if (state.signal) return signalStatus(state.signal);
+        const status = await runNative(request.args, cwd, state, request.input, request.inputFd);
+        if (status) return status;
+      }
+      return 0;
+    }
     if (!outputBytes) return 0;
     return await writeOutput(Buffer.concat(records, outputBytes), state);
   } finally {

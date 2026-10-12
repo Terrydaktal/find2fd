@@ -1,0 +1,1827 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-12T23:10:39.483Z",
+  "status": "passed",
+  "scope": "Actual npm source archive, independently rebuilt Rust release, packaged full-byte GNU-oracle tests and CLI comparisons from outside the source checkout.",
+  "source": "/home/lewis/Dev/find2fd",
+  "output": "/home/lewis/Dev/find2fd/artifacts/rust-package-with-default-routing-final.json",
+  "archiveDirectory": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K",
+  "workingDirectory": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+  "isolation": {
+    "extractedSource": "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted",
+    "cargoTarget": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target",
+    "npmCache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+    "lifecycleScripts": "disabled during npm pack",
+    "cargoBuild": "release, locked, offline",
+    "testsWorkingDirectoryOutsideSource": true,
+    "originalRustTargetUsedForBuild": false
+  },
+  "stages": [
+    {
+      "name": "Pack the real npm distribution without lifecycle scripts",
+      "program": "npm",
+      "argv": [
+        "pack",
+        "--json",
+        "--ignore-scripts",
+        "--offline",
+        "--pack-destination",
+        "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K"
+      ],
+      "cwd": "/home/lewis/Dev/find2fd",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 173.38201700000002,
+      "error": null,
+      "stdoutBytes": 7455,
+      "stderrBytes": 0,
+      "stdoutSHA256": "e75d87b8d158dd0afb143280243fa3eee443767852cddc2642bef812165ab9bf",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\n  \"find2fd\": {\n    \"id\": \"find2fd@0.1.0\",\n    \"name\": \"find2fd\",\n    \"version\": \"0.1.0\",\n    \"size\": 217192,\n    \"unpackedSize\": 984796,\n    \"shasum\": \"cfa6257fa62e20b33eb6941178016c5aa6cad877\",\n    \"integrity\": \"sha512-QmBB3OSMRpYLn+0VkZ4xj5g+WTDdCbXSKXCKqJ/Xe7MR2/vRBte/mCBohR+1MQo1odYtH8GpCvyZrF4kMYhG3A==\",\n    \"filename\": \"find2fd-0.1.0.tgz\",\n    \"files\": [\n      {\n        \"path\": \"LICENSE\",\n        \"size\": 11358,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"NOTICE\",\n        \"size\": 658,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"README.md\",\n        \"size\": 26422,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"bin/find2fd\",\n        \"size\": 2293,\n        \"mode\": 493\n      },\n      {\n        \"path\": \"bin/find2fd-shell-prefix.mjs\",\n        \"size\": 277,\n        \"mode\": 493\n      },\n      {\n        \"path\": \"bin/find2fd.mjs\",\n        \"size\": 210,\n        \"mode\": 493\n      },\n      {\n        \"path\": \"docs/automatic-qualification.json\",\n        \"size\": 6044,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"docs/automatic-routing-audit.json\",\n        \"size\": 53838,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"docs/automatic-routing-performance.json\",\n        \"size\": 23163,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"docs/broader-qualification.json\",\n        \"size\": 66308,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"docs/compatibility.md\",\n        \"size\": 13688,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"docs/coverage.json\",\n        \"size\": 25258,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"docs/expanded-qualification.json\",\n        \"size\": 23413,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"docs/qualification.json\",\n        \"size\": 8281,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"docs/rust-engine-performance.json\",\n        \"size\": 81989,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"docs/rust-engine-qualification.json\",\n        \"size\": 82946,\n        \"mode\": 384\n      },\n      {\n        \"path\": \"docs/rust-engine.md\",\n        \"size\": 9563,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"docs/verification.md\",\n        \"size\": 13039,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"package.json\",\n        \"size\": 1763,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"pi/find2fd.ts\",\n        \"size\": 1534,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"rust/Cargo.lock\",\n        \"size\": 4228,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"rust/Cargo.toml\",\n        \"size\": 403,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"rust/src/main.rs\",\n        \"size\": 31446,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"src/find-auto.sh\",\n        \"size\": 4722,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"src/find-descriptors.mjs\",\n        \"size\": 1894,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"src/find-evaluate.mjs\",\n        \"size\": 6196,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"src/find-incremental.mjs\",\n        \"size\": 20768,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"src/find-options.mjs\",\n        \"size\": 23008,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"src/find-order.mjs\",\n        \"size\": 5730,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"src/find-runtime.mjs\",\n        \"size\": 16338,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"src/find-wrapper.mjs\",\n        \"size\": 3014,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/find_incremental_helpers.mjs\",\n        \"size\": 3867,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/find_metadata_helpers.mjs\",\n        \"size\": 5824,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/find_option_inventory.json\",\n        \"size\": 54178,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/find_wrapper_requirements.json\",\n        \"size\": 10956,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/helpers.mjs\",\n        \"size\": 5624,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/rust-engine-contract.json\",\n        \"size\": 35930,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_benchmark_processes.mjs\",\n        \"size\": 8809,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_automatic_routing.mjs\",\n        \"size\": 4898,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_campaign.mjs\",\n        \"size\": 7543,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_cli.mjs\",\n        \"size\": 3192,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_default_policy.mjs\",\n        \"size\": 11451,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_descriptors.mjs\",\n        \"size\": 9302,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_expression_campaign.mjs\",\n        \"size\": 9760,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_expressions.mjs\",\n        \"size\": 11724,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_fallback.mjs\",\n        \"size\": 3668,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_incremental_runtime.mjs\",\n        \"size\": 13920,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_incremental.mjs\",\n        \"size\": 10448,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_leading_flags.mjs\",\n        \"size\": 2510,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_metadata_formats.mjs\",\n        \"size\": 2075,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_metadata_traversal.mjs\",\n        \"size\": 2640,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_metadata.mjs\",\n        \"size\": 4534,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_options.mjs\",\n        \"size\": 7047,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_runtime.mjs\",\n        \"size\": 19828,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_rust_routing.mjs\",\n        \"size\": 11190,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_find_scope.mjs\",\n        \"size\": 14509,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_package_artifact.mjs\",\n        \"size\": 5062,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_package_entry.mjs\",\n        \"size\": 10403,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tests/test_rust_engine.mjs\",\n        \"size\": 39321,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tools/benchmark-processes.py\",\n        \"size\": 11323,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tools/benchmark-routing.py\",\n        \"size\": 8700,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tools/benchmark-rust-engine.py\",\n        \"size\": 12900,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tools/build-rust.mjs\",\n        \"size\": 1433,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tools/render-rust-results.py\",\n        \"size\": 10055,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tools/verify-artifact.mjs\",\n        \"size\": 5235,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tools/verify-rust-artifact.mjs\",\n        \"size\": 20913,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"tools/verify.mjs\",\n        \"size\": 14232,\n        \"mode\": 420\n      }\n    ],\n    \"entryCount\": 67,\n    \"bundled\": []\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "Inspect the actual archive entries",
+      "program": "tar",
+      "argv": [
+        "-tzf",
+        "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/find2fd-0.1.0.tgz"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 3.8387600000000077,
+      "error": null,
+      "stdoutBytes": 2320,
+      "stderrBytes": 0,
+      "stdoutSHA256": "9ce842cf987d7649645dc4f9e5bb1096aefc4aa1c3510357a38260c5057cb7aa",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "package/bin/find2fd\npackage/LICENSE\npackage/NOTICE\npackage/docs/automatic-qualification.json\npackage/docs/automatic-routing-audit.json\npackage/docs/automatic-routing-performance.json\npackage/docs/broader-qualification.json\npackage/docs/coverage.json\npackage/docs/expanded-qualification.json\npackage/tests/find_option_inventory.json\npackage/tests/find_wrapper_requirements.json\npackage/package.json\npackage/docs/qualification.json\npackage/tests/rust-engine-contract.json\npackage/docs/rust-engine-performance.json\npackage/docs/rust-engine-qualification.json\npackage/rust/Cargo.lock\npackage/docs/compatibility.md\npackage/README.md\npackage/docs/rust-engine.md\npackage/docs/verification.md\npackage/tools/build-rust.mjs\npackage/tests/find_incremental_helpers.mjs\npackage/tests/find_metadata_helpers.mjs\npackage/src/find-descriptors.mjs\npackage/src/find-evaluate.mjs\npackage/src/find-incremental.mjs\npackage/src/find-options.mjs\npackage/src/find-order.mjs\npackage/src/find-runtime.mjs\npackage/src/find-wrapper.mjs\npackage/bin/find2fd-shell-prefix.mjs\npackage/bin/find2fd.mjs\npackage/tests/helpers.mjs\npackage/tests/test_benchmark_processes.mjs\npackage/tests/test_find_automatic_routing.mjs\npackage/tests/test_find_campaign.mjs\npackage/tests/test_find_cli.mjs\npackage/tests/test_find_default_policy.mjs\npackage/tests/test_find_descriptors.mjs\npackage/tests/test_find_expression_campaign.mjs\npackage/tests/test_find_expressions.mjs\npackage/tests/test_find_fallback.mjs\npackage/tests/test_find_incremental_runtime.mjs\npackage/tests/test_find_incremental.mjs\npackage/tests/test_find_leading_flags.mjs\npackage/tests/test_find_metadata_formats.mjs\npackage/tests/test_find_metadata_traversal.mjs\npackage/tests/test_find_metadata.mjs\npackage/tests/test_find_options.mjs\npackage/tests/test_find_runtime.mjs\npackage/tests/test_find_rust_routing.mjs\npackage/tests/test_find_scope.mjs\npackage/tests/test_package_artifact.mjs\npackage/tests/test_package_entry.mjs\npackage/tests/test_rust_engine.mjs\npackage/tools/verify-artifact.mjs\npackage/tools/verify-rust-artifact.mjs\npackage/tools/verify.mjs\npackage/tools/benchmark-processes.py\npackage/tools/benchmark-routing.py\npackage/tools/benchmark-rust-engine.py\npackage/tools/render-rust-results.py\npackage/rust/src/main.rs\npackage/src/find-auto.sh\npackage/rust/Cargo.toml\npackage/pi/find2fd.ts\n",
+      "stderr": ""
+    },
+    {
+      "name": "Extract the source package outside the repository",
+      "program": "tar",
+      "argv": [
+        "-xzf",
+        "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/find2fd-0.1.0.tgz",
+        "-C",
+        "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 3.392565000000019,
+      "error": null,
+      "stdoutBytes": 0,
+      "stderrBytes": 0,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "Record cargo version",
+      "program": "cargo",
+      "argv": [
+        "--version",
+        "--verbose"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 6.969459999999998,
+      "error": null,
+      "stdoutBytes": 327,
+      "stderrBytes": 0,
+      "stdoutSHA256": "62a51fe726df9b1369e819435ba8b0615eef2cd90c18029052c5446edb5bc029",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "cargo 1.90.0 (840b83a10 2025-07-30)\nrelease: 1.90.0\ncommit-hash: 840b83a10fb0e039a83f4d70ad032892c287570a\ncommit-date: 2025-07-30\nhost: x86_64-unknown-linux-gnu\nlibgit2: 1.9.1 (sys:0.20.2 vendored)\nlibcurl: 8.14.1-DEV (sys:0.4.82+curl-8.14.1 vendored ssl:OpenSSL/3.5.0)\nssl: OpenSSL 3.5.0 8 Apr 2025\nos: CachyOS Linux [64-bit]\n",
+      "stderr": ""
+    },
+    {
+      "name": "Record rustc version",
+      "program": "rustc",
+      "argv": [
+        "--version",
+        "--verbose"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 8.967949000000004,
+      "error": null,
+      "stdoutBytes": 196,
+      "stderrBytes": 0,
+      "stdoutSHA256": "938db28b83089ab88301ca425f99fa1d8b61ee66e0371babe1db6373ae9810a3",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "rustc 1.90.0 (1159e78c4 2025-09-14)\nbinary: rustc\ncommit-hash: 1159e78c4747b02ef996e55082b704c09b970588\ncommit-date: 2025-09-14\nhost: x86_64-unknown-linux-gnu\nrelease: 1.90.0\nLLVM version: 20.1.8\n",
+      "stderr": ""
+    },
+    {
+      "name": "Record npm version",
+      "program": "npm",
+      "argv": [
+        "--version"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 41.15827299999998,
+      "error": null,
+      "stdoutBytes": 7,
+      "stderrBytes": 0,
+      "stdoutSHA256": "2013b258fd4defb17ad242f1c447dd734dd9e1be76761494b4a9a3b6f2797241",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "12.0.2\n",
+      "stderr": ""
+    },
+    {
+      "name": "Record GNU version",
+      "program": "/usr/bin/find",
+      "argv": [
+        "--version"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 1.3043069999999943,
+      "error": null,
+      "stdoutBytes": 460,
+      "stderrBytes": 0,
+      "stdoutSHA256": "29ed88d2588f53dcd45a006bc3ecc8d9f7db4f6da33040dd1988a62067a25cca",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "find (GNU findutils) 4.11.0-modified\nCopyright (C) 2026 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Eric B. Decker, James Youngman, Bernhard Voelker,\nand Kevin Dalley.\nFeatures enabled: D_TYPE O_NOFOLLOW(enabled) LEAF_OPTIMISATION FTS(FTS_CWDFD) CBO(level=1) \n",
+      "stderr": ""
+    },
+    {
+      "name": "Build only the extracted Rust source with locked offline dependencies",
+      "program": "cargo",
+      "argv": [
+        "build",
+        "--release",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted/package/rust/Cargo.toml",
+        "--target-dir",
+        "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 600000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "CARGO_TARGET_DIR": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target",
+        "CARGO_NET_OFFLINE": "true"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 4155.241642,
+      "error": null,
+      "stdoutBytes": 0,
+      "stderrBytes": 526,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "b9902adba6fdeb41d70e0b7001cd3b663a49843eecfcb8bb2642283ac407e7a1",
+      "stdout": "",
+      "stderr": "   Compiling crossbeam-utils v0.8.23\n   Compiling crossbeam-epoch v0.9.21\n   Compiling crossbeam-deque v0.8.8\n   Compiling serde_core v1.0.229\n   Compiling zmij v1.0.23\n   Compiling rayon-core v1.13.0\n   Compiling serde_json v1.0.154\n   Compiling libc v0.2.190\n   Compiling itoa v1.0.18\n   Compiling either v1.19.0\n   Compiling memchr v2.8.3\n   Compiling rayon v1.12.0\n   Compiling find2fd-rust v0.1.0 (/tmp/find2fd-rust-package-cwd-eUxuPk/extracted/package/rust)\n    Finished `release` profile [optimized] target(s) in 4.14s\n"
+    },
+    {
+      "name": "Run the packaged Rust GNU-oracle suite from an outside cwd",
+      "program": "/usr/bin/node",
+      "argv": [
+        "--test",
+        "--test-reporter=tap",
+        "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted/package/tests/test_rust_engine.mjs",
+        "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted/package/tests/test_find_rust_routing.mjs"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 300000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust",
+        "TMPDIR": "/tmp/find2fd-rust-package-cwd-eUxuPk/test-temporary"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 2234.55894,
+      "error": null,
+      "stdoutBytes": 13331,
+      "stderrBytes": 0,
+      "stdoutSHA256": "a26ee473b545021baaa500eebe7f7ebb031e242e3fb6df80f6a1627aca6f7273",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "TAP version 13\n# Subtest: compiled public CLI and Pi hook use Rust for ordinary searches, with no Node/fd/GNU helper\nok 1 - compiled public CLI and Pi hook use Rust for ordinary searches, with no Node/fd/GNU helper\n  ---\n  duration_ms: 48.383586\n  type: 'test'\n  ...\n# {\"campaign\":\"compiled-public-and-Pi-routing\",\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\",\"comparisons\":10,\"rustSearches\":10,\"gnuFallbacks\":0,\"ioComparisons\":0,\"failures\":0,\"classes\":{\"native-public\":5,\"native-private-Bash\":5}}\n# Subtest: Rust delegates unsupported expressions once, retaining GNU diagnostics and action boundaries\nok 2 - Rust delegates unsupported expressions once, retaining GNU diagnostics and action boundaries\n  ---\n  duration_ms: 46.433749\n  type: 'test'\n  ...\n# {\"campaign\":\"compiled-public-and-Pi-routing\",\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\",\"comparisons\":8,\"rustSearches\":0,\"gnuFallbacks\":8,\"ioComparisons\":0,\"failures\":0,\"classes\":{\"delegation-public\":4,\"delegation-private-Bash\":4}}\n# Subtest: explicit optouts and missing builds use GNU without launching Rust, Node or fd\nok 3 - explicit optouts and missing builds use GNU without launching Rust, Node or fd\n  ---\n  duration_ms: 70.710277\n  type: 'test'\n  ...\n# {\"campaign\":\"compiled-public-and-Pi-routing\",\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\",\"comparisons\":16,\"rustSearches\":0,\"gnuFallbacks\":16,\"ioComparisons\":0,\"failures\":0,\"classes\":{\"optout-public\":8,\"optout-private-Bash\":8}}\n# Subtest: private Rust function stays local to model commands; bypasses and child/user shells retain GNU\nok 4 - private Rust function stays local to model commands; bypasses and child/user shells retain GNU\n  ---\n  duration_ms: 18.02683\n  type: 'test'\n  ...\n# {\"campaign\":\"compiled-public-and-Pi-routing\",\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\",\"comparisons\":2,\"rustSearches\":0,\"gnuFallbacks\":1,\"ioComparisons\":1,\"failures\":0,\"classes\":{\"private-scope\":1,\"outside-user-shell\":1}}\n# Subtest: standard package-relative Rust lookup survives symlink chains and shell-metacharacter install paths\nok 5 - standard package-relative Rust lookup survives symlink chains and shell-metacharacter install paths\n  ---\n  duration_ms: 14.969118\n  type: 'test'\n  ...\n# {\"campaign\":\"compiled-public-and-Pi-routing\",\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\",\"comparisons\":2,\"rustSearches\":2,\"gnuFallbacks\":0,\"ioComparisons\":0,\"failures\":0,\"classes\":{\"relocated-public\":1,\"relocated-private-Bash\":1}}\n# Subtest: closed stdin/stdout delegate before runtime initialization can replace their descriptor state\nok 6 - closed stdin/stdout delegate before runtime initialization can replace their descriptor state\n  ---\n  duration_ms: 22.480221\n  type: 'test'\n  ...\n# {\"campaign\":\"compiled-public-and-Pi-routing\",\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\",\"comparisons\":4,\"rustSearches\":0,\"gnuFallbacks\":4,\"ioComparisons\":0,\"failures\":0,\"classes\":{\"closed-descriptor-public\":2,\"closed-descriptor-private-Bash\":2}}\n# Subtest: Rust release native find grammar preserves ordered complete raw paths\nok 7 - Rust release native find grammar preserves ordered complete raw paths\n  ---\n  duration_ms: 144.365475\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":57,\"rustSearches\":56,\"gnuFallbacks\":1,\"ioComparisons\":0,\"classes\":{\"default-print\":1,\"physical-traversal\":1,\"literal-name\":1,\"glob-name\":1,\"folded-name\":1,\"path-pattern\":1,\"folded-path\":1,\"whole-path-alias\":1,\"folded-whole-path-alias\":1,\"type-filter\":1,\"depth-bounds\":1,\"and-expression\":1,\"or-expression\":1,\"not-expression\":1,\"comma-expression\":1,\"parenthesized-expression\":1,\"constant-predicates\":1,\"repeated-actions\":1,\"explicit-print-short-circuit\":1,\"duplicate-roots\":1,\"root-file\":1,\"root-symlink\":1,\"root-dangling-symlink\":1,\"empty-directory\":1,\"root-spelling\":6,\"root-spelling-maxdepth-zero\":6,\"type-alphabet\":7,\"gnu-glob-boundaries\":7,\"pathname-name-warning-guard\":1,\"gnu-path-boundaries\":6},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find boolean printing and global depth semantics match GNU\nok 8 - Rust find boolean printing and global depth semantics match GNU\n  ---\n  duration_ms: 73.144501\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":25,\"rustSearches\":25,\"gnuFallbacks\":0,\"ioComparisons\":0,\"classes\":{\"boolean-and-depth-boundaries\":23,\"implicit-root\":1,\"no-argv-default-root\":1},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find root basename and terminal-slash symlink semantics match GNU\nok 9 - Rust find root basename and terminal-slash symlink semantics match GNU\n  ---\n  duration_ms: 131.62444\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":52,\"rustSearches\":28,\"gnuFallbacks\":24,\"ioComparisons\":0,\"classes\":{\"root-terminal-slash-traversal\":7,\"root-basename-predicate\":42,\"terminal-slash-invalid-root\":3},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find seeded native interaction campaign uses the independent GNU CLI\nok 10 - Rust find seeded native interaction campaign uses the independent GNU CLI\n  ---\n  duration_ms: 885.77219\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":384,\"rustSearches\":384,\"gnuFallbacks\":0,\"ioComparisons\":0,\"classes\":{\"seeded-native-expression\":384},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find optimized literal, prefix, suffix and contains globs preserve GNU bytes\nok 11 - Rust find optimized literal, prefix, suffix and contains globs preserve GNU bytes\n  ---\n  duration_ms: 192.670482\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":50,\"rustSearches\":50,\"gnuFallbacks\":0,\"ioComparisons\":0,\"classes\":{\"optimized-name-glob-boundaries\":40,\"optimized-path-glob-boundaries\":10},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find delegates unsupported GNU semantics before observable output\nok 12 - Rust find delegates unsupported GNU semantics before observable output\n  ---\n  duration_ms: 112.626834\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":31,\"rustSearches\":0,\"gnuFallbacks\":31,\"ioComparisons\":0,\"classes\":{\"symlink-following\":1,\"recursive-symlink-following\":1,\"depth-first-traversal\":1,\"prune-action\":1,\"quit-action\":1,\"metadata-predicate\":1,\"formatted-output\":1,\"regex-predicate\":1,\"exec-action\":1,\"files0-input\":1,\"missing-root\":1,\"malformed-expression\":1,\"position-sensitive-warning\":1,\"depth-overflow\":1,\"invalid-or-unsupported-argv\":15,\"later-global-option-warning\":2},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find option inventory classifies every GNU spelling without running actions\nok 13 - Rust find option inventory classifies every GNU spelling without running actions\n  ---\n  duration_ms: 89.358041\n  type: 'test'\n  ...\n# {\"campaign\":\"rust-GNU-option-inventory\",\"GNUHelpOptionSpellings\":81,\"classifiedOptionsAndOperators\":91,\"nonExecutingRouteChecks\":91,\"destructiveActionsExecuted\":0}\n# {\"seed\":\"0x46444e31\",\"comparisons\":0,\"rustSearches\":0,\"gnuFallbacks\":0,\"ioComparisons\":0,\"classes\":{},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find fallback actions preserve owned filesystem side effects\nok 14 - Rust find fallback actions preserve owned filesystem side effects\n  ---\n  duration_ms: 47.511858\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":6,\"rustSearches\":0,\"gnuFallbacks\":6,\"ioComparisons\":0,\"classes\":{\"owned-output-and-exec-actions\":5,\"owned-delete-action\":1},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find native parallel traversal restores GNU preorder without losing duplicate roots\nok 15 - Rust find native parallel traversal restores GNU preorder without losing duplicate roots\n  ---\n  duration_ms: 53.027068\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":7,\"rustSearches\":6,\"gnuFallbacks\":0,\"ioComparisons\":1,\"classes\":{\"parallel-native-GNU-order\":6,\"parallel-descriptor-pressure\":1},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find shallow traversal avoids workers while preserving GNU rows and limits\nok 16 - Rust find shallow traversal avoids workers while preserving GNU rows and limits\n  ---\n  duration_ms: 22.206534\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":3,\"rustSearches\":3,\"gnuFallbacks\":0,\"ioComparisons\":0,\"classes\":{\"shallow-no-pool-GNU-order\":3},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find errors, locales, physical cycles and stdout failures preserve GNU behavior\nok 17 - Rust find errors, locales, physical cycles and stdout failures preserve GNU behavior\n  ---\n  duration_ms: 50.858226\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":12,\"rustSearches\":3,\"gnuFallbacks\":6,\"ioComparisons\":3,\"classes\":{\"unreadable-traversal\":1,\"physical-cycle-no-follow\":1,\"following-cycle-GNU-diagnostic\":1,\"non-C-complex-pattern\":4,\"non-C-literal-ASCII\":1,\"POSIX-complex-pattern\":1,\"closed-output\":1,\"full-output\":1,\"descriptor-pressure\":1},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find preparation limits abandon native work before any partial output\nok 18 - Rust find preparation limits abandon native work before any partial output\n  ---\n  duration_ms: 74.356362\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":5,\"rustSearches\":0,\"gnuFallbacks\":5,\"ioComparisons\":0,\"classes\":{\"POSIXLY_CORRECT-delegation\":1,\"POSIXLY_CORRECT-empty-delegation\":1,\"pattern-preparation-bound\":1,\"expression-preparation-bound\":1,\"late-depth-preparation-bound\":1},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find stdout regression: ignored-SIGPIPE\nok 19 - Rust find stdout regression: ignored-SIGPIPE\n  ---\n  duration_ms: 59.133355\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":1,\"rustSearches\":0,\"gnuFallbacks\":0,\"ioComparisons\":1,\"classes\":{\"regression-ignored-SIGPIPE\":1},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find stdout regression: nonblocking-full-pipe\nok 20 - Rust find stdout regression: nonblocking-full-pipe\n  ---\n  duration_ms: 58.642317\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":1,\"rustSearches\":0,\"gnuFallbacks\":0,\"ioComparisons\":1,\"classes\":{\"regression-nonblocking-full-pipe\":1},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find ordinary execution uses the claimed engine and preserves direct GNU exec\nok 21 - Rust find ordinary execution uses the claimed engine and preserves direct GNU exec\n  ---\n  duration_ms: 26.92136\n  type: 'test'\n  ...\n# {\"seed\":\"0x46444e31\",\"comparisons\":2,\"rustSearches\":1,\"gnuFallbacks\":1,\"ioComparisons\":0,\"classes\":{\"external-native-execution-proof\":1,\"external-GNU-execution-proof\":1},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find physical traversal rejects a child swapped to an outside symlink before open\nok 22 - Rust find physical traversal rejects a child swapped to an outside symlink before open\n  ---\n  duration_ms: 42.194903\n  type: 'test'\n  ...\n# {\"campaign\":\"physical-child-symlink-swap\",\"ownedPreloadSHA256\":\"2a3782ae864e372e31ddd5541eb1bbd5723f4c3c7de132029c2f671ec60a0b8e\",\"deterministicSwapChecks\":1,\"mutationControlsDetected\":1,\"productionDataRead\":false}\n# {\"seed\":\"0x46444e31\",\"comparisons\":2,\"rustSearches\":1,\"gnuFallbacks\":0,\"ioComparisons\":1,\"classes\":{\"race-hook-negative-control\":1,\"physical-child-symlink-swap\":1},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n# Subtest: Rust find raw directory batches resolve unknown types and reject malformed kernel records\nok 23 - Rust find raw directory batches resolve unknown types and reject malformed kernel records\n  ---\n  duration_ms: 97.34263\n  type: 'test'\n  ...\n# {\"campaign\":\"raw-directory-batches\",\"ownedPreloadSHA256\":\"a0f1167f227ef2e10e380ce9e2874bce50f24fca7448e37c2fd0b04e4819e340\",\"unknownTypeComparisons\":9,\"malformedRecordComparisons\":3,\"zeroInodeComparisons\":1,\"productionDataRead\":false}\n# {\"seed\":\"0x46444e31\",\"comparisons\":14,\"rustSearches\":10,\"gnuFallbacks\":3,\"ioComparisons\":1,\"classes\":{\"raw-directory-negative-control\":1,\"raw-directory-DT-UNKNOWN\":8,\"raw-directory-multiple-batches\":1,\"raw-directory-invalid-zero-length\":1,\"raw-directory-invalid-missing-NUL\":1,\"raw-directory-invalid-short-header\":1,\"raw-directory-zero-inode\":1},\"failures\":0,\"artifactSHA256\":\"f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8\"}\n1..23\n# tests 23\n# suites 0\n# pass 23\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 2212.580197\n",
+      "stderr": ""
+    },
+    {
+      "name": "Run the packaged process-timer contract tests from an outside cwd",
+      "program": "/usr/bin/node",
+      "argv": [
+        "--test",
+        "--test-reporter=tap",
+        "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted/package/tests/test_benchmark_processes.mjs"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 30000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "TMPDIR": "/tmp/find2fd-rust-package-cwd-eUxuPk/test-temporary"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 817.3418339999998,
+      "error": null,
+      "stdoutBytes": 1840,
+      "stderrBytes": 0,
+      "stdoutSHA256": "a6c6aa488815f019a75c1087eee2462bded055591f1bfb432f7f1f96c3979793",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "TAP version 13\n# Subtest: batch timer retains complete binary stdin, stdout, stderr and exit status\nok 1 - batch timer retains complete binary stdin, stdout, stderr and exit status\n  ---\n  duration_ms: 57.461122\n  type: 'test'\n  ...\n# Subtest: GNU find argv0 and error status match independent direct GNU commands\nok 2 - GNU find argv0 and error status match independent direct GNU commands\n  ---\n  duration_ms: 26.349007\n  type: 'test'\n  ...\n# Subtest: argv metacharacters remain literal and child environment is exact\nok 3 - argv metacharacters remain literal and child environment is exact\n  ---\n  duration_ms: 35.33435\n  type: 'test'\n  ...\n# Subtest: timeout kills the owned descendant group even when the direct child already exited\nok 4 - timeout kills the owned descendant group even when the direct child already exited\n  ---\n  duration_ms: 433.840358\n  type: 'test'\n  ...\n# Subtest: early output EOF still waits for process exit without timeout polling sleeps\nok 5 - early output EOF still waits for process exit without timeout polling sleeps\n  ---\n  duration_ms: 54.454857\n  type: 'test'\n  ...\n# Subtest: output limits kill producers and retain bounded channel buffers\nok 6 - output limits kill producers and retain bounded channel buffers\n  ---\n  duration_ms: 24.70568\n  type: 'test'\n  ...\n# Subtest: spawn failures and natural signals do not lose following batch observations\nok 7 - spawn failures and natural signals do not lose following batch observations\n  ---\n  duration_ms: 27.802216\n  type: 'test'\n  ...\n# Subtest: malformed manifests and invalid bounded jobs receive structured errors\nok 8 - malformed manifests and invalid bounded jobs receive structured errors\n  ---\n  duration_ms: 89.653019\n  type: 'test'\n  ...\n1..8\n# tests 8\n# suites 0\n# pass 8\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 791.930759\n",
+      "stderr": ""
+    },
+    {
+      "name": "GNU CLI oracle: name-search",
+      "program": "/usr/bin/find",
+      "argv": [
+        "fixture",
+        "-name",
+        "*.txt"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 1.1457469999995737,
+      "error": null,
+      "stdoutBytes": 16,
+      "stderrBytes": 0,
+      "stdoutSHA256": "885e2987c54fc7b2d506c7c7f3b38ba197da984ecc9d1e3bd975d6c75b302805",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fixture/hit.txt\n",
+      "stderr": ""
+    },
+    {
+      "name": "Rust CLI: name-search",
+      "program": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust",
+      "argv": [
+        "fixture",
+        "-name",
+        "*.txt"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 1.2123830000000453,
+      "error": null,
+      "stdoutBytes": 16,
+      "stderrBytes": 0,
+      "stdoutSHA256": "885e2987c54fc7b2d506c7c7f3b38ba197da984ecc9d1e3bd975d6c75b302805",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fixture/hit.txt\n",
+      "stderr": ""
+    },
+    {
+      "name": "packaged-launcher CLI: name-search",
+      "program": "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted/package/bin/find2fd",
+      "argv": [
+        "fixture",
+        "-name",
+        "*.txt"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 2.3373200000005454,
+      "error": null,
+      "stdoutBytes": 16,
+      "stderrBytes": 0,
+      "stdoutSHA256": "885e2987c54fc7b2d506c7c7f3b38ba197da984ecc9d1e3bd975d6c75b302805",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fixture/hit.txt\n",
+      "stderr": ""
+    },
+    {
+      "name": "GNU CLI oracle: nul-output",
+      "program": "/usr/bin/find",
+      "argv": [
+        "fixture",
+        "-type",
+        "f",
+        "-print0"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 1.0485019999996439,
+      "error": null,
+      "stdoutBytes": 56,
+      "stderrBytes": 0,
+      "stdoutSHA256": "4f74e80c2399fbddca51ea349d9c3b3395e2d34640a0f6829f5682131d3f0d7d",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fixture/hit.txt\u0000fixture/nested/miss.bin\u0000fixture/.hidden\u0000",
+      "stderr": ""
+    },
+    {
+      "name": "Rust CLI: nul-output",
+      "program": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust",
+      "argv": [
+        "fixture",
+        "-type",
+        "f",
+        "-print0"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 0.8619799999996758,
+      "error": null,
+      "stdoutBytes": 56,
+      "stderrBytes": 0,
+      "stdoutSHA256": "4f74e80c2399fbddca51ea349d9c3b3395e2d34640a0f6829f5682131d3f0d7d",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fixture/hit.txt\u0000fixture/nested/miss.bin\u0000fixture/.hidden\u0000",
+      "stderr": ""
+    },
+    {
+      "name": "packaged-launcher CLI: nul-output",
+      "program": "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted/package/bin/find2fd",
+      "argv": [
+        "fixture",
+        "-type",
+        "f",
+        "-print0"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 2.1838800000004994,
+      "error": null,
+      "stdoutBytes": 56,
+      "stderrBytes": 0,
+      "stdoutSHA256": "4f74e80c2399fbddca51ea349d9c3b3395e2d34640a0f6829f5682131d3f0d7d",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fixture/hit.txt\u0000fixture/nested/miss.bin\u0000fixture/.hidden\u0000",
+      "stderr": ""
+    },
+    {
+      "name": "GNU CLI oracle: depth-filter",
+      "program": "/usr/bin/find",
+      "argv": [
+        "fixture",
+        "-maxdepth",
+        "1",
+        "-type",
+        "d"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 0.8251599999994141,
+      "error": null,
+      "stdoutBytes": 23,
+      "stderrBytes": 0,
+      "stdoutSHA256": "3435151600b5f86fb6c0cbd86f3c49e2bf37e72b30fe01b816bb43339b31ee78",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fixture\nfixture/nested\n",
+      "stderr": ""
+    },
+    {
+      "name": "Rust CLI: depth-filter",
+      "program": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust",
+      "argv": [
+        "fixture",
+        "-maxdepth",
+        "1",
+        "-type",
+        "d"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 0.9877480000004653,
+      "error": null,
+      "stdoutBytes": 23,
+      "stderrBytes": 0,
+      "stdoutSHA256": "3435151600b5f86fb6c0cbd86f3c49e2bf37e72b30fe01b816bb43339b31ee78",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fixture\nfixture/nested\n",
+      "stderr": ""
+    },
+    {
+      "name": "packaged-launcher CLI: depth-filter",
+      "program": "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted/package/bin/find2fd",
+      "argv": [
+        "fixture",
+        "-maxdepth",
+        "1",
+        "-type",
+        "d"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 2.221872000000076,
+      "error": null,
+      "stdoutBytes": 23,
+      "stderrBytes": 0,
+      "stdoutSHA256": "3435151600b5f86fb6c0cbd86f3c49e2bf37e72b30fe01b816bb43339b31ee78",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fixture\nfixture/nested\n",
+      "stderr": ""
+    },
+    {
+      "name": "GNU CLI oracle: metadata-fallback",
+      "program": "/usr/bin/find",
+      "argv": [
+        "fixture",
+        "-size",
+        "+0c",
+        "-print"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 0.9424719999997251,
+      "error": null,
+      "stdoutBytes": 79,
+      "stderrBytes": 0,
+      "stdoutSHA256": "ebc924c2454467fdf00b28fa606b1181b8f3872d0380e9db7b403c3a02aecf9f",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fixture\nfixture/hit.txt\nfixture/nested\nfixture/nested/miss.bin\nfixture/.hidden\n",
+      "stderr": ""
+    },
+    {
+      "name": "Rust CLI: metadata-fallback",
+      "program": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust",
+      "argv": [
+        "fixture",
+        "-size",
+        "+0c",
+        "-print"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 1.223493999999846,
+      "error": null,
+      "stdoutBytes": 79,
+      "stderrBytes": 0,
+      "stdoutSHA256": "ebc924c2454467fdf00b28fa606b1181b8f3872d0380e9db7b403c3a02aecf9f",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fixture\nfixture/hit.txt\nfixture/nested\nfixture/nested/miss.bin\nfixture/.hidden\n",
+      "stderr": ""
+    },
+    {
+      "name": "packaged-launcher CLI: metadata-fallback",
+      "program": "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted/package/bin/find2fd",
+      "argv": [
+        "fixture",
+        "-size",
+        "+0c",
+        "-print"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust"
+      },
+      "status": 0,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 2.382605999999214,
+      "error": null,
+      "stdoutBytes": 79,
+      "stderrBytes": 0,
+      "stdoutSHA256": "ebc924c2454467fdf00b28fa606b1181b8f3872d0380e9db7b403c3a02aecf9f",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fixture\nfixture/hit.txt\nfixture/nested\nfixture/nested/miss.bin\nfixture/.hidden\n",
+      "stderr": ""
+    },
+    {
+      "name": "GNU CLI oracle: invalid-option-diagnostic",
+      "program": "/usr/bin/find",
+      "argv": [
+        "fixture",
+        "-not-a-valid-predicate"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 1,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 0.9359389999999621,
+      "error": null,
+      "stdoutBytes": 0,
+      "stderrBytes": 49,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "12b727f37ae12d048c28039f8bdf2830a4efb98fb4bf576ae03a1b286ca45bba",
+      "stdout": "",
+      "stderr": "find: unknown predicate `-not-a-valid-predicate'\n"
+    },
+    {
+      "name": "Rust CLI: invalid-option-diagnostic",
+      "program": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust",
+      "argv": [
+        "fixture",
+        "-not-a-valid-predicate"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust"
+      },
+      "status": 1,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 1.162558999999419,
+      "error": null,
+      "stdoutBytes": 0,
+      "stderrBytes": 49,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "12b727f37ae12d048c28039f8bdf2830a4efb98fb4bf576ae03a1b286ca45bba",
+      "stdout": "",
+      "stderr": "find: unknown predicate `-not-a-valid-predicate'\n"
+    },
+    {
+      "name": "packaged-launcher CLI: invalid-option-diagnostic",
+      "program": "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted/package/bin/find2fd",
+      "argv": [
+        "fixture",
+        "-not-a-valid-predicate"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust"
+      },
+      "status": 1,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 2.365523000000394,
+      "error": null,
+      "stdoutBytes": 0,
+      "stderrBytes": 49,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "12b727f37ae12d048c28039f8bdf2830a4efb98fb4bf576ae03a1b286ca45bba",
+      "stdout": "",
+      "stderr": "find: unknown predicate `-not-a-valid-predicate'\n"
+    },
+    {
+      "name": "GNU CLI oracle: missing-root-diagnostic",
+      "program": "/usr/bin/find",
+      "argv": [
+        "missing-root",
+        "-name",
+        "*.txt"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache"
+      },
+      "status": 1,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 0.7371039999998175,
+      "error": null,
+      "stdoutBytes": 0,
+      "stderrBytes": 48,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "dbdd57e667ad0ec886410e7121e010bef174f49c3130a9ce22e283d59cf9fd69",
+      "stdout": "",
+      "stderr": "find: 'missing-root': No such file or directory\n"
+    },
+    {
+      "name": "Rust CLI: missing-root-diagnostic",
+      "program": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust",
+      "argv": [
+        "missing-root",
+        "-name",
+        "*.txt"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust"
+      },
+      "status": 1,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 1.1273520000004282,
+      "error": null,
+      "stdoutBytes": 0,
+      "stderrBytes": 48,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "dbdd57e667ad0ec886410e7121e010bef174f49c3130a9ce22e283d59cf9fd69",
+      "stdout": "",
+      "stderr": "find: 'missing-root': No such file or directory\n"
+    },
+    {
+      "name": "packaged-launcher CLI: missing-root-diagnostic",
+      "program": "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted/package/bin/find2fd",
+      "argv": [
+        "missing-root",
+        "-name",
+        "*.txt"
+      ],
+      "cwd": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+      "timeoutMs": 60000,
+      "environment": {
+        "LC_ALL": "C",
+        "LANG": "C",
+        "npm_config_cache": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/npm-cache",
+        "FIND2FD_RUST_BINARY": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust"
+      },
+      "status": 1,
+      "signal": null,
+      "timedOut": false,
+      "durationMs": 2.285632000000078,
+      "error": null,
+      "stdoutBytes": 0,
+      "stderrBytes": 48,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "dbdd57e667ad0ec886410e7121e010bef174f49c3130a9ce22e283d59cf9fd69",
+      "stdout": "",
+      "stderr": "find: 'missing-root': No such file or directory\n"
+    }
+  ],
+  "failures": [],
+  "sourceHashes": {
+    "rust/Cargo.lock": "0939785ea8b0bca804092481d9332cc239df508ae9d0229744a2e0578f2a2ccb",
+    "rust/Cargo.toml": "82227aa85b139837e18c7f466e19758e4949bd53edaa6213ba74da33f0b67be3",
+    "rust/src/main.rs": "d29157af58904379ccc406b41c8618ee2e8d69c0264bf28c98f3922b17842d14",
+    "rust/.npmignore": "b53ee26e6ff1da219b0563333a76d2c9ec19eec713d6ee54e11a1edacb0e9f3d",
+    "package.json": "1419a374e152b0bd943f4800237b08b0b3f52a4028b7de067f939ddfabd874de",
+    ".npmignore": "30495a0c0a2d337165d1fa8d3c0a642b28d75b2357743a88f2b72d4b2864ff12",
+    "tools/.npmignore": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+    "tests/test_rust_engine.mjs": "1088cd8dcbdeb0705ad8714e1ddf22f14c3ff4f7f60e7ab263ee19947494b25e",
+    "tests/test_find_rust_routing.mjs": "3e48c656b93b1858b6747f576f9f2386ff4a8bfbf1484bd1c30a628e06ea6326",
+    "src/find-wrapper.mjs": "ce7992369897003a29228e47e3444bddce89d291e7a554ffbc3a996a485cc634",
+    "tools/build-rust.mjs": "4522c4cb77b24f80d0b64874ff5250b684831a3760e8e7f46be35caaa39e0bc9",
+    "tests/rust-engine-contract.json": "a55cfa9ce78226d2fd6f304012a31e11dceb6ec4a9d67373e4b253185cd93147",
+    "tests/find_option_inventory.json": "baff36d9f209f8a7a9e2ce478a4deddc5ea60d02920f629f6bd11217c0a89e55",
+    "tests/test_benchmark_processes.mjs": "d55eb093b83364841fcb76b22f8e4abd82b2cad81678825760c0685cf4dcadc0",
+    "tools/benchmark-processes.py": "fdb213c63cd66dd1e85726b432942133b32d67de109d27982f9e23d863c00131",
+    "tools/benchmark-rust-engine.py": "438651e0941bf852523605f436b9091a4447f6c41979a3ba85e2d445e25b5844",
+    "tools/render-rust-results.py": "2e447bc31ae62cd898666f4fa34e721fca2e17cb6fbc1d416441b1dc901b0f1d",
+    "tools/verify-rust-artifact.mjs": "c5f1155ba6cf65a272650e37f8f7e9c6a9de5e0809e14edbf2928a87984a4061",
+    "bin/find2fd": "8aba4ce2efbd1b7600d9ac94ed81c5cc529fed9ba65fe144ff097690354776ef",
+    "src/find-runtime.mjs": "2363f275c4dee36dd19fbc1faa1ca5fc09f106b37d24d4453e76d8c3ebd38739",
+    "src/find-options.mjs": "ce0541da53edc7384769aac3d7efa5bbcd44440d3bc624a71c20f920d3313806",
+    "src/find-order.mjs": "82a06b06a6dc43f0311acf188eea1e0799639ab90dba7b71c3b8bb4381268ef6",
+    "src/find-evaluate.mjs": "f651088cdd502aaf7b2849573784fef99eb87e5ffd78d779d12626b5cf1761cb",
+    "src/find-incremental.mjs": "b856907e8211fa0e997bf6ec892bc98dc2ed61ba9139712a2a11cfdf0e927aa8",
+    "src/find-descriptors.mjs": "98abb8a06198882ead1bde0417e6bf500866e68015d53fc7f7ad8e19e32b89d2"
+  },
+  "originalRelease": {
+    "path": "/home/lewis/Dev/find2fd/rust/target/release/find2fd-rust",
+    "SHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+  },
+  "packageArtifact": {
+    "filename": "find2fd-0.1.0.tgz",
+    "SHA256": "b069063fadbef9b4fdc101a0859d51f5d35f406fdfe4ffb294a92df531c7954e",
+    "integrity": "sha512-QmBB3OSMRpYLn+0VkZ4xj5g+WTDdCbXSKXCKqJ/Xe7MR2/vRBte/mCBohR+1MQo1odYtH8GpCvyZrF4kMYhG3A==",
+    "npmSHA1": "cfa6257fa62e20b33eb6941178016c5aa6cad877",
+    "fileCount": 67,
+    "sizeBytes": 217192,
+    "unpackedSizeBytes": 984796,
+    "files": [
+      "LICENSE",
+      "NOTICE",
+      "README.md",
+      "bin/find2fd",
+      "bin/find2fd-shell-prefix.mjs",
+      "bin/find2fd.mjs",
+      "docs/automatic-qualification.json",
+      "docs/automatic-routing-audit.json",
+      "docs/automatic-routing-performance.json",
+      "docs/broader-qualification.json",
+      "docs/compatibility.md",
+      "docs/coverage.json",
+      "docs/expanded-qualification.json",
+      "docs/qualification.json",
+      "docs/rust-engine-performance.json",
+      "docs/rust-engine-qualification.json",
+      "docs/rust-engine.md",
+      "docs/verification.md",
+      "package.json",
+      "pi/find2fd.ts",
+      "rust/Cargo.lock",
+      "rust/Cargo.toml",
+      "rust/src/main.rs",
+      "src/find-auto.sh",
+      "src/find-descriptors.mjs",
+      "src/find-evaluate.mjs",
+      "src/find-incremental.mjs",
+      "src/find-options.mjs",
+      "src/find-order.mjs",
+      "src/find-runtime.mjs",
+      "src/find-wrapper.mjs",
+      "tests/find_incremental_helpers.mjs",
+      "tests/find_metadata_helpers.mjs",
+      "tests/find_option_inventory.json",
+      "tests/find_wrapper_requirements.json",
+      "tests/helpers.mjs",
+      "tests/rust-engine-contract.json",
+      "tests/test_benchmark_processes.mjs",
+      "tests/test_find_automatic_routing.mjs",
+      "tests/test_find_campaign.mjs",
+      "tests/test_find_cli.mjs",
+      "tests/test_find_default_policy.mjs",
+      "tests/test_find_descriptors.mjs",
+      "tests/test_find_expression_campaign.mjs",
+      "tests/test_find_expressions.mjs",
+      "tests/test_find_fallback.mjs",
+      "tests/test_find_incremental.mjs",
+      "tests/test_find_incremental_runtime.mjs",
+      "tests/test_find_leading_flags.mjs",
+      "tests/test_find_metadata.mjs",
+      "tests/test_find_metadata_formats.mjs",
+      "tests/test_find_metadata_traversal.mjs",
+      "tests/test_find_options.mjs",
+      "tests/test_find_runtime.mjs",
+      "tests/test_find_rust_routing.mjs",
+      "tests/test_find_scope.mjs",
+      "tests/test_package_artifact.mjs",
+      "tests/test_package_entry.mjs",
+      "tests/test_rust_engine.mjs",
+      "tools/benchmark-processes.py",
+      "tools/benchmark-routing.py",
+      "tools/benchmark-rust-engine.py",
+      "tools/build-rust.mjs",
+      "tools/render-rust-results.py",
+      "tools/verify-artifact.mjs",
+      "tools/verify-rust-artifact.mjs",
+      "tools/verify.mjs"
+    ],
+    "rustFiles": [
+      "rust/Cargo.lock",
+      "rust/Cargo.toml",
+      "rust/src/main.rs"
+    ],
+    "compiledTargetAbsent": true,
+    "pythonCacheAbsent": true
+  },
+  "extractedRustSourceHashes": {
+    "rust/Cargo.lock": "0939785ea8b0bca804092481d9332cc239df508ae9d0229744a2e0578f2a2ccb",
+    "rust/Cargo.toml": "82227aa85b139837e18c7f466e19758e4949bd53edaa6213ba74da33f0b67be3",
+    "rust/src/main.rs": "d29157af58904379ccc406b41c8618ee2e8d69c0264bf28c98f3922b17842d14"
+  },
+  "versions": {
+    "cargo": "cargo 1.90.0 (840b83a10 2025-07-30)\nrelease: 1.90.0\ncommit-hash: 840b83a10fb0e039a83f4d70ad032892c287570a\ncommit-date: 2025-07-30\nhost: x86_64-unknown-linux-gnu\nlibgit2: 1.9.1 (sys:0.20.2 vendored)\nlibcurl: 8.14.1-DEV (sys:0.4.82+curl-8.14.1 vendored ssl:OpenSSL/3.5.0)\nssl: OpenSSL 3.5.0 8 Apr 2025\nos: CachyOS Linux [64-bit]\n",
+    "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)\nbinary: rustc\ncommit-hash: 1159e78c4747b02ef996e55082b704c09b970588\ncommit-date: 2025-09-14\nhost: x86_64-unknown-linux-gnu\nrelease: 1.90.0\nLLVM version: 20.1.8\n",
+    "npm": "12.0.2\n",
+    "GNU": "find (GNU findutils) 4.11.0-modified\nCopyright (C) 2026 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Eric B. Decker, James Youngman, Bernhard Voelker,\nand Kevin Dalley.\nFeatures enabled: D_TYPE O_NOFOLLOW(enabled) LEAF_OPTIMISATION FTS(FTS_CWDFD) CBO(level=1) \n",
+    "node": "v26.4.0"
+  },
+  "executable": {
+    "path": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust",
+    "SHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8",
+    "rebuiltFromExtractedSource": true,
+    "packagedPrebuiltBinaryUsed": false,
+    "GNUOraclePath": "/usr/bin/find",
+    "GNUOracleSHA256": "dd7db3e8da1775fd4f196db8a9000d5d31c20bf82f105af567bea7c3db4303d6"
+  },
+  "tests": {
+    "reporter": "TAP",
+    "counts": {
+      "tests": 23,
+      "suites": 0,
+      "pass": 23,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "diagnostics": [
+      {
+        "campaign": "compiled-public-and-Pi-routing",
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8",
+        "comparisons": 10,
+        "rustSearches": 10,
+        "gnuFallbacks": 0,
+        "ioComparisons": 0,
+        "failures": 0,
+        "classes": {
+          "native-public": 5,
+          "native-private-Bash": 5
+        }
+      },
+      {
+        "campaign": "compiled-public-and-Pi-routing",
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8",
+        "comparisons": 8,
+        "rustSearches": 0,
+        "gnuFallbacks": 8,
+        "ioComparisons": 0,
+        "failures": 0,
+        "classes": {
+          "delegation-public": 4,
+          "delegation-private-Bash": 4
+        }
+      },
+      {
+        "campaign": "compiled-public-and-Pi-routing",
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8",
+        "comparisons": 16,
+        "rustSearches": 0,
+        "gnuFallbacks": 16,
+        "ioComparisons": 0,
+        "failures": 0,
+        "classes": {
+          "optout-public": 8,
+          "optout-private-Bash": 8
+        }
+      },
+      {
+        "campaign": "compiled-public-and-Pi-routing",
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8",
+        "comparisons": 2,
+        "rustSearches": 0,
+        "gnuFallbacks": 1,
+        "ioComparisons": 1,
+        "failures": 0,
+        "classes": {
+          "private-scope": 1,
+          "outside-user-shell": 1
+        }
+      },
+      {
+        "campaign": "compiled-public-and-Pi-routing",
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8",
+        "comparisons": 2,
+        "rustSearches": 2,
+        "gnuFallbacks": 0,
+        "ioComparisons": 0,
+        "failures": 0,
+        "classes": {
+          "relocated-public": 1,
+          "relocated-private-Bash": 1
+        }
+      },
+      {
+        "campaign": "compiled-public-and-Pi-routing",
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8",
+        "comparisons": 4,
+        "rustSearches": 0,
+        "gnuFallbacks": 4,
+        "ioComparisons": 0,
+        "failures": 0,
+        "classes": {
+          "closed-descriptor-public": 2,
+          "closed-descriptor-private-Bash": 2
+        }
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 57,
+        "rustSearches": 56,
+        "gnuFallbacks": 1,
+        "ioComparisons": 0,
+        "classes": {
+          "default-print": 1,
+          "physical-traversal": 1,
+          "literal-name": 1,
+          "glob-name": 1,
+          "folded-name": 1,
+          "path-pattern": 1,
+          "folded-path": 1,
+          "whole-path-alias": 1,
+          "folded-whole-path-alias": 1,
+          "type-filter": 1,
+          "depth-bounds": 1,
+          "and-expression": 1,
+          "or-expression": 1,
+          "not-expression": 1,
+          "comma-expression": 1,
+          "parenthesized-expression": 1,
+          "constant-predicates": 1,
+          "repeated-actions": 1,
+          "explicit-print-short-circuit": 1,
+          "duplicate-roots": 1,
+          "root-file": 1,
+          "root-symlink": 1,
+          "root-dangling-symlink": 1,
+          "empty-directory": 1,
+          "root-spelling": 6,
+          "root-spelling-maxdepth-zero": 6,
+          "type-alphabet": 7,
+          "gnu-glob-boundaries": 7,
+          "pathname-name-warning-guard": 1,
+          "gnu-path-boundaries": 6
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 25,
+        "rustSearches": 25,
+        "gnuFallbacks": 0,
+        "ioComparisons": 0,
+        "classes": {
+          "boolean-and-depth-boundaries": 23,
+          "implicit-root": 1,
+          "no-argv-default-root": 1
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 52,
+        "rustSearches": 28,
+        "gnuFallbacks": 24,
+        "ioComparisons": 0,
+        "classes": {
+          "root-terminal-slash-traversal": 7,
+          "root-basename-predicate": 42,
+          "terminal-slash-invalid-root": 3
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 384,
+        "rustSearches": 384,
+        "gnuFallbacks": 0,
+        "ioComparisons": 0,
+        "classes": {
+          "seeded-native-expression": 384
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 50,
+        "rustSearches": 50,
+        "gnuFallbacks": 0,
+        "ioComparisons": 0,
+        "classes": {
+          "optimized-name-glob-boundaries": 40,
+          "optimized-path-glob-boundaries": 10
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 31,
+        "rustSearches": 0,
+        "gnuFallbacks": 31,
+        "ioComparisons": 0,
+        "classes": {
+          "symlink-following": 1,
+          "recursive-symlink-following": 1,
+          "depth-first-traversal": 1,
+          "prune-action": 1,
+          "quit-action": 1,
+          "metadata-predicate": 1,
+          "formatted-output": 1,
+          "regex-predicate": 1,
+          "exec-action": 1,
+          "files0-input": 1,
+          "missing-root": 1,
+          "malformed-expression": 1,
+          "position-sensitive-warning": 1,
+          "depth-overflow": 1,
+          "invalid-or-unsupported-argv": 15,
+          "later-global-option-warning": 2
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 0,
+        "rustSearches": 0,
+        "gnuFallbacks": 0,
+        "ioComparisons": 0,
+        "classes": {},
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 6,
+        "rustSearches": 0,
+        "gnuFallbacks": 6,
+        "ioComparisons": 0,
+        "classes": {
+          "owned-output-and-exec-actions": 5,
+          "owned-delete-action": 1
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 7,
+        "rustSearches": 6,
+        "gnuFallbacks": 0,
+        "ioComparisons": 1,
+        "classes": {
+          "parallel-native-GNU-order": 6,
+          "parallel-descriptor-pressure": 1
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 3,
+        "rustSearches": 3,
+        "gnuFallbacks": 0,
+        "ioComparisons": 0,
+        "classes": {
+          "shallow-no-pool-GNU-order": 3
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 12,
+        "rustSearches": 3,
+        "gnuFallbacks": 6,
+        "ioComparisons": 3,
+        "classes": {
+          "unreadable-traversal": 1,
+          "physical-cycle-no-follow": 1,
+          "following-cycle-GNU-diagnostic": 1,
+          "non-C-complex-pattern": 4,
+          "non-C-literal-ASCII": 1,
+          "POSIX-complex-pattern": 1,
+          "closed-output": 1,
+          "full-output": 1,
+          "descriptor-pressure": 1
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 5,
+        "rustSearches": 0,
+        "gnuFallbacks": 5,
+        "ioComparisons": 0,
+        "classes": {
+          "POSIXLY_CORRECT-delegation": 1,
+          "POSIXLY_CORRECT-empty-delegation": 1,
+          "pattern-preparation-bound": 1,
+          "expression-preparation-bound": 1,
+          "late-depth-preparation-bound": 1
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 1,
+        "rustSearches": 0,
+        "gnuFallbacks": 0,
+        "ioComparisons": 1,
+        "classes": {
+          "regression-ignored-SIGPIPE": 1
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 1,
+        "rustSearches": 0,
+        "gnuFallbacks": 0,
+        "ioComparisons": 1,
+        "classes": {
+          "regression-nonblocking-full-pipe": 1
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 2,
+        "rustSearches": 1,
+        "gnuFallbacks": 1,
+        "ioComparisons": 0,
+        "classes": {
+          "external-native-execution-proof": 1,
+          "external-GNU-execution-proof": 1
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 2,
+        "rustSearches": 1,
+        "gnuFallbacks": 0,
+        "ioComparisons": 1,
+        "classes": {
+          "race-hook-negative-control": 1,
+          "physical-child-symlink-swap": 1
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      },
+      {
+        "seed": "0x46444e31",
+        "comparisons": 14,
+        "rustSearches": 10,
+        "gnuFallbacks": 3,
+        "ioComparisons": 1,
+        "classes": {
+          "raw-directory-negative-control": 1,
+          "raw-directory-DT-UNKNOWN": 8,
+          "raw-directory-multiple-batches": 1,
+          "raw-directory-invalid-zero-length": 1,
+          "raw-directory-invalid-missing-NUL": 1,
+          "raw-directory-invalid-short-header": 1,
+          "raw-directory-zero-inode": 1
+        },
+        "failures": 0,
+        "artifactSHA256": "f5b95362c769bf69eb3caa92f6fc6111eac301f30d4d00a62739fd6a09ebbff8"
+      }
+    ],
+    "fullGNUComparisons": 694,
+    "rustSearches": 579,
+    "gnuFallbacks": 106,
+    "ioComparisons": 9,
+    "classes": {
+      "native-public": 5,
+      "native-private-Bash": 5,
+      "delegation-public": 4,
+      "delegation-private-Bash": 4,
+      "optout-public": 8,
+      "optout-private-Bash": 8,
+      "private-scope": 1,
+      "outside-user-shell": 1,
+      "relocated-public": 1,
+      "relocated-private-Bash": 1,
+      "closed-descriptor-public": 2,
+      "closed-descriptor-private-Bash": 2,
+      "default-print": 1,
+      "physical-traversal": 1,
+      "literal-name": 1,
+      "glob-name": 1,
+      "folded-name": 1,
+      "path-pattern": 1,
+      "folded-path": 1,
+      "whole-path-alias": 1,
+      "folded-whole-path-alias": 1,
+      "type-filter": 1,
+      "depth-bounds": 1,
+      "and-expression": 1,
+      "or-expression": 1,
+      "not-expression": 1,
+      "comma-expression": 1,
+      "parenthesized-expression": 1,
+      "constant-predicates": 1,
+      "repeated-actions": 1,
+      "explicit-print-short-circuit": 1,
+      "duplicate-roots": 1,
+      "root-file": 1,
+      "root-symlink": 1,
+      "root-dangling-symlink": 1,
+      "empty-directory": 1,
+      "root-spelling": 6,
+      "root-spelling-maxdepth-zero": 6,
+      "type-alphabet": 7,
+      "gnu-glob-boundaries": 7,
+      "pathname-name-warning-guard": 1,
+      "gnu-path-boundaries": 6,
+      "boolean-and-depth-boundaries": 23,
+      "implicit-root": 1,
+      "no-argv-default-root": 1,
+      "root-terminal-slash-traversal": 7,
+      "root-basename-predicate": 42,
+      "terminal-slash-invalid-root": 3,
+      "seeded-native-expression": 384,
+      "optimized-name-glob-boundaries": 40,
+      "optimized-path-glob-boundaries": 10,
+      "symlink-following": 1,
+      "recursive-symlink-following": 1,
+      "depth-first-traversal": 1,
+      "prune-action": 1,
+      "quit-action": 1,
+      "metadata-predicate": 1,
+      "formatted-output": 1,
+      "regex-predicate": 1,
+      "exec-action": 1,
+      "files0-input": 1,
+      "missing-root": 1,
+      "malformed-expression": 1,
+      "position-sensitive-warning": 1,
+      "depth-overflow": 1,
+      "invalid-or-unsupported-argv": 15,
+      "later-global-option-warning": 2,
+      "owned-output-and-exec-actions": 5,
+      "owned-delete-action": 1,
+      "parallel-native-GNU-order": 6,
+      "parallel-descriptor-pressure": 1,
+      "shallow-no-pool-GNU-order": 3,
+      "unreadable-traversal": 1,
+      "physical-cycle-no-follow": 1,
+      "following-cycle-GNU-diagnostic": 1,
+      "non-C-complex-pattern": 4,
+      "non-C-literal-ASCII": 1,
+      "POSIX-complex-pattern": 1,
+      "closed-output": 1,
+      "full-output": 1,
+      "descriptor-pressure": 1,
+      "POSIXLY_CORRECT-delegation": 1,
+      "POSIXLY_CORRECT-empty-delegation": 1,
+      "pattern-preparation-bound": 1,
+      "expression-preparation-bound": 1,
+      "late-depth-preparation-bound": 1,
+      "regression-ignored-SIGPIPE": 1,
+      "regression-nonblocking-full-pipe": 1,
+      "external-native-execution-proof": 1,
+      "external-GNU-execution-proof": 1,
+      "race-hook-negative-control": 1,
+      "physical-child-symlink-swap": 1,
+      "raw-directory-negative-control": 1,
+      "raw-directory-DT-UNKNOWN": 8,
+      "raw-directory-multiple-batches": 1,
+      "raw-directory-invalid-zero-length": 1,
+      "raw-directory-invalid-missing-NUL": 1,
+      "raw-directory-invalid-short-header": 1,
+      "raw-directory-zero-inode": 1
+    },
+    "requiredClasses": [
+      "default-print",
+      "physical-traversal",
+      "literal-name",
+      "glob-name",
+      "folded-name",
+      "path-pattern",
+      "folded-path",
+      "whole-path-alias",
+      "folded-whole-path-alias",
+      "type-filter",
+      "depth-bounds",
+      "and-expression",
+      "or-expression",
+      "not-expression",
+      "comma-expression",
+      "parenthesized-expression",
+      "constant-predicates",
+      "repeated-actions",
+      "explicit-print-short-circuit",
+      "duplicate-roots",
+      "root-file",
+      "root-symlink",
+      "root-dangling-symlink",
+      "empty-directory",
+      "symlink-following",
+      "recursive-symlink-following",
+      "depth-first-traversal",
+      "prune-action",
+      "quit-action",
+      "metadata-predicate",
+      "formatted-output",
+      "regex-predicate",
+      "exec-action",
+      "files0-input",
+      "missing-root",
+      "malformed-expression",
+      "position-sensitive-warning",
+      "depth-overflow"
+    ],
+    "fullComparisonContract": [
+      "all stdout bytes",
+      "all stderr bytes",
+      "exit status"
+    ],
+    "nativeRouteAssertionsSeparateFromFallback": true
+  },
+  "benchmarkDriverTests": {
+    "counts": {
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "executedFromExtractedSource": true
+  },
+  "cli": {
+    "workingDirectory": "/tmp/find2fd-rust-package-cwd-eUxuPk",
+    "fullGNUComparisons": 12,
+    "packagedLauncher": "/tmp/find2fd-rust-package-cwd-eUxuPk/extracted/package/bin/find2fd",
+    "rebuiltRustCLI": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust",
+    "launcherRustCoverageClaimed": true,
+    "launcherBinaryOverride": "/home/lewis/Dev/find2fd/artifacts/rust-package-nLa92K/cargo-target/release/find2fd-rust",
+    "observations": [
+      {
+        "id": "name-search",
+        "label": "Rust",
+        "argv": [
+          "fixture",
+          "-name",
+          "*.txt"
+        ],
+        "GNU": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 16,
+          "stderrBytes": 0,
+          "stdoutSHA256": "885e2987c54fc7b2d506c7c7f3b38ba197da984ecc9d1e3bd975d6c75b302805",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "actual": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 16,
+          "stderrBytes": 0,
+          "stdoutSHA256": "885e2987c54fc7b2d506c7c7f3b38ba197da984ecc9d1e3bd975d6c75b302805",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "statusMatches": true,
+        "fullStdoutMatches": true,
+        "fullStderrMatches": true
+      },
+      {
+        "id": "name-search",
+        "label": "packaged-launcher",
+        "argv": [
+          "fixture",
+          "-name",
+          "*.txt"
+        ],
+        "GNU": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 16,
+          "stderrBytes": 0,
+          "stdoutSHA256": "885e2987c54fc7b2d506c7c7f3b38ba197da984ecc9d1e3bd975d6c75b302805",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "actual": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 16,
+          "stderrBytes": 0,
+          "stdoutSHA256": "885e2987c54fc7b2d506c7c7f3b38ba197da984ecc9d1e3bd975d6c75b302805",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "statusMatches": true,
+        "fullStdoutMatches": true,
+        "fullStderrMatches": true
+      },
+      {
+        "id": "nul-output",
+        "label": "Rust",
+        "argv": [
+          "fixture",
+          "-type",
+          "f",
+          "-print0"
+        ],
+        "GNU": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 56,
+          "stderrBytes": 0,
+          "stdoutSHA256": "4f74e80c2399fbddca51ea349d9c3b3395e2d34640a0f6829f5682131d3f0d7d",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "actual": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 56,
+          "stderrBytes": 0,
+          "stdoutSHA256": "4f74e80c2399fbddca51ea349d9c3b3395e2d34640a0f6829f5682131d3f0d7d",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "statusMatches": true,
+        "fullStdoutMatches": true,
+        "fullStderrMatches": true
+      },
+      {
+        "id": "nul-output",
+        "label": "packaged-launcher",
+        "argv": [
+          "fixture",
+          "-type",
+          "f",
+          "-print0"
+        ],
+        "GNU": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 56,
+          "stderrBytes": 0,
+          "stdoutSHA256": "4f74e80c2399fbddca51ea349d9c3b3395e2d34640a0f6829f5682131d3f0d7d",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "actual": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 56,
+          "stderrBytes": 0,
+          "stdoutSHA256": "4f74e80c2399fbddca51ea349d9c3b3395e2d34640a0f6829f5682131d3f0d7d",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "statusMatches": true,
+        "fullStdoutMatches": true,
+        "fullStderrMatches": true
+      },
+      {
+        "id": "depth-filter",
+        "label": "Rust",
+        "argv": [
+          "fixture",
+          "-maxdepth",
+          "1",
+          "-type",
+          "d"
+        ],
+        "GNU": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 23,
+          "stderrBytes": 0,
+          "stdoutSHA256": "3435151600b5f86fb6c0cbd86f3c49e2bf37e72b30fe01b816bb43339b31ee78",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "actual": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 23,
+          "stderrBytes": 0,
+          "stdoutSHA256": "3435151600b5f86fb6c0cbd86f3c49e2bf37e72b30fe01b816bb43339b31ee78",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "statusMatches": true,
+        "fullStdoutMatches": true,
+        "fullStderrMatches": true
+      },
+      {
+        "id": "depth-filter",
+        "label": "packaged-launcher",
+        "argv": [
+          "fixture",
+          "-maxdepth",
+          "1",
+          "-type",
+          "d"
+        ],
+        "GNU": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 23,
+          "stderrBytes": 0,
+          "stdoutSHA256": "3435151600b5f86fb6c0cbd86f3c49e2bf37e72b30fe01b816bb43339b31ee78",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "actual": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 23,
+          "stderrBytes": 0,
+          "stdoutSHA256": "3435151600b5f86fb6c0cbd86f3c49e2bf37e72b30fe01b816bb43339b31ee78",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "statusMatches": true,
+        "fullStdoutMatches": true,
+        "fullStderrMatches": true
+      },
+      {
+        "id": "metadata-fallback",
+        "label": "Rust",
+        "argv": [
+          "fixture",
+          "-size",
+          "+0c",
+          "-print"
+        ],
+        "GNU": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 79,
+          "stderrBytes": 0,
+          "stdoutSHA256": "ebc924c2454467fdf00b28fa606b1181b8f3872d0380e9db7b403c3a02aecf9f",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "actual": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 79,
+          "stderrBytes": 0,
+          "stdoutSHA256": "ebc924c2454467fdf00b28fa606b1181b8f3872d0380e9db7b403c3a02aecf9f",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "statusMatches": true,
+        "fullStdoutMatches": true,
+        "fullStderrMatches": true
+      },
+      {
+        "id": "metadata-fallback",
+        "label": "packaged-launcher",
+        "argv": [
+          "fixture",
+          "-size",
+          "+0c",
+          "-print"
+        ],
+        "GNU": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 79,
+          "stderrBytes": 0,
+          "stdoutSHA256": "ebc924c2454467fdf00b28fa606b1181b8f3872d0380e9db7b403c3a02aecf9f",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "actual": {
+          "status": 0,
+          "signal": null,
+          "stdoutBytes": 79,
+          "stderrBytes": 0,
+          "stdoutSHA256": "ebc924c2454467fdf00b28fa606b1181b8f3872d0380e9db7b403c3a02aecf9f",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "statusMatches": true,
+        "fullStdoutMatches": true,
+        "fullStderrMatches": true
+      },
+      {
+        "id": "invalid-option-diagnostic",
+        "label": "Rust",
+        "argv": [
+          "fixture",
+          "-not-a-valid-predicate"
+        ],
+        "GNU": {
+          "status": 1,
+          "signal": null,
+          "stdoutBytes": 0,
+          "stderrBytes": 49,
+          "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderrSHA256": "12b727f37ae12d048c28039f8bdf2830a4efb98fb4bf576ae03a1b286ca45bba"
+        },
+        "actual": {
+          "status": 1,
+          "signal": null,
+          "stdoutBytes": 0,
+          "stderrBytes": 49,
+          "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderrSHA256": "12b727f37ae12d048c28039f8bdf2830a4efb98fb4bf576ae03a1b286ca45bba"
+        },
+        "statusMatches": true,
+        "fullStdoutMatches": true,
+        "fullStderrMatches": true
+      },
+      {
+        "id": "invalid-option-diagnostic",
+        "label": "packaged-launcher",
+        "argv": [
+          "fixture",
+          "-not-a-valid-predicate"
+        ],
+        "GNU": {
+          "status": 1,
+          "signal": null,
+          "stdoutBytes": 0,
+          "stderrBytes": 49,
+          "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderrSHA256": "12b727f37ae12d048c28039f8bdf2830a4efb98fb4bf576ae03a1b286ca45bba"
+        },
+        "actual": {
+          "status": 1,
+          "signal": null,
+          "stdoutBytes": 0,
+          "stderrBytes": 49,
+          "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderrSHA256": "12b727f37ae12d048c28039f8bdf2830a4efb98fb4bf576ae03a1b286ca45bba"
+        },
+        "statusMatches": true,
+        "fullStdoutMatches": true,
+        "fullStderrMatches": true
+      },
+      {
+        "id": "missing-root-diagnostic",
+        "label": "Rust",
+        "argv": [
+          "missing-root",
+          "-name",
+          "*.txt"
+        ],
+        "GNU": {
+          "status": 1,
+          "signal": null,
+          "stdoutBytes": 0,
+          "stderrBytes": 48,
+          "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderrSHA256": "dbdd57e667ad0ec886410e7121e010bef174f49c3130a9ce22e283d59cf9fd69"
+        },
+        "actual": {
+          "status": 1,
+          "signal": null,
+          "stdoutBytes": 0,
+          "stderrBytes": 48,
+          "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderrSHA256": "dbdd57e667ad0ec886410e7121e010bef174f49c3130a9ce22e283d59cf9fd69"
+        },
+        "statusMatches": true,
+        "fullStdoutMatches": true,
+        "fullStderrMatches": true
+      },
+      {
+        "id": "missing-root-diagnostic",
+        "label": "packaged-launcher",
+        "argv": [
+          "missing-root",
+          "-name",
+          "*.txt"
+        ],
+        "GNU": {
+          "status": 1,
+          "signal": null,
+          "stdoutBytes": 0,
+          "stderrBytes": 48,
+          "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderrSHA256": "dbdd57e667ad0ec886410e7121e010bef174f49c3130a9ce22e283d59cf9fd69"
+        },
+        "actual": {
+          "status": 1,
+          "signal": null,
+          "stdoutBytes": 0,
+          "stderrBytes": 48,
+          "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderrSHA256": "dbdd57e667ad0ec886410e7121e010bef174f49c3130a9ce22e283d59cf9fd69"
+        },
+        "statusMatches": true,
+        "fullStdoutMatches": true,
+        "fullStderrMatches": true
+      }
+    ]
+  },
+  "sourceAndExecutableHashesStable": true,
+  "fullGNUComparisons": 706,
+  "stageCount": 28,
+  "completedAt": "2026-10-12T23:10:46.964Z",
+  "cleanup": "Owned archive/cache/build/extraction/outside-cwd directories removed after verification."
+}

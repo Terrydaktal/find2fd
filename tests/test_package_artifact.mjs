@@ -21,9 +21,9 @@ function entryChecks(packageRoot, cwd, bin, prefixBin) {
   const environment = { ...process.env, FIND2FD_TEST_PACKAGE_ROOT: packageRoot, FIND2FD_TEST_ENTRY_BIN: bin, FIND2FD_TEST_PREFIX_BIN: prefixBin };
   // A nested `node --test` owns its TAP stream, rather than the parent's IPC mode.
   delete environment.NODE_TEST_CONTEXT;
-  const result = command(process.execPath, ['--test', '--test-reporter=tap', join(packageRoot, 'tests/test_package_entry.mjs')], cwd,
+  const result = command(process.execPath, ['--test', '--test-reporter=tap', join(packageRoot, 'tests/test_package_entry.mjs'), join(packageRoot, 'tests/test_find_default_policy.mjs')], cwd,
     environment);
-  assert.match(result.stdout, /^# tests 5$/m);
+  assert.match(result.stdout, /^# tests 10$/m);
   for (const kind of ['fail', 'cancelled', 'skipped', 'todo']) assert.match(result.stdout, new RegExp(`^# ${kind} 0$`, 'm'));
   return [...result.stdout.matchAll(/^# (\{.*\})$/gm)].map((match) => JSON.parse(match[1]));
 }
@@ -39,9 +39,11 @@ test('actual npm tar extraction and offline local installation execute shipped G
   command('tar', ['-xzf', archive, '-C', extraction], cwd);
   const packageRoot = join(extraction, 'package');
   const expected = ['package.json', 'README.md', 'LICENSE', 'NOTICE', 'pi/find2fd.ts', 'bin/find2fd', 'bin/find2fd.mjs', 'bin/find2fd-shell-prefix.mjs',
+    'src/find-auto.sh', 'tools/benchmark-routing.py', 'docs/automatic-routing-audit.json', 'docs/automatic-routing-performance.json',
     'tools/verify.mjs', 'tools/verify-artifact.mjs', 'tests/helpers.mjs', 'tests/test_package_entry.mjs', 'tests/test_package_artifact.mjs', 'tests/find_option_inventory.json', 'tests/find_wrapper_requirements.json',
-    ...['options', 'order', 'runtime', 'wrapper'].map((name) => `src/find-${name}.mjs`),
-    ...['options', 'cli', 'fallback', 'runtime', 'scope', 'campaign'].map((name) => `tests/test_find_${name}.mjs`)];
+    ...['options', 'order', 'runtime', 'wrapper', 'evaluate', 'incremental', 'descriptors'].map((name) => `src/find-${name}.mjs`),
+    'tests/find_metadata_helpers.mjs', 'tests/find_incremental_helpers.mjs',
+    ...['automatic_routing', 'default_policy', 'options', 'cli', 'expressions', 'fallback', 'runtime', 'scope', 'campaign', 'expression_campaign', 'metadata', 'metadata_formats', 'metadata_traversal', 'incremental', 'incremental_runtime', 'leading_flags', 'descriptors'].map((name) => `tests/test_find_${name}.mjs`)];
   for (const file of expected) {
     assert.ok(existsSync(join(packageRoot, file)), `missing extracted verification or product file ${file}`);
     assert.equal(hash(join(packageRoot, file)), hash(join(root, file)), `packed file identity: ${file}`);
@@ -52,5 +54,5 @@ test('actual npm tar extraction and offline local installation execute shipped G
   command('npm', ['install', '--prefix', installation, '--offline', '--ignore-scripts', '--no-audit', '--no-fund', '--legacy-peer-deps', archive], cwd, npmEnv);
   const installedPackage = join(installation, 'node_modules/find2fd');
   const installedEvidence = entryChecks(installedPackage, cwd, join(installation, 'node_modules/.bin/find2fd'), join(installation, 'node_modules/.bin/find2fd-shell-prefix'));
-  t.diagnostic(JSON.stringify({ campaign: 'packed-artifact', tarballSHA256: hash(archive), npmIntegrity: record.integrity, extractedFilesVerified: expected.length, extractedEntryNodeTests: 5, installedEntryNodeTests: 5, extractedEvidence, installedEvidence }));
+  t.diagnostic(JSON.stringify({ campaign: 'packed-artifact', tarballSHA256: hash(archive), npmIntegrity: record.integrity, extractedFilesVerified: expected.length, extractedEntryNodeTests: 10, installedEntryNodeTests: 10, extractedEvidence, installedEvidence }));
 });

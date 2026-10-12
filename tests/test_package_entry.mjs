@@ -12,14 +12,37 @@ function prefix(program, current) {
   const result = run(program, [], current.cwd, { env: current.env });
   assert.equal(result.status, 0); assert.equal(result.stderr.length, 0); return result.stdout.toString();
 }
-test('installed find2fd preserves GNU arguments, exact output/status, stdin and native expression behavior', (t) => {
+test('installed find2fd preserves GNU arguments, exact output/status, stdin and expanded expression behavior', (t) => {
   const current = fixture(t);
   const cases = [[], ['tree'], ['tree', '-print0'], ['tree', '-name', '*.txt'], ['tree', '-type', 'd'], ['tree', '-maxdepth', '0'], ['tree/empty'], ['tree', 'tree', '-name', 'foo.txt'], ['tree/z-dir', 'tree', '-print0'], ['tree', '-name', 'missing'], ['tree/foo.txt'], ['missing', 'tree/foo.txt', '-print0'], ['tree', '-name', 'foo.txt', '-o', '-name', 'Foo.txt', '-print0'], ['tree', '(', '-name', 'foo.txt', '-o', '-name', 'Foo.txt', ')', '-print0'], ['tree', '-prune'], ['tree', '-quit'], ['tree', '-printf', '%p:%f\n'], ['-files0-from', '-', '-print0'], ['--help'], ['--version'], ['--invalid-wrapper-option'], ['tree', '-name']];
+  cases.push(
+    ['tree', '!', '-type', 'd', '-print0'], ['tree', '-false', '-o', '-true'],
+    ['tree', '-name', 'foo.txt', '-o', '-print0'], ['tree', '-print0', '-print'],
+    ['tree', '-name', 'foo.txt', '-print0', ',', '-name', 'Foo.txt', '-print'],
+    ['tree', '-path', 'tree/*/target.txt', '-print0'], ['tree', '-wholename', 'tree/*/target.txt'],
+    ['tree', '-iname', 'FOO.TXT'], ['tree', '-ipath', 'TREE/*/TARGET.TXT'],
+    ['tree', '-name', '?oo.txt'], ['tree', '(', '-true', '-o', '-false', ')', '-a', '-false'],
+  );
+  const stdinRoots = Buffer.from('tree/foo.txt\0tree/Foo.txt\0');
+  let stdinComparisons = 0;
   for (const argv of cases) {
-    const extras = { env: current.env, input: Buffer.from('tree/foo.txt\0tree/Foo.txt\0') };
-    exact(run(cli, argv, current.cwd, extras), run('/usr/bin/find', argv, current.cwd, extras), JSON.stringify(argv));
+    const readsStdin = argv.some((arg, index) => arg === '-files0-from' && argv[index + 1] === '-');
+    // Non-reading commands can exit before spawnSync writes an unused pipe,
+    // producing a harness EPIPE instead of the real GNU result. Supply a
+    // payload only to the case that actually consumes roots from stdin.
+    const extras = { env: current.env, ...(readsStdin ? { input: stdinRoots } : {}) };
+    const expected = run('/usr/bin/find', argv, current.cwd, extras);
+    const actual = run(cli, argv, current.cwd, extras);
+    exact(actual, expected, JSON.stringify(argv));
+    if (readsStdin) {
+      assert.equal(expected.status, 0);
+      assert.deepEqual(expected.stdout, stdinRoots, 'the GNU oracle actually consumes both NUL-delimited stdin roots');
+      stdinComparisons++;
+    }
   }
-  t.diagnostic(JSON.stringify({ campaign: 'package-entry', actualGNUComparisons: cases.length, executable: cli, actualFdInvocations: current.actualSearchCalls() }));
+  assert.equal(stdinComparisons, 1, 'the package entry gate must retain its real stdin root case');
+  t.diagnostic(JSON.stringify({ campaign: 'package-entry', actualGNUComparisons: cases.length, executable: cli,
+    actualFdInvocations: current.actualSearchCalls(), actualStdinComparisons: stdinComparisons, stdinPayloadBytes: stdinRoots.length }));
 });
 test('shell-prefix executable adapts only private bare find and preserves native bypasses, children and outside shells', (t) => {
   const current = fixture(t), helper = prefix(prefixCli, current);
@@ -45,7 +68,7 @@ test('shell-prefix and public launcher safely handle metacharacter paths and ins
   for (const program of [chained, join(tricky, 'bin/find2fd')]) exact(run(program, ['tree', '-name', 'foo.txt'], current.cwd), run('/usr/bin/find', ['tree', '-name', 'foo.txt'], current.cwd), 'public launcher path');
   assert.equal(existsSync(marker), false, 'shell substitutions in paths are never executed');
 });
-test('public launcher retains valid Unicode and invalid UTF-8 argv without Node decoding', (t) => {
+test('public launcher accelerates valid Unicode and retains invalid UTF-8 argv before Node decoding', (t) => {
   const current = fixture(t), rawName = Buffer.from([0xff, 0xfe, ...Buffer.from('.txt')]);
   const rawBin = join(current.cwd, 'raw-bin'); mkdirSync(rawBin);
   // Keep the fd recorder, but invoke real native GNU directly: a Node-based
@@ -67,7 +90,7 @@ print(json.dumps(output))
   const result = run('python3', ['-c', script, cli, JSON.stringify(cases)], current.cwd, { env: rawEnv }); assert.equal(result.status, 0, result.stderr.toString());
   const comparisons = JSON.parse(result.stdout); assert.equal(comparisons.length, cases.length);
   for (const [index, comparison] of comparisons.entries()) assert.deepEqual(comparison.actual, comparison.expected, `raw argv case ${index}`);
-  assert.equal(current.actualSearchCalls(), 0, 'non-ASCII argv stay native before Node');
+  assert.equal(current.actualSearchCalls(), 1, 'valid Unicode predicate uses real fd; raw invalid bytes and scan-free file roots need no fd walk');
   t.diagnostic(JSON.stringify({ campaign: 'package-argv-bytes', actualGNUComparisons: comparisons.length, argvSource: 'Python byte argv to real executable' }));
 });
 

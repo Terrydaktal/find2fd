@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "scope": "GNU-help spelling inventory; classification is conservative and contextual, never a universal fd-equivalence claim.",
+  "scope": "Independent finite GNU option/operator compatibility inventory. Automatic sparse measured family is separately audited in docs/automatic-routing-audit.json; broad semantic qualified classes require EXPERIMENTAL_FD=1 and are not speed claims.",
   "options": [
     {
       "spelling": "-P",
@@ -9,7 +9,7 @@
         "tree"
       ],
       "classification": "qualified",
-      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-name",
@@ -19,7 +19,7 @@
         "foo*"
       ],
       "classification": "qualified",
-      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-type",
@@ -29,7 +29,7 @@
         "f"
       ],
       "classification": "qualified",
-      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-mindepth",
@@ -39,7 +39,7 @@
         "1"
       ],
       "classification": "qualified",
-      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-maxdepth",
@@ -49,7 +49,7 @@
         "1"
       ],
       "classification": "qualified",
-      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-a",
@@ -62,7 +62,7 @@
         "*.txt"
       ],
       "classification": "qualified",
-      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-and",
@@ -75,7 +75,7 @@
         "*.txt"
       ],
       "classification": "qualified",
-      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-print",
@@ -84,7 +84,7 @@
         "-print"
       ],
       "classification": "qualified",
-      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-print0",
@@ -93,7 +93,7 @@
         "-print0"
       ],
       "classification": "qualified",
-      "contract": "Only within the documented pure conjunction, directory-root and safe-pattern boundary; exact GNU output order and bytes remain required."
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-daystart",
@@ -101,8 +101,8 @@
         "tree",
         "-daystart"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-follow",
@@ -110,8 +110,8 @@
         "tree",
         "-follow"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-nowarn",
@@ -119,8 +119,8 @@
         "tree",
         "-nowarn"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-warn",
@@ -128,8 +128,18 @@
         "tree",
         "-warn"
       ],
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
+    },
+    {
+      "spelling": "-d",
+      "argv": [
+        "tree",
+        "-d",
+        "-print0"
+      ],
       "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "contract": "The documented -depth alias retains the complete original GNU invocation, including alias diagnostics, traversal order, output bytes and status. This alias receives no fd acceleration credit."
     },
     {
       "spelling": "-depth",
@@ -137,8 +147,8 @@
         "tree",
         "-depth"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-mount",
@@ -146,8 +156,8 @@
         "tree",
         "-mount"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-noleaf",
@@ -155,8 +165,8 @@
         "tree",
         "-noleaf"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-xdev",
@@ -164,8 +174,8 @@
         "tree",
         "-xdev"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-ignore_readdir_race",
@@ -182,8 +192,8 @@
         "tree",
         "-noignore_readdir_race"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: Leading default-mode noignore_readdir_race qualifies before tests; GNU prevalidation checks diagnostics and actual fd enumerates candidates. Positional late spellings retain original GNU."
     },
     {
       "spelling": "-empty",
@@ -191,8 +201,8 @@
         "tree",
         "-empty"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-false",
@@ -200,8 +210,8 @@
         "tree",
         "-false"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-nouser",
@@ -209,8 +219,8 @@
         "tree",
         "-nouser"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-nogroup",
@@ -218,8 +228,8 @@
         "tree",
         "-nogroup"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-readable",
@@ -227,8 +237,8 @@
         "tree",
         "-readable"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-writable",
@@ -236,8 +246,8 @@
         "tree",
         "-writable"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-executable",
@@ -245,8 +255,8 @@
         "tree",
         "-executable"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-true",
@@ -254,8 +264,8 @@
         "tree",
         "-true"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-ls",
@@ -263,26 +273,30 @@
         "tree",
         "-ls"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-prune",
       "argv": [
         "tree",
+        "-maxdepth",
+        "8",
         "-prune"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: Physical preorder controls with an explicit finite maxdepth proving every pathname fits PATH_MAX run in a persistent GNU depth-zero FIFO/PTY evaluator before any descendant listing. GNU truth, implicit print and output bytes remain authoritative; only directories actually visited use immediate fd listing. Root prune/quit require zero fd calls and receive no fd acceleration credit. Unsafe traversal/action/context mixtures and unavailable helper dependencies retain original GNU before evaluation starts."
     },
     {
       "spelling": "-quit",
       "argv": [
         "tree",
+        "-maxdepth",
+        "8",
         "-quit"
       ],
-      "classification": "native",
-      "contract": "Pass the original invocation unchanged to GNU before fd or side effects."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: Physical preorder controls with an explicit finite maxdepth proving every pathname fits PATH_MAX run in a persistent GNU depth-zero FIFO/PTY evaluator before any descendant listing. GNU truth, implicit print and output bytes remain authoritative; only directories actually visited use immediate fd listing. Root prune/quit require zero fd calls and receive no fd acceleration credit. Unsafe traversal/action/context mixtures and unavailable helper dependencies retain original GNU before evaluation starts."
     },
     {
       "spelling": "-delete",
@@ -297,31 +311,37 @@
       "spelling": "-amin",
       "argv": [
         "tree",
+        "-type",
+        "f",
         "-amin",
         "1"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-anewer",
       "argv": [
         "tree",
+        "-type",
+        "f",
         "-anewer",
         "tree/foo.txt"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-atime",
       "argv": [
         "tree",
+        "-type",
+        "f",
         "-atime",
         "1"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-cmin",
@@ -330,8 +350,8 @@
         "-cmin",
         "1"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-cnewer",
@@ -340,8 +360,8 @@
         "-cnewer",
         "tree/foo.txt"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-context",
@@ -351,7 +371,7 @@
         "*"
       ],
       "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "contract": "On the qualified Linux environments GNU SELinux context support is unavailable: compile-only GNU validation preserves its native diagnostic before fd traversal. Enabled SELinux contexts require separate environment qualification rather than acceleration credit from an error-only invocation."
     },
     {
       "spelling": "-ctime",
@@ -360,8 +380,8 @@
         "-ctime",
         "1"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-fstype",
@@ -370,8 +390,8 @@
         "-fstype",
         "ext4"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-gid",
@@ -380,8 +400,8 @@
         "-gid",
         "0"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-group",
@@ -390,8 +410,8 @@
         "-group",
         "root"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-ilname",
@@ -400,8 +420,8 @@
         "-ilname",
         "*"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-iname",
@@ -410,8 +430,8 @@
         "-iname",
         "*.TXT"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-inum",
@@ -420,8 +440,8 @@
         "-inum",
         "0"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-iwholename",
@@ -430,8 +450,8 @@
         "-iwholename",
         "*"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-iregex",
@@ -440,8 +460,8 @@
         "-iregex",
         ".*"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-links",
@@ -450,8 +470,8 @@
         "-links",
         "1"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-lname",
@@ -460,8 +480,8 @@
         "-lname",
         "*"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-mmin",
@@ -470,8 +490,8 @@
         "-mmin",
         "1"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-mtime",
@@ -480,8 +500,8 @@
         "-mtime",
         "1"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-newer",
@@ -490,8 +510,8 @@
         "-newer",
         "tree/foo.txt"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-newerXY",
@@ -500,8 +520,8 @@
         "-newermt",
         "2026-01-01"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-path",
@@ -510,8 +530,8 @@
         "-path",
         "tree/*"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-perm",
@@ -520,8 +540,8 @@
         "-perm",
         "u=r"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-regex",
@@ -530,8 +550,8 @@
         "-regex",
         ".*"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-size",
@@ -540,8 +560,8 @@
         "-size",
         "1c"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-uid",
@@ -550,18 +570,20 @@
         "-uid",
         "0"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-used",
       "argv": [
         "tree",
+        "-type",
+        "f",
         "-used",
         "1"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-user",
@@ -570,8 +592,8 @@
         "-user",
         "root"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-wholename",
@@ -580,8 +602,8 @@
         "-wholename",
         "tree/*"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-xtype",
@@ -590,8 +612,8 @@
         "-xtype",
         "l"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-regextype",
@@ -600,8 +622,8 @@
         "-regextype",
         "posix-extended"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-printf",
@@ -610,8 +632,8 @@
         "-printf",
         "%p\\n"
       ],
-      "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-fprintf",
@@ -622,7 +644,7 @@
         "%p\\n"
       ],
       "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "contract": "Output-file actions and user -files0-from lists retain original GNU execution; these representatives are not fd acceleration."
     },
     {
       "spelling": "-fprint",
@@ -632,7 +654,7 @@
         "result.paths"
       ],
       "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "contract": "Output-file actions and user -files0-from lists retain original GNU execution; these representatives are not fd acceleration."
     },
     {
       "spelling": "-fprint0",
@@ -642,7 +664,7 @@
         "result.paths"
       ],
       "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "contract": "Output-file actions and user -files0-from lists retain original GNU execution; these representatives are not fd acceleration."
     },
     {
       "spelling": "-fls",
@@ -652,7 +674,7 @@
         "result.paths"
       ],
       "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "contract": "Output-file actions and user -files0-from lists retain original GNU execution; these representatives are not fd acceleration."
     },
     {
       "spelling": "-files0-from",
@@ -661,7 +683,7 @@
         "roots.list"
       ],
       "classification": "native",
-      "contract": "Metadata, regex, positional options, stdin/file roots and rich output actions retain native GNU semantics."
+      "contract": "Output-file actions and user -files0-from lists retain original GNU execution; these representatives are not fd acceleration."
     },
     {
       "spelling": "-exec",
@@ -717,8 +739,8 @@
         "-H",
         "tree"
       ],
-      "classification": "native",
-      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-L",
@@ -726,8 +748,8 @@
         "-L",
         "tree"
       ],
-      "classification": "native",
-      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-Olevel",
@@ -735,8 +757,8 @@
         "-O2",
         "tree"
       ],
-      "classification": "native",
-      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-D",
@@ -746,7 +768,15 @@
         "tree"
       ],
       "classification": "native",
-      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+      "contract": "Debug and informational invocations retain original GNU output and status; these representatives are not fd acceleration."
+    },
+    {
+      "spelling": "-help",
+      "argv": [
+        "-help"
+      ],
+      "classification": "native",
+      "contract": "The documented --help alias retains original GNU informational output, diagnostics and status without fd execution."
     },
     {
       "spelling": "--help",
@@ -754,7 +784,15 @@
         "--help"
       ],
       "classification": "native",
-      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+      "contract": "Debug and informational invocations retain original GNU output and status; these representatives are not fd acceleration."
+    },
+    {
+      "spelling": "-version",
+      "argv": [
+        "-version"
+      ],
+      "classification": "native",
+      "contract": "The documented --version alias retains original GNU informational output, diagnostics and status without fd execution."
     },
     {
       "spelling": "--version",
@@ -762,7 +800,7 @@
         "--version"
       ],
       "classification": "native",
-      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+      "contract": "Debug and informational invocations retain original GNU output and status; these representatives are not fd acceleration."
     },
     {
       "spelling": "-not",
@@ -772,8 +810,8 @@
         "-type",
         "d"
       ],
-      "classification": "native",
-      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-o",
@@ -785,8 +823,8 @@
         "-type",
         "d"
       ],
-      "classification": "native",
-      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
     },
     {
       "spelling": "-or",
@@ -798,63 +836,97 @@
         "-type",
         "d"
       ],
-      "classification": "native",
-      "contract": "Complex operators, dereferencing, diagnostics and informational invocations remain native unchanged."
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
+    },
+    {
+      "spelling": "-ipath",
+      "argv": [
+        "tree",
+        "-ipath",
+        "TREE/*"
+      ],
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The representative invocation plans fd traversal, followed by pure evaluation or depth-zero GNU evaluation on ordered candidate paths. Metadata/globs/regex and print formats preserve GNU bytes, diagnostics and status; syntax/host-feature validation, access-time effects, traversal observations and resource limits may route the complete original invocation natively before output."
+    },
+    {
+      "spelling": "-samefile",
+      "argv": [
+        "tree",
+        "-samefile",
+        "tree/foo.txt"
+      ],
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: fd supplies traversal candidates; depth-zero GNU evaluation preserves original reference inode/device semantics. This manual predicate is not listed in GNU help."
+    },
+    {
+      "spelling": "--",
+      "argv": [
+        "--",
+        "tree",
+        "-size",
+        "+0c"
+      ],
+      "classification": "qualified",
+      "contract": "Under explicit experimental opt-in: The leading GNU root delimiter retains original root labels and permits fd enumeration followed by nonrecursive GNU predicates; malformed following leading flags remain native."
     }
   ],
   "operators": [
     {
       "spelling": "(",
-      "classification": "native",
+      "classification": "qualified",
       "argv": [
         "tree",
-        "("
+        "(",
+        "-true",
+        ")"
       ],
-      "contract": "Unsupported expression operators retain their exact original argv and GNU diagnostics; precedence is never translated."
+      "contract": "Under explicit experimental opt-in: Supported pure expression operator with exact GNU precedence/short circuiting/printing; malformed operands remain native for GNU diagnostics."
     },
     {
       "spelling": ")",
-      "classification": "native",
+      "classification": "qualified",
       "argv": [
         "tree",
+        "(",
+        "-true",
         ")"
       ],
-      "contract": "Unsupported expression operators retain their exact original argv and GNU diagnostics; precedence is never translated."
+      "contract": "Under explicit experimental opt-in: Supported pure expression operator with exact GNU precedence/short circuiting/printing; malformed operands remain native for GNU diagnostics."
     },
     {
       "spelling": "!",
-      "classification": "native",
+      "classification": "qualified",
       "argv": [
         "tree",
-        "!"
+        "!",
+        "-type",
+        "d"
       ],
-      "contract": "Unsupported expression operators retain their exact original argv and GNU diagnostics; precedence is never translated."
+      "contract": "Under explicit experimental opt-in: Supported pure expression operator with exact GNU precedence/short circuiting/printing; malformed operands remain native for GNU diagnostics."
     },
     {
       "spelling": ",",
-      "classification": "native",
+      "classification": "qualified",
       "argv": [
         "tree",
-        ","
+        "-false",
+        ",",
+        "-true"
       ],
-      "contract": "Unsupported expression operators retain their exact original argv and GNU diagnostics; precedence is never translated."
+      "contract": "Under explicit experimental opt-in: Supported pure expression operator with exact GNU precedence/short circuiting/printing; malformed operands remain native for GNU diagnostics."
     }
   ],
   "boundaries": {
     "name": [
-      "literal",
-      "*",
-      "prefix*",
-      "*.suffix"
+      "GNU literal/glob syntax through pure evaluation or GNU depth-zero broker",
+      "ASCII and valid UTF-8 argument patterns",
+      "raw descendant filename bytes"
     ],
     "nativeName": [
-      "",
-      "?",
-      "[]",
-      "{}",
-      "\\",
-      "/",
-      "non-ASCII"
+      "unrepresentable NUL argv",
+      "invalid UTF-8 argument bytes requiring native Bash forwarding",
+      "parse-time diagnostics that would duplicate across split GNU evaluations"
     ],
     "depth": [
       "0",
@@ -876,6 +948,143 @@
       "D",
       "x",
       "f,d"
-    ]
+    ],
+    "expression": {
+      "maxNodes": 256,
+      "maxNesting": 64,
+      "nativeBeyondBounds": true,
+      "maxPatternBytes": 8192
+    },
+    "output": {
+      "maxFormattedRecords": 100000,
+      "maxFormattedBytes": 33554432,
+      "nativeBeforeAnyOutputBeyondBounds": true,
+      "scope": "Buffered listing/evaluation modes only; incremental GNU public output is inherited and streamed."
+    },
+    "accessTime": {
+      "accelerated": "regular-file-only buffered output proof, or incremental current-node evaluation before directory opening",
+      "native": "directory/symlink observations or mutable access-time references in buffered traversal; unsafe incremental traversal/action combinations"
+    },
+    "traversal": {
+      "qualified": [
+        "-P",
+        "-H",
+        "-L",
+        "-depth",
+        "-xdev",
+        "-mount",
+        "-noleaf",
+        "finite-depth physical preorder prune/quit with noncontextual pure output"
+      ],
+      "nativeObserved": [
+        "logical cross-filesystem directory boundary in buffered logical traversal",
+        "buffered fd stderr/errors/overflow before output",
+        "unsupported pruning/stopping combinations and side-effect actions",
+        "unbounded controls or finite depth/root-byte budgets that cannot prove PATH_MAX safety"
+      ],
+      "incrementalFaultContinuation": "After evaluator startup, malformed/error fd listing uses local GNU depth-one discovery without original invocation replay.",
+      "incrementalPathBudget": {
+        "maxPathBytes": 4095,
+        "maximumComponentBytes": 255,
+        "explicitFiniteMaxDepthRequired": true,
+        "knownFilesystems": [
+          "ext2",
+          "ext3",
+          "ext4",
+          "btrfs",
+          "xfs",
+          "tmpfs",
+          "ramfs",
+          "f2fs"
+        ],
+        "unknownNestedMounts": "original GNU before helper startup",
+        "maximumMountInfoBytes": 1048576
+      }
+    }
+  },
+  "backendCoverage": [
+    {
+      "feature": "default public/private/direct API/Pi policy",
+      "backend": "original GNU; no assumed universally faster class",
+      "contract": "Absent or nonexact experimental flag preserves original raw argv, descriptors, stdin, actions and native diagnostics before Node/fd/probes in public/private Bash. Exact1 opt-in has real fd witness; no universal speed claim.",
+      "tests": [
+        "tests/test_find_default_policy.mjs",
+        "tests/test_find_scope.mjs"
+      ]
+    },
+    {
+      "feature": "name/path/type expressions and printing",
+      "backend": "fd plus byte-preserving pure evaluator or GNU evaluator",
+      "tests": [
+        "tests/test_find_expressions.mjs",
+        "tests/test_find_metadata.mjs"
+      ]
+    },
+    {
+      "feature": "GNU size, permissions, ownership, inode, link, emptiness, access, time and reference predicates",
+      "backend": "fd traversal plus nonrecursive GNU predicate broker",
+      "tests": [
+        "tests/test_find_metadata.mjs"
+      ]
+    },
+    {
+      "feature": "GNU printf including original starting-point/depth context and ls",
+      "backend": "fd traversal plus nonrecursive GNU formatting broker",
+      "tests": [
+        "tests/test_find_metadata_formats.mjs"
+      ]
+    },
+    {
+      "feature": "depth and H/L symlink traversal policy",
+      "backend": "fd traversal plus GNU-order reconstruction and candidate evaluation",
+      "tests": [
+        "tests/test_find_metadata_traversal.mjs"
+      ]
+    },
+    {
+      "feature": "directory access time and observed logical cross-filesystem boundary",
+      "backend": "original GNU for proven compatibility boundary",
+      "tests": [
+        "tests/test_find_metadata.mjs",
+        "tests/test_find_metadata_traversal.mjs"
+      ]
+    },
+    {
+      "feature": "deletion, external/file actions and stdin root lists",
+      "backend": "original GNU while dedicated semantics remain unimplemented",
+      "tests": [
+        "tests/test_find_fallback.mjs"
+      ]
+    },
+    {
+      "feature": "Leading root delimiter, numeric optimization and default readdir-race spelling",
+      "backend": "Actual fd enumeration plus nonrecursive GNU validation/evaluation",
+      "contract": "Leading --, zero-padded -O and noignore_readdir_race retain GNU parsing and diagnostics; late/invalid flags and action mixtures remain explicitly native.",
+      "tests": [
+        "tests/test_find_leading_flags.mjs"
+      ]
+    },
+    {
+      "feature": "Caller auxiliary and closed standard descriptors",
+      "backend": "Descriptor-preserving fd/evaluator or original GNU",
+      "contract": "Public/private calls preserve FD3/FD63/FD4097 across exec, samefile references and process substitution; evaluator chooses an unused input slot. Direct runFind can explicitly declare callerDescriptors:[3]. Closed standard0/1/2 retain GNU status/streams through direct executables.",
+      "tests": [
+        "tests/test_find_descriptors.mjs"
+      ]
+    },
+    {
+      "feature": "finite-depth physical preorder prune/quit and short-circuit control truth",
+      "backend": "persistent GNU candidate evaluator plus immediate fd directory listing after evaluation",
+      "contract": "Root controls and file roots use GNU only; real fd contribution, validation calls, local GNU discovery and original fallback are counted separately. Fault continuation never replays prior output or actions. Unbounded or excessive-depth controls remain original GNU before helper startup; no full-expression replay can occur after output.",
+      "tests": [
+        "tests/test_find_incremental.mjs",
+        "tests/test_find_incremental_runtime.mjs"
+      ]
+    }
+  ],
+  "executionPolicy": {
+    "default": "original GNU find before Node, fd and expression preflight in public/private Bash routes",
+    "experimentalOptIn": "FIND2FD_EXPERIMENTAL_FD=1 (exact string only)",
+    "performanceClaim": "none; semantic finite correctness evidence does not establish universal speed"
   }
 }

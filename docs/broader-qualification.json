@@ -1,0 +1,1779 @@
+{
+  "schemaVersion": 1,
+  "package": "find2fd",
+  "scope": "Finite independent GNU differential qualification of the native default and explicitly enabled experimental fd routes, including expressions, metadata, formatting, descriptors and bounded physical preorder prune/quit. No universal speed or filesystem-race equivalence claim.",
+  "executionPolicy": {
+    "defaultBackend": "GNU find",
+    "experimentalFlag": "FIND2FD_EXPERIMENTAL_FD=1",
+    "semanticTestsOptInExplicitly": true,
+    "defaultPolicyTest": "tests/test_find_default_policy.mjs",
+    "speedClaim": "none",
+    "acceptedExperimentalValue": "1",
+    "universallyFasterClasses": [],
+    "publicDefault": "Execute original GNU before Node startup, argument proofs or preparatory probes.",
+    "privateDefault": "Execute command find with original arguments before Node or preparatory probes.",
+    "PiDefault": "Keep the native Bash tool without a wrapper hook; experimental adaptation additionally requires an allowed provider.",
+    "actionPolicy": "User command, mutating and output-file actions retain original GNU execution; actions are never timed twice."
+  },
+  "experimentalSemanticScope": {
+    "inProcess": "fd candidates with byte-safe filters and Boolean/output evaluation, restored to GNU operand and traversal order.",
+    "batchedGNU": "fd discovery followed by scan-free roots or nonrecursive GNU metadata, matching and formatting evaluation; compile, evaluation, discovery and original fallback invocations are counted separately.",
+    "incrementalGNU": "Physical preorder pure predicates/output plus prune/quit, with finite leading maxdepth and a proved path budget. GNU evaluates the current node before immediate-child fd discovery. Root-only controls require no fd query.",
+    "incrementalBounds": {
+      "maximumPathBytes": 4095,
+      "maximumComponentBytes": 255,
+      "maximumMountInfoBytes": 1048576,
+      "qualifiedFilesystems": [
+        "ext2",
+        "ext3",
+        "ext4",
+        "btrfs",
+        "xfs",
+        "tmpfs",
+        "ramfs",
+        "f2fs"
+      ],
+      "maximumRetainedChildren": 100000,
+      "maximumRetainedNameBytes": 33554432
+    },
+    "incrementalFaultPolicy": "Preparation failure uses original GNU before output. After broker start, failed fd directory queries continue with local GNU depth-one discovery without replaying prior expressions.",
+    "remainingBoundaries": "Unbounded prune/quit, unsupported traversal/control combinations, unknown filesystem types or nested mounts, unsafe private scratch placement and user actions retain original GNU; no fd contribution is credited."
+  },
+  "qualifiedArchive": {
+    "filename": "find2fd-0.1.0.tgz",
+    "sha256": "62f43c0f548c35eee8b67f94cfa21aa11db4db02e726a9c966f2bfb371045bee",
+    "integrity": "sha512-ovbErqQHaxM4rd9Gz6JYVF7Y5SfN6IR/6kUJU+5unNXKjxr7dN2vJ7NQRDUOUeZLr5KYCIvF7dSOYxDr58NiBQ==",
+    "fileCount": 46,
+    "verification": "The same actual npm pack archive was extracted and replayed on desktop and VM with tools/verify.mjs --deep --sdk. The release coordinator confirmed the transferred archive SHA256."
+  },
+  "sourceAgreement": {
+    "algorithm": "SHA256",
+    "files": 37,
+    "desktopEqualsVM": true,
+    "beforeEqualsAfter": true,
+    "currentFilesEqualReports": true,
+    "qualifiedArchiveFilesEqualReports": true
+  },
+  "sourceHashes": {
+    "bin/find2fd": "a14985199b326b7f1d50659421977de2182dbb1abcda0368902ee43045c88b4a",
+    "bin/find2fd-shell-prefix.mjs": "42610de727a3f49a5f2bf10c87b821d0a101dfa12d64f889ff9a565d0e74f58c",
+    "bin/find2fd.mjs": "5295f12e0816ccc493fdb1d2f56c7f42515dcd2cddbbb9091315060f64dd98a9",
+    "package.json": "6bf9f2598f9a09272e210b4a0b8f4c97b8ab2dc9b3ff6dd0a279b036ba440bd6",
+    "pi/find2fd.ts": "9658ff3860222810d4c52109a683098044422e219ce80bb5c54d0dc8de63cde7",
+    "src/find-descriptors.mjs": "98abb8a06198882ead1bde0417e6bf500866e68015d53fc7f7ad8e19e32b89d2",
+    "src/find-evaluate.mjs": "f651088cdd502aaf7b2849573784fef99eb87e5ffd78d779d12626b5cf1761cb",
+    "src/find-incremental.mjs": "b856907e8211fa0e997bf6ec892bc98dc2ed61ba9139712a2a11cfdf0e927aa8",
+    "src/find-options.mjs": "ce0541da53edc7384769aac3d7efa5bbcd44440d3bc624a71c20f920d3313806",
+    "src/find-order.mjs": "82a06b06a6dc43f0311acf188eea1e0799639ab90dba7b71c3b8bb4381268ef6",
+    "src/find-runtime.mjs": "3aa0f88a72de5208492f9ec81cd02be34128f63f9b122646c4d3efcde245ec7e",
+    "src/find-wrapper.mjs": "784b8984ade1c8787c12f0de259e92da5d319d188e37d44ba026ff6cb2c68795",
+    "tests/find_incremental_helpers.mjs": "9453d079d48017c34c39c3802aa3be236f104cae8fc5901cb09b6de22f7adcf2",
+    "tests/find_metadata_helpers.mjs": "e1f7a67fc6a9e8693599cb66ad17d47925e13de47eb8870b5739ab7c39d11e6a",
+    "tests/find_option_inventory.json": "7d562429953b5f01c3fef6dbdb41c02a418380311b47be61eb7b4b724ef9f3da",
+    "tests/find_wrapper_requirements.json": "1f0746c806ea68b79473c0e6ae77ac96fda527fce9076a8f96d45961f44fa467",
+    "tests/helpers.mjs": "a73ab5d3586991c70ef562872d23b73245461e9590e27245a087b78e2ddb16f6",
+    "tests/test_find_campaign.mjs": "b941a8c02bf6402601d9ac5556326cae32082b09d1aa7d0548691d99670274ca",
+    "tests/test_find_cli.mjs": "b7bd0d4a39fc9aec7b5db111525f800b3af7f015bf28d4110e0da11e79ab376d",
+    "tests/test_find_default_policy.mjs": "0a6bd9f7bdf7ed0570b0327eb6caf5dc2288ffbbebdeb0135ca744743cd5b7c7",
+    "tests/test_find_descriptors.mjs": "fe2bbedb5c9e43b62078b5e26eab880e48f02c1093b530ec0a5722131bf5f4ef",
+    "tests/test_find_expression_campaign.mjs": "49b7093a6b0152c3998473f8907d46b29033362fd551bdfffc67abf03c7b9d19",
+    "tests/test_find_expressions.mjs": "c85b48ca7fd388e105baf945431d6ac21b5a5ef3bd456c43920d58f3f9c4eda4",
+    "tests/test_find_fallback.mjs": "1939e6cf6dfe9c3081bb825b593a0bfc42bfe37c89d5bc9ae018678034d6036a",
+    "tests/test_find_incremental.mjs": "edf4f65a184d3680a85efe32f2e2e603b783ba078906c8473e23cd3daaa1f7a8",
+    "tests/test_find_incremental_runtime.mjs": "91a660883cbcd8d004f16f7aa5808ccc5c29a545adf135f18aa8e136209f9b5f",
+    "tests/test_find_leading_flags.mjs": "f842da47fc362b44f51ece960dff861aa2a04182b6cdeb98461ed1fa5744f6ca",
+    "tests/test_find_metadata.mjs": "94203af41c96a162ea3db50a67faf08c6f117025f91ee92a6c90b43c6f878256",
+    "tests/test_find_metadata_formats.mjs": "c07ce8a9f4529886e02de10c3ebfb7a8473d5fbab129e07f2772c8bf4fa16918",
+    "tests/test_find_metadata_traversal.mjs": "e7960db429a21f3744a08f22b30ead34b78110ed42a0ff99c284efba46e6462d",
+    "tests/test_find_options.mjs": "4fc0d738c74b985dfb459c8695794e07a8b9268ffae6918d4bc7f18f2613cf5c",
+    "tests/test_find_runtime.mjs": "cf90d67da4edc4510016c6a2b438791d893ab605b7e90b3740bd3e565c547ecb",
+    "tests/test_find_scope.mjs": "0265faf26f1e47203fc2014b8c11db22999302e4bc3cbaf61fe35747d665be9b",
+    "tests/test_package_artifact.mjs": "6d6665ddc847af1f830630d62d043c580af0b361aa4e6cfcfee1cb254a2bedfa",
+    "tests/test_package_entry.mjs": "20eac5bc3c064b7bd590b885a9066380b32821974e18be51e3e4c97552e4d43b",
+    "tools/verify-artifact.mjs": "1aad695310ccaa53ba080b705561f2e924276eb737db72819dd1612691d248ea",
+    "tools/verify.mjs": "f48cee06ef2edbff6e988f663e3e445966fd1258b91c0091aa2ed8be99eaf7dc"
+  },
+  "environments": [
+    {
+      "environment": "Linux desktop",
+      "evidenceReport": "artifacts/coverage-package-deep.json",
+      "startedAt": "2026-10-11T22:36:52.283Z",
+      "finishedAt": "2026-10-11T22:39:39.943Z",
+      "passed": true,
+      "nodeTests": 100,
+      "sourceChanged": false,
+      "versions": {
+        "node": "v26.4.0",
+        "GNU": "find (GNU findutils) 4.11.0-modified",
+        "fd": "fd 9.0.0",
+        "script": "script from util-linux 2.42.2",
+        "python": "Python 3.14.6",
+        "bash": "GNU bash, version 5.3.15(1)-release (x86_64-pc-linux-gnu)",
+        "readlink": "readlink (GNU coreutils) 9.11",
+        "npm": "12.0.2",
+        "tar": "tar (GNU tar) 1.35"
+      },
+      "stages": [
+        {
+          "name": "core",
+          "status": 0,
+          "signal": null,
+          "durationMs": 117602,
+          "timedOut": false,
+          "interrupted": false,
+          "logTruncated": false,
+          "counts": {
+            "tests": 91,
+            "suites": 0,
+            "pass": 91,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          }
+        },
+        {
+          "name": "campaigns",
+          "status": 0,
+          "signal": null,
+          "durationMs": 49046,
+          "timedOut": false,
+          "interrupted": false,
+          "logTruncated": false,
+          "counts": {
+            "tests": 2,
+            "suites": 0,
+            "pass": 2,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          }
+        },
+        {
+          "name": "installed Pi native Bash scope",
+          "status": 0,
+          "signal": null,
+          "durationMs": 947,
+          "timedOut": false,
+          "interrupted": false,
+          "logTruncated": false,
+          "counts": {
+            "tests": 7,
+            "suites": 0,
+            "pass": 7,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          }
+        }
+      ],
+      "campaignDiagnostics": [
+        {
+          "campaign": "qualified-cli",
+          "actualGNUComparisons": 25,
+          "actualFdInvocations": 28
+        },
+        {
+          "campaign": "filename-bytes",
+          "actualGNUComparisons": 8
+        },
+        {
+          "campaign": "default-GNU-policy",
+          "actualGNUComparisons": 36,
+          "CLIEntryRoutes": 2,
+          "actualOriginalGNUInvocations": 36,
+          "actualNodeInvocations": 0,
+          "actualFdInvocations": 0,
+          "actualGNUPreflightInvocations": 0,
+          "acceptedExperimentalValue": "1",
+          "rejectedValues": [
+            "absent",
+            "",
+            "0",
+            "true",
+            "01",
+            "1 "
+          ]
+        },
+        {
+          "campaign": "default-direct-API-and-explicit-experiment",
+          "actualGNUComparisons": 4,
+          "directAPINativeComparisons": 3,
+          "actualOriginalGNUInvocations": 3,
+          "experimentalGNUComparisons": 1,
+          "experimentalActualFdInvocations": 1,
+          "speedClaim": "none"
+        },
+        {
+          "campaign": "default-raw-argv-and-descriptors",
+          "actualGNUComparisons": 10,
+          "rawInvalidUTF8ArgvComparisons": 4,
+          "descriptorComparisons": 6,
+          "actualHighFD4097OpenAndWriteConfirmed": 2,
+          "actualNodeInvocations": 0,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "default-closed-standard-descriptors",
+          "actualGNUComparisons": 8,
+          "actualNodeInvocations": 0,
+          "actualFdInvocations": 0,
+          "testedClosures": [
+            "stdout",
+            "stderr",
+            "stdin unused",
+            "stdin used"
+          ]
+        },
+        {
+          "campaign": "default-actions-and-raw-stdin",
+          "actualGNUComparisons": 4,
+          "ownedActionComparisons": 2,
+          "rawNULStdinComparisons": 2,
+          "actualNodeInvocations": 0,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "find-caller-fd3",
+          "actualGNUComparisons": 8,
+          "actualFdInvocations": 4,
+          "actualGNUValidationInvocations": 4,
+          "actualNonrecursiveGNUInvocations": 4,
+          "actualOriginalGNUInvocations": 4,
+          "privateBrokerInputCannotClobberCallerFD3": true
+        },
+        {
+          "campaign": "find-high-fd-process-substitution",
+          "actualGNUComparisons": 8,
+          "actualFdInvocations": 4,
+          "actualGNUValidationInvocations": 4,
+          "actualNonrecursiveGNUInvocations": 4,
+          "actualOriginalGNUInvocations": 4,
+          "highDescriptor": 4097,
+          "successfulHighDescriptorOpenWitnesses": 4
+        },
+        {
+          "campaign": "find-closed-caller-fd",
+          "actualGNUComparisons": 4,
+          "actualFdInvocations": 0,
+          "actualGNUValidationInvocations": 0,
+          "actualNonrecursiveGNUInvocations": 0,
+          "actualOriginalGNUInvocations": 4
+        },
+        {
+          "campaign": "find-closed-standard-fds",
+          "actualGNUComparisons": 10,
+          "closedDescriptors": [
+            0,
+            1,
+            2
+          ],
+          "directExecutablesWithoutRecorder": true
+        },
+        {
+          "campaign": "find-direct-explicit-caller-fd",
+          "actualGNUComparisons": 1,
+          "actualFdInvocations": 1,
+          "actualGNUValidationInvocations": 1,
+          "actualNonrecursiveGNUInvocations": 1,
+          "actualOriginalGNUInvocations": 0,
+          "explicitCallerDescriptors": [
+            3
+          ]
+        },
+        {
+          "campaign": "expanded-expressions",
+          "actualGNUComparisons": 45,
+          "actualFdInvocations": 48,
+          "actualNativeInvocations": 0,
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "candidate-raw-byte-regression",
+          "actualGNUComparisons": 7,
+          "actualFdInvocations": 7,
+          "actualNativeInvocations": 0
+        },
+        {
+          "campaign": "expanded-C-matching",
+          "actualGNUComparisons": 16,
+          "actualFdInvocations": 16,
+          "actualNativeInvocations": 0,
+          "locale": "C/POSIX including LC_ALL/LC_CTYPE/LANG precedence"
+        },
+        {
+          "campaign": "expression-native-boundaries",
+          "actualGNUComparisons": 15,
+          "actualFdInvocations": 15,
+          "actualNativeInvocations": 30
+        },
+        {
+          "campaign": "expression-errors",
+          "actualGNUComparisons": 17,
+          "actualNativeInvocations": 17,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "trailing-slash-path-diagnostics",
+          "actualGNUComparisons": 22,
+          "actualNativeInvocations": 22,
+          "actualFdInvocations": 0,
+          "warningCases": 12,
+          "matchingRootCasesWithoutWarnings": 10
+        },
+        {
+          "campaign": "expression-fallback",
+          "actualGNUComparisons": 6,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "action-fallback",
+          "actualGNUComparisons": 6,
+          "ownedSideEffectComparisons": 6,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "incremental-root-control-truth",
+          "actualGNUComparisons": 8,
+          "actualImmediateFdInvocations": 7,
+          "actualGNUEvaluatorInvocations": 8,
+          "actualGNUValidationInvocations": 16,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualOriginalGNUInvocations": 0,
+          "brokerOnlyComparisons": 7,
+          "rawFixtureBytes": true
+        },
+        {
+          "campaign": "incremental-branch-control-operators",
+          "actualGNUComparisons": 11,
+          "actualImmediateFdInvocations": 56,
+          "actualGNUEvaluatorInvocations": 11,
+          "actualGNUValidationInvocations": 22,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualOriginalGNUInvocations": 0,
+          "brokerOnlyComparisons": 0,
+          "rawFixtureBytes": true
+        },
+        {
+          "campaign": "incremental-roots-rawbytes-metadata",
+          "actualGNUComparisons": 12,
+          "actualImmediateFdInvocations": 66,
+          "actualGNUEvaluatorInvocations": 12,
+          "actualGNUValidationInvocations": 24,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualOriginalGNUInvocations": 0,
+          "brokerOnlyComparisons": 4,
+          "rawFixtureBytes": true
+        },
+        {
+          "campaign": "incremental-unsafe-combination-native",
+          "actualGNUComparisons": 8,
+          "actualImmediateFdInvocations": 0,
+          "actualGNUEvaluatorInvocations": 0,
+          "actualGNUValidationInvocations": 1,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualOriginalGNUInvocations": 8,
+          "brokerOnlyComparisons": 0,
+          "rawFixtureBytes": true
+        },
+        {
+          "campaign": "incremental-unbounded-and-path-budget-native",
+          "actualGNUComparisons": 5,
+          "actualImmediateFdInvocations": 0,
+          "actualGNUEvaluatorInvocations": 0,
+          "actualGNUValidationInvocations": 5,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualOriginalGNUInvocations": 5,
+          "brokerOnlyComparisons": 0,
+          "rawFixtureBytes": true,
+          "ownedLongTreeLevels": 20,
+          "maximumGNURecordBytes": 4440
+        },
+        {
+          "campaign": "incremental-mutating-actions-native",
+          "actualGNUComparisons": 3,
+          "actualImmediateFdInvocations": 0,
+          "actualGNUEvaluatorInvocations": 0,
+          "actualGNUValidationInvocations": 0,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualOriginalGNUInvocations": 3,
+          "brokerOnlyComparisons": 0,
+          "rawFixtureBytes": true
+        },
+        {
+          "campaign": "incremental-public-TTY-output",
+          "actualGNUComparisons": 3,
+          "actualImmediateFdInvocations": 15,
+          "actualOriginalGNUInvocations": 0,
+          "outputDestination": "real owned PTY",
+          "rawFixtureBytes": true
+        },
+        {
+          "campaign": "incremental-fd-fault-continuation",
+          "actualGNUComparisons": 2,
+          "injectedFdSearchAttempts": 14,
+          "actualFdInvocations": 0,
+          "actualGNUDiscoveryInvocations": 14,
+          "actualOriginalGNUInvocations": 0
+        },
+        {
+          "campaign": "incremental-prestart-native-boundaries",
+          "actualGNUComparisons": 3,
+          "actualOriginalGNUInvocations": 3,
+          "actualFdInvocations": 0,
+          "actualGNUEvaluatorInvocations": 0
+        },
+        {
+          "campaign": "incremental-prune-semantic-mutant",
+          "actualGNUComparisons": 1,
+          "negativeControlExecutions": 1,
+          "semanticNegativeControlRejected": true
+        },
+        {
+          "campaign": "incremental-paused-output",
+          "actualGNUComparisons": 1,
+          "actualImmediateFdInvocations": 7,
+          "exactOutputBytes": 288036,
+          "pausedMilliseconds": 250
+        },
+        {
+          "campaign": "incremental-paused-cancellation",
+          "CLIEntryRoutes": 2,
+          "entryRoutes": [
+            "public-Bash-dispatcher",
+            "private-Node-dispatcher"
+          ],
+          "actualImmediateFdInvocations": 0,
+          "handledSignalInvocations": 6,
+          "expectedExitStatuses": [
+            130,
+            143,
+            129
+          ],
+          "ownedPrivateDirectoriesRemoved": 6
+        },
+        {
+          "campaign": "incremental-private-Bash-cancellation",
+          "actualGNUCompleteOutputComparisons": 1,
+          "actualGNUGroupCancellationBaselines": 3,
+          "privateBashGroupCancellationInvocations": 3,
+          "actualImmediateFdInvocations": 6,
+          "groupTerminationObservations": [
+            {
+              "signal": "SIGINT",
+              "actual": {
+                "status": 130,
+                "terminationSignal": null
+              },
+              "expected": {
+                "status": null,
+                "terminationSignal": "SIGINT"
+              },
+              "shellStatus": 130
+            },
+            {
+              "signal": "SIGTERM",
+              "actual": {
+                "status": null,
+                "terminationSignal": "SIGTERM"
+              },
+              "expected": {
+                "status": null,
+                "terminationSignal": "SIGTERM"
+              },
+              "shellStatus": 143
+            },
+            {
+              "signal": "SIGHUP",
+              "actual": {
+                "status": null,
+                "terminationSignal": "SIGHUP"
+              },
+              "expected": {
+                "status": null,
+                "terminationSignal": "SIGHUP"
+              },
+              "shellStatus": 129
+            }
+          ],
+          "PIDOnlyOuterBashInterruptBaselines": 1,
+          "PIDOnlyOuterBashInterruptWrapperInvocations": 1,
+          "cancellationOutputAssertion": "exact prefix of independent full GNU output; partial byte counts depend on scheduling"
+        },
+        {
+          "campaign": "leading-flags-fd-required",
+          "actualGNUComparisons": 14,
+          "actualFdInvocations": 14,
+          "actualNonrecursiveGNUInvocations": 14,
+          "actualGNUValidationInvocations": 14,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "leading-flags-native-diagnostics",
+          "actualGNUComparisons": 5,
+          "actualFdInvocations": 0,
+          "actualNonrecursiveGNUInvocations": 0,
+          "actualGNUValidationInvocations": 1,
+          "actualOriginalGNUInvocations": 5,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-numeric-permission-owner",
+          "actualGNUComparisons": 51,
+          "actualFdInvocations": 51,
+          "actualNonrecursiveGNUInvocations": 51,
+          "actualGNUValidationInvocations": 51,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-time-reference",
+          "actualGNUComparisons": 36,
+          "actualFdInvocations": 36,
+          "actualNonrecursiveGNUInvocations": 36,
+          "actualGNUValidationInvocations": 36,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-access-time-native-boundary",
+          "actualGNUComparisons": 7,
+          "actualFdInvocations": 0,
+          "actualNonrecursiveGNUInvocations": 0,
+          "actualGNUValidationInvocations": 0,
+          "actualOriginalGNUInvocations": 7,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-glob-regex-link",
+          "actualGNUComparisons": 22,
+          "actualFdInvocations": 22,
+          "actualNonrecursiveGNUInvocations": 19,
+          "actualGNUValidationInvocations": 19,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-format-independent-context",
+          "actualGNUComparisons": 16,
+          "actualFdInvocations": 16,
+          "actualNonrecursiveGNUInvocations": 16,
+          "actualGNUValidationInvocations": 16,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-format-starting-context",
+          "actualGNUComparisons": 21,
+          "actualFdInvocations": 27,
+          "actualNonrecursiveGNUInvocations": 1394,
+          "actualGNUValidationInvocations": 21,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-traversal-depth",
+          "actualGNUComparisons": 8,
+          "actualFdInvocations": 10,
+          "actualNonrecursiveGNUInvocations": 8,
+          "actualGNUValidationInvocations": 8,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-traversal-follow",
+          "actualGNUComparisons": 9,
+          "actualFdInvocations": 10,
+          "actualNonrecursiveGNUInvocations": 13,
+          "actualGNUValidationInvocations": 9,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-traversal-filesystem-boundary",
+          "actualGNUComparisons": 2,
+          "actualFdInvocations": 2,
+          "actualNonrecursiveGNUInvocations": 0,
+          "actualGNUValidationInvocations": 2,
+          "actualOriginalGNUInvocations": 2,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "qualification",
+          "fdPlans": 47,
+          "nativePlans": 15
+        },
+        {
+          "campaign": "option-inventory",
+          "GNUHelpOptionSpellings": 81,
+          "classifiedOptionsAndOperators": 91
+        },
+        {
+          "campaign": "documented-GNU-aliases",
+          "actualGNUComparisons": 6,
+          "actualOriginalGNUInvocations": 6,
+          "actualFdInvocations": 0,
+          "separateDepthAliasOracle": 1,
+          "documentedAliases": [
+            "-d",
+            "-help",
+            "-version"
+          ],
+          "CLIEntryRoutes": 2
+        },
+        {
+          "campaign": "mutations",
+          "rejectedSemanticMutants": 4,
+          "cleanNegativeControls": 4
+        },
+        {
+          "campaign": "cleanup-mutation",
+          "rejectedSemanticMutants": 1,
+          "cleanNegativeControls": 1,
+          "defect": "cancelled escalation timer leaks ignored-stdio helper"
+        },
+        {
+          "campaign": "packed-artifact",
+          "tarballSHA256": "62f43c0f548c35eee8b67f94cfa21aa11db4db02e726a9c966f2bfb371045bee",
+          "npmIntegrity": "sha512-ovbErqQHaxM4rd9Gz6JYVF7Y5SfN6IR/6kUJU+5unNXKjxr7dN2vJ7NQRDUOUeZLr5KYCIvF7dSOYxDr58NiBQ==",
+          "extractedFilesVerified": 40,
+          "extractedEntryNodeTests": 10,
+          "installedEntryNodeTests": 10,
+          "extractedEvidence": [
+            {
+              "campaign": "default-GNU-policy",
+              "actualGNUComparisons": 36,
+              "CLIEntryRoutes": 2,
+              "actualOriginalGNUInvocations": 36,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0,
+              "actualGNUPreflightInvocations": 0,
+              "acceptedExperimentalValue": "1",
+              "rejectedValues": [
+                "absent",
+                "",
+                "0",
+                "true",
+                "01",
+                "1 "
+              ]
+            },
+            {
+              "campaign": "default-direct-API-and-explicit-experiment",
+              "actualGNUComparisons": 4,
+              "directAPINativeComparisons": 3,
+              "actualOriginalGNUInvocations": 3,
+              "experimentalGNUComparisons": 1,
+              "experimentalActualFdInvocations": 1,
+              "speedClaim": "none"
+            },
+            {
+              "campaign": "default-raw-argv-and-descriptors",
+              "actualGNUComparisons": 10,
+              "rawInvalidUTF8ArgvComparisons": 4,
+              "descriptorComparisons": 6,
+              "actualHighFD4097OpenAndWriteConfirmed": 2,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0
+            },
+            {
+              "campaign": "default-closed-standard-descriptors",
+              "actualGNUComparisons": 8,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0,
+              "testedClosures": [
+                "stdout",
+                "stderr",
+                "stdin unused",
+                "stdin used"
+              ]
+            },
+            {
+              "campaign": "default-actions-and-raw-stdin",
+              "actualGNUComparisons": 4,
+              "ownedActionComparisons": 2,
+              "rawNULStdinComparisons": 2,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0
+            },
+            {
+              "campaign": "package-entry",
+              "actualGNUComparisons": 33,
+              "actualFdInvocations": 26,
+              "actualStdinComparisons": 1,
+              "stdinPayloadBytes": 26
+            },
+            {
+              "campaign": "package-prefix",
+              "actualFdInvocations": 3,
+              "nativeScopeComparisons": 1
+            },
+            {
+              "campaign": "package-argv-bytes",
+              "actualGNUComparisons": 4,
+              "argvSource": "Python byte argv to real executable"
+            },
+            {
+              "campaign": "package-cwd-bytes",
+              "actualGNUComparisons": 3,
+              "cwdSource": "Python byte cwd to real executable and private prefix"
+            }
+          ],
+          "installedEvidence": [
+            {
+              "campaign": "default-GNU-policy",
+              "actualGNUComparisons": 36,
+              "CLIEntryRoutes": 2,
+              "actualOriginalGNUInvocations": 36,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0,
+              "actualGNUPreflightInvocations": 0,
+              "acceptedExperimentalValue": "1",
+              "rejectedValues": [
+                "absent",
+                "",
+                "0",
+                "true",
+                "01",
+                "1 "
+              ]
+            },
+            {
+              "campaign": "default-direct-API-and-explicit-experiment",
+              "actualGNUComparisons": 4,
+              "directAPINativeComparisons": 3,
+              "actualOriginalGNUInvocations": 3,
+              "experimentalGNUComparisons": 1,
+              "experimentalActualFdInvocations": 1,
+              "speedClaim": "none"
+            },
+            {
+              "campaign": "default-raw-argv-and-descriptors",
+              "actualGNUComparisons": 10,
+              "rawInvalidUTF8ArgvComparisons": 4,
+              "descriptorComparisons": 6,
+              "actualHighFD4097OpenAndWriteConfirmed": 2,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0
+            },
+            {
+              "campaign": "default-closed-standard-descriptors",
+              "actualGNUComparisons": 8,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0,
+              "testedClosures": [
+                "stdout",
+                "stderr",
+                "stdin unused",
+                "stdin used"
+              ]
+            },
+            {
+              "campaign": "default-actions-and-raw-stdin",
+              "actualGNUComparisons": 4,
+              "ownedActionComparisons": 2,
+              "rawNULStdinComparisons": 2,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0
+            },
+            {
+              "campaign": "package-entry",
+              "actualGNUComparisons": 33,
+              "actualFdInvocations": 26,
+              "actualStdinComparisons": 1,
+              "stdinPayloadBytes": 26
+            },
+            {
+              "campaign": "package-prefix",
+              "actualFdInvocations": 3,
+              "nativeScopeComparisons": 1
+            },
+            {
+              "campaign": "package-argv-bytes",
+              "actualGNUComparisons": 4,
+              "argvSource": "Python byte argv to real executable"
+            },
+            {
+              "campaign": "package-cwd-bytes",
+              "actualGNUComparisons": 3,
+              "cwdSource": "Python byte cwd to real executable and private prefix"
+            }
+          ]
+        },
+        {
+          "campaign": "package-entry",
+          "actualGNUComparisons": 33,
+          "actualFdInvocations": 26,
+          "actualStdinComparisons": 1,
+          "stdinPayloadBytes": 26
+        },
+        {
+          "campaign": "package-prefix",
+          "actualFdInvocations": 3,
+          "nativeScopeComparisons": 1
+        },
+        {
+          "campaign": "package-argv-bytes",
+          "actualGNUComparisons": 4,
+          "argvSource": "Python byte argv to real executable"
+        },
+        {
+          "campaign": "package-cwd-bytes",
+          "actualGNUComparisons": 3,
+          "cwdSource": "Python byte cwd to real executable and private prefix"
+        },
+        {
+          "campaign": "seeded-cli",
+          "seed": "0x8f2da643",
+          "deep": true,
+          "fixtureSourceSHA256": "a73ab5d3586991c70ef562872d23b73245461e9590e27245a087b78e2ddb16f6",
+          "actualGNUComparisons": 3072,
+          "distinctArgvCases": 3072,
+          "fdQualifiedPlans": 2722,
+          "fdSearchPlans": 2366,
+          "scanFreePlans": 340,
+          "incrementalPlans": 16,
+          "nativePlans": 350,
+          "actualFdInvocations": 3743,
+          "actualGNUValidationInvocations": 134,
+          "actualNonrecursiveGNUInvocations": 98,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualNativeInvocations": 350,
+          "qualifiedRuntimeFallbacks": 0,
+          "mismatches": 0,
+          "concurrency": 8
+        },
+        {
+          "campaign": "generated-expression-cli",
+          "seed": "0x6a29fd37",
+          "deep": true,
+          "concurrency": 8,
+          "fixtureSourceSHA256": "a73ab5d3586991c70ef562872d23b73245461e9590e27245a087b78e2ddb16f6",
+          "campaignSourceSHA256": "49b7093a6b0152c3998473f8907d46b29033362fd551bdfffc67abf03c7b9d19",
+          "actualGNUComparisons": 1536,
+          "distinctLocaleArgvCases": 1536,
+          "distinctArgvCases": 960,
+          "casesPerLocale": {
+            "C": 960,
+            "C.UTF-8": 576
+          },
+          "pairedComparisons": 1152,
+          "COnlyByteMatchingComparisons": 384,
+          "rawFilenameBytes": true,
+          "publicCLI": true,
+          "actualFdInvocations": 2152,
+          "expectedFdInvocations": 2152,
+          "actualNativeInvocations": 0,
+          "qualifiedRuntimeFallbacks": 0,
+          "globPushdownInvocations": 240,
+          "typePushdownInvocations": 299,
+          "nonemptyGNUResults": 1157,
+          "expressionSpellings": [
+            "!",
+            "(",
+            ")",
+            ",",
+            "-a",
+            "-and",
+            "-false",
+            "-hyphen*",
+            "-iname",
+            "-ipath",
+            "-iwholename",
+            "-maxdepth",
+            "-mindepth",
+            "-name",
+            "-not",
+            "-o",
+            "-or",
+            "-path",
+            "-print",
+            "-print0",
+            "-true",
+            "-type",
+            "-wholename"
+          ],
+          "mismatches": 0
+        },
+        {
+          "campaign": "pi-sdk-scope",
+          "actualFdInvocations": 7,
+          "networkRequests": 0,
+          "inferenceRequests": 0,
+          "extension": "pi/find2fd.ts",
+          "nativeToolName": "bash"
+        }
+      ]
+    },
+    {
+      "environment": "Debian VM",
+      "evidenceReport": "artifacts/coverage-package-vm.json",
+      "startedAt": "2026-10-11T22:37:00.633Z",
+      "finishedAt": "2026-10-11T22:40:48.136Z",
+      "passed": true,
+      "nodeTests": 100,
+      "sourceChanged": false,
+      "versions": {
+        "node": "v24.21.0",
+        "GNU": "find (GNU findutils) 4.10.0",
+        "fd": "fdfind 10.2.0",
+        "script": "script from util-linux 2.41.5",
+        "python": "Python 3.13.5",
+        "bash": "GNU bash, version 5.2.37(1)-release (x86_64-pc-linux-gnu)",
+        "readlink": "readlink (GNU coreutils) 9.7",
+        "npm": "11.19.0",
+        "tar": "tar (GNU tar) 1.35"
+      },
+      "stages": [
+        {
+          "name": "core",
+          "status": 0,
+          "signal": null,
+          "durationMs": 164294,
+          "timedOut": false,
+          "interrupted": false,
+          "logTruncated": false,
+          "counts": {
+            "tests": 91,
+            "suites": 0,
+            "pass": 91,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          }
+        },
+        {
+          "name": "campaigns",
+          "status": 0,
+          "signal": null,
+          "durationMs": 61573,
+          "timedOut": false,
+          "interrupted": false,
+          "logTruncated": false,
+          "counts": {
+            "tests": 2,
+            "suites": 0,
+            "pass": 2,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          }
+        },
+        {
+          "name": "installed Pi native Bash scope",
+          "status": 0,
+          "signal": null,
+          "durationMs": 1490,
+          "timedOut": false,
+          "interrupted": false,
+          "logTruncated": false,
+          "counts": {
+            "tests": 7,
+            "suites": 0,
+            "pass": 7,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          }
+        }
+      ],
+      "campaignDiagnostics": [
+        {
+          "campaign": "qualified-cli",
+          "actualGNUComparisons": 25,
+          "actualFdInvocations": 28
+        },
+        {
+          "campaign": "filename-bytes",
+          "actualGNUComparisons": 8
+        },
+        {
+          "campaign": "default-GNU-policy",
+          "actualGNUComparisons": 36,
+          "CLIEntryRoutes": 2,
+          "actualOriginalGNUInvocations": 36,
+          "actualNodeInvocations": 0,
+          "actualFdInvocations": 0,
+          "actualGNUPreflightInvocations": 0,
+          "acceptedExperimentalValue": "1",
+          "rejectedValues": [
+            "absent",
+            "",
+            "0",
+            "true",
+            "01",
+            "1 "
+          ]
+        },
+        {
+          "campaign": "default-direct-API-and-explicit-experiment",
+          "actualGNUComparisons": 4,
+          "directAPINativeComparisons": 3,
+          "actualOriginalGNUInvocations": 3,
+          "experimentalGNUComparisons": 1,
+          "experimentalActualFdInvocations": 1,
+          "speedClaim": "none"
+        },
+        {
+          "campaign": "default-raw-argv-and-descriptors",
+          "actualGNUComparisons": 10,
+          "rawInvalidUTF8ArgvComparisons": 4,
+          "descriptorComparisons": 6,
+          "actualHighFD4097OpenAndWriteConfirmed": 2,
+          "actualNodeInvocations": 0,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "default-closed-standard-descriptors",
+          "actualGNUComparisons": 8,
+          "actualNodeInvocations": 0,
+          "actualFdInvocations": 0,
+          "testedClosures": [
+            "stdout",
+            "stderr",
+            "stdin unused",
+            "stdin used"
+          ]
+        },
+        {
+          "campaign": "default-actions-and-raw-stdin",
+          "actualGNUComparisons": 4,
+          "ownedActionComparisons": 2,
+          "rawNULStdinComparisons": 2,
+          "actualNodeInvocations": 0,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "find-caller-fd3",
+          "actualGNUComparisons": 8,
+          "actualFdInvocations": 4,
+          "actualGNUValidationInvocations": 4,
+          "actualNonrecursiveGNUInvocations": 4,
+          "actualOriginalGNUInvocations": 4,
+          "privateBrokerInputCannotClobberCallerFD3": true
+        },
+        {
+          "campaign": "find-high-fd-process-substitution",
+          "actualGNUComparisons": 8,
+          "actualFdInvocations": 4,
+          "actualGNUValidationInvocations": 4,
+          "actualNonrecursiveGNUInvocations": 4,
+          "actualOriginalGNUInvocations": 4,
+          "highDescriptor": 4097,
+          "successfulHighDescriptorOpenWitnesses": 4
+        },
+        {
+          "campaign": "find-closed-caller-fd",
+          "actualGNUComparisons": 4,
+          "actualFdInvocations": 0,
+          "actualGNUValidationInvocations": 0,
+          "actualNonrecursiveGNUInvocations": 0,
+          "actualOriginalGNUInvocations": 4
+        },
+        {
+          "campaign": "find-closed-standard-fds",
+          "actualGNUComparisons": 10,
+          "closedDescriptors": [
+            0,
+            1,
+            2
+          ],
+          "directExecutablesWithoutRecorder": true
+        },
+        {
+          "campaign": "find-direct-explicit-caller-fd",
+          "actualGNUComparisons": 1,
+          "actualFdInvocations": 1,
+          "actualGNUValidationInvocations": 1,
+          "actualNonrecursiveGNUInvocations": 1,
+          "actualOriginalGNUInvocations": 0,
+          "explicitCallerDescriptors": [
+            3
+          ]
+        },
+        {
+          "campaign": "expanded-expressions",
+          "actualGNUComparisons": 45,
+          "actualFdInvocations": 48,
+          "actualNativeInvocations": 0,
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "candidate-raw-byte-regression",
+          "actualGNUComparisons": 7,
+          "actualFdInvocations": 7,
+          "actualNativeInvocations": 0
+        },
+        {
+          "campaign": "expanded-C-matching",
+          "actualGNUComparisons": 16,
+          "actualFdInvocations": 16,
+          "actualNativeInvocations": 0,
+          "locale": "C/POSIX including LC_ALL/LC_CTYPE/LANG precedence"
+        },
+        {
+          "campaign": "expression-native-boundaries",
+          "actualGNUComparisons": 15,
+          "actualFdInvocations": 15,
+          "actualNativeInvocations": 30
+        },
+        {
+          "campaign": "expression-errors",
+          "actualGNUComparisons": 17,
+          "actualNativeInvocations": 17,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "trailing-slash-path-diagnostics",
+          "actualGNUComparisons": 22,
+          "actualNativeInvocations": 22,
+          "actualFdInvocations": 0,
+          "warningCases": 12,
+          "matchingRootCasesWithoutWarnings": 10
+        },
+        {
+          "campaign": "expression-fallback",
+          "actualGNUComparisons": 6,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "action-fallback",
+          "actualGNUComparisons": 6,
+          "ownedSideEffectComparisons": 6,
+          "actualFdInvocations": 0
+        },
+        {
+          "campaign": "incremental-root-control-truth",
+          "actualGNUComparisons": 8,
+          "actualImmediateFdInvocations": 7,
+          "actualGNUEvaluatorInvocations": 8,
+          "actualGNUValidationInvocations": 16,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualOriginalGNUInvocations": 0,
+          "brokerOnlyComparisons": 7,
+          "rawFixtureBytes": true
+        },
+        {
+          "campaign": "incremental-branch-control-operators",
+          "actualGNUComparisons": 11,
+          "actualImmediateFdInvocations": 58,
+          "actualGNUEvaluatorInvocations": 11,
+          "actualGNUValidationInvocations": 22,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualOriginalGNUInvocations": 0,
+          "brokerOnlyComparisons": 0,
+          "rawFixtureBytes": true
+        },
+        {
+          "campaign": "incremental-roots-rawbytes-metadata",
+          "actualGNUComparisons": 12,
+          "actualImmediateFdInvocations": 66,
+          "actualGNUEvaluatorInvocations": 12,
+          "actualGNUValidationInvocations": 24,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualOriginalGNUInvocations": 0,
+          "brokerOnlyComparisons": 4,
+          "rawFixtureBytes": true
+        },
+        {
+          "campaign": "incremental-unsafe-combination-native",
+          "actualGNUComparisons": 8,
+          "actualImmediateFdInvocations": 0,
+          "actualGNUEvaluatorInvocations": 0,
+          "actualGNUValidationInvocations": 1,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualOriginalGNUInvocations": 8,
+          "brokerOnlyComparisons": 0,
+          "rawFixtureBytes": true
+        },
+        {
+          "campaign": "incremental-unbounded-and-path-budget-native",
+          "actualGNUComparisons": 5,
+          "actualImmediateFdInvocations": 0,
+          "actualGNUEvaluatorInvocations": 0,
+          "actualGNUValidationInvocations": 5,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualOriginalGNUInvocations": 5,
+          "brokerOnlyComparisons": 0,
+          "rawFixtureBytes": true,
+          "ownedLongTreeLevels": 20,
+          "maximumGNURecordBytes": 4440
+        },
+        {
+          "campaign": "incremental-mutating-actions-native",
+          "actualGNUComparisons": 3,
+          "actualImmediateFdInvocations": 0,
+          "actualGNUEvaluatorInvocations": 0,
+          "actualGNUValidationInvocations": 0,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualOriginalGNUInvocations": 3,
+          "brokerOnlyComparisons": 0,
+          "rawFixtureBytes": true
+        },
+        {
+          "campaign": "incremental-public-TTY-output",
+          "actualGNUComparisons": 3,
+          "actualImmediateFdInvocations": 15,
+          "actualOriginalGNUInvocations": 0,
+          "outputDestination": "real owned PTY",
+          "rawFixtureBytes": true
+        },
+        {
+          "campaign": "incremental-fd-fault-continuation",
+          "actualGNUComparisons": 2,
+          "injectedFdSearchAttempts": 14,
+          "actualFdInvocations": 0,
+          "actualGNUDiscoveryInvocations": 14,
+          "actualOriginalGNUInvocations": 0
+        },
+        {
+          "campaign": "incremental-prestart-native-boundaries",
+          "actualGNUComparisons": 3,
+          "actualOriginalGNUInvocations": 3,
+          "actualFdInvocations": 0,
+          "actualGNUEvaluatorInvocations": 0
+        },
+        {
+          "campaign": "incremental-prune-semantic-mutant",
+          "actualGNUComparisons": 1,
+          "negativeControlExecutions": 1,
+          "semanticNegativeControlRejected": true
+        },
+        {
+          "campaign": "incremental-paused-output",
+          "actualGNUComparisons": 1,
+          "actualImmediateFdInvocations": 7,
+          "exactOutputBytes": 288036,
+          "pausedMilliseconds": 250
+        },
+        {
+          "campaign": "incremental-paused-cancellation",
+          "CLIEntryRoutes": 2,
+          "entryRoutes": [
+            "public-Bash-dispatcher",
+            "private-Node-dispatcher"
+          ],
+          "actualImmediateFdInvocations": 0,
+          "handledSignalInvocations": 6,
+          "expectedExitStatuses": [
+            130,
+            143,
+            129
+          ],
+          "ownedPrivateDirectoriesRemoved": 6
+        },
+        {
+          "campaign": "incremental-private-Bash-cancellation",
+          "actualGNUCompleteOutputComparisons": 1,
+          "actualGNUGroupCancellationBaselines": 3,
+          "privateBashGroupCancellationInvocations": 3,
+          "actualImmediateFdInvocations": 1,
+          "groupTerminationObservations": [
+            {
+              "signal": "SIGINT",
+              "actual": {
+                "status": 130,
+                "terminationSignal": null
+              },
+              "expected": {
+                "status": null,
+                "terminationSignal": "SIGINT"
+              },
+              "shellStatus": 130
+            },
+            {
+              "signal": "SIGTERM",
+              "actual": {
+                "status": null,
+                "terminationSignal": "SIGTERM"
+              },
+              "expected": {
+                "status": null,
+                "terminationSignal": "SIGTERM"
+              },
+              "shellStatus": 143
+            },
+            {
+              "signal": "SIGHUP",
+              "actual": {
+                "status": null,
+                "terminationSignal": "SIGHUP"
+              },
+              "expected": {
+                "status": null,
+                "terminationSignal": "SIGHUP"
+              },
+              "shellStatus": 129
+            }
+          ],
+          "PIDOnlyOuterBashInterruptBaselines": 1,
+          "PIDOnlyOuterBashInterruptWrapperInvocations": 1,
+          "cancellationOutputAssertion": "exact prefix of independent full GNU output; partial byte counts depend on scheduling"
+        },
+        {
+          "campaign": "leading-flags-fd-required",
+          "actualGNUComparisons": 14,
+          "actualFdInvocations": 14,
+          "actualNonrecursiveGNUInvocations": 14,
+          "actualGNUValidationInvocations": 14,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "leading-flags-native-diagnostics",
+          "actualGNUComparisons": 5,
+          "actualFdInvocations": 0,
+          "actualNonrecursiveGNUInvocations": 0,
+          "actualGNUValidationInvocations": 1,
+          "actualOriginalGNUInvocations": 5,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-numeric-permission-owner",
+          "actualGNUComparisons": 51,
+          "actualFdInvocations": 51,
+          "actualNonrecursiveGNUInvocations": 51,
+          "actualGNUValidationInvocations": 51,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-time-reference",
+          "actualGNUComparisons": 36,
+          "actualFdInvocations": 36,
+          "actualNonrecursiveGNUInvocations": 36,
+          "actualGNUValidationInvocations": 36,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-access-time-native-boundary",
+          "actualGNUComparisons": 7,
+          "actualFdInvocations": 0,
+          "actualNonrecursiveGNUInvocations": 0,
+          "actualGNUValidationInvocations": 0,
+          "actualOriginalGNUInvocations": 7,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-glob-regex-link",
+          "actualGNUComparisons": 22,
+          "actualFdInvocations": 22,
+          "actualNonrecursiveGNUInvocations": 19,
+          "actualGNUValidationInvocations": 19,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-format-independent-context",
+          "actualGNUComparisons": 16,
+          "actualFdInvocations": 16,
+          "actualNonrecursiveGNUInvocations": 16,
+          "actualGNUValidationInvocations": 16,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-format-starting-context",
+          "actualGNUComparisons": 21,
+          "actualFdInvocations": 27,
+          "actualNonrecursiveGNUInvocations": 1394,
+          "actualGNUValidationInvocations": 21,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-traversal-depth",
+          "actualGNUComparisons": 8,
+          "actualFdInvocations": 10,
+          "actualNonrecursiveGNUInvocations": 8,
+          "actualGNUValidationInvocations": 8,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-traversal-follow",
+          "actualGNUComparisons": 9,
+          "actualFdInvocations": 10,
+          "actualNonrecursiveGNUInvocations": 13,
+          "actualGNUValidationInvocations": 9,
+          "actualOriginalGNUInvocations": 0,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "metadata-traversal-filesystem-boundary",
+          "actualGNUComparisons": 2,
+          "actualFdInvocations": 2,
+          "actualNonrecursiveGNUInvocations": 0,
+          "actualGNUValidationInvocations": 2,
+          "actualOriginalGNUInvocations": 2,
+          "fixtureSource": "owned synthetic metadata tree",
+          "rawFilenameBytes": true
+        },
+        {
+          "campaign": "qualification",
+          "fdPlans": 47,
+          "nativePlans": 15
+        },
+        {
+          "campaign": "option-inventory",
+          "GNUHelpOptionSpellings": 80,
+          "classifiedOptionsAndOperators": 91
+        },
+        {
+          "campaign": "documented-GNU-aliases",
+          "actualGNUComparisons": 6,
+          "actualOriginalGNUInvocations": 6,
+          "actualFdInvocations": 0,
+          "separateDepthAliasOracle": 1,
+          "documentedAliases": [
+            "-d",
+            "-help",
+            "-version"
+          ],
+          "CLIEntryRoutes": 2
+        },
+        {
+          "campaign": "mutations",
+          "rejectedSemanticMutants": 4,
+          "cleanNegativeControls": 4
+        },
+        {
+          "campaign": "cleanup-mutation",
+          "rejectedSemanticMutants": 1,
+          "cleanNegativeControls": 1,
+          "defect": "cancelled escalation timer leaks ignored-stdio helper"
+        },
+        {
+          "campaign": "packed-artifact",
+          "tarballSHA256": "3b919220c9efe818b877ecea43da7c7e379d99cd80e78d0da1c4d72b67d52edc",
+          "npmIntegrity": "sha512-ehi0wOh1UT1WgqzRY84gKpBH4stdA6l4Ra1WCKq97glppyt7AK0tzEAxQ1J76n2PtJ1GAroLfQE+4G2eQDPBjQ==",
+          "extractedFilesVerified": 40,
+          "extractedEntryNodeTests": 10,
+          "installedEntryNodeTests": 10,
+          "extractedEvidence": [
+            {
+              "campaign": "default-GNU-policy",
+              "actualGNUComparisons": 36,
+              "CLIEntryRoutes": 2,
+              "actualOriginalGNUInvocations": 36,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0,
+              "actualGNUPreflightInvocations": 0,
+              "acceptedExperimentalValue": "1",
+              "rejectedValues": [
+                "absent",
+                "",
+                "0",
+                "true",
+                "01",
+                "1 "
+              ]
+            },
+            {
+              "campaign": "default-direct-API-and-explicit-experiment",
+              "actualGNUComparisons": 4,
+              "directAPINativeComparisons": 3,
+              "actualOriginalGNUInvocations": 3,
+              "experimentalGNUComparisons": 1,
+              "experimentalActualFdInvocations": 1,
+              "speedClaim": "none"
+            },
+            {
+              "campaign": "default-raw-argv-and-descriptors",
+              "actualGNUComparisons": 10,
+              "rawInvalidUTF8ArgvComparisons": 4,
+              "descriptorComparisons": 6,
+              "actualHighFD4097OpenAndWriteConfirmed": 2,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0
+            },
+            {
+              "campaign": "default-closed-standard-descriptors",
+              "actualGNUComparisons": 8,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0,
+              "testedClosures": [
+                "stdout",
+                "stderr",
+                "stdin unused",
+                "stdin used"
+              ]
+            },
+            {
+              "campaign": "default-actions-and-raw-stdin",
+              "actualGNUComparisons": 4,
+              "ownedActionComparisons": 2,
+              "rawNULStdinComparisons": 2,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0
+            },
+            {
+              "campaign": "package-entry",
+              "actualGNUComparisons": 33,
+              "actualFdInvocations": 26,
+              "actualStdinComparisons": 1,
+              "stdinPayloadBytes": 26
+            },
+            {
+              "campaign": "package-prefix",
+              "actualFdInvocations": 3,
+              "nativeScopeComparisons": 1
+            },
+            {
+              "campaign": "package-argv-bytes",
+              "actualGNUComparisons": 4,
+              "argvSource": "Python byte argv to real executable"
+            },
+            {
+              "campaign": "package-cwd-bytes",
+              "actualGNUComparisons": 3,
+              "cwdSource": "Python byte cwd to real executable and private prefix"
+            }
+          ],
+          "installedEvidence": [
+            {
+              "campaign": "default-GNU-policy",
+              "actualGNUComparisons": 36,
+              "CLIEntryRoutes": 2,
+              "actualOriginalGNUInvocations": 36,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0,
+              "actualGNUPreflightInvocations": 0,
+              "acceptedExperimentalValue": "1",
+              "rejectedValues": [
+                "absent",
+                "",
+                "0",
+                "true",
+                "01",
+                "1 "
+              ]
+            },
+            {
+              "campaign": "default-direct-API-and-explicit-experiment",
+              "actualGNUComparisons": 4,
+              "directAPINativeComparisons": 3,
+              "actualOriginalGNUInvocations": 3,
+              "experimentalGNUComparisons": 1,
+              "experimentalActualFdInvocations": 1,
+              "speedClaim": "none"
+            },
+            {
+              "campaign": "default-raw-argv-and-descriptors",
+              "actualGNUComparisons": 10,
+              "rawInvalidUTF8ArgvComparisons": 4,
+              "descriptorComparisons": 6,
+              "actualHighFD4097OpenAndWriteConfirmed": 2,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0
+            },
+            {
+              "campaign": "default-closed-standard-descriptors",
+              "actualGNUComparisons": 8,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0,
+              "testedClosures": [
+                "stdout",
+                "stderr",
+                "stdin unused",
+                "stdin used"
+              ]
+            },
+            {
+              "campaign": "default-actions-and-raw-stdin",
+              "actualGNUComparisons": 4,
+              "ownedActionComparisons": 2,
+              "rawNULStdinComparisons": 2,
+              "actualNodeInvocations": 0,
+              "actualFdInvocations": 0
+            },
+            {
+              "campaign": "package-entry",
+              "actualGNUComparisons": 33,
+              "actualFdInvocations": 26,
+              "actualStdinComparisons": 1,
+              "stdinPayloadBytes": 26
+            },
+            {
+              "campaign": "package-prefix",
+              "actualFdInvocations": 3,
+              "nativeScopeComparisons": 1
+            },
+            {
+              "campaign": "package-argv-bytes",
+              "actualGNUComparisons": 4,
+              "argvSource": "Python byte argv to real executable"
+            },
+            {
+              "campaign": "package-cwd-bytes",
+              "actualGNUComparisons": 3,
+              "cwdSource": "Python byte cwd to real executable and private prefix"
+            }
+          ]
+        },
+        {
+          "campaign": "package-entry",
+          "actualGNUComparisons": 33,
+          "actualFdInvocations": 26,
+          "actualStdinComparisons": 1,
+          "stdinPayloadBytes": 26
+        },
+        {
+          "campaign": "package-prefix",
+          "actualFdInvocations": 3,
+          "nativeScopeComparisons": 1
+        },
+        {
+          "campaign": "package-argv-bytes",
+          "actualGNUComparisons": 4,
+          "argvSource": "Python byte argv to real executable"
+        },
+        {
+          "campaign": "package-cwd-bytes",
+          "actualGNUComparisons": 3,
+          "cwdSource": "Python byte cwd to real executable and private prefix"
+        },
+        {
+          "campaign": "seeded-cli",
+          "seed": "0x8f2da643",
+          "deep": true,
+          "fixtureSourceSHA256": "a73ab5d3586991c70ef562872d23b73245461e9590e27245a087b78e2ddb16f6",
+          "actualGNUComparisons": 3072,
+          "distinctArgvCases": 3072,
+          "fdQualifiedPlans": 2722,
+          "fdSearchPlans": 2366,
+          "scanFreePlans": 340,
+          "incrementalPlans": 16,
+          "nativePlans": 350,
+          "actualFdInvocations": 3743,
+          "actualGNUValidationInvocations": 134,
+          "actualNonrecursiveGNUInvocations": 98,
+          "actualGNUDiscoveryInvocations": 0,
+          "actualNativeInvocations": 350,
+          "qualifiedRuntimeFallbacks": 0,
+          "mismatches": 0,
+          "concurrency": 8
+        },
+        {
+          "campaign": "generated-expression-cli",
+          "seed": "0x6a29fd37",
+          "deep": true,
+          "concurrency": 8,
+          "fixtureSourceSHA256": "a73ab5d3586991c70ef562872d23b73245461e9590e27245a087b78e2ddb16f6",
+          "campaignSourceSHA256": "49b7093a6b0152c3998473f8907d46b29033362fd551bdfffc67abf03c7b9d19",
+          "actualGNUComparisons": 1536,
+          "distinctLocaleArgvCases": 1536,
+          "distinctArgvCases": 960,
+          "casesPerLocale": {
+            "C": 960,
+            "C.UTF-8": 576
+          },
+          "pairedComparisons": 1152,
+          "COnlyByteMatchingComparisons": 384,
+          "rawFilenameBytes": true,
+          "publicCLI": true,
+          "actualFdInvocations": 2152,
+          "expectedFdInvocations": 2152,
+          "actualNativeInvocations": 0,
+          "qualifiedRuntimeFallbacks": 0,
+          "globPushdownInvocations": 240,
+          "typePushdownInvocations": 299,
+          "nonemptyGNUResults": 1157,
+          "expressionSpellings": [
+            "!",
+            "(",
+            ")",
+            ",",
+            "-a",
+            "-and",
+            "-false",
+            "-hyphen*",
+            "-iname",
+            "-ipath",
+            "-iwholename",
+            "-maxdepth",
+            "-mindepth",
+            "-name",
+            "-not",
+            "-o",
+            "-or",
+            "-path",
+            "-print",
+            "-print0",
+            "-true",
+            "-type",
+            "-wholename"
+          ],
+          "mismatches": 0
+        },
+        {
+          "campaign": "pi-sdk-scope",
+          "actualFdInvocations": 7,
+          "networkRequests": 0,
+          "inferenceRequests": 0,
+          "extension": "pi/find2fd.ts",
+          "nativeToolName": "bash"
+        }
+      ]
+    }
+  ],
+  "historicalRecords": {
+    "original": "docs/qualification.json",
+    "expanded": "docs/expanded-qualification.json",
+    "previousBroader": {
+      "nodeTestsPerEnvironment": 81,
+      "qualifiedArchiveSHA256": "dab6323d66b7a80f61c65c0aeb7382a2a314a2bafa7288c8867bce1bc3671fd4",
+      "preservedRecord": "artifacts/qualified-source-packages/broader-qualification-81-pre-native-default.json"
+    }
+  },
+  "interpretation": [
+    "GNU is the default because no current fd command class is proved universally faster. Only exact FIND2FD_EXPERIMENTAL_FD=1 enables the deliberately experimental semantic routes; actual fd contribution is not a speed guarantee.",
+    "Each environment passed 100 Node groups: 91 core, 2 generated campaigns and 7 SDK scope checks, with no failures, cancellations, skips, todos, timeouts, truncated logs or source changes.",
+    "The 3072 distinct seeded CLI cases comprise 2366 batched fd-search plans, 340 scan-free plans, 16 incremental plans and 350 original-native plans. They made 3743 actual fd invocations per environment, with zero mismatches or qualified runtime fallbacks.",
+    "The expression campaign has 1536 distinct locale/argv cases and 960 distinct argv vectors, with 2152 contributing fd searches, zero original-native calls and zero mismatches per environment.",
+    "The five default-policy groups contain 61 original-native GNU comparisons with no fd or preparatory engine work, plus one explicit experimental comparison requiring real fd. The CLI default starts no Node dispatcher; three direct-API comparisons necessarily execute inside Node. Raw argv, caller descriptors, closed standard descriptors, stdin and owned actions are included.",
+    "Focused controls, metadata, formats, aliases, descriptors and fault comparisons are separate diagnostic groups. Replaying a corpus on two environments or in nested extracted/installed package checks does not increase unique-case coverage.",
+    "A root-only prune or quit, scan-free root, compile validation or original-native fallback receives no fd traversal credit. Failed injected fd attempts followed by local GNU discovery receive no real-fd credit.",
+    "Incremental fault checks observed 14 local GNU discoveries across two exact complete-output comparisons without original-command replay. A 20-level tree with 4440-byte GNU records proves the original-native long-path boundary. Paused output retained an exact 288036-byte GNU result.",
+    "Six direct dispatcher signal checks reached 130/143/129 and removed owned private directories. Private Bash process-group checks compare shell-visible status, valid GNU output prefixes and cleanup; raw wait status differs for handled SIGINT exit130 versus native SIGINT termination. PID-only outer-Bash SIGINT remains a separate native behavior boundary.",
+    "Output, stderr, exit status and owned side effects are compared with GNU on synthetic trees. This is finite semantic qualification, not proof through arbitrary concurrent filesystem or mount changes.",
+    "The packed-artifact diagnostics contain separately rebuilt tar hashes from each environment; the qualifiedArchive SHA256 identifies the transported immutable outer archive.",
+    "This record was written after capture and identifies the immutable tested archive and current implementation/test hashes, not a self-referential tarball containing its own hash."
+  ],
+  "routingPolicy": {
+    "defaultBackend": "GNU find",
+    "experimentalFlag": "FIND2FD_EXPERIMENTAL_FD=1",
+    "acceptedExperimentalValue": "1",
+    "universallyFasterClasses": [],
+    "universalSpeedGuarantee": false,
+    "experimentalScope": "Finite semantic routes only; a real fd invocation is not a speed claim."
+  }
+}

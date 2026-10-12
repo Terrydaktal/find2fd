@@ -1,0 +1,1039 @@
+{
+  "schemaVersion": 1,
+  "scope": "Finite release qualification of GNU-compatible native Rust find grammar; complete option inventory delegates unsupported behavior before output. No universal speed or correctness claim.",
+  "oracle": "/usr/bin/find, argv0=find, exact exit status, stdout bytes/order and stderr bytes; side-effect assertions use owned fixtures only",
+  "nativeRequiredClasses": [
+    "default-print",
+    "physical-traversal",
+    "literal-name",
+    "glob-name",
+    "folded-name",
+    "path-pattern",
+    "folded-path",
+    "whole-path-alias",
+    "folded-whole-path-alias",
+    "type-filter",
+    "depth-bounds",
+    "and-expression",
+    "or-expression",
+    "not-expression",
+    "comma-expression",
+    "parenthesized-expression",
+    "constant-predicates",
+    "repeated-actions",
+    "explicit-print-short-circuit",
+    "duplicate-roots",
+    "root-file",
+    "root-symlink",
+    "root-dangling-symlink",
+    "empty-directory"
+  ],
+  "fallbackAllowedClasses": [
+    "symlink-following",
+    "recursive-symlink-following",
+    "depth-first-traversal",
+    "prune-action",
+    "quit-action",
+    "metadata-predicate",
+    "formatted-output",
+    "regex-predicate",
+    "exec-action",
+    "files0-input",
+    "missing-root",
+    "malformed-expression",
+    "position-sensitive-warning",
+    "depth-overflow"
+  ],
+  "seed": "0x46444e31",
+  "seededNativeComparisons": 384,
+  "platform": "Linux, unprivileged user, installed GNU find, fd, test-only strace and GNU C compiler/libdl",
+  "routeEvidence": "Opt-in read-only --find2fd-route-json classification is separate from ordinary result comparison. Special stdout transports receive no native execution credit.",
+  "behaviorOwners": {
+    "native-grammar": "tests/test_rust_engine.mjs",
+    "fallback-side-effects": "tests/test_rust_engine.mjs",
+    "raw-byte-order": "tests/test_rust_engine.mjs",
+    "parallel-order": "tests/test_rust_engine.mjs",
+    "option-inventory": "tests/test_rust_engine.mjs",
+    "io-failures": "tests/test_rust_engine.mjs",
+    "native-execution-proof": "tests/test_rust_engine.mjs",
+    "atomic-preparation-bounds": "tests/test_rust_engine.mjs",
+    "deterministic-physical-child-swap": "tests/test_rust_engine.mjs",
+    "optimized-glob-variants": "tests/test_rust_engine.mjs",
+    "shallow-no-pool": "tests/test_rust_engine.mjs",
+    "raw-getdents-batches": "tests/test_rust_engine.mjs",
+    "DT-UNKNOWN-fstatat": "tests/test_rust_engine.mjs",
+    "zero-inode-skip": "tests/test_rust_engine.mjs"
+  },
+  "options": [
+    {
+      "spelling": "-P",
+      "argv": [
+        "-P",
+        "tree"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-name",
+      "argv": [
+        "tree",
+        "-name",
+        "foo*"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-type",
+      "argv": [
+        "tree",
+        "-type",
+        "f"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-mindepth",
+      "argv": [
+        "tree",
+        "-mindepth",
+        "1"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-maxdepth",
+      "argv": [
+        "tree",
+        "-maxdepth",
+        "1"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-a",
+      "argv": [
+        "tree",
+        "-type",
+        "f",
+        "-a",
+        "-name",
+        "*.txt"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-and",
+      "argv": [
+        "tree",
+        "-type",
+        "f",
+        "-and",
+        "-name",
+        "*.txt"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-print",
+      "argv": [
+        "tree",
+        "-print"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-print0",
+      "argv": [
+        "tree",
+        "-print0"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-daystart",
+      "argv": [
+        "tree",
+        "-daystart"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-follow",
+      "argv": [
+        "tree",
+        "-follow"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-nowarn",
+      "argv": [
+        "tree",
+        "-nowarn"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-warn",
+      "argv": [
+        "tree",
+        "-warn"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-d",
+      "argv": [
+        "tree",
+        "-d",
+        "-print0"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-depth",
+      "argv": [
+        "tree",
+        "-depth"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-mount",
+      "argv": [
+        "tree",
+        "-mount"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-noleaf",
+      "argv": [
+        "tree",
+        "-noleaf"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-xdev",
+      "argv": [
+        "tree",
+        "-xdev"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-ignore_readdir_race",
+      "argv": [
+        "tree",
+        "-ignore_readdir_race"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-noignore_readdir_race",
+      "argv": [
+        "tree",
+        "-noignore_readdir_race"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-empty",
+      "argv": [
+        "tree",
+        "-empty"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-false",
+      "argv": [
+        "tree",
+        "-false"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-nouser",
+      "argv": [
+        "tree",
+        "-nouser"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-nogroup",
+      "argv": [
+        "tree",
+        "-nogroup"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-readable",
+      "argv": [
+        "tree",
+        "-readable"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-writable",
+      "argv": [
+        "tree",
+        "-writable"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-executable",
+      "argv": [
+        "tree",
+        "-executable"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-true",
+      "argv": [
+        "tree",
+        "-true"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-ls",
+      "argv": [
+        "tree",
+        "-ls"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-prune",
+      "argv": [
+        "tree",
+        "-maxdepth",
+        "8",
+        "-prune"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-quit",
+      "argv": [
+        "tree",
+        "-maxdepth",
+        "8",
+        "-quit"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-delete",
+      "argv": [
+        "tree",
+        "-delete"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-amin",
+      "argv": [
+        "tree",
+        "-type",
+        "f",
+        "-amin",
+        "1"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-anewer",
+      "argv": [
+        "tree",
+        "-type",
+        "f",
+        "-anewer",
+        "tree/foo.txt"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-atime",
+      "argv": [
+        "tree",
+        "-type",
+        "f",
+        "-atime",
+        "1"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-cmin",
+      "argv": [
+        "tree",
+        "-cmin",
+        "1"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-cnewer",
+      "argv": [
+        "tree",
+        "-cnewer",
+        "tree/foo.txt"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-context",
+      "argv": [
+        "tree",
+        "-context",
+        "*"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-ctime",
+      "argv": [
+        "tree",
+        "-ctime",
+        "1"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-fstype",
+      "argv": [
+        "tree",
+        "-fstype",
+        "ext4"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-gid",
+      "argv": [
+        "tree",
+        "-gid",
+        "0"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-group",
+      "argv": [
+        "tree",
+        "-group",
+        "root"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-ilname",
+      "argv": [
+        "tree",
+        "-ilname",
+        "*"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-iname",
+      "argv": [
+        "tree",
+        "-iname",
+        "*.TXT"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-inum",
+      "argv": [
+        "tree",
+        "-inum",
+        "0"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-iwholename",
+      "argv": [
+        "tree",
+        "-iwholename",
+        "*"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-iregex",
+      "argv": [
+        "tree",
+        "-iregex",
+        ".*"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-links",
+      "argv": [
+        "tree",
+        "-links",
+        "1"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-lname",
+      "argv": [
+        "tree",
+        "-lname",
+        "*"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-mmin",
+      "argv": [
+        "tree",
+        "-mmin",
+        "1"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-mtime",
+      "argv": [
+        "tree",
+        "-mtime",
+        "1"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-newer",
+      "argv": [
+        "tree",
+        "-newer",
+        "tree/foo.txt"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-newerXY",
+      "argv": [
+        "tree",
+        "-newermt",
+        "2026-01-01"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-path",
+      "argv": [
+        "tree",
+        "-path",
+        "tree/*"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-perm",
+      "argv": [
+        "tree",
+        "-perm",
+        "u=r"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-regex",
+      "argv": [
+        "tree",
+        "-regex",
+        ".*"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-size",
+      "argv": [
+        "tree",
+        "-size",
+        "1c"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-uid",
+      "argv": [
+        "tree",
+        "-uid",
+        "0"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-used",
+      "argv": [
+        "tree",
+        "-type",
+        "f",
+        "-used",
+        "1"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-user",
+      "argv": [
+        "tree",
+        "-user",
+        "root"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-wholename",
+      "argv": [
+        "tree",
+        "-wholename",
+        "tree/*"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-xtype",
+      "argv": [
+        "tree",
+        "-xtype",
+        "l"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-regextype",
+      "argv": [
+        "tree",
+        "-regextype",
+        "posix-extended"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-printf",
+      "argv": [
+        "tree",
+        "-printf",
+        "%p\\n"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-fprintf",
+      "argv": [
+        "tree",
+        "-fprintf",
+        "result.paths",
+        "%p\\n"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-fprint",
+      "argv": [
+        "tree",
+        "-fprint",
+        "result.paths"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-fprint0",
+      "argv": [
+        "tree",
+        "-fprint0",
+        "result.paths"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-fls",
+      "argv": [
+        "tree",
+        "-fls",
+        "result.paths"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-files0-from",
+      "argv": [
+        "-files0-from",
+        "roots.list"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-exec",
+      "argv": [
+        "tree",
+        "-exec",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-execdir",
+      "argv": [
+        "tree",
+        "-execdir",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-ok",
+      "argv": [
+        "tree",
+        "-ok",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-okdir",
+      "argv": [
+        "tree",
+        "-okdir",
+        "/usr/bin/true",
+        "{}",
+        ";"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-H",
+      "argv": [
+        "-H",
+        "tree"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-L",
+      "argv": [
+        "-L",
+        "tree"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-Olevel",
+      "argv": [
+        "-O2",
+        "tree"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-D",
+      "argv": [
+        "-D",
+        "tree",
+        "tree"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-help",
+      "argv": [
+        "-help"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "--help",
+      "argv": [
+        "--help"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-version",
+      "argv": [
+        "-version"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "--version",
+      "argv": [
+        "--version"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "-not",
+      "argv": [
+        "tree",
+        "-not",
+        "-type",
+        "d"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-o",
+      "argv": [
+        "tree",
+        "-type",
+        "f",
+        "-o",
+        "-type",
+        "d"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-or",
+      "argv": [
+        "tree",
+        "-type",
+        "f",
+        "-or",
+        "-type",
+        "d"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-ipath",
+      "argv": [
+        "tree",
+        "-ipath",
+        "TREE/*"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "-samefile",
+      "argv": [
+        "tree",
+        "-samefile",
+        "tree/foo.txt"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "--",
+      "argv": [
+        "--",
+        "tree",
+        "-size",
+        "+0c"
+      ],
+      "route": "gnu",
+      "contract": "Route the untouched original argv directly to GNU before native stdout; retained actions and unsupported predicates must preserve GNU behavior and owned side effects."
+    },
+    {
+      "spelling": "(",
+      "argv": [
+        "tree",
+        "(",
+        "-true",
+        ")"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": ")",
+      "argv": [
+        "tree",
+        "(",
+        "-true",
+        ")"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": "!",
+      "argv": [
+        "tree",
+        "!",
+        "-type",
+        "d"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    },
+    {
+      "spelling": ",",
+      "argv": [
+        "tree",
+        "-false",
+        ",",
+        "-true"
+      ],
+      "route": "native",
+      "contract": "On this owned C-locale physical fixture, native Rust evaluation preserves GNU predicate semantics, raw path bytes, traversal order, printing, status and diagnostic behavior."
+    }
+  ],
+  "regressions": [
+    {
+      "id": "ignored-SIGPIPE",
+      "owner": "tests/test_rust_engine.mjs",
+      "contract": "A closed-reader stdout pipe with inherited SIGPIPE ignored must reproduce GNU status1 and complete Broken pipe diagnostics, rather than terminate with SIGPIPE.",
+      "redArtifactSHA256": "46dc9939a0067e8049ef62855b7913fb5149b1ba4788b9bfd9616749562c067c",
+      "redResult": "GNU1 versus Rust141; exact GNU argv0=find"
+    },
+    {
+      "id": "nonblocking-full-pipe",
+      "owner": "tests/test_rust_engine.mjs",
+      "contract": "A tiny print0 result into an already full nonblocking stdout pipe with the reader kept alive must preserve GNU status1 and complete EAGAIN diagnostics; final buffer-flush errors cannot become success.",
+      "redArtifactSHA256": "46dc9939a0067e8049ef62855b7913fb5149b1ba4788b9bfd9616749562c067c",
+      "redResult": "GNU1 versus Rust0; exact GNU argv0=find"
+    },
+    {
+      "id": "root-basename-trailing-slash",
+      "owner": "tests/test_rust_engine.mjs",
+      "contract": "For -name matching, GNU removes all trailing root slashes while preserving the original raw root spelling in print output; this is different from the GNU printf %f directive.",
+      "redArtifactSHA256": "c43a19d8fd84b50cdf60f4fb373391055658f1ac06a821623680801952afe742",
+      "redResult": "GNU prints tree/ NUL for tree/ -maxdepth0 -name tree -print0; Rust printed nothing"
+    },
+    {
+      "id": "physical-child-symlink-swap",
+      "owner": "tests/test_rust_engine.mjs",
+      "contract": "Under -P, a child directory replaced with an outside symlink immediately before opening must not expose any outside marker; after preparation rejects that swap, untouched GNU execution must exactly match the settled post-swap tree without partial native replay.",
+      "faultInjection": "Owned fixture LD_PRELOAD openat/opendir interception; no production paths",
+      "mutationControl": "Removing only O_NOFOLLOW at the controlled child leaks the sentinel and violates the tested invariant; the native negative control matches GNU without mutation.",
+      "coverageLimit": "Proves this deterministic child replacement and the unchanged fixture; not every possible filesystem mutation or temporal snapshot equivalence"
+    }
+  ],
+  "optimizationContracts": [
+    {
+      "id": "glob-specialization",
+      "owner": "tests/test_rust_engine.mjs",
+      "contract": "Literal, all-star, prefix, suffix and contains specializations preserve GNU byte matching, empty patterns, repeated stars, ASCII case folding, nonASCII and raw newline/invalidUTF8 names.",
+      "comparisons": 50
+    },
+    {
+      "id": "shallow-thread-budget",
+      "owner": "tests/test_rust_engine.mjs",
+      "contract": "Maxdepth0 or1 retains exact GNU output and does not create a worker pool when no descending work remains.",
+      "comparisons": 3
+    },
+    {
+      "id": "raw-directory-type-and-batch",
+      "owner": "tests/test_rust_engine.mjs",
+      "contract": "Owned getdents64 injection forces DT_UNKNOWN and actual anchored fstatat resolution, preserves complete raw GNU order across32KiB batches, and delegates malformed length/NUL/header records before stdout.",
+      "unknownTypeComparisons": 9,
+      "malformedRecordComparisons": 3
+    },
+    {
+      "id": "zero-inode-native-skip",
+      "owner": "tests/test_rust_engine.mjs",
+      "contract": "An owned deleted entry retained in a raw batch with inode0 is skipped natively, with output identical to GNU on the settled tree and external exec proof that no GNU fallback masked the behavior.",
+      "comparisons": 1
+    }
+  ]
+}

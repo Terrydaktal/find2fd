@@ -26,7 +26,9 @@ export default function find2fd(pi: ExtensionAPI) {
       const delegate = createBashToolDefinition(ctx.cwd, {
         shellPath,
         commandPrefix: settings.getShellCommandPrefix(),
-        spawnHook: enabledForProvider(ctx.model?.provider)
+        spawnHook: !["off", "0"].includes(process.env.FIND2FD_ACCELERATION ?? "")
+          && (process.env.FIND2FD_EXPERIMENTAL_FD === undefined || process.env.FIND2FD_EXPERIMENTAL_FD === "1")
+          && enabledForProvider(ctx.model?.provider)
           ? (context) => withFindWrapper(context, shellPath)
           : undefined,
       });

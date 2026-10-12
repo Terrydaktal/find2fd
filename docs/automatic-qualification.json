@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "scope": "Current automatic performance policy and broader explicit semantic experiment. Product source hashes agree with the measured CLI and fully tested extracted npm artifact. Documentation can be edited after a tested artifact; the archive hash identifies its exact earlier documentation snapshot.",
+  "passed": true,
+  "finishedAt": "2026-10-12T00:01:02.258Z",
+  "nodeTests": 102,
+  "sourceChangedDuringVerification": false,
+  "packageArtifact": {
+    "filename": "find2fd-0.1.0.tgz",
+    "sha256": "184ff23d689a0c38a096cdc8f6a6da0fe657ef2325c141db5cd723a9c6ab8020",
+    "integrity": "sha512-HOEzeiGr9G+hxKh8nMx6W2maBAYLYog6Gshv2afTbGWTIwFFcPaW5yV2NPWGc6kLUfy3XqbI4mYb0KBGa2mgcg==",
+    "fileCount": 51,
+    "verification": "actual npm pack tarball, extracted tools/verify.mjs"
+  },
+  "productSourceSHA256": {
+    "src/find-auto.sh": "dc5a817baa0e70f173ba4cc01984a09ce3f735b964b03bd082c99b330d798ba1",
+    "src/find-descriptors.mjs": "98abb8a06198882ead1bde0417e6bf500866e68015d53fc7f7ad8e19e32b89d2",
+    "src/find-evaluate.mjs": "f651088cdd502aaf7b2849573784fef99eb87e5ffd78d779d12626b5cf1761cb",
+    "src/find-incremental.mjs": "b856907e8211fa0e997bf6ec892bc98dc2ed61ba9139712a2a11cfdf0e927aa8",
+    "src/find-options.mjs": "ce0541da53edc7384769aac3d7efa5bbcd44440d3bc624a71c20f920d3313806",
+    "src/find-order.mjs": "82a06b06a6dc43f0311acf188eea1e0799639ab90dba7b71c3b8bb4381268ef6",
+    "src/find-runtime.mjs": "2363f275c4dee36dd19fbc1faa1ca5fc09f106b37d24d4453e76d8c3ebd38739",
+    "src/find-wrapper.mjs": "10c406e0242ae5304a5e7d12347e80b43e1648f30b9d4a4b6e6a06be12c5465b",
+    "bin/find2fd": "6f9b323e2cf12cc938831185a76141670da13bf9ad3722fbbb7659d09e52e16c",
+    "bin/find2fd.mjs": "5295f12e0816ccc493fdb1d2f56c7f42515dcd2cddbbb9091315060f64dd98a9",
+    "bin/find2fd-shell-prefix.mjs": "42610de727a3f49a5f2bf10c87b821d0a101dfa12d64f889ff9a565d0e74f58c",
+    "pi/find2fd.ts": "039fcbe4f42a0ef1252304026903db5555b22a53a017fa46853ef3d805b13114"
+  },
+  "stages": [
+    {
+      "name": "core",
+      "passed": true,
+      "counts": {
+        "tests": 93,
+        "suites": 0,
+        "pass": 93,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "name": "campaigns",
+      "passed": true,
+      "counts": {
+        "tests": 2,
+        "suites": 0,
+        "pass": 2,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "name": "installed Pi native Bash scope",
+      "passed": true,
+      "counts": {
+        "tests": 7,
+        "suites": 0,
+        "pass": 7,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    }
+  ],
+  "selectedDiagnostics": [
+    {
+      "campaign": "automatic-topology-and-density-routing",
+      "actualGNUComparisons": 20,
+      "actualAutomaticFdInvocations": 8,
+      "nativeRoutingComparisons": 12,
+      "syntheticSecondLevelDirectories": 25600,
+      "fullByteOrderChecked": true,
+      "extraUserActions": 0
+    },
+    {
+      "campaign": "seeded-cli",
+      "seed": "0x8f2da643",
+      "deep": true,
+      "fixtureSourceSHA256": "a73ab5d3586991c70ef562872d23b73245461e9590e27245a087b78e2ddb16f6",
+      "actualGNUComparisons": 3072,
+      "distinctArgvCases": 3072,
+      "fdQualifiedPlans": 2722,
+      "fdSearchPlans": 2366,
+      "scanFreePlans": 340,
+      "incrementalPlans": 16,
+      "nativePlans": 350,
+      "actualFdInvocations": 3743,
+      "actualGNUValidationInvocations": 134,
+      "actualNonrecursiveGNUInvocations": 98,
+      "actualGNUDiscoveryInvocations": 0,
+      "actualNativeInvocations": 350,
+      "qualifiedRuntimeFallbacks": 0,
+      "mismatches": 0,
+      "concurrency": 8
+    },
+    {
+      "campaign": "generated-expression-cli",
+      "seed": "0x6a29fd37",
+      "deep": true,
+      "concurrency": 8,
+      "fixtureSourceSHA256": "a73ab5d3586991c70ef562872d23b73245461e9590e27245a087b78e2ddb16f6",
+      "campaignSourceSHA256": "49b7093a6b0152c3998473f8907d46b29033362fd551bdfffc67abf03c7b9d19",
+      "actualGNUComparisons": 1536,
+      "distinctLocaleArgvCases": 1536,
+      "distinctArgvCases": 960,
+      "casesPerLocale": {
+        "C": 960,
+        "C.UTF-8": 576
+      },
+      "pairedComparisons": 1152,
+      "COnlyByteMatchingComparisons": 384,
+      "rawFilenameBytes": true,
+      "publicCLI": true,
+      "actualFdInvocations": 2152,
+      "expectedFdInvocations": 2152,
+      "actualNativeInvocations": 0,
+      "qualifiedRuntimeFallbacks": 0,
+      "globPushdownInvocations": 240,
+      "typePushdownInvocations": 299,
+      "nonemptyGNUResults": 1157,
+      "expressionSpellings": [
+        "!",
+        "(",
+        ")",
+        ",",
+        "-a",
+        "-and",
+        "-false",
+        "-hyphen*",
+        "-iname",
+        "-ipath",
+        "-iwholename",
+        "-maxdepth",
+        "-mindepth",
+        "-name",
+        "-not",
+        "-o",
+        "-or",
+        "-path",
+        "-print",
+        "-print0",
+        "-true",
+        "-type",
+        "-wholename"
+      ],
+      "mismatches": 0
+    },
+    {
+      "campaign": "pi-sdk-scope",
+      "actualFdInvocations": 7,
+      "networkRequests": 0,
+      "inferenceRequests": 0,
+      "extension": "pi/find2fd.ts",
+      "nativeToolName": "bash"
+    }
+  ],
+  "performance": {
+    "capture": "automatic-routing-performance.json",
+    "classes": 18,
+    "runsPerEngineCase": 7,
+    "actualTimedAndWarmupGNUChecks": 432,
+    "mismatches": 0,
+    "includedCosts": "Shipping Bash/Node startup, topology/density samples, fd candidates, GNU ordering, and output."
+  },
+  "routingAudit": "automatic-routing-audit.json",
+  "engines": {
+    "node": "v26.4.0",
+    "GNU": "find (GNU findutils) 4.11.0-modified",
+    "fd": "fd 9.0.0"
+  },
+  "limits": "Finite warm-cache synthetic coverage on the desktop and installed Pi SDK. No new VM-wide deep campaign is credited here, and workload samples cannot predict every future input, cache state or device. Original GNU handles unqualified and slower measured classes."
+}
