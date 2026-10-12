@@ -17,42 +17,41 @@ below measures the native executable directly: Bash launcher/prefix setup is
 not included and has not been assigned these direct-executable timings.
 
 The independently rebuilt package passed **706 exact GNU comparisons**,
-including **579 native Rust suite searches**. Thirty-one rotated
-warm-cache trials per class measured the archived and optimized Rust releases
-on the same trees alongside direct GNU find and fd. All 18 earlier classes are
-included, plus case-insensitive, path, compound and repeated-output cases.
+including **567 native engine searches** and **42 Node CLI/Pi comparisons**. Rust units passed **11 checks in each of debug and release**. Thirty-one rotated
+warm-cache trials per class measured the current Rust release alongside direct
+GNU find and fd on the same trees. The 22 workloads include case-insensitive,
+path, compound and repeated-output searches.
 
-| Workload | Direct GNU find ms | Direct fd ms | Previous Rust ms | Optimized Rust ms | Execution |
-| --- | ---: | ---: | ---: | ---: | --- |
-| 128-file sparse name | 0.470 | 8.951 | 0.467 | 0.476 | Native Rust |
-| 8K-file flat sparse name | 2.216 | 9.379 | 2.415 | 1.783 | Native Rust |
-| 180-level chain sparse name | 0.880 | 8.954 | 1.203 | 0.799 | Native Rust |
-| 5K-directory layered sparse name | 16.353 | 10.400 | 6.278 | 3.222 | Native Rust |
-| 30K-directory sparse exact name | 103.707 | 21.439 | 31.461 | 14.081 | Native Rust |
-| 30K-directory sparse star glob | 103.584 | 21.666 | 31.394 | 14.194 | Native Rust |
-| 30K-directory sparse name/type | 102.603 | 20.932 | 31.555 | 13.990 | Native Rust |
-| 30K-directory absent name | 101.493 | 20.738 | 31.307 | 13.942 | Native Rust |
-| 30K-directory repeated filename | 104.813 | 21.680 | 32.022 | 14.842 | Native Rust |
-| 30K-directory broad name output | 109.008 | 23.201 | 34.675 | 17.108 | Native Rust |
-| 30K-directory all regular files | 101.405 | 23.475 | 34.804 | 17.161 | Native Rust |
-| 30K-directory depth-one sparse name | 0.543 | 9.155 | 1.026 | 0.495 | Native Rust |
-| Metadata size predicate | 165.461 | — | 166.065 | 164.668 | GNU fallback |
-| GNU printf format | 102.964 | — | 103.319 | 102.993 | GNU fallback |
-| Boolean with short-circuit output | 110.732 | — | 32.162 | 14.694 | Native Rust |
-| Case-insensitive sparse name | 102.394 | 21.098 | 31.653 | 14.068 | Native Rust |
-| Full-path sparse glob | 103.095 | 22.672 | 32.106 | 14.387 | Native Rust |
-| Compound name/type negation | 17.813 | 10.798 | 6.664 | 3.482 | Native Rust |
-| Repeated print actions | 14.953 | — | 6.170 | 3.181 | Native Rust |
-| Prune control | 0.359 | — | 0.564 | 0.574 | GNU fallback |
-| GNU exec action | 0.548 | — | 0.783 | 0.774 | GNU fallback |
-| Missing-root diagnostics | 0.266 | — | 0.466 | 0.462 | GNU fallback |
+| Workload | Direct GNU find ms | Direct fd ms | Optimized Rust ms | Execution |
+| --- | ---: | ---: | ---: | --- |
+| 128-file sparse name | 0.470 | 8.951 | 0.476 | Native Rust |
+| 8K-file flat sparse name | 2.216 | 9.379 | 1.783 | Native Rust |
+| 180-level chain sparse name | 0.880 | 8.954 | 0.799 | Native Rust |
+| 5K-directory layered sparse name | 16.353 | 10.400 | 3.222 | Native Rust |
+| 30K-directory sparse exact name | 103.707 | 21.439 | 14.081 | Native Rust |
+| 30K-directory sparse star glob | 103.584 | 21.666 | 14.194 | Native Rust |
+| 30K-directory sparse name/type | 102.603 | 20.932 | 13.990 | Native Rust |
+| 30K-directory absent name | 101.493 | 20.738 | 13.942 | Native Rust |
+| 30K-directory repeated filename | 104.813 | 21.680 | 14.842 | Native Rust |
+| 30K-directory broad name output | 109.008 | 23.201 | 17.108 | Native Rust |
+| 30K-directory all regular files | 101.405 | 23.475 | 17.161 | Native Rust |
+| 30K-directory depth-one sparse name | 0.543 | 9.155 | 0.495 | Native Rust |
+| Metadata size predicate | 165.461 | — | 164.668 | GNU fallback |
+| GNU printf format | 102.964 | — | 102.993 | GNU fallback |
+| Boolean with short-circuit output | 110.732 | — | 14.694 | Native Rust |
+| Case-insensitive sparse name | 102.394 | 21.098 | 14.068 | Native Rust |
+| Full-path sparse glob | 103.095 | 22.672 | 14.387 | Native Rust |
+| Compound name/type negation | 17.813 | 10.798 | 3.482 | Native Rust |
+| Repeated print actions | 14.953 | — | 3.181 | Native Rust |
+| Prune control | 0.359 | — | 0.574 | GNU fallback |
+| GNU exec action | 0.548 | — | 0.774 | GNU fallback |
+| Missing-root diagnostics | 0.266 | — | 0.462 | GNU fallback |
 
-Optimized Rust was faster than fd in **15/15 comparable classes** in this capture.
-Sixteen of 17 native-class medians improved over the archived Rust release;
-the 128-file case stayed approximately unchanged at 0.47 ms. Large-tree native
-searches fell from roughly 31–35 ms to 14–17 ms. GNU fallback rows do not receive
-native acceleration credit. These finite warm-cache results do not establish
-universal performance across filesystems, cold caches or expression classes.
+Rust was faster than fd in **15/15 comparable classes** and GNU find in
+**16/17 native classes** in this capture. Large-tree native searches took roughly
+14–17 ms. GNU fallback rows do not receive native acceleration credit. These
+finite warm-cache results do not establish universal performance across
+filesystems, cold caches or expression classes.
 
 Rust preserves exact GNU ordering. Direct fd can return the same records in a
 different order. Measurements include process startup and complete output
@@ -64,7 +63,8 @@ bytes, conservative bounds and fallback before output remain checked.
 ```bash
 cargo build --release --locked --manifest-path rust/Cargo.toml
 rust/target/release/find2fd-rust . -type f -name '*.ts' -print0
-node --test tests/test_rust_engine.mjs
+npm run test:rust
+npm run test:integration
 node tools/verify-rust-artifact.mjs --output artifacts/rust-package.json
 python3 tools/benchmark-rust-engine.py --output artifacts/rust-performance.json
 ```
@@ -264,7 +264,31 @@ Recovering order repeats directory enumeration for the candidate ancestors; broa
 
 ## Verification
 
-The compiled dispatch regression traces the actual public and private Bash exec chains. It verifies Rust execution without Node/fd, exact GNU fallback, optouts and missing builds, local scope, closed descriptors and relocated/symlinked installations. Run it with the operator suite through `npm run test:rust`; `node tools/verify-rust-artifact.mjs` rebuilds and tests the shipped source outside the checkout.
+Tests follow the implementation boundary:
+
+| Layer | Language and location | Run |
+| --- | --- | --- |
+| Native parser, matcher, traversal and resource invariants | Rust unit/property tests under `rust/src/` | `npm run test:rust:unit` |
+| Actual optimized engine versus GNU, including seeded and fault cases | Rust release harness under `rust/tests/` | `npm run test:rust:oracle` |
+| Pi Bash scope and public CLI integration | JavaScript under `tests/` | `npm run test:integration` |
+| Retained experimental JavaScript adapters | JavaScript under `tests/` | `node tools/verify.mjs --core` |
+
+`npm test` runs the Rust, integration and adapter layers. `npm run test:rust`
+runs the native layers without Node test assertions. Plain `cargo test --locked
+--manifest-path rust/Cargo.toml` runs the fast Rust unit/property checks; the
+`release-oracle` feature explicitly enables the longer GNU comparison campaign.
+The external campaign tests the uninstrumented optimized executable, even when
+unit tests use a debug build. GNU fallback checks retain separate counts and do
+not claim native implementation coverage.
+
+`npm run verify:rust` packs and extracts the actual npm source archive, builds
+an independent production release, runs Rust units in debug and release, and
+executes the Rust oracle and Node integration tests outside the checkout. Its
+report rejects empty/skipped suites, missing classes and mismatched artifact
+identities. The GNU campaign runs once per qualification; debug and release
+unit results are reported separately rather than adding duplicate GNU cases.
+
+The compiled dispatch regression traces the actual public and private Bash exec chains. It verifies Rust execution without Node/fd, exact GNU fallback, optouts and missing builds, local scope, closed descriptors and relocated/symlinked installations. Run the engine suite with `npm run test:rust` and the launcher/Pi checks with `npm run test:integration`; `node tools/verify-rust-artifact.mjs` rebuilds and tests the shipped source outside the checkout.
 
 Run focused checks, then the bounded or larger synthetic campaigns:
 
@@ -317,8 +341,10 @@ find2fd/
 ├── rust/
 │   ├── Cargo.toml               Native Rust executable and locked dependencies
 │   ├── Cargo.lock               Reproducible dependency resolution
-│   └── src/main.rs              GNU-compatible parsing, matching and ordered traversal
-├── tests/                       Synthetic GNU comparisons and focused regressions
+│   ├── src/main.rs              GNU-compatible parsing, matching and ordered traversal
+│   ├── src/tests.rs              Native unit/property tests
+│   └── tests/gnu_oracle.rs       Release GNU comparisons and owned fault fixtures
+├── tests/                       Pi/package and retained JavaScript adapter checks
 ├── tools/
 │   ├── verify.mjs               Tiered checks and structured JSON reports
 │   ├── verify-artifact.mjs      Packs, extracts and verifies the existing npm CLI

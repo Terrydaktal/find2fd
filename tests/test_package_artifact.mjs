@@ -40,6 +40,8 @@ test('actual npm tar extraction and offline local installation execute shipped G
   const packageRoot = join(extraction, 'package');
   const expected = ['package.json', 'README.md', 'LICENSE', 'NOTICE', 'pi/find2fd.ts', 'bin/find2fd', 'bin/find2fd.mjs', 'bin/find2fd-shell-prefix.mjs',
     'src/find-auto.sh', 'tools/benchmark-routing.py', 'docs/automatic-routing-audit.json', 'docs/automatic-routing-performance.json',
+    'rust/Cargo.toml', 'rust/Cargo.lock', 'rust/src/main.rs', 'rust/src/tests.rs', 'rust/tests/gnu_oracle.rs',
+    'tools/rust-verification.mjs', 'tools/verify-rust-artifact.mjs', 'tests/test_verification_evidence.mjs',
     'tools/verify.mjs', 'tools/verify-artifact.mjs', 'tests/helpers.mjs', 'tests/test_package_entry.mjs', 'tests/test_package_artifact.mjs', 'tests/find_option_inventory.json', 'tests/find_wrapper_requirements.json',
     ...['options', 'order', 'runtime', 'wrapper', 'evaluate', 'incremental', 'descriptors'].map((name) => `src/find-${name}.mjs`),
     'tests/find_metadata_helpers.mjs', 'tests/find_incremental_helpers.mjs',
@@ -48,7 +50,12 @@ test('actual npm tar extraction and offline local installation execute shipped G
     assert.ok(existsSync(join(packageRoot, file)), `missing extracted verification or product file ${file}`);
     assert.equal(hash(join(packageRoot, file)), hash(join(root, file)), `packed file identity: ${file}`);
   }
-  assert.ok(record.files.every(({ path }) => !/(^|\/)(node_modules|artifacts|\.git|captures|fixtures|private)(\/|$)/.test(path)), 'the package contains no local installs, verification results or private lab data');
+  assert.ok(record.files.every(({ path }) => {
+    // Public native fault drivers are versioned test source, not private captures.
+    const publicRustFixture = /^rust\/tests\/fixtures\/[^/]+\.(?:c|py|json)$/.test(path);
+    return !/(^|\/)(node_modules|artifacts|\.git|captures|private|target)(\/|$)/.test(path) &&
+      (publicRustFixture || !/(^|\/)fixtures(\/|$)/.test(path));
+  }), 'the package contains only public source/tests, without builds or private lab data');
   const extractedEvidence = entryChecks(packageRoot, cwd, join(packageRoot, 'bin/find2fd'), join(packageRoot, 'bin/find2fd-shell-prefix.mjs'));
   const installation = join(cwd, 'installed'); mkdirSync(installation);
   command('npm', ['install', '--prefix', installation, '--offline', '--ignore-scripts', '--no-audit', '--no-fund', '--legacy-peer-deps', archive], cwd, npmEnv);

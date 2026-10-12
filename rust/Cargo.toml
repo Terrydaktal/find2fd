@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 rust-version = "1.90"
 publish = false
+autotests = false
 license = "Apache-2.0"
 authors = ["Terrydaktal <9lewis9@gmail.com>"]
 description = "GNU find-compatible bounded filename discovery with ordered fd-style Rust traversal"
@@ -17,3 +18,12 @@ serde_json = "1.0"
 lto = "thin"
 codegen-units = 1
 panic = "abort"
+
+[features]
+release-oracle = []
+
+[[test]]
+name = "gnu_oracle"
+path = "tests/gnu_oracle.rs"
+harness = false
+required-features = ["release-oracle"]

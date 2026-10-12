@@ -1,10 +1,26 @@
+The native Rust implementation is tested in Rust: `rust/src/tests.rs` contains
+unit/property checks, and `rust/tests/gnu_oracle.rs` owns optimized-release
+GNU comparisons, seeded cases and fault injection. Run `npm run test:rust` for
+both native layers and `npm run test:integration` for Node CLI/Pi scope checks.
+Node also retains the experimental JavaScript adapter suites because those tests
+target JavaScript implementations, rather than the native Rust engine.
+
+The current [native package qualification](rust-engine-qualification.json)
+rebuilds the actual npm source archive offline outside the checkout. It runs Rust
+units in debug and release, then the Rust GNU campaign once against a separate
+uninstrumented production binary, followed by Node integration, process-timer
+and evidence-validation checks. Counts, native/delegated routes and artifact
+hashes are recorded separately. Run `npm run verify:rust` for this release gate.
+
+The following records describe the retained historical JavaScript/fd adapter.
+
 # Verification
 
 The new automatic-routing regressions execute the real CLI and private Bash entry points against a synthetic 25,600-directory tree. They require actual fd contribution for sparse matches and exact complete GNU byte ordering/status/diagnostics, and require native routing for dense, repeated, broad, shallow, rich, followed and compound cases. Action and shell-option checks ensure sampling never duplicates a user action or alters the calling shell's options.
 
 The [routing audit](automatic-routing-audit.json) covers every inventoried option spelling and structural family. The [speed capture](automatic-routing-performance.json) records seven randomized paired measurements after one warmup per engine in 18 representative classes, with GNU/automatic/experimental engines all checked against GNU. CPU and package verification results are retained by the commands below; previous qualification JSON files describe historical source states and are not current-source release certification.
 
-[Current product qualification](automatic-qualification.json) records **102 passing Node groups**: 93 core, two deep campaign groups and seven installed-Pi SDK groups. Its 3,072-case seeded campaign and 1,536-case expression campaign have zero mismatches and qualified runtime fallbacks. The automatic routing group makes 20 additional GNU comparisons, with eight actual automatic fd calls. The product hashes match the actual CLI performance capture and extracted artifact; its archive identity describes the exact package tested, including the documentation present when packed. The earlier missing-shell-resource mutant-fixture failure was corrected by copying the shipped policy into that disposable test fixture; runtime source did not change.
+[Historical adapter qualification](automatic-qualification.json) records **102 passing Node groups**: 93 core, two deep campaign groups and seven installed-Pi SDK groups. Its 3,072-case seeded campaign and 1,536-case expression campaign have zero mismatches and qualified runtime fallbacks. The automatic routing group makes 20 additional GNU comparisons, with eight actual automatic fd calls. The product hashes match the actual CLI performance capture and extracted artifact; its archive identity describes the exact package tested, including the documentation present when packed. The earlier missing-shell-resource mutant-fixture failure was corrected by copying the shipped policy into that disposable test fixture; runtime source did not change.
 
 Tests use GNU find as the independent oracle. They execute public entry points
 against disposable synthetic trees and compare stdout bytes, stderr bytes and

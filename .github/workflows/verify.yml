@@ -58,7 +58,7 @@ jobs:
           sudo apt-get install --yes findutils fd-find bash coreutils python3 strace build-essential
       - name: Resolve locked Rust dependencies
         run: cargo fetch --locked --manifest-path rust/Cargo.toml
-      - name: Verify Rust engine from the extracted source archive
+      - name: Verify extracted Rust units, GNU campaigns and Node integration
         run: node tools/verify-rust-artifact.mjs --output artifacts/rust-artifact.json
       - name: Retain Rust qualification evidence
         if: always()

@@ -46,23 +46,24 @@
   ],
   "seed": "0x46444e31",
   "seededNativeComparisons": 384,
-  "platform": "Linux, unprivileged user, installed GNU find, fd, test-only strace and GNU C compiler/libdl",
+  "platform": "Linux, unprivileged user, independently installed GNU find, test-only strace and GNU C compiler/libdl; Python only for controlled stdout-descriptor transports",
   "routeEvidence": "Opt-in read-only --find2fd-route-json classification is separate from ordinary result comparison. Special stdout transports receive no native execution credit.",
   "behaviorOwners": {
-    "native-grammar": "tests/test_rust_engine.mjs",
-    "fallback-side-effects": "tests/test_rust_engine.mjs",
-    "raw-byte-order": "tests/test_rust_engine.mjs",
-    "parallel-order": "tests/test_rust_engine.mjs",
-    "option-inventory": "tests/test_rust_engine.mjs",
-    "io-failures": "tests/test_rust_engine.mjs",
-    "native-execution-proof": "tests/test_rust_engine.mjs",
-    "atomic-preparation-bounds": "tests/test_rust_engine.mjs",
-    "deterministic-physical-child-swap": "tests/test_rust_engine.mjs",
-    "optimized-glob-variants": "tests/test_rust_engine.mjs",
-    "shallow-no-pool": "tests/test_rust_engine.mjs",
-    "raw-getdents-batches": "tests/test_rust_engine.mjs",
-    "DT-UNKNOWN-fstatat": "tests/test_rust_engine.mjs",
-    "zero-inode-skip": "tests/test_rust_engine.mjs"
+    "native-grammar": "rust/tests/gnu_oracle.rs",
+    "fallback-side-effects": "rust/tests/gnu_oracle.rs",
+    "raw-byte-order": "rust/tests/gnu_oracle.rs",
+    "parallel-order": "rust/tests/gnu_oracle.rs",
+    "option-inventory": "rust/tests/gnu_oracle.rs",
+    "io-failures": "rust/tests/gnu_oracle.rs",
+    "native-execution-proof": "rust/tests/gnu_oracle.rs",
+    "atomic-preparation-bounds": "rust/tests/gnu_oracle.rs",
+    "deterministic-physical-child-swap": "rust/tests/gnu_oracle.rs",
+    "optimized-glob-variants": "rust/tests/gnu_oracle.rs",
+    "shallow-no-pool": "rust/tests/gnu_oracle.rs",
+    "raw-getdents-batches": "rust/tests/gnu_oracle.rs",
+    "DT-UNKNOWN-fstatat": "rust/tests/gnu_oracle.rs",
+    "zero-inode-skip": "rust/tests/gnu_oracle.rs",
+    "native-unit-properties": "rust/src/tests.rs"
   },
   "options": [
     {
@@ -981,28 +982,28 @@
   "regressions": [
     {
       "id": "ignored-SIGPIPE",
-      "owner": "tests/test_rust_engine.mjs",
+      "owner": "rust/tests/gnu_oracle.rs",
       "contract": "A closed-reader stdout pipe with inherited SIGPIPE ignored must reproduce GNU status1 and complete Broken pipe diagnostics, rather than terminate with SIGPIPE.",
       "redArtifactSHA256": "46dc9939a0067e8049ef62855b7913fb5149b1ba4788b9bfd9616749562c067c",
       "redResult": "GNU1 versus Rust141; exact GNU argv0=find"
     },
     {
       "id": "nonblocking-full-pipe",
-      "owner": "tests/test_rust_engine.mjs",
+      "owner": "rust/tests/gnu_oracle.rs",
       "contract": "A tiny print0 result into an already full nonblocking stdout pipe with the reader kept alive must preserve GNU status1 and complete EAGAIN diagnostics; final buffer-flush errors cannot become success.",
       "redArtifactSHA256": "46dc9939a0067e8049ef62855b7913fb5149b1ba4788b9bfd9616749562c067c",
       "redResult": "GNU1 versus Rust0; exact GNU argv0=find"
     },
     {
       "id": "root-basename-trailing-slash",
-      "owner": "tests/test_rust_engine.mjs",
+      "owner": "rust/tests/gnu_oracle.rs",
       "contract": "For -name matching, GNU removes all trailing root slashes while preserving the original raw root spelling in print output; this is different from the GNU printf %f directive.",
       "redArtifactSHA256": "c43a19d8fd84b50cdf60f4fb373391055658f1ac06a821623680801952afe742",
       "redResult": "GNU prints tree/ NUL for tree/ -maxdepth0 -name tree -print0; Rust printed nothing"
     },
     {
       "id": "physical-child-symlink-swap",
-      "owner": "tests/test_rust_engine.mjs",
+      "owner": "rust/tests/gnu_oracle.rs",
       "contract": "Under -P, a child directory replaced with an outside symlink immediately before opening must not expose any outside marker; after preparation rejects that swap, untouched GNU execution must exactly match the settled post-swap tree without partial native replay.",
       "faultInjection": "Owned fixture LD_PRELOAD openat/opendir interception; no production paths",
       "mutationControl": "Removing only O_NOFOLLOW at the controlled child leaks the sentinel and violates the tested invariant; the native negative control matches GNU without mutation.",
@@ -1012,28 +1013,36 @@
   "optimizationContracts": [
     {
       "id": "glob-specialization",
-      "owner": "tests/test_rust_engine.mjs",
+      "owner": "rust/tests/gnu_oracle.rs",
       "contract": "Literal, all-star, prefix, suffix and contains specializations preserve GNU byte matching, empty patterns, repeated stars, ASCII case folding, nonASCII and raw newline/invalidUTF8 names.",
       "comparisons": 50
     },
     {
       "id": "shallow-thread-budget",
-      "owner": "tests/test_rust_engine.mjs",
+      "owner": "rust/tests/gnu_oracle.rs",
       "contract": "Maxdepth0 or1 retains exact GNU output and does not create a worker pool when no descending work remains.",
       "comparisons": 3
     },
     {
       "id": "raw-directory-type-and-batch",
-      "owner": "tests/test_rust_engine.mjs",
+      "owner": "rust/tests/gnu_oracle.rs",
       "contract": "Owned getdents64 injection forces DT_UNKNOWN and actual anchored fstatat resolution, preserves complete raw GNU order across32KiB batches, and delegates malformed length/NUL/header records before stdout.",
       "unknownTypeComparisons": 9,
       "malformedRecordComparisons": 3
     },
     {
       "id": "zero-inode-native-skip",
-      "owner": "tests/test_rust_engine.mjs",
+      "owner": "rust/tests/gnu_oracle.rs",
       "contract": "An owned deleted entry retained in a raw batch with inode0 is skipped natively, with output identical to GNU on the settled tree and external exec proof that no GNU fallback masked the behavior.",
       "comparisons": 1
     }
-  ]
+  ],
+  "testArchitecture": {
+    "unit": "rust/src/tests.rs; default Cargo test target find2fd-rust; parser, matcher, independent truth/action tables, budgets and kernel record logic",
+    "releaseOracle": "rust/tests/gnu_oracle.rs; custom harness=false integration target gnu_oracle gated by release-oracle, always launching the optimized release executable via FIND2FD_RUST_BINARY",
+    "processProtocol": "18 TAP groups (17 GNU comparison campaigns and one bounded runner self-check group); per-campaign # JSON evidence and exactly one aggregate FIND2FD_ENGINE_REPORT= JSON line; fallback and special transports receive no native credit",
+    "NodeBoundary": "Actual CLI/Pi shell routing, installation, package and legacy JS/fd behavior remain Node integration tests; no JS native-engine shim",
+    "boundedRunner": "Separate stdin feeder and stdout/stderr captures; 15-second child deadline and 8 MiB-per-stream cap; process-group termination before joins on normal/error/timeout paths; focused descendant, blocked-stdin and early-close checks",
+    "failureEvidence": "Retained owned fixture, bounded raw-argument/override journal, complete captured stdout/stderr files, status and declared route on a mismatch; no production data"
+  }
 }

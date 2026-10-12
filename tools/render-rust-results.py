@@ -20,26 +20,12 @@ def main():
     comparable_fd = [case for case in native if "fd" in case["medianMs"]]
     faster_fd = sum(case["medianMs"]["rust"] < case["medianMs"]["fd"] for case in comparable_fd)
     rows = []
-    compared_previous = "previousExecutableSHA256" in performance
     for case in performance["cases"]:
         timing = case["medianMs"]
         fd = f'{timing["fd"]:.3f}' if "fd" in timing else "—"
         route = case["route"]
         execution = f'Rust, {route["strategy"]}' if route["route"] == "native" else "GNU fallback"
-        previous = f' {timing["previousRust"]:.3f} |' if compared_previous else ""
-        rows.append(f'| {case["description"]} | {timing["gnu"]:.3f} | {fd} |{previous} {timing["rust"]:.3f} | {execution} |')
-    old_heading = " Previous Rust ms |" if compared_previous else ""
-    old_alignment = " ---: |" if compared_previous else ""
-    comparison_note = ""
-    if compared_previous:
-        improved = sum(case["medianMs"]["rust"] < case["medianMs"]["previousRust"] for case in native)
-        comparison_note = f'''The archived previous Rust release was measured on the same owned trees,
-in the same rotated trial order, rather than comparing captures from different
-times. {improved}/{len(native)} native-class medians improved. Its SHA-256 is
-`{performance["previousExecutableSHA256"]}`. The previous executable is an
-explicit optional benchmark input; ordinary package verification needs no
-archived binary.
-'''
+        rows.append(f'| {case["description"]} | {timing["gnu"]:.3f} | {fd} | {timing["rust"]:.3f} | {execution} |')
     counts = qualification["tests"]
     text = f'''# Native Rust find engine
 
@@ -60,8 +46,8 @@ The large fixture contains 30,000 second-level directories and approximately
 The baselines are {performance["versions"]["GNU find"]} and
 {performance["versions"]["fd"]}.
 
-| Workload | Direct GNU find ms | Direct fd ms |{old_heading} Rust executable ms | Execution |
-| --- | ---: | ---: |{old_alignment} ---: | --- |
+| Workload | Direct GNU find ms | Direct fd ms | Rust executable ms | Execution |
+| --- | ---: | ---: | ---: | --- |
 {chr(10).join(rows)}
 
 {len(native)} classes execute native Rust searches. Their medians are lower
@@ -69,8 +55,6 @@ than direct GNU in {faster_gnu}/{len(native)} cases and lower than direct fd
 in {faster_fd}/{len(comparable_fd)} comparable cases. GNU fallback is recorded
 separately and receives no native acceleration credit. Sub-millisecond margins
 and finite warm-cache fixtures do not establish universal wins.
-
-{comparison_note}
 
 Every Rust timing sample matches GNU stdout, stderr, status and ordering
 exactly. Direct fd is invoked with equivalent hidden/ignore, case, depth and
@@ -92,7 +76,8 @@ commands, output identities and native/fallback decisions. Release SHA-256:
 
 The independently rebuilt npm source artifact passed
 **{qualification["fullGNUComparisons"]} exact GNU comparisons**, including
-**{counts["rustSearches"]} native Rust suite searches**. Native, fallback and
+**{counts["rustSearches"]} native engine searches** and
+**{qualification["integrationTests"]["fullGNUComparisons"]} Node CLI/Pi comparisons**. Native, fallback and
 transport comparisons are counted separately. The suite exercises expression
 precedence, short-circuit/repeated output, root inclusion and spelling, hidden
 and ignored files, byte filenames, globs, depth, ordered parallel traversal,
@@ -103,7 +88,8 @@ have been reimplemented in Rust.
 Verification packs the actual npm distribution, checks source identities and
 build-output exclusion, extracts it outside the checkout, rebuilds locked
 dependencies offline into an independent release target, and runs the packaged
-oracle and process-timer tests there. The rebuilt executable has the same
+Rust oracle and separate Node integration/process-timer tests there. Rust units
+passed {qualification["unitTests"]["debug"]["passed"]} debug and {qualification["unitTests"]["release"]["passed"]} release checks. The rebuilt executable has the same
 SHA-256 as the release measured above. The
 [qualification report](rust-engine-qualification.json) records the source
 hashes, archive identity, build and actual test counts. CI runs this packaged
@@ -163,7 +149,8 @@ namespace-replacement tests; none is used by an ordinary native search.
 ```bash
 cargo build --release --locked --manifest-path rust/Cargo.toml
 rust/target/release/find2fd-rust . -type f -name '*.rs' -print0
-node --test tests/test_rust_engine.mjs tests/test_find_rust_routing.mjs
+npm run test:rust
+npm run test:integration
 node tools/verify-rust-artifact.mjs --output docs/rust-engine-qualification.json
 python3 tools/benchmark-rust-engine.py --output docs/rust-engine-performance.json
 python3 tools/render-rust-results.py
